@@ -1,0 +1,14 @@
+[project]
+name = "architecture"
+version = "0.0.0"
+description = "Reference architecture documentation for FullStaQD"
+readme = "README.md"
+authors = [
+    {name = "Max Schweikart", email = "schweikart@kit.edu"},
+    {name = "Rinor Kelmendi"},
+    {name = "Ina Schaefer"}
+]
+requires-python = ">=3.14"
+dependencies = [
+    "mkdocs-material>=9.7.4",
+]
