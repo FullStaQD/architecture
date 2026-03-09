@@ -1,0 +1,47 @@
+name: ci 
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read # check out repo
+  pages: write # deploy to pages
+  id-token: write # required for deploying to pages, see https://github.com/actions/deploy-pages/issues/329
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+      - name: Install project dependencies (incl. Python)
+        run: uv sync --locked --all-extras --dev
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Build documentation
+        run: uv run mkdocs build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}$
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
