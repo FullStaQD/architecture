@@ -139,4 +139,23 @@ compiler.
 
 ### White Box Physical Layer {#_white_box_phys_layer}
 
-*\<white box template\>*
+<figure markdown="span">
+  ![](./images/Building-Blocks-L2-Physical-Layer.excalidraw.png)
+</figure>
+
+#### Motivation
+The implementation of the physical layer will usually depend on the hardware
+architecture and vendor.
+As such, the key architectural characteristic here is to either have the vendor
+implement our interface towards the system layer, or to implement an adapter
+that translates our interface to the vendor's interface.
+
+#### Contained Building Blocks
+* **QDMI Adapter:** This component provides the quantum device's characteristics
+  via QDMI and acts as an adapter between the QDMI protocol and the
+  device-specific Quantum System Controller.
+* **Quantum System Controller:** This component controls the physical quantum
+  device, for example triggering lasers and sensors in superconducting hardware.
+
+#### Important Interfaces
+!!! warning "TODO"
