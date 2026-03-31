@@ -2,4 +2,11 @@ site_name: FullStaQD Reference Architecture
 theme:
   name: material
 markdown_extensions: 
-- attr_list
+  - attr_list
+  - md_in_html # for using markdown in <figure>s
+
+  # for adminitions, source:
+  # https://squidfunk.github.io/mkdocs-material/reference/admonitions/
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
