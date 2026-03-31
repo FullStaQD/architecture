@@ -34,18 +34,44 @@ We rectify this decision with the following three perspectives:
 
 ### Contained Building Blocks
 
-- **Application Layer:** This layer will involve use-case-specific quantum and
-  hybrid programs, written in high-level languages using algorithms, SDKs and
-  libraries. 
-- **System Layer:** The system layer is responsible for compiling high-level
-  program specifications from the application layer to low-level,
-  device-specific instructions to be executed in the physical layer, taking into
-  account the quantum device architecture (e.g. superconducting vs. neutral
-  atom, topology / connectivity) and possibly HPC concerns.
-- **Physical Layer:** The physical layer executes the programs it receives from
-  the system layers by controlling the physical quantum device.
-  It is also responsible for calibrating the device and monitoring it (e.g.
-  fidelities).
+#### Application Layer
+This layer will involve use-case-specific quantum and hybrid programs, written
+in high-level languages using algorithms, SDKs and libraries.
+
+<!-- *\<Interface(s)\>* -->
+
+##### Quality Characteristics
+
+- The architecture layer must be extensible for new algorithms and abstractions.
+
+!!! warning "TODO"
+    
+    These characteristics are not measurable yet and do not set a target value!
+
+#### System Layer
+The system layer is responsible for compiling high-level program specifications
+from the application layer to low-level, device-specific instructions to be
+executed in the physical layer, taking into account the quantum device
+architecture (e.g. superconducting vs. neutral atom, topology / connectivity)
+and possibly HPC concerns.
+
+##### Quality Characteristics
+
+- The physical layer must be extensible for new quantum device architectures.
+- The physical layer must be extensible for new quantum compilation passes.
+- The physical layer should be extensible to work with different intermediate
+  representations.
+- The physical layer should minimise execution cost by optimising generated
+  instructions.
+
+#### Physical Layer
+The physical layer executes the programs it receives from the system layers by
+controlling the physical quantum device.
+It is also responsible for calibrating the device and monitoring it (e.g.
+fidelities).
+
+##### Quality Characteristics
+- The classical co-processor must be able to run decoders in real-time.
 
 ### Important Interfaces
 
@@ -61,33 +87,6 @@ We rectify this decision with the following three perspectives:
     program specification to be run on quantum devices and co-processors, and it
     involves the reporting of final results as well as monitoring data.
 
-<!-- ### \<Name black box 1\> {#_name_black_box_1}
-
-*\<Purpose/Responsibility\>*
-
-*\<Interface(s)\>*
-
-*\<(Optional) Quality/Performance Characteristics\>*
-
-*\<(Optional) Directory/File Location\>*
-
-*\<(Optional) Fulfilled Requirements\>*
-
-*\<(optional) Open Issues/Problems/Risks\>*
-
-### \<Name black box 2\> {#_name_black_box_2}
-
-*\<black box template\>*
-
-### \<Name black box n\> {#_name_black_box_n}
-
-*\<black box template\>*
-
-### \<Name interface 1\> {#_name_interface_1}
-
-...​
-
-### \<Name interface m\> {#_name_interface_m} -->
 
 ## Level 2 {#_level_2}
 
