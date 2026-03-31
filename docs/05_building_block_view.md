@@ -90,30 +90,53 @@ fidelities).
 
 ## Level 2 {#_level_2}
 
-### White Box *\<building block 1\>* {#_white_box_building_block_1}
+!!! info
+
+    The internal architecture of each layer is under the authority of the
+    respective team.
+    This section shallowly digs into the details the layers nonetheless to give
+    an overview of each layer's responsibilities.
+    Understanding this separation of concerns is a necessary precondition for
+    analysing the interfaces between the layers.
+
+### White Box Application Layer {#_white_box_app_layer}
 
 *\<white box template\>*
 
-### White Box *\<building block 2\>* {#_white_box_building_block_2}
+### White Box System Layer {#_white_box_sys_layer}
 
-*\<white box template\>*
+<figure markdown="span">
+  ![](./images/Building-Blocks-L2-System-Layer.excalidraw.png)
+</figure>
 
-...​
+#### Motivation
+The compiler is split into a quantum and a classical compiler to allow re-using
+existing, highly-optimised compiler infrastructure such as gcc while giving
+emphasis to extensibility in quantum compilation through a plugin system.
+The plugin system also allows integrating proprietary extensions to the
+compiler.
 
-### White Box *\<building block m\>* {#_white_box_building_block_m}
+#### Contained Building Blocks
 
-*\<white box template\>*
+- **Frontend:** Used as a facade; shields the core of the compiler from the
+  details of the application layer.
+  Frontend is to be understood as a programming language frontend for the
+  compiler (cf.
+  [`gcc`'s page on frontends](https://gcc.gnu.org/frontends.html)), meaning
+  frontends for different languages or SDKs could be integrated in the future.
+- **Classical Compiler:** Integrates established compiler infrastructure (e.g.
+  [`gcc`](https://gcc.gnu.org)) to compile classical parts of the program with
+  state-of-the-art optimisations.
+- **Quantum Compiler:** Compiles high-level specifications of [quantum-kernels](./12_glossary.md#quantum-kernel) to
+  low-level, device-specific instructions.
+  The compilation process involves passes and dialects and it is extensible
+  through a plugin system.
+- **Backend:** The backend is a bridge between the compiler and the physical
+  layer.
 
-## Level 3 {#_level_3}
+#### Important Interfaces
+!!! warning "TODO"
 
-### White Box \<\_building block x.1\_\> {#_white_box_building_block_x_1}
-
-*\<white box template\>*
-
-### White Box \<\_building block x.2\_\> {#_white_box_building_block_x_2}
-
-*\<white box template\>*
-
-### White Box \<\_building block y.1\_\> {#_white_box_building_block_y_1}
+### White Box Physical Layer {#_white_box_phys_layer}
 
 *\<white box template\>*
