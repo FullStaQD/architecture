@@ -1,17 +1,12 @@
-# Welcome to MkDocs
+# Welcome!
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+This site contains the architectural documentation for the FullStaQD reference
+architecture.
+Its structure is based on [arc42](https://arc42.org) (version 9.0), an open
+template for documenting of software and system architecture.
 
-## Commands
+!!! warning
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+    The design of the reference architecture is still in its early stages.
+    The documentation is therefore largely incomplete and will be filled as we
+    progress.
