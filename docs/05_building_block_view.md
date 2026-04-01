@@ -101,7 +101,48 @@ fidelities).
 
 ### White Box Application Layer {#_white_box_app_layer}
 
-*\<white box template\>*
+<figure markdown="span">
+  ![](./images/Building-Blocks-L2-Application-Layer.excalidraw.png)
+</figure>
+
+#### Motivation
+
+A lot of different software components exist that can be classified as part of
+the application layer and the above figure presents a rough sketch of their
+dependencies.
+Most quantum software that is freely available today makes use of (usually
+python-based) SDKs to build quantum circuits.
+Furthermore, many tools exist for transforming various scientific, engineering
+and commercial problems into quantum formulations, and there exist several tools
+for configuring these transformations in a low-code manner.
+Fully developed quantum solutions will likely have to implement a custom
+component in the long term to interface between existing systems and the quantum
+software stack.
+
+#### Contained Building Blocks
+
+- **Use Case:** This component encapsulates the configuration of the quantum
+  software stack for a specific use case.
+  It is also responsible for interfacing with external systems if the quantum
+  application is to be integrated into an existing IT system.
+  As such, use case components are highly specific for the context they are used
+  in and should be seen as an adapter rather than including complex logic.
+- **Problem Transformations:** This component is symbolic for the many
+  available tools for transforming scientific, engineering and commercial
+  problems into quantum formulations.
+  Many of these tools use Algorithm Templates from a Quantum SDK.
+- **Workflow Modeler:** Graphical configuration tool for quantum workflows.
+- **Workflow Engine:** Execution and orchestration engine for quantum workflows
+  configured with a workflow modeler.
+- **Quantum SDK:** The quantum SDK contains common building blocks for quantum
+  software such as circuits and types (e.g.
+  [qrisp's quantum variables](https://qrisp.eu/reference/Core/index.html#quantumvariable)),
+  algorithm templates (e.g. VQE, QAOA, QPE) and optimisers (e.g. Adam or
+  Rotosolve) for hybrid algorithms.
+
+#### Important Interfaces
+
+!!! warning "TODO"
 
 ### White Box System Layer {#_white_box_sys_layer}
 
