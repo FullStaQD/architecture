@@ -125,8 +125,14 @@ software stack.
   software stack for a specific use case.
   It is also responsible for interfacing with external systems if the quantum
   application is to be integrated into an existing IT system.
-  As such, use case components are highly specific for the context they are used
-  in and should be seen as an adapter rather than including complex logic.
+  As the Use Case component characterises the interface between quantum and
+  classical computation, it will have one or more dedicated
+  [**Quantum Kernels**](./12_glossary.md#quantum-kernel) which encapsulate the
+  parts of the program that are to be run on a quantum computer. 
+  Use case components are highly specific for the context and task they are used
+  in.
+  Reusable code will often live in the Quantum SDK or Problem Transformation
+  libraries.
 - **Problem Transformations:** This component is symbolic for the many
   available tools for transforming scientific, engineering and commercial
   problems into quantum formulations.
