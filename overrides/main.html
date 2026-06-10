@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block announce %}
+<style>
+  [data-md-component="announce"] .md-banner {
+    background-color: #f4a500;
+    /* background-image: repeating-linear-gradient(
+      45deg,
+      #f4a500,
+      #f4a500 10px,
+      #222 10px,
+      #222 20px
+    ); */
+  }
+  [data-md-component="announce"] .md-banner .md-banner__inner {
+    background-color: #f4a500;
+    /* padding: 0.3; */
+    font-size: medium;
+    font-weight: 500;
+    color: var(--md-typeset-color);
+  }
+</style>
+<b>⚠️ Internal pre-release:</b>
+Please let us know about any issues you find with this architecture by
+<a href="https://github.com/FullStaQD/architecture/issues/new/choose">opening an issue</a>.
+{% endblock %}

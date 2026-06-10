@@ -1,6 +1,10 @@
 site_name: FullStaQD Reference Architecture
 theme:
   name: material
+  features:
+    - content.action.edit
+    - content.action.view
+  custom_dir: overrides
 markdown_extensions: 
   - attr_list
   - md_in_html # for using markdown in <figure>s
@@ -13,3 +17,6 @@ markdown_extensions:
 
   - toc:
       toc_depth: 4
+repo_url: https://github.com/fullstaqd/architecture
+repo_name: FullStaQD/architecture
+edit_uri: edit/main/docs/
