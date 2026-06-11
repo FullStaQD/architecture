@@ -33,12 +33,38 @@
 - In hybrid systems, the quantum stack only contains the quantum part
     - But: hybrid algorithms are a common pattern in QC and need to be specifiable
 
-## Quantum Cloud Services {#_runtime_scenario_1}
+
+
+## Quantum simulation for material science, chemistry and physics {#_runtime_scenario_1}
+
+This scenario descriebes the how quatum computing can be used for material science, chemistry and physics. 
+It has the following specifications:
+-  Input: molecule or atom specification
+-  Output: ground state energy, excited states, dipole moments, …
+-  Used in: material science, battery design, catalyst research, …
+
+### Application Layer
+(Bild einfügen)
+
+In the first layer of the Quatum Stack, the Application Layer, the Simulation App receives a Molecule specification. 
+This application will perform different algorithms starting with a DFT or a Hartree-Fock. (waren das die beiden die basicaly gleich waren und nur einer von beiden genutzt wird? hatte mir da was notiert)
+From there it goes with 1 or 2-electron integrals into an Hamiltonian Formulator, which will provide an Hamiltonian that is then used by the Jordan-Winger-Transformation to create a Qubit Representation. 
+
+The VQE Algorithm (Variational Quantum Eigensolver) is used to find the ground state of the physical system. 
+Then the VQE Programm Generator can create an Qiskit programm, wich is ececutable. 
+But before it will be executet, we still can use a Logical Optimisation, to reduce redundancy.
+
+### System Layer 
+
+- Runtimes ???
+
+Here on the Quantum System Architecture the Transpilation Process is executed.
+
+
+## Quantum Cloud Services {#_runtime_scenario_2}
 Quantum Cloud Services for optimisation problems
 
 Hybrider Algorithmus gut
-
-TODO: SZENARIO 1 und 2 tauschen 
 
 
 - Solving NP-hard combinatorial optimisation problems
@@ -51,16 +77,6 @@ TODO: SZENARIO 1 und 2 tauschen
     - Trajectory optimization in air traffic
     - Paint-shop scheduling
     - Planning problems in highly individualised mass production
-
-
-## Quantum simulation for material science, chemistry and physics {#_runtime_scenario_2}
-
--  Input: molecule or atom specification
--  Output: ground state energy, excited states, dipole moments, …
--  Used in: material science, battery design, catalyst research, …
-
-
-DFT und Hartree-Fock
 
 
 ## Embedded QPU {#_runtime_scenario_3}
