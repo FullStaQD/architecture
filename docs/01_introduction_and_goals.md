@@ -1,7 +1,18 @@
 # Introduction and Goals {#section-introduction-and-goals}
 The FullStaQD reference architecture is the first step towards a full stack, which ensures compatability and interoperability of various components in the quantum ecosystem. We want to develop a reference architexture with uniform standardised interfaces, which is consistent, modular and open. This reference architecture would reinforce the german quantum computing ecosystem by demonstrating the technical feasibility of quantum applications in the german industry, while also covering a wide quantum computing landscape.
 
+The reference architecture is divided into three layers and cross-layer concerns. 
 
+| Module  | Description | 
+| ------------- | ------------- | 
+| Application Layer | Contains all components on a high-level programming language or algorithmic level  |
+| System Layer  | Contains all components to adjust high-level program to the specific hardware and to integrate HPCs |
+| Physical Layer  | Contains all components on a physical layer, which indirectly/directly communicated with the quantum backend  |
+| Cross-Layer Concerns  | Contains all components like Testing, Benchmarking, Simulations, Tools, Visualization, ...  |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
+![](./images/Reference-Architecture-Introduction.png)
 
 
 ## Requirements Overview {#_requirements_overview}
