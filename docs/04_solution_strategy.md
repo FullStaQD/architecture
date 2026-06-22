@@ -12,7 +12,7 @@ To fulfill the requirements and goals of the architecture, we use various state 
 | Method  | Description | Reason | 
 | ------------- | ------------- | ------------- | 
 | Scenario-based analysis | Using predefined scenarios of use cases on the reference architecture  | To assess how well the reference architecture covers the predefined use cases and to identify the common requirements shared by the components on which those use cases depend |
-| Requirement Survey  | Sending surveys to Stakeholders asking for requirements and needs for their components | Obtaining high-level input on the requirements that the reference architecture must fulfil.  |
+| Requirement Survey  | Sending surveys to Stakeholders asking for requirements and needs for their components | Obtaining high-level input on the requirements that the reference architecture must fulfill  |
 | Interview with Stakeholders  | In-depth interviews with stakeholders about the reference architecture and their respective positions  | Acquiring detailed insights of Stakeholders and adopt their input  |
 | Workshops  | Regular on-site exchange with the consortium  | Updating partners of current status and discussing next steps |
-| Community Engagement | Allowing open requests and discussion about the reference architecture through our ticket system | Ensuring external input, extendability and exhangability | 
+| Community Engagement | Allowing open requests and discussion about the reference architecture through our ticket system | Ensuring external input, extendability and exchangability | 
