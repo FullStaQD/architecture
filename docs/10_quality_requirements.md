@@ -15,7 +15,7 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Determinism  | Determinism means that under the same inputs and initial conditions, a system produces the same externally observable behavior. This is foundational for reproducible testing, debugging, formal reasoning, and fault-tolerant replication.  |
 | Effectiveness  | Effectiveness is the capability of producing a desired result or the ability to produce desired output.  |
 | Efficiency  | capable of producing desired results with little or no waste (as of time or materials) |
-| Content Cell  | Content Cell  |
+| Latency | Latency in general is a time delay between the cause and the effect of some change in a system.  |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
@@ -53,7 +53,7 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | ------------- | ------------- | 
 | Analysability  | Capability of a product to be effectively and efficiently assessed regarding the impact of an intended change to one or more of its parts, to diagnose it for deficiencies or causes of failures, or to identify parts to be modified.  |
 | Debuggability  | Debuggability focuses on shortening time-to-diagnosis and reducing the effort to pinpoint root causes. It is closely related to but distinct from:  Observability: raw signals (logs, metrics, traces) vs. using those signals effectively to debug. Testability: how easily a system can be tested vs. how easily failures can be diagnosed. Analysability: impact/change assessment; debuggability emphasizes incident and defect diagnosis|
-| Content Cell  | Content Cell  |
+| Maintainability  | Maintainability is concerned with modifications after the software baseline is established. The goal of a maintenance activity is to correct defects, adapt to changing environments, or im- prove a system’s future maintainability or other quality attributes. The description of a particular maintenance activity is in the eye of the beholder: A particular change (or type of change) can be labeled differently, depending on the maintainer’s intention. We measure maintainability as the amount of work required to modify, test, and maintain our software base in response to changes in environmental elements. This measure may depend on who is perform- ing the maintenance task and that individual’s level of skill or knowledge. |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
@@ -70,6 +70,10 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Governability  | Governability is the degree to which an organization can direct and control a system through policies that are defined, communicated, monitored, and enforced.  |
 | Interaction capability  | capability of a product to be interacted with by specified users to exchange information between a user and a system via the user interface to complete the intended task  |
 | Interoperability  | Work (together) with other products or systems.  |
+| Learnability  | Capability of a product to have specified users learn to use specified product functions within a specified amount of time. |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
 
 ### Reliable
@@ -137,8 +141,8 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Consistency  | Eventual consistency is a weaker consistency model: after an update, reads may temporarily return stale values, but if no new updates occur, all replicas will eventually converge to the last written value. It is commonly used to improve availability and latency in distributed systems.  |
 | Discoverability  | The ease with which users can find new or unknown features, content, and functionalities within a product or system without prior knowledge of their existence.  |
 | Inclusivity  | Capability of a product to be utilised by people of various backgrounds  |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Intuitiveness  | The degree to which a system’s interface, behavior, and information organization align with users’ existing mental models and expectations, enabling immediate understanding and effective use without prior learning or training. |
+| Legal Requirements  | Legal Requirement means any federal, state, local, municipal, foreign or other law, statute, constitution, principle of common law, resolution, ordinance, code, edict, decree, rule, regulation, ruling or requirement issued, enacted, adopted, promulgated, implemented or otherwise put into effect by or under the authority of any Governmental Body.  |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
