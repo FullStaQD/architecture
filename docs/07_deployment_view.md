@@ -5,20 +5,21 @@ This section documents a few common deployment scenarios.
 
 ## Deployment on a Single Machine
 <figure markdown="span">
-  ![](./images/Deployment-Single-Machine.png)
+  ![](./images/Deployment-Single-Machine.excalidraw.png)
 </figure>
 
 While developing quantum software, it is common to test the software on a local
 machine.
-In this most simple scenario, a full instantiation of the quantum software is
-installed on a single non-quantum device such as a developer's laptop or server.
+In this most simple scenario, a full instantiation of the quantum software stack
+is installed on a single non-quantum device such as a developer's laptop or
+server.
 As no quantum hardware is available in such a scenario, the physical layer
 contains a simulator rather than actual quantum device firmware to execute
 quantum kernels.
 
 ## Deployment in an HPC Centre
 <figure markdown="span">
-  ![](./images/Deployment-HPC.png)
+  ![](./images/Deployment-HPC.excalidraw.png)
 </figure>
 
 It is a common belief in the quantum software community that quantum computers
