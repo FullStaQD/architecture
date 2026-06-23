@@ -23,7 +23,7 @@ It has the following specifications:
 -  Output: ground state energy, excited states, dipole moments, …
 -  Used in: material science, battery design, catalyst research, …
 
-### Application Layer
+### Application Layer (Downwards)
 
 
 <figure markdown="span">
@@ -31,88 +31,93 @@ It has the following specifications:
 </figure>
 
 
-1. Siumaltion App: 
-2. DFT (Density Functional Theory): 
-    - Function: Calculates the electronic structure of the molecule based on the spatial distribution of electrons (electron density) rather than the complex wave function (as in Hartree-Fock). Within the quantum pipeline, DFT often provides superior starting orbitals (Kohn-Sham orbitals) for the Hamiltonian Formulator.
-    - Input: Molecular geometry (atomic coordinates, elements), basis set, a selected "functional" (the mathematical approximation, e.g., B3LYP), charge, and spin.
-    - Output: Electron density, optimized molecular orbitals, one- and two-electron integrals, and classically calculated ground-state energy.
-3. Hartree-Fock: 
-    - Function: Performs a classical approximation calculation to estimate a molecule's ground-state energy and determine its molecular orbitals. It serves as a starting point for more accurate quantum algorithms.
-    - Input: Molecular geometry (atomic coordinates, elements), basis set, charge, and spin.
-    - Output: Molecular orbitals, one- and two-electron integrals, classical ground-state energy.
-4. Hamiltonian Formulator:
-    - Function: Takes the results of the Hartree-Fock calculation and formulates the system quantum-mechanically using so-called "second quantization."
-    - Input: One- and two-electron integrals (from the Hartree-Fock step).
-    - Output: A fermionic Hamiltonian (expressed in terms of electron creation and annihilation operators).
-5. Jordan-Wigner:
-    - Function: Translates the fermionic Hamiltonian into the language of quantum computing. Electrons (fermions) are mathematically mapped onto qubits.
-    - Input: Fermionic Hamiltonian (from the Hamiltonian Formulator)
-    - Output: Qubit Hamiltonian (a sum of Pauli matrices or Pauli strings such as X, Y, and Z).
-6. VQE (Variational Quantum Eigensolver): 
-    - Function: The core algorithm (hybrid: quantum-classical). The quantum computer measures the energy of a specific state, and a classical computer adjusts the parameters to minimize this energy until the true ground state is found.
-    - Input: Qubit Hamiltonian, a parameterized quantum circuit (ansatz), and a classical optimization algorithm.
-    - Output: The calculated ground-state energy of the molecule and the optimal parameters for the circuit.
-7. VQE Program Generator
-    - Function: Constructs the actual parameterized quantum circuit (the "Ansatz") that serves as the trial wavefunction for the VQE algorithm (e.g., UCCSD or a hardware-efficient Ansatz).
-    - Input: Number of qubits, system properties (e.g., number of electrons), and the chosen Ansatz strategy.
-    -  Output: A parameterized quantum circuit.
-8. Logical Optimisation:
-    - Function: Simplifies and optimises the generated quantum circuit. It removes redundant operations and adapts the code to the physical limitations of the actual quantum hardware.
-    - Input: The unoptimised quantum circuit from the program generator.
-    - Output: An optimised, shorter quantum circuit closer to the hardware level (fewer gates, lower susceptibility to errors).
+1. Simulation App:
+    - This is the Entry Point for the scenario and this runtime. 
 
-### System Layer
-1. Runtimes: (e.g., Qiskit Runtime)
-    - Function: The execution environment serving as a bridge between the classical computer and the quantum hardware. It manages job queues, minimizes communication time (latency) during the VQE loop, and often automatically applies error mitigation methods.
-    - Input: Optimized quantum circuits, execution parameters (e.g., number of measurements/shots, desired level of error correction).
-    - Output: Measurement results (e.g., bitstrings or calculated expectation values) and execution metadata.
-2. Transpilation:
-Transpilation can be broken down into the following three specific sub-steps at the hardware level:
-3. Routing:
-    - Function: Adapts the circuit to the physical architecture (topology) of the quantum chip. Since not all qubits are physically connected on real hardware, routing inserts "SWAP gates." These shift quantum information until the qubits required for an operation are positioned directly next to each other.
-    - Input: Logical quantum circuit, hardware topology (coupling map—which qubits are connected to which?).
-    - Output: A physically compatible quantum circuit (often containing additional SWAP operations).
-4. Scheduling / Circuit Optimisation:
-    - Function: Compresses the circuit and schedules the exact timing of operations. To minimize errors caused by the short lifespan of qubits (decoherence), unnecessary gates are removed (e.g., two opposing operations that cancel each other out), and independent gates are scheduled to execute in parallel for greater time efficiency. 
-    - Input: Routed quantum circuit, hardware calibration data (e.g., duration of individual gates).
-    - Output: A time-optimized, compressed, and fully scheduled quantum circuit.
-5. Circuit-Command mapping:
-    - Function: The lowest-level translation step. Here, theoretical quantum gates (such as X, Y, or CNOT) are translated into the actual physical language of the hardware. The quantum computer does not "understand" gates, but rather precisely timed analog signals (such as microwave or laser pulses).
-    - Input: The final, scheduled quantum circuit.
-    - Output: Analog pulse sequences (waveforms/pulse schedules) sent directly to the quantum computer's control electronics to physically manipulate the qubits.
+2. Hartree-Fock:
+    - Using molecular geometry as an input, this process performs a transformation to estimate a molecule's ground-state energy and determine its molecular orbitals. 
+    It outputs these orbitals, one- and two-electron integrals, and the classical ground-state energy, serving as a starting point for quantum algorithms.
 
-### Physical Layer
+3. Hamiltonian Formulator:
+    - Using the one- and two-electron integrals as an input, this process formulates the system quantum-mechanically through second quantization. 
+    It outputs a fermionic Hamiltonian expressed in terms of electron creation and annihilation operators, going from a classical approximation to a quantum representation.
+
+4. Jordan-Wigner:
+    - Using the fermionic Hamiltonian as input, this process translates the system into the language of quantum computing by mathematically mapping electrons onto qubits. 
+    It outputs a qubit Hamiltonian, structuring the quantum system for execution on a quantum circuit.
+
+5. VQE (Variational Quantum Eigensolver): 
+    - Using a qubit Hamiltonian, a parameterized quantum circuit and a classical optimization algorithm, this hybrid process uses a quantum computer to measure energy states while a classical computer iteratively adjusts parameters to find the true ground state. 
+    It outputs the calculated ground-state energy of the molecule and the optimal parameters for the circuit.
+
+6. VQE Program Generator
+    - Using the number of qubits, system properties, and a chosen strategy, this process constructs a parameterize quantum circuit to act as a trial wavefunction for the VQE algorithm and then outputs a parameterized circuit.
+
+7. Logical Optimisation:
+    - Using the unoptimized quantum circuit as input, this process optimizes the design by removing redundant operations and adapting it to the physical limitations of quantum hardware. 
+    It outputs a shorter, optimized circuit with fewer gates, delivering a hardware-ready architecture.
+
+### System Layer - Downwards
+
+The transpilation process can be broken down in six different steps;
+
+8. Initialization Stage
+    - As the first stage in the process, it accepts a abstract circuit defined gates and performs high-level logical optimizations. 
+    It breaks down complex multi-qubit operations, ultimately outputting a simplified abstract circuit that contains only one- and two-qubit operations.
+
+9. Layout Stage
+    - This stage maps the input circuit's virtual qubits to the target's physical hardware qubits, expanding the circuit to match the hardware's overall size. 
+    While it does not guarantee continuous connectivity or direct execution validity, finding an optimal initial layout is a importnant, computationally expensive step that minimizes error rates and reduces the need for subsequent routing.
+
+7. Routing Stage
+    - This adapts a logical quantum circuit to fit the physical connectivity constraints of a specific quantum chip's topology. 
+    Taking the original circuit and hardware coupling map as inputs, it outputs a physically compatible circuit by inserting SWAP gates to move information between previously unconnected qubits.
+
+10. Translation Stage
+    - This stage rewrites all circuit operations into the specific native gates supported by the target hardware's Instruction Set Architecture (ISA). 
+
+11. Optimization Stage 
+    - This stage executes low-level, hardware-aware refinements on circuits that are already compatible with the target's Instruction Set Architecture (ISA).
+
+12. Scheduling Stage 
+    - The scheduling stage receives an ISA-compatible circuit and inserts explicit delay instructions to accurately reflect qubit idle periods and hardware timing constraints.
+    It ensures the final output remains ISA-compatible while updating start-time metadata and optionally applying walltime-sensitive transformations.
+
+### Physical Layer 
 
 1. Superconducting Device and Firmware:
-    - Function: This is the "brain" of the hardware layer. It converts previously calculated instructions into concrete physical signals and controls operations on the quantum chip.
-    - Input: Digital hardware instructions and pulse definitions (from the circuit-command mapping).
-    - Output: A "Microwave Signal List" (list of microwave signals) sent to the quantum hardware.
+    - Using digital hardware instructions and pulse definitions, this process converts these commands into physical signals to control operations on the quantum chip. 
+    It outputs a Microwave Signal List directly to the quantum hardware, translating digital instructions into executable physical actions.
+    
 2. Molecule Laser:
-    - Function: Executes the actual physical quantum operations. It responds to control signals and physically manipulates the state of the qubits. 
-    - Input: "Microwave Signal List" (physical signals from the control electronics).
-    - Output: Executes quantum operations and sends a "Status Flag" (a physical feedback signal) to the sensor once the operation/measurement is complete.
+    - Using the Microwave Signal List as input, this hardware component executes the physical quantum operations by responding to control signals and manipulating the states of the qubits. 
+    It outputs a physical feedback signal to the sensor, when the operation or measurement is complete.
+
 3. Energy Sensor:
-    - Function: Responsible for the readout process. It measures the final physical state of the qubits at the end of the calculation and translates these quantum states back into classical information (e.g., to determine energy in the VQE algorithm).
-    - Input: The "Status Flag" (or physical feedback) directly from the quantum hardware ("Molecule Laser").
-    - Output: Classical measurement data (such as bitstrings or energy values) sent back to the classical runtime for further processing.
+    - Using the Status Flag from the quantum hardware as input, this readout process measures the final physical state of the qubits and translates these quantum states back into classical information. 
+    It outputs classical measurement data, such as bitstrings or calculated energy values, sending it back to the classical runtime for further processing and optimization.
 
+### System Layer - Upwards 
 
-Ab hier geht es wieder von System Layer hoch:
+1. Transpilation
+    - Using the Qubit energy level, it translates the energy levels to an expactation value.
 
-Transpilation
+### Application Layer - Upwards 
 
-COBYLA
+1. COBYLA
+    - Using the measured expectation values it optimizes the costfunction by modeling it with linear approximations to avoid noisy quantum derivative calculations.
+    It outputs updated parameters to refine the circuit in the next iteration.
 
-VQE Program Generator
+2. VQE Program Generator
+    - Using the number of qubits, system properties, and a chosen strategy, this process constructs a parameterize quantum circuit to act as a trial wavefunction for the VQE algorithm. 
+    It then outputs a parameterized circuit for the next iteration or returns the final results. 
 
-Zero Noise Extrapolation
+3. Zero Noise Extrapolation
+    - It intentionally amplifying the hardware noise of a circuit across multiple scale factors and fitting a classical curve to the results to estimate the ideal state. 
+    It takes a series of noisy expectation values measured at these elevated noise levels as input and outputs a single, error-mitigated value that approximates the true, noiseless computation.
 
-Simulation App
-
-Ground state energy
-
-
-
+4. Simulation App
+    - This is the Exit Point for the scenario.
 
 
 ## Quantum Cloud Services {#_runtime_scenario_2}
@@ -132,6 +137,8 @@ Hybrider Algorithmus gut
     - Paint-shop scheduling
     - Planning problems in highly individualised mass production
 
+
+Variieren des system layer in additon to scenario 1 ...
 
 ## Embedded QPU {#_runtime_scenario_3}
 Embedded quantum computing for non-functional properties
