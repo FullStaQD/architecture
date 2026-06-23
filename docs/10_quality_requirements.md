@@ -96,13 +96,6 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Verifiability  | The capability of a product or system to be proven correct and complete, allowing for the checking of the correctness of statements or claims, and the replication or confirmation of results by independent means.  |
 
 
-### Safe
-
-| Quality Goal  | Description | 
-| ------------- | ------------- | 
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-
 
 ### Secure
 
