@@ -16,8 +16,12 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Effectiveness  | Effectiveness is the capability of producing a desired result or the ability to produce desired output.  |
 | Efficiency  | capable of producing desired results with little or no waste (as of time or materials) |
 | Latency | Latency in general is a time delay between the cause and the effect of some change in a system.  |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Performance | Perform its functions within specified time and throughput parameters and be efficient in the use of resources under specified conditions  |
+| Profitability  | In economics, profit is the difference between revenue that an economic entity has received from its outputs and total costs of its inputs.  |
+| Resource efficiency  | Resource efficiency is the maximising of the supply of money, materials, staff, and other assets that can be drawn on by a person or organization in order to function effectively, with minimum wasted (natural) resource expenses.  |
+| Resource utilization | Use no more than the specified amount of resources to perform its function under specified conditions.  |
+| Simplicity  | For software, “simple” means easy to read, understand, and correctly modify.  |
+| Sustainability  | refers to the ability of a system to meet the needs of the present without compromising the ability of future generations to meet their own needs. It emphasizes the long-term viability, resilience, and adaptability of the system, considering environmental, economic, and social factors  |
 | Content Cell  | Content Cell  |
 
 ### Flexible
@@ -39,9 +43,9 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Integrability  | Integrability is the ease with which a software component or system can be integrated with other components or systems.  |
 | Interchangeability | Interchangeability is the ability to substitute one component, part, or element with another of the same type without requiring modifications to the system or loss of functionality. |
 | Internationalization  | Developing information so that it is suitable for an international audience  |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Reusability  | Capability of a product to be used as assets in more than one system, or in building other assets.  |
+| Scalability  | Scalability is the property of a system to handle a growing amount of work by adding resources to the system. |
+| Versatility  | able to change easily or to be used for different purposes  |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
@@ -54,8 +58,8 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Analysability  | Capability of a product to be effectively and efficiently assessed regarding the impact of an intended change to one or more of its parts, to diagnose it for deficiencies or causes of failures, or to identify parts to be modified.  |
 | Debuggability  | Debuggability focuses on shortening time-to-diagnosis and reducing the effort to pinpoint root causes. It is closely related to but distinct from:  Observability: raw signals (logs, metrics, traces) vs. using those signals effectively to debug. Testability: how easily a system can be tested vs. how easily failures can be diagnosed. Analysability: impact/change assessment; debuggability emphasizes incident and defect diagnosis|
 | Maintainability  | Maintainability is concerned with modifications after the software baseline is established. The goal of a maintenance activity is to correct defects, adapt to changing environments, or im- prove a system’s future maintainability or other quality attributes. The description of a particular maintenance activity is in the eye of the beholder: A particular change (or type of change) can be labeled differently, depending on the maintainer’s intention. We measure maintainability as the amount of work required to modify, test, and maintain our software base in response to changes in environmental elements. This measure may depend on who is perform- ing the maintenance task and that individual’s level of skill or knowledge. |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Modifiability | Capability of a system to be effectively and efficiently modified without introducing defects or degrading existing product quality |
+| Modularity  | Capability of a product to limit changes to one component from affecting other components. (Backend)  |
 | Content Cell  | Content Cell  |
 
 ### Operable
@@ -71,7 +75,7 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Interaction capability  | capability of a product to be interacted with by specified users to exchange information between a user and a system via the user interface to complete the intended task  |
 | Interoperability  | Work (together) with other products or systems.  |
 | Learnability  | Capability of a product to have specified users learn to use specified product functions within a specified amount of time. |
-| Content Cell  | Content Cell  |
+| Updateability  | Updateability refers to the capability of a software system to efficiently receive, install, and integrate updates, patches, security fixes, and minor enhancements while maintaining system integrity and minimizing service disruption. |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
@@ -91,6 +95,13 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Functional completeness | Provide a set of functions that covers all the specified tasks and intended users’ objectives.  |
 | Functional suitability  | Provide functions that meet stated and implied needs of intended users when it is used under specified conditions. |
 | Functionality  | Functionality is the ability of the system to do the work for which it was intended. |
+| Reliability | Capability of a product to perform specified functions under specified conditions for a specified period of time without interruptions and failures. |
+| Stability  | Stability has two different meanings: Stability at runtime: free from severe errors that cause interruption of system function. Stability in development: When adding new features, existing parts can remain largely unchanged.  |
+| Timeliness | The degree to which data is up-to-date and available when needed for decision-making or processing. |
+| Transparency  | the quality of being easy to see through.  |
+| Verifiability  | The capability of a product or system to be proven correct and complete, allowing for the checking of the correctness of statements or claims, and the replication or confirmation of results by independent means.  |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
 
@@ -110,7 +121,7 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Quality Goal  | Description | 
 | ------------- | ------------- | 
 | Confidentiality  | Capability of a product to ensure that data are accessible only to those authorized to have access.  |
-| Content Cell  | Content Cell  |
+| Privacy | Broadly speaking, privacy is the right to be let alone, or freedom from interference or intrusion. Information privacy is the right to have some control over how your personal information is collected and used.  |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
@@ -120,7 +131,7 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 
 | Quality Goal  | Description | 
 | ------------- | ------------- | 
-| Content Cell  | Content Cell  |
+| Testability  | Capability of a product to enable an objective and feasible test to be designed and performed to determine whether a requirement is met. |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
@@ -143,9 +154,14 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Inclusivity  | Capability of a product to be utilised by people of various backgrounds  |
 | Intuitiveness  | The degree to which a system’s interface, behavior, and information organization align with users’ existing mental models and expectations, enabling immediate understanding and effective use without prior learning or training. |
 | Legal Requirements  | Legal Requirement means any federal, state, local, municipal, foreign or other law, statute, constitution, principle of common law, resolution, ordinance, code, edict, decree, rule, regulation, ruling or requirement issued, enacted, adopted, promulgated, implemented or otherwise put into effect by or under the authority of any Governmental Body.  |
+| Readability  | The fact of being easy to read, or the degree to which something is easy to read.  |
+| Redundancy  | The goal (required quality) can be twofold: free of redudancy (or repetition), avoid duplication have (controlled) redundancy or repetition, e.g. with redundant hardware or certain parts of systems to avoid downtime due to failures (e.g. due to hardware defects or component/service overload or similar).  |
+| Self-descriptiveness  | Capability of a product to present appropriate information, where needed by the user, to make its capabilities and use immediately obvious to the user without excessive interactions with a product or other resources.  |
+| Suitability  | Provide functions that meet stated and implied needs of intended users when it is used under specified conditions.  |
+| Understandability  | Understandability is the concept that a system should be presented so that (somebody) can easily comprehend it. The more understandable a system is, the easier it will be for engineers to change it in a predictable and safe manner.  |
+| Usability | Capability of a product to be used by specified users to exchange information between a user and an interactive system via the user interface to complete the intended task.  |
 | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+
 
 
 ## Quality Scenarios {#_quality_scenarios}
