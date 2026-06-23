@@ -22,7 +22,6 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Resource utilization | Use no more than the specified amount of resources to perform its function under specified conditions.  |
 | Simplicity  | For software, “simple” means easy to read, understand, and correctly modify.  |
 | Sustainability  | refers to the ability of a system to meet the needs of the present without compromising the ability of future generations to meet their own needs. It emphasizes the long-term viability, resilience, and adaptability of the system, considering environmental, economic, and social factors  |
-| Content Cell  | Content Cell  |
 
 ### Flexible
 
@@ -46,10 +45,7 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Reusability  | Capability of a product to be used as assets in more than one system, or in building other assets.  |
 | Scalability  | Scalability is the property of a system to handle a growing amount of work by adding resources to the system. |
 | Versatility  | able to change easily or to be used for different purposes  |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+
 
 ### Maintainable
 
@@ -60,7 +56,7 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Maintainability  | Maintainability is concerned with modifications after the software baseline is established. The goal of a maintenance activity is to correct defects, adapt to changing environments, or im- prove a system’s future maintainability or other quality attributes. The description of a particular maintenance activity is in the eye of the beholder: A particular change (or type of change) can be labeled differently, depending on the maintainer’s intention. We measure maintainability as the amount of work required to modify, test, and maintain our software base in response to changes in environmental elements. This measure may depend on who is perform- ing the maintenance task and that individual’s level of skill or knowledge. |
 | Modifiability | Capability of a system to be effectively and efficiently modified without introducing defects or degrading existing product quality |
 | Modularity  | Capability of a product to limit changes to one component from affecting other components. (Backend)  |
-| Content Cell  | Content Cell  |
+
 
 ### Operable
 
@@ -76,9 +72,7 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Interoperability  | Work (together) with other products or systems.  |
 | Learnability  | Capability of a product to have specified users learn to use specified product functions within a specified amount of time. |
 | Updateability  | Updateability refers to the capability of a software system to efficiently receive, install, and integrate updates, patches, security fixes, and minor enhancements while maintaining system integrity and minimizing service disruption. |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+
 
 ### Reliable
 
@@ -100,10 +94,7 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Timeliness | The degree to which data is up-to-date and available when needed for decision-making or processing. |
 | Transparency  | the quality of being easy to see through.  |
 | Verifiability  | The capability of a product or system to be proven correct and complete, allowing for the checking of the correctness of statements or claims, and the replication or confirmation of results by independent means.  |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+
 
 ### Safe
 
@@ -111,10 +102,7 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | ------------- | ------------- | 
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+
 
 ### Secure
 
@@ -122,10 +110,7 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | ------------- | ------------- | 
 | Confidentiality  | Capability of a product to ensure that data are accessible only to those authorized to have access.  |
 | Privacy | Broadly speaking, privacy is the right to be let alone, or freedom from interference or intrusion. Information privacy is the right to have some control over how your personal information is collected and used.  |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+
 
 ### Suitable
 
@@ -134,9 +119,7 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Testability  | Capability of a product to enable an objective and feasible test to be designed and performed to determine whether a requirement is met. |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+
 
 ### Usable
 
@@ -167,10 +150,9 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 ## Quality Scenarios {#_quality_scenarios}
 | Scenario  | Description | 
 | ------------- | ------------- | 
-| Operability  | The reference architecture can be understood, learned, used and is attractive to users from academia and industry  |
-| Compatibility  | Systems can be integrated into the reference architecture using specific interfaces  |
-| Maintainability  | The reference architecture can be modified, corrected, adapted or improved due to changes in the environment or requirements  |
-| Functional Suitability  | The reference architecture provides functions that meet the needs.  |
-| Realiability  | The reference architecture can maintain a high level of performance when used under specific conditions  |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
