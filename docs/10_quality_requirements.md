@@ -10,12 +10,12 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Quality Goal  | Description | Scenario ID |
 | ------------- | ------------- |  ------------- | 
 | Capacity  | System meets requirements for the maximum limits of system parameter.  | |
-| Coherence    | Logically or aesthetically ordered or integrated  | |
+| Coherence    | Logically or aesthetically ordered or integrated  | SC1 |
 | Cohesion  | In computer programming, cohesion refers to the degree to which the elements inside a module belong together.  | |
 | Compliance  | How well does the system or product obeys the rules of a given standard.  | |
 | Conciseness | Giving a lot of information clearly and in a few words; brief but comprehensive.  | SC1 |
 | Determinism  | Determinism means that under the same inputs and initial conditions, a system produces the same externally observable behavior. This is foundational for reproducible testing, debugging, formal reasoning, and fault-tolerant replication.  | |
-| Distributability  | In software engineering, distributability refers to the ease with which a system’s components can be distributed across multiple physical or virtual locations, platforms, or computing nodes while maintaining functionality, performance, and reliability. A highly distributable system enables workload distribution, geographic deployment flexibility, and the ability to partition functionality across heterogeneous environments.  | |
+| Distributability  | In software engineering, distributability refers to the ease with which a system’s components can be distributed across multiple physical or virtual locations, platforms, or computing nodes while maintaining functionality, performance, and reliability. A highly distributable system enables workload distribution, geographic deployment flexibility, and the ability to partition functionality across heterogeneous environments.  | SC4  |
 | Effectiveness  | Effectiveness is the capability of producing a desired result or the ability to produce desired output.  | |
 | Efficiency  | capable of producing desired results with little or no waste (as of time or materials) | SC6  |
 | Latency | Latency in general is a time delay between the cause and the effect of some change in a system.  | |
