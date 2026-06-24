@@ -23,13 +23,13 @@ It has the following specifications:
 -  Output: ground state energy, excited states, dipole moments, …
 -  Used in: material science, battery design, catalyst research, …
 
-### Application Layer (Downwards)
-
 
 <figure markdown="span">
-  ![](./images/Runtime-Scenario_1-Application.excalidraw.png)
+  ![](./images/runtime-view-scenario1-Application-Layer-Downwards.drawio.pdf)
 </figure>
 
+
+### Application Layer (Downwards)
 
 1. Simulation App:
     - This is the Entry Point for the scenario and this runtime. 
@@ -85,45 +85,47 @@ The transpilation process can be broken down in six different steps;
 
 ### Physical Layer 
 
-1. Superconducting Device and Firmware:
+14. Superconducting Device and Firmware:
     - Using digital hardware instructions and pulse definitions, this process converts these commands into physical signals to control operations on the quantum chip. 
     It outputs a Microwave Signal List directly to the quantum hardware, translating digital instructions into executable physical actions.
     
-2. Molecule Laser:
+15. Molecule Laser:
     - Using the Microwave Signal List as input, this hardware component executes the physical quantum operations by responding to control signals and manipulating the states of the qubits. 
     It outputs a physical feedback signal to the sensor, when the operation or measurement is complete.
 
-3. Energy Sensor:
+16. Energy Sensor:
     - Using the Status Flag from the quantum hardware as input, this readout process measures the final physical state of the qubits and translates these quantum states back into classical information. 
     It outputs classical measurement data, such as bitstrings or calculated energy values, sending it back to the classical runtime for further processing and optimization.
 
 ### System Layer - Upwards 
 
-1. Transpilation
+17. Transpilation
     - Using the Qubit energy level, it translates the energy levels to an expactation value.
 
 ### Application Layer - Upwards 
 
-1. COBYLA
+18. COBYLA
     - Using the measured expectation values it optimizes the costfunction by modeling it with linear approximations to avoid noisy quantum derivative calculations.
     It outputs updated parameters to refine the circuit in the next iteration.
 
-2. VQE Program Generator
+19. VQE Program Generator
     - Using the number of qubits, system properties, and a chosen strategy, this process constructs a parameterize quantum circuit to act as a trial wavefunction for the VQE algorithm. 
     It then outputs a parameterized circuit for the next iteration or returns the final results. 
 
-3. Zero Noise Extrapolation
+20. Zero Noise Extrapolation
     - It intentionally amplifying the hardware noise of a circuit across multiple scale factors and fitting a classical curve to the results to estimate the ideal state. 
     It takes a series of noisy expectation values measured at these elevated noise levels as input and outputs a single, error-mitigated value that approximates the true, noiseless computation.
 
-4. Simulation App
+21. Simulation App
     - This is the Exit Point for the scenario.
 
 
 ## Quantum Cloud Services {#_runtime_scenario_2}
 Quantum Cloud Services for optimisation problems
 
-Hybrider Algorithmus gut
+<figure markdown="span">
+  ![](./images/RuntimeView-scenario2.png)
+</figure>
 
 
 - Solving NP-hard combinatorial optimisation problems
@@ -143,3 +145,6 @@ Variieren des system layer in additon to scenario 1 ...
 ## Embedded QPU {#_runtime_scenario_3}
 Embedded quantum computing for non-functional properties
 
+<figure markdown="span">
+  ![](./images/RuntimeView-scenario3.png)
+</figure>
