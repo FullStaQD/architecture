@@ -132,11 +132,11 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 ## Quality Scenarios {#_quality_scenarios}
 Scenario ID | Scenario  | Description | 
 |-------------| ------------- | ------------- | 
-| SC1 | Getting Introduced to the Architecture  | Content Cell  |
-| SC2 | New Programming Language  | Content Cell  |
-| SC3 | New Hardware Provider  | Content Cell  |
-| SC4 | Integration of HPC  | Content Cell  |
-| SC5 | Errors in the Architecture  | Content Cell  |
-| SC6 | Cost Estimation of Quantum Program  | Content Cell  |
+| SC1 | Getting Introduced to the Architecture  | A new user (idepedently of his background) wants to learn about the architecture and use it.  |
+| SC2 | New Programming Language  | A new programming language for quantum computing is getting introducted and is not represented in the reference architecture. |
+| SC3 | New Hardware Provider  | A new hardware is introduced, which should be integrated into the reference architecture |
+| SC4 | Integration of HPC  | A Stakeholder wants to use a programm, which needs a HPC and a quantum processor.  |
+| SC5 | Errors in the Architecture  | A Stakeholder finds an undefined space or error in the reference architecture  |
+| SC6 | Cost Estimation of Quantum Program  | A Stakeholder pays a certain amount of money per time period for his program and needs information how long his program runs.  |
 | SC7 | Running a job   | When a job is run in architecture, the job content must be protected from outside interference to prevent research from being accessed.|
 | SC8 | Content Cell  | Content Cell  |
