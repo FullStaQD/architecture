@@ -13,35 +13,35 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Coherence    | Logically or aesthetically ordered or integrated  | |
 | Cohesion  | In computer programming, cohesion refers to the degree to which the elements inside a module belong together.  | |
 | Compliance  | How well does the system or product obeys the rules of a given standard.  | |
-| Conciseness | Giving a lot of information clearly and in a few words; brief but comprehensive.  | |
+| Conciseness | Giving a lot of information clearly and in a few words; brief but comprehensive.  | SC1 |
 | Determinism  | Determinism means that under the same inputs and initial conditions, a system produces the same externally observable behavior. This is foundational for reproducible testing, debugging, formal reasoning, and fault-tolerant replication.  | |
 | Distributability  | In software engineering, distributability refers to the ease with which a system’s components can be distributed across multiple physical or virtual locations, platforms, or computing nodes while maintaining functionality, performance, and reliability. A highly distributable system enables workload distribution, geographic deployment flexibility, and the ability to partition functionality across heterogeneous environments.  | |
 | Effectiveness  | Effectiveness is the capability of producing a desired result or the ability to produce desired output.  | |
-| Efficiency  | capable of producing desired results with little or no waste (as of time or materials) | |
+| Efficiency  | capable of producing desired results with little or no waste (as of time or materials) | SC6  |
 | Latency | Latency in general is a time delay between the cause and the effect of some change in a system.  | |
 | Performance | Perform its functions within specified time and throughput parameters and be efficient in the use of resources under specified conditions  | |
 | Profitability  | In economics, profit is the difference between revenue that an economic entity has received from its outputs and total costs of its inputs.  | |
 | Resource efficiency  | Resource efficiency is the maximising of the supply of money, materials, staff, and other assets that can be drawn on by a person or organization in order to function effectively, with minimum wasted (natural) resource expenses.  |  |
 | Resource utilization | Use no more than the specified amount of resources to perform its function under specified conditions.  | |
-| Simplicity  | For software, “simple” means easy to read, understand, and correctly modify.  | |
+| Simplicity  | For software, “simple” means easy to read, understand, and correctly modify.  | SC1 |
 | Sustainability  | refers to the ability of a system to meet the needs of the present without compromising the ability of future generations to meet their own needs. It emphasizes the long-term viability, resilience, and adaptability of the system, considering environmental, economic, and social factors  | |
 
 ### Flexible
 
 | Quality Goal  | Description |  Scenario ID |
 | ------------- | ------------- | ------------- |
-| Adaptability  | Capability of a product to be effectively and efficiently adapted for or transferred to different hardware, software or other operational or usage environments | |
-| Agility  | A system can rapidly be changed (as opposed to flexibility, which means that a system can easily be changed.)  | |
+| Adaptability  | Capability of a product to be effectively and efficiently adapted for or transferred to different hardware, software or other operational or usage environments | SC2, SC3, SC4 |
+| Agility  | A system can rapidly be changed (as opposed to flexibility, which means that a system can easily be changed.)  | SC2, SC3, SC4|
 | Changeability  | One common theme popping up in projects is that change is the only constant. Code changes, architecture changes, technology changes, requirements change and people change. But often, change comes at a high cost. Things were just not prepared for change because doing so would have imposed the costs earlier on. But really the same costs? To reduce costs in the long run, wouldn’t it be beneficial to spend some effort in changeability upfront? Of course, but it is difficult to find the sweet spot between spending enough and too much effort to properly implement changeability. … For aspects shall be distinguished: Robustness: the system is insensitive to a change in the surrounding environment. Flexibility: the system can easily be changed. Agility: the system can rapidly be changed. Adaptability: the system adapts itself to changing operating conditions. | |
-| Co-existence  | Capability of a product to perform its required functions efficiently while sharing a common environment and resources with other products, without detrimental impact on any other product (with other stacks) | |
+| Co-existence  | Capability of a product to perform its required functions efficiently while sharing a common environment and resources with other products, without detrimental impact on any other product (with other stacks) | SC8 |
 | Composability  | Composability is a system design principle that deals with the inter-relationships of components. A highly composable system provides components that can be selected and assembled in various combinations to satisfy specific user requirements.    |  |
 | Configurability | Configurability refers to the ability of a system, software application, or hardware device to be easily customized and adapted to suit various requirements, preferences, and environments. A configurable system allows users or administrators to modify its settings, features, or behavior without the need for extensive code changes or hardware modifications. Configurability empowers users to tailor the system to their specific needs, making it more versatile and adaptable. |  |
 | Elasticity  | In distributed system and system resource, elasticity is defined as “the degree to which a system is able to adapt to workload changes by provisioning and de-provisioning resources in an autonomic manner, such that at each point in time the available resources match the current demand as closely as possible” |  |
 | Evolvability  | The ability of a system to adapt to changes in its environment, requirements, and implementation technologies in a cost-effective way.  | |
-| Extensibility  | Ability to add new features or functions to a system.  |  |
+| Extensibility  | Ability to add new features or functions to a system.  | SC2, SC3, SC4  |
 | Flexibility  | Applies to several stages in the life of a system or product, for example: at development or compile time, installation or deployment time, during testing at runtime  | |
 | Independence  | Functional independence is achieved by developing functions that perform only one kind of task and do not excessively interact with other modules. Independence is important because it makes implementation more accessible and faster. The independent modules are easier to maintain, test, and reduce error propagation and can be reused in other programs as well. Thus, functional independence is a good design feature which ensures software quality.  | |
-| Integrability  | Integrability is the ease with which a software component or system can be integrated with other components or systems.  | |
+| Integrability  | Integrability is the ease with which a software component or system can be integrated with other components or systems.  | SC4, SC8|
 | Interchangeability | Interchangeability is the ability to substitute one component, part, or element with another of the same type without requiring modifications to the system or loss of functionality. | |
 | Internationalization  | Developing information so that it is suitable for an international audience  | |
 | Modifiability | Capability of a system to be effectively and efficiently modified without introducing defects or degrading existing product quality | |
@@ -58,7 +58,7 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Debuggability  | Debuggability focuses on shortening time-to-diagnosis and reducing the effort to pinpoint root causes. It is closely related to but distinct from:  Observability: raw signals (logs, metrics, traces) vs. using those signals effectively to debug. Testability: how easily a system can be tested vs. how easily failures can be diagnosed. Analysability: impact/change assessment; debuggability emphasizes incident and defect diagnosis| |
 | Maintainability  | Maintainability is concerned with modifications after the software baseline is established. The goal of a maintenance activity is to correct defects, adapt to changing environments, or im- prove a system’s future maintainability or other quality attributes. The description of a particular maintenance activity is in the eye of the beholder: A particular change (or type of change) can be labeled differently, depending on the maintainer’s intention. We measure maintainability as the amount of work required to modify, test, and maintain our software base in response to changes in environmental elements. This measure may depend on who is perform- ing the maintenance task and that individual’s level of skill or knowledge. | |
 | Modularity  | Capability of a product to limit changes to one component from affecting other components. (Backend)  | |
-| Updateability  | Updateability refers to the capability of a software system to efficiently receive, install, and integrate updates, patches, security fixes, and minor enhancements while maintaining system integrity and minimizing service disruption. | |
+| Updateability  | Updateability refers to the capability of a software system to efficiently receive, install, and integrate updates, patches, security fixes, and minor enhancements while maintaining system integrity and minimizing service disruption. | SC5 |
 | Testability  | Capability of a product to enable an objective and feasible test to be designed and performed to determine whether a requirement is met. | |
 | Verifiability  | The capability of a product or system to be proven correct and complete, allowing for the checking of the correctness of statements or claims, and the replication or confirmation of results by independent means.  | |
 
@@ -139,4 +139,4 @@ Scenario ID | Scenario  | Description |
 | SC5 | Errors in the Architecture  | A Stakeholder finds an undefined space or error in the reference architecture  |
 | SC6 | Cost Estimation of Quantum Program  | A Stakeholder pays a certain amount of money per time period for his program and needs information how long his program runs.  |
 | SC7 | Running a job   | When a job is run in architecture, the job content must be protected from outside interference to prevent research from being accessed.|
-| SC8 | Content Cell  | Content Cell  |
+| SC8 | A new architecture is introduced  | A new architecture/stack for the quantum eco system is introduced, which may or may not be similar to our reference architecture.  |
