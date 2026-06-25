@@ -21,8 +21,7 @@ To establish a solid foundation for the reference architecture and ensure alignm
 | Open Source  | The reference architecture and most of its building blocks in the layers are open source |
 | Communication | The reference architecture allows changes through communication with the community  |
 | Modular  | Systems or whole Layers can be integrated and are exchangeable into the reference architecture using specific interfaces  |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+
 
 
 ## Quality Goals {#_quality_goals}
@@ -35,8 +34,6 @@ To maintain a state of the art reference architecture in the quantum ecosystem, 
 | Maintainability  | The reference architecture can be modified, corrected, adapted or improved due to changes in the environment or requirements  |
 | Functional Suitability  | The reference architecture provides functions that meet the needs.  |
 | Realiability  | The reference architecture can maintain a high level of performance when used under specific conditions  |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
 
 ## Stakeholders {#_stakeholders}
 The FullStaQD reference architecture is designed for research at the university, as well as for practical use of the industry.
