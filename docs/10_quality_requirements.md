@@ -41,13 +41,13 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Extensibility  | Ability to add new features or functions to a system.  | SC2, SC3, SC4  |
 | Flexibility  | Applies to several stages in the life of a system or product, for example: at development or compile time, installation or deployment time, during testing at runtime  | |
 | Independence  | Functional independence is achieved by developing functions that perform only one kind of task and do not excessively interact with other modules. Independence is important because it makes implementation more accessible and faster. The independent modules are easier to maintain, test, and reduce error propagation and can be reused in other programs as well. Thus, functional independence is a good design feature which ensures software quality.  | |
-| Integrability  | Integrability is the ease with which a software component or system can be integrated with other components or systems.  | SC4, SC8|
-| Interchangeability | Interchangeability is the ability to substitute one component, part, or element with another of the same type without requiring modifications to the system or loss of functionality. | |
+| Integrability  | Integrability is the ease with which a software component or system can be integrated with other components or systems.  | SC2, SC3, SC4, SC8|
+| Interchangeability | Interchangeability is the ability to substitute one component, part, or element with another of the same type without requiring modifications to the system or loss of functionality. | SC3 |
 | Internationalization  | Developing information so that it is suitable for an international audience  | |
 | Modifiability | Capability of a system to be effectively and efficiently modified without introducing defects or degrading existing product quality | |
 | Reusability  | Capability of a product to be used as assets in more than one system, or in building other assets.  | |
-| Scalability  | Scalability is the property of a system to handle a growing amount of work by adding resources to the system. | |
-| Versatility  | able to change easily or to be used for different purposes  | |
+| Scalability  | Scalability is the property of a system to handle a growing amount of work by adding resources to the system. | SC8 |
+| Versatility  | able to change easily or to be used for different purposes  | SC5 |
 
 
 ### Maintainable
