@@ -1,5 +1,5 @@
 # Quality Requirements {#section-quality-scenarios}
-As breifly mentioned in the 'Introduction and Goals' section, there are quality goals, we want to achieve in the reference architecture. 
+As breifly mentioned in the 'Introduction and Goals' section, there are quality goals, we want to achieve in the FullStaQD reference architecture. 
 In this section, we want to describe these goals in more detail and want to present some scenarios, in which they are needed.
 
 ## Quality Requirements Overview {#_quality_requirements_overview}
@@ -18,13 +18,13 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Distributability  | In software engineering, distributability refers to the ease with which a system’s components can be distributed across multiple physical or virtual locations, platforms, or computing nodes while maintaining functionality, performance, and reliability. A highly distributable system enables workload distribution, geographic deployment flexibility, and the ability to partition functionality across heterogeneous environments.  | SC4  |
 | Effectiveness  | Effectiveness is the capability of producing a desired result or the ability to produce desired output.  | |
 | Efficiency  | capable of producing desired results with little or no waste (as of time or materials) | SC6  |
-| Latency | Latency in general is a time delay between the cause and the effect of some change in a system.  | |
-| Performance | Perform its functions within specified time and throughput parameters and be efficient in the use of resources under specified conditions  | |
+| Latency | Latency in general is a time delay between the cause and the effect of some change in a system.  |  |
+| Performance | Perform its functions within specified time and throughput parameters and be efficient in the use of resources under specified conditions  | SC6 |
 | Profitability  | In economics, profit is the difference between revenue that an economic entity has received from its outputs and total costs of its inputs.  | |
-| Resource efficiency  | Resource efficiency is the maximising of the supply of money, materials, staff, and other assets that can be drawn on by a person or organization in order to function effectively, with minimum wasted (natural) resource expenses.  |  |
-| Resource utilization | Use no more than the specified amount of resources to perform its function under specified conditions.  | |
+| Resource efficiency  | Resource efficiency is the maximising of the supply of money, materials, staff, and other assets that can be drawn on by a person or organization in order to function effectively, with minimum wasted (natural) resource expenses.  | SC6 |
+| Resource utilization | Use no more than the specified amount of resources to perform its function under specified conditions.  | SC6 |
 | Simplicity  | For software, “simple” means easy to read, understand, and correctly modify.  | SC1 |
-| Sustainability  | refers to the ability of a system to meet the needs of the present without compromising the ability of future generations to meet their own needs. It emphasizes the long-term viability, resilience, and adaptability of the system, considering environmental, economic, and social factors  | |
+| Sustainability  | refers to the ability of a system to meet the needs of the present without compromising the ability of future generations to meet their own needs. It emphasizes the long-term viability, resilience, and adaptability of the system, considering environmental, economic, and social factors  | SC2, SC3, SC8 |
 
 ### Flexible
 
@@ -32,12 +32,12 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | ------------- | ------------- | ------------- |
 | Adaptability  | Capability of a product to be effectively and efficiently adapted for or transferred to different hardware, software or other operational or usage environments | SC2, SC3, SC4 |
 | Agility  | A system can rapidly be changed (as opposed to flexibility, which means that a system can easily be changed.)  | SC2, SC3, SC4|
-| Changeability  | One common theme popping up in projects is that change is the only constant. Code changes, architecture changes, technology changes, requirements change and people change. But often, change comes at a high cost. Things were just not prepared for change because doing so would have imposed the costs earlier on. But really the same costs? To reduce costs in the long run, wouldn’t it be beneficial to spend some effort in changeability upfront? Of course, but it is difficult to find the sweet spot between spending enough and too much effort to properly implement changeability. … For aspects shall be distinguished: Robustness: the system is insensitive to a change in the surrounding environment. Flexibility: the system can easily be changed. Agility: the system can rapidly be changed. Adaptability: the system adapts itself to changing operating conditions. | |
+| Changeability  |  the system can rapidly be changed. | SC2, SC3, SC5, SC8 |
 | Co-existence  | Capability of a product to perform its required functions efficiently while sharing a common environment and resources with other products, without detrimental impact on any other product (with other stacks) | SC8 |
 | Composability  | Composability is a system design principle that deals with the inter-relationships of components. A highly composable system provides components that can be selected and assembled in various combinations to satisfy specific user requirements.    |  |
-| Configurability | Configurability refers to the ability of a system, software application, or hardware device to be easily customized and adapted to suit various requirements, preferences, and environments. A configurable system allows users or administrators to modify its settings, features, or behavior without the need for extensive code changes or hardware modifications. Configurability empowers users to tailor the system to their specific needs, making it more versatile and adaptable. |  |
-| Elasticity  | In distributed system and system resource, elasticity is defined as “the degree to which a system is able to adapt to workload changes by provisioning and de-provisioning resources in an autonomic manner, such that at each point in time the available resources match the current demand as closely as possible” |  |
-| Evolvability  | The ability of a system to adapt to changes in its environment, requirements, and implementation technologies in a cost-effective way.  | |
+| Configurability | Configurability refers to the ability of a system, software application, or hardware device to be easily customized and adapted to suit various requirements, preferences, and environments. A configurable system allows users or administrators to modify its settings, features, or behavior without the need for extensive code changes or hardware modifications. Configurability empowers users to tailor the system to their specific needs, making it more versatile and adaptable. | SC2, SC3, SC4, SC8 |
+| Elasticity  | In distributed system and system resource, elasticity is defined as “the degree to which a system is able to adapt to workload changes by provisioning and de-provisioning resources in an autonomic manner, such that at each point in time the available resources match the current demand as closely as possible” | SC6 |
+| Evolvability  | The ability of a system to adapt to changes in its environment, requirements, and implementation technologies in a cost-effective way.  | SC2, SC3, SC5, SC8 |
 | Extensibility  | Ability to add new features or functions to a system.  | SC2, SC3, SC4  |
 | Flexibility  | Applies to several stages in the life of a system or product, for example: at development or compile time, installation or deployment time, during testing at runtime  | |
 | Independence  | Functional independence is achieved by developing functions that perform only one kind of task and do not excessively interact with other modules. Independence is important because it makes implementation more accessible and faster. The independent modules are easier to maintain, test, and reduce error propagation and can be reused in other programs as well. Thus, functional independence is a good design feature which ensures software quality.  | |
