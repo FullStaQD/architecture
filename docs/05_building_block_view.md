@@ -157,8 +157,8 @@ software stack.
 
 - **Use Case:** This component encapsulates the configuration of the quantum
   software stack for a specific use case.
-  It is also responsible for interfacing with external systems if the quantum
-  application is to be integrated into an existing IT system.
+  It is also responsible for interfacing with external IT systems if the quantum
+  application is to be integrated into an existing IT system (see [context section](./03_context_and_scope.md)).
   As the Use Case component characterises the interface between quantum and
   classical computation, it will have one or more dedicated
   [**Quantum Kernels**](./12_glossary.md#quantum-kernel) which encapsulate the
@@ -167,22 +167,55 @@ software stack.
   in.
   Reusable code will often live in the Quantum SDK or Problem Transformation
   libraries.
+    - **Integration Tooling**: Some tools specifically target the task of
+      integrating quantum applications into existing IT infrastructure.
+      This includes for example workflow modeling tools (e.g. with the
+      [Kipu Quantum Hub](https://docs.hub.kipu-quantum.com)) and problem
+      decomposition tools (e.g. with the
+      [ProvideQ Toolbox](https://tva.kastel.kit.edu/english/research_177.php))
+      which improve the accessibility of quantum computing and provide
+      standardised web APIs which can be integrated into typical IT infrastructure
+      more easily.
+      Integration tools typically depend on Use Case implementations which they
+      wrap with their own abstractions and interfaces but they can also take a
+      more fine-grained approach and provide direct access to the Problem
+      Transformation and Quantum SDK building blocks. 
 - **Problem Transformations:** This component is symbolic for the many
   available tools for transforming scientific, engineering and commercial
-  problems into quantum formulations.
-  Many of these tools use Algorithm Templates from a Quantum SDK.
-- **Workflow Modeler:** Graphical configuration tool for quantum workflows.
-- **Workflow Engine:** Execution and orchestration engine for quantum workflows
-  configured with a workflow modeler.
+  problems into quantum formulations (e.g.
+  [qubovert](https://qubovert.readthedocs.io/en/latest/),
+  [Qiskit Finance](https://github.com/qiskit-community/qiskit-finance)).
+  Many of these tools directly use the Quantum SDK's building blocks.
 - **Quantum SDK:** The quantum SDK contains common building blocks for quantum
   software such as circuits and types (e.g.
   [qrisp's quantum variables](https://qrisp.eu/reference/Core/index.html#quantumvariable)),
   algorithm templates (e.g. VQE, QAOA, QPE) and optimisers (e.g. Adam or
   Rotosolve) for hybrid algorithms.
+  Popular examples for quantum SDKs include [Eclipse's qrisp](https://qrisp.eu),
+  [IBM's Qiskit](https://github.com/Qiskit/qiskit) and
+  [Xanadu's Pennylane](https://pennylane.ai).
 
 #### Important Interfaces
+We have characterised the building blocks merely through an abstract
+characterisation above, and we will characterise the interfaces between them in
+a similar fashion:
 
-!!! warning "TODO"
+* One major interface is the Quantum SDK, the language that developers use to
+  specify their quantum applications, and therefore, Use Case implementations,
+  Problem Transformations and some Integration Tooling may depend on the chosen
+  Quantum SDK.
+  The [2025 Quantum Open Source Survey](https://unitaryfoundation.github.io/survey-2025/#Software)
+  shows that there is currently no single favourite among the available
+  Quantum SDKs, so to facilitate adoption of a standardised quantum software
+  stack, it will be important to build integrations of multiple popular SDKs
+  into the rest of the stack.
+<!-- TODO: quantum sdk to sys layer -->
+* Use Case implementations and Problem Transformations provide highly individual
+  interfaces since the problems they accept depend on their purpose.
+* Integration Tooling can provide access to the Use Case implementations and
+  Problem Transformations with a unified interfaces (e.g. for progress updates
+  and configuration) but the data/payload types for the submitted problem
+  instances are still specific to the Use Case implementation and Problem Transformation which they wrap. 
 
 ### White Box System Layer {#_white_box_sys_layer}
 
