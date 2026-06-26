@@ -48,6 +48,9 @@ in high-level languages using algorithms, SDKs and libraries.
     
     These characteristics are not measurable yet and do not set a target value!
 
+##### See also
+* [Whitebox view of the Application Layer](#_white_box_app_layer)
+
 #### System Layer
 The system layer is responsible for compiling high-level program specifications
 from the application layer to low-level, device-specific instructions to be
@@ -64,6 +67,9 @@ and possibly HPC concerns.
 - The physical layer should minimise execution cost by optimising generated
   instructions.
 
+##### See also
+* [Whitebox view of the System Layer](#_white_box_sys_layer)
+
 #### Physical Layer
 The physical layer executes the programs it receives from the system layers by
 controlling the physical quantum device.
@@ -73,20 +79,48 @@ fidelities).
 ##### Quality Characteristics
 - The classical co-processor must be able to run decoders in real-time.
 
+##### See also
+* [Whitebox view of the Physical Layer](#_white_box_phys_layer)
+
 ### Important Interfaces
+#### Between the Application and System Layers
+The interface between the Application and System Layers needs to serve the
+following needs:
 
-!!! warning "TODO"
-    
-    The interfaces are still to be determined.
-    The interface between the application and system layer will involve some
-    form of program specification (e.g. source code, circuits or MLIR
-    representations) as well as some compiler configuration (e.g. whether to use
-    error correction or which quantum device to target) and result passing (e.g.
-    callbacks or return values).
-    The interface between the system and physical layer will be some low-level
-    program specification to be run on quantum devices and co-processors, and it
-    involves the reporting of final results as well as monitoring data.
+* It needs to transmit program specifications from the Application Layer to the
+  System layer.
+  In the short term, low-level representations like OpenQASM or Qrisp's
+  intermediate representation format will suffice but in the long term, programs
+  written in high-level quantum programming languages (like
+  [QPI](https://doi.org/10.1109/QCE60285.2024.10293)) will be transmitted,
+  represented as their source code.
+* It needs to allow submitting program specification for compilation and
+  execution with suitable options available for configuring the compiler.
+  Furthermore, the progress and results of execution and compilation tasks
+  should be reported back to the Application layer.
 
+In the reference implementation, this interface will at first be realised with
+[Qrisp's MLIR interface](https://qrisp.eu/reference/Jasp/MLIR%20Interface.html)
+which currently supports low-level states and opearations but is intended to capture Qrisp's [high-level features](https://qrisp.eu/index.html#key-features)
+at some point.
+The concrete interface for submitting compilation and execution jobs is yet to
+be determined.
+
+#### Between the System and Physical Layers
+The interface between the System and Physical Layers needs to serve the
+following needs:
+
+* It needs to allow the System Layer to submit low-level quantum program
+  specifications to the Physical Layer.
+* It needs to allow the System Layer to query properties (like hardware
+  architecture, instruction set, topology or gate fidelities) of the quantum
+  device managed by the system layer. 
+
+In the reference implementation, the
+[Quantum Device Management Interface (QDMI)](https://munich-quantum-software-stack.github.io/QDMI/)
+will be used as its
+[Job and Query interfaces](https://munich-quantum-software-stack.github.io/QDMI/latest/md_docs_2rationale.html)
+satisfy these needs exactly.
 
 ## Level 2 {#_level_2}
 
