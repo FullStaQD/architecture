@@ -74,32 +74,28 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Fault tolerance  | The architecture should be capable to operate as intended despite the presence of hardware or software faults. | |
 | Functional suitability  | The reference architecture should provide functions that meet stated and implied needs of intended users when it is used under specified conditions. | |
 | Stability  |  The reference architecture remains largely unchanged, when adding new features. | SC2 SC3, SC4, SC8  |
-| Suitability  | Provide functions that meet stated and implied needs of intended users when it is used under specified conditions.  | |
-| Timeliness | The degree to which data is up-to-date and available when needed for decision-making or processing. | |
-| Transparency  | the quality of being easy to see through.  | |
+| Timeliness | The architecture should profile the resources to the moment, when its needed for the decision-making or processing e.G. backend-information.| |
+
 
 
 ### Secure
 
 | Quality Goal  | Description |  Scenario ID |
 | ------------- | ------------- |  ------------- |
-| Confidentiality  | Capability of a product to ensure that data are accessible only to those authorized to have access.  | SC7 |
-| Privacy | Broadly speaking, privacy is the right to be let alone, or freedom from interference or intrusion. Information privacy is the right to have some control over how your personal information is collected and used.  | SC7 |
+| Confidentiality  | The architecture should not give access to data to entities which are unauthorized to have access.  | SC7 |
+| Privacy | The trchitecture should only collect the necessary personal information and delete it when it is no longer needed. | SC7 |
 
 
 ### Usable
 
 | Quality Goal  | Description |  Scenario ID |
 | ------------- | ------------- | ------------- |  
-| Accessibility  | Capability of a product or system to be usable by people with the widest range of characteristics and capabilities to achieve a specified goal in a specified context of use.  | SC1 |
-| Attractiveness  | Attractiveness summarizes properties that make software appealing to users and stakeholders. Attractive software typically exhibits: User-friendly and intuitive design: The software is easy to navigate and use, minimizing learning curves and maximizing efficiency.  Robust functionality and regular updates: The software offers powerful features and is continuously improved to meet evolving user needs. Optimized performance with minimal errors: The software runs smoothly, with quick load times and few errors, enhancing user productivity. Compatibility with various systems: The software works well across different platforms and hardware configurations.  | |
-| Communicability  | Communicability in software systems refers to the clarity and effectiveness with which the system conveys its functions and usability to the user. This includes the design of the user interface, the presentation of information, and the system’s ability to guide and assist users in accomplishing their tasks.  | SC1 |
-| Consistency  | Eventual consistency is a weaker consistency model: after an update, reads may temporarily return stale values, but if no new updates occur, all replicas will eventually converge to the last written value. It is commonly used to improve availability and latency in distributed systems.  | |
-| Discoverability  | The ease with which users can find new or unknown features, content, and functionalities within a product or system without prior knowledge of their existence.  | SC1 |
-| Inclusivity  | Capability of a product to be utilised by people of various backgrounds  | SC1 |
-| Intuitiveness  | The degree to which a system’s interface, behavior, and information organization align with users’ existing mental models and expectations, enabling immediate understanding and effective use without prior learning or training. | SC1 |
-| Readability  | The fact of being easy to read, or the degree to which something is easy to read.  | SC1 |
-| Self-descriptiveness  | Capability of a product to present appropriate information, where needed by the user, to make its capabilities and use immediately obvious to the user without excessive interactions with a product or other resources.  | SC1 |
+| Accessibility  | The reference architecture needs to be usable by people with the widest range of characteristics and capabilities to achieve a specified goal in a specified context of use.  | SC1 |
+| Discoverability  | The reference architecture needs to be well documented and presented, so that users can find easily new or unknown features, content, and functionalities within a product or system without prior knowledge of their existence.  | SC1 |
+| Inclusivity  | The reference architecture is intended be utilised by people of various backgrounds  | SC1 |
+| Intuitiveness  | The reference architectures interface, behavior, and information, enabling immediate understanding and effective use without prior learning or training. | SC1 |
+| Readability  | The reference architecture needs to be easy to read | SC1 |
+| Self-descriptiveness  | The reference architecture should be able to present appropriate information, where needed by the user, to make its capabilities and use immediately obvious to the user without excessive interactions with a product or other resources.  | SC1 |
 
 
 
