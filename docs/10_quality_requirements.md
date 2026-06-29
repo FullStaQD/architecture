@@ -20,7 +20,7 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Profitability  | The reference architecture needs to be profitable in an industrial sense.  | |
 | Resource utilization | The reference architecture doesnt use more than the specified amount of resources to perform its function under specified conditions.  | SC6 |
 | Simplicity  | The reference architecture needs to be easy to read, understand, and correctly modify.  | SC1 |
-| Sustainability  | The reference architecture has to meet the needs of the present without compromising the ability of future generations to meet their own needs. It emphasizes the long-term viability, resilience, and adaptability of the system, considering environmental, economic, and social factors  | SC2, SC3, SC8 |
+| Sustainability  | The reference architecture has to meet the needs of the present without compromising the ability of future generations to meet their own needs. It emphasizes the long-term viability, resilience, and adaptability of the system, considering environmental, economic, and social factors.  | SC2, SC3, SC8 |
 
 ### Flexible
 
