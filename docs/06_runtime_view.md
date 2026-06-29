@@ -1,4 +1,6 @@
 # Runtime View {#section-runtime-view}
+The runtime view documents the concrete behaviour and interaction of the building blocks. Based on Carbonelli et al. (https://link.springer.com/content/pdf/10.1007/978-3-031-64136-7_12.pdf) work, we demonstrate how typical quantum use cases are represented in the architecture. The demonstration shows one scenario in detail for each use case, starting at the user input, continuing through the execution, and concluding with the return value to the user.
+We document these steps through an activity diagram, in which each architecture layer is divided by a swim lane.  We focus on the steps and interfaces during the execution process rather than describing the building blocks in detail.
 
 !!! note "Architecture Note Scenarios"
 
@@ -7,20 +9,15 @@
             - Representative scenario selection is crucial
 
 
-In their work, Carbonelli et al. examine three specific industrial use cases.
-First, they investigate the use of quantum cloud services to solve optimization problems.
-Second, they analyze the potential of quantum simulations in the fields of materials science, chemistry, and physics.
-As a third aspect, the authors explore embedded quantum computing with regard to non-functional properties.
-These three use-cases will be analyzed in this chapter.
-
 
 ## Quantum simulation for material science, chemistry and physics {#_runtime_scenario_1}
 
-This scenario descriebes the how quatum computing can be used for material science, chemistry and physics. 
+This scenario describes the how quatum computing can be used for material science, chemistry and physics. 
 
 It has the following specifications:
--  Input: molecule or atom specification
--  Output: ground state energy, excited states, dipole moments, …
+
+-  Input: molecule specification
+-  Output: ground state energy
 -  Used in: material science, battery design, catalyst research, …
 
 
@@ -32,92 +29,93 @@ It has the following specifications:
 ### Application Layer (Downwards)
 
 1. Simulation App:
-    - This is the Entry Point for the scenario and this runtime. 
+    - The Simulation App is the entry point for this scenario.
+    - It takes the molecule specification and passes it down to the Hartree-Fock 
 
 2. Hartree-Fock:
-    - Using molecular geometry as an input, this process performs a transformation to estimate a molecule's ground-state energy and determine its molecular orbitals. 
-    It outputs these orbitals, one- and two-electron integrals, and the classical ground-state energy, serving as a starting point for quantum algorithms.
+    - The Hartree-Fock is the first transformation step to get from the molecule input to a quantum ready representation
+    - Its input is the molecular geometry in our scenario
+    - The output are the electron integrals.
 
-3. Hamiltonian Formulator:
-    - Using the one- and two-electron integrals as an input, this process formulates the system quantum-mechanically through second quantization. 
-    It outputs a fermionic Hamiltonian expressed in terms of electron creation and annihilation operators, going from a classical approximation to a quantum representation.
+4. Hamiltonian Formulator:
+   - The Hamiltonian formulation maps the electron integrals into a fermonic Hamiltonian.
 
-4. Jordan-Wigner:
-    - Using the fermionic Hamiltonian as input, this process translates the system into the language of quantum computing by mathematically mapping electrons onto qubits. 
-    It outputs a qubit Hamiltonian, structuring the quantum system for execution on a quantum circuit.
+6. Jordan-Wigner:
+   - The Jordan-Wigner Transformation allows a qubit representation using a fermonic Hamiltonian and turning it into a spin Hamiltonian, which is equivalent to a chain of qubits.
+     
+8. VQE (Variational Quantum Eigensolver):
+   - The VQE Algorithm is a hybrid algorithm, which uses the qubit hamiltonian to create a parameterised quantum circuit.
 
-5. VQE (Variational Quantum Eigensolver): 
-    - Using a qubit Hamiltonian, a parameterized quantum circuit and a classical optimization algorithm, this hybrid process uses a quantum computer to measure energy states while a classical computer iteratively adjusts parameters to find the true ground state. 
-    It outputs the calculated ground-state energy of the molecule and the optimal parameters for the circuit.
-
-6. VQE Program Generator
-    - Using the number of qubits, system properties, and a chosen strategy, this process constructs a parameterize quantum circuit to act as a trial wavefunction for the VQE algorithm and then outputs a parameterized circuit.
-
-7. Logical Optimisation:
-    - Using the unoptimized quantum circuit as input, this process optimizes the design by removing redundant operations and adapting it to the physical limitations of quantum hardware. 
-    It outputs a shorter, optimized circuit with fewer gates, delivering a hardware-ready architecture.
-
+9. VQE Program Generator
+    - With the parametrised circuit the program generator creates a program for the transpilation pipeline in the system layer.
+ 
 ### System Layer - Downwards
 
-The transpilation process can be broken down in six different steps;
+The transpilation pipeline consists of 6 steps:
 
-8. Initialization Stage
-    - As the first stage in the process, it accepts a abstract circuit defined gates and performs high-level logical optimizations. 
-    It breaks down complex multi-qubit operations, ultimately outputting a simplified abstract circuit that contains only one- and two-qubit operations.
+1. Initialization Stage
+    - Using the quantum program from the Application Layer, the transpilation pipeline can start.
+    - The first step of the transpilation pipeline is breaking down multi- and custom made qubit- gates into one- or two-qubit operations.
+      
+2. Layout Stage
+    - This stage maps the input circuit's virtual qubits to the target's physical hardware qubits.
+    - Ideally, the algorithm maps the qubit next to each other, which interact the most. 
+    - While it does not guarantee continuous connectivity or direct execution validity, finding an optimal initial layout is a important, computationally expensive step that minimizes error rates and reduces the need for subsequent routing.
 
-9. Layout Stage
-    - This stage maps the input circuit's virtual qubits to the target's physical hardware qubits, expanding the circuit to match the hardware's overall size. 
-    While it does not guarantee continuous connectivity or direct execution validity, finding an optimal initial layout is a importnant, computationally expensive step that minimizes error rates and reduces the need for subsequent routing.
+3. Routing Stage
+    - As described in the step before, a perfect connectivity between the qubits can not always be achieved. Therefore this stage adds additional operations to adapt to these constraints.
+    - Using the  circuit and hardware topology as inputs, it can create  a physically compatible circuit by inserting SWAP gates to move information between previously not connected qubits.
 
-7. Routing Stage
-    - This adapts a logical quantum circuit to fit the physical connectivity constraints of a specific quantum chip's topology. 
-    Taking the original circuit and hardware coupling map as inputs, it outputs a physically compatible circuit by inserting SWAP gates to move information between previously unconnected qubits.
+4. Translation Stage
+    - This stage rewrites all previously chosen gates into the specific native gates supported by the target hardware's Instruction Set Architecture (ISA). 
 
-10. Translation Stage
-    - This stage rewrites all circuit operations into the specific native gates supported by the target hardware's Instruction Set Architecture (ISA). 
-
-11. Optimization Stage 
+5. Optimization Stage 
     - This stage executes low-level, hardware-aware refinements on circuits that are already compatible with the target's Instruction Set Architecture (ISA).
 
-12. Scheduling Stage 
-    - The scheduling stage receives an ISA-compatible circuit and inserts explicit delay instructions to accurately reflect qubit idle periods and hardware timing constraints.
-    It ensures the final output remains ISA-compatible while updating start-time metadata and optionally applying walltime-sensitive transformations.
+6. Scheduling Stage 
+    - The scheduling stage receives an ISA-compatible circuit and inserts explicit delay instructions to accurately reflect qubit idle periods, hardware timing constraints and to reduce error rate.
+    - It ensures the final output remains ISA-compatible while updating start-time metadata and optionally applying walltime-sensitive transformations.
+
+7. Circuit-Command Mapping
+   - Using the ISA-compatible circuit, additional information like number of measurements demanded and a translation table, which translated the commands into backend compatible commands, this steps gives a list of operations to the device and firmware of the hardware.
 
 ### Physical Layer 
 
-14. Superconducting Device and Firmware:
+1. Superconducting Device and Firmware:
     - Using digital hardware instructions and pulse definitions, this process converts these commands into physical signals to control operations on the quantum chip. 
-    It outputs a Microwave Signal List directly to the quantum hardware, translating digital instructions into executable physical actions.
+    - It outputs a Microwave Signal List directly to the quantum hardware, translating digital instructions into executable physical actions.
     
-15. Molecule Laser:
-    - Using the Microwave Signal List as input, this hardware component executes the physical quantum operations by responding to control signals and manipulating the states of the qubits. 
-    It outputs a physical feedback signal to the sensor, when the operation or measurement is complete.
+2. Molecule Laser:
+    - The Molecule Laser uses the Microwave Signal List to execute the quantum operations on the physical hardware.
+    - When all operations are done, the Molecule Laser sends a status flag to the Energy Sensor
 
-16. Energy Sensor:
-    - Using the Status Flag from the quantum hardware as input, this readout process measures the final physical state of the qubits and translates these quantum states back into classical information. 
-    It outputs classical measurement data, such as bitstrings or calculated energy values, sending it back to the classical runtime for further processing and optimization.
+3. Energy Sensor:
+    - When the Molecule Laser updated its status, this step measures the qubit energy levels 
 
 ### System Layer - Upwards 
 
-17. Transpilation
-    - Using the Qubit energy level, it translates the energy levels to an expactation value.
+7. Transpilation
+    - In this step, the qubit energy levels are transformed into an expectation value.
+    - To do this, additional backend data is needed to interpret the measured results.
 
 ### Application Layer - Upwards 
 
-18. COBYLA
-    - Using the measured expectation values it optimizes the costfunction by modeling it with linear approximations to avoid noisy quantum derivative calculations.
-    It outputs updated parameters to refine the circuit in the next iteration.
-
-19. VQE Program Generator
-    - Using the number of qubits, system properties, and a chosen strategy, this process constructs a parameterize quantum circuit to act as a trial wavefunction for the VQE algorithm. 
-    It then outputs a parameterized circuit for the next iteration or returns the final results. 
-
-20. Zero Noise Extrapolation
-    - It intentionally amplifying the hardware noise of a circuit across multiple scale factors and fitting a classical curve to the results to estimate the ideal state. 
-    It takes a series of noisy expectation values measured at these elevated noise levels as input and outputs a single, error-mitigated value that approximates the true, noiseless computation.
-
-21. Simulation App
-    - This is the Exit Point for the scenario.
+10. COBYLA
+    - COBYLA is a classical optimizer which needs an expectation value as input.
+    - It compares the expectation value to the last one (if it exists) and tries to optimize the parameters of the VQE algorithm.
+    - After an local optimal solution is found or the maximum of iterations is reached, the classical optimizer terminates
+      
+11. VQE Program Generator
+    - The Program Generator updates the parameters of the COBYLA algorithm and starts the process again.
+    - When the classical optimizer terminates, the Program Generator gives the optimal result towards the Error Mitigation Method.
+      
+12. Zero Noise Extrapolation
+    - The Zero Noise Extrapolation (ZNE) is a error mitigation method, which can reduce the error rate by using an expectation value and a circuit has input
+    - It creates a program to measure a new expectation value with a circuit, which has still the same function but uses more gates. 
+    - This process is repeated multiple times and lead towards a noise pattern, which allows to reduce the error rate by extrapolation.
+    
+13. Simulation App
+    - The error-optimized expectation value is given towards the simulation app, which then visualize it as ground state energy for the user.
 
 
 ## Quantum Cloud Services {#_runtime_scenario_2}
