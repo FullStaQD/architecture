@@ -3,7 +3,7 @@ As breifly mentioned in the 'Introduction and Goals' section, there are quality 
 In this section, we want to describe these goals in more detail and want to present some scenarios, in which they are needed.
 
 ## Quality Requirements Overview {#_quality_requirements_overview}
-We sort the quality requirements after the arc42 design (https://quality.arc42.org/qualities/). Afterwards, we present the scenarios that can appear in the reference architecture, and we define which quality goal needs to be fulfilled in each scenario.
+We sort the quality requirements after the arc42 design (https://quality.arc42.org/qualities/). Afterwards, we present the scenarios that can appear in the reference architecture, and we define which quality goal needs to be fulfilled in each scenario. We use "reference architecture" to define the quality goals of the concept and "architecture" for the realization of such an architecture.
 
 ### Efficient
 
@@ -26,76 +26,54 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 
 | Quality Goal  | Description |  Scenario ID |
 | ------------- | ------------- | ------------- |
-| Adaptability  | Capability of a product to be effectively and efficiently adapted for or transferred to different hardware, software or other operational or usage environments | SC2, SC3, SC4 |
-| Agility  | A system can rapidly be changed (as opposed to flexibility, which means that a system can easily be changed.)  | SC2, SC3, SC4|
-| Changeability  |  the system can rapidly be changed. | SC2, SC3, SC5, SC8 |
-| Co-existence  | Capability of a product to perform its required functions efficiently while sharing a common environment and resources with other products, without detrimental impact on any other product (with other stacks) | SC8 |
-| Composability  | Composability is a system design principle that deals with the inter-relationships of components. A highly composable system provides components that can be selected and assembled in various combinations to satisfy specific user requirements.    |  |
-| Configurability | Configurability refers to the ability of a system, software application, or hardware device to be easily customized and adapted to suit various requirements, preferences, and environments. A configurable system allows users or administrators to modify its settings, features, or behavior without the need for extensive code changes or hardware modifications. Configurability empowers users to tailor the system to their specific needs, making it more versatile and adaptable. | SC2, SC3, SC4, SC8 |
-| Elasticity  | In distributed system and system resource, elasticity is defined as “the degree to which a system is able to adapt to workload changes by provisioning and de-provisioning resources in an autonomic manner, such that at each point in time the available resources match the current demand as closely as possible” | SC6 |
-| Evolvability  | The ability of a system to adapt to changes in its environment, requirements, and implementation technologies in a cost-effective way.  | SC2, SC3, SC5, SC8 |
-| Extensibility  | Ability to add new features or functions to a system.  | SC2, SC3, SC4  |
-| Flexibility  | Applies to several stages in the life of a system or product, for example: at development or compile time, installation or deployment time, during testing at runtime  | |
-| Independence  | Functional independence is achieved by developing functions that perform only one kind of task and do not excessively interact with other modules. Independence is important because it makes implementation more accessible and faster. The independent modules are easier to maintain, test, and reduce error propagation and can be reused in other programs as well. Thus, functional independence is a good design feature which ensures software quality.  | |
-| Integrability  | Integrability is the ease with which a software component or system can be integrated with other components or systems.  | SC2, SC3, SC4, SC8|
-| Interchangeability | Interchangeability is the ability to substitute one component, part, or element with another of the same type without requiring modifications to the system or loss of functionality. | SC3 |
-| Internationalization  | Developing information so that it is suitable for an international audience  | |
-| Modifiability | Capability of a system to be effectively and efficiently modified without introducing defects or degrading existing product quality | |
-| Reusability  | Capability of a product to be used as assets in more than one system, or in building other assets.  | |
-| Scalability  | Scalability is the property of a system to handle a growing amount of work by adding resources to the system. | SC8 |
-| Versatility  | able to change easily or to be used for different purposes  | SC5 |
+| Adaptability  | The reference architecture needs to be capable to be effectively and efficiently adapted for or transferred to different hardware, software or other operational or usage environments. | SC2, SC3, SC4 |
+| Agility  | The reference architecture can be rapidly changed, if needed.  | SC2, SC3, SC4, SC5, SC8|
+| Composability  | The components of the reference architecture should be exchangeable with equivalent components e.G. different hardware backends. |  |
+| Configurability | The components of the reference architecture needs to be configurable to support specific needs of the user and be more adaptable. | SC2, SC3, SC4, SC8 |
+| Elasticity  | The architecture needs to be able to adapt to workload changes, while trying to remain as close to the estimated costs as possible. | SC6 |
+| Evolvability  | The reference architecture needs to adapt to changes in its environment, requirements, and implementation technologies in a cost-effective way.  | SC2, SC3, SC5, SC8 |
+| Extensibility  | The reference architecture needs to be able to add new features or functions.  | SC2, SC3, SC4  |
+| Independence  | The architectures components should only perform on task and do not excessively interact with other components. | |
+| Integrability  | The reference architecture can integrate software components or systems with ease.  | SC2, SC3, SC4, SC8|
+| Interchangeability | The reference architecture should be interchangeable, which allows it to substitute one component, part, or element with another of the same type without requiring modifications to the system or loss of functionality. | SC3 |
+| Internationalization  | The reference architecture should be understandable to an international audience. | |
+| Scalability  | Because of the rapidly evolving field of quantum technology, the reference architecture should be scalable. | SC8 |
 
 
 ### Maintainable
 
 | Quality Goal  | Description |  Scenario ID |
 | ------------- | ------------- | ------------- |
-| Analysability  | Capability of a product to be effectively and efficiently assessed regarding the impact of an intended change to one or more of its parts, to diagnose it for deficiencies or causes of failures, or to identify parts to be modified.  | |
-| Debuggability  | Debuggability focuses on shortening time-to-diagnosis and reducing the effort to pinpoint root causes. It is closely related to but distinct from:  Observability: raw signals (logs, metrics, traces) vs. using those signals effectively to debug. Testability: how easily a system can be tested vs. how easily failures can be diagnosed. Analysability: impact/change assessment; debuggability emphasizes incident and defect diagnosis| |
-| Maintainability  | Maintainability is concerned with modifications after the software baseline is established. The goal of a maintenance activity is to correct defects, adapt to changing environments, or im- prove a system’s future maintainability or other quality attributes. The description of a particular maintenance activity is in the eye of the beholder: A particular change (or type of change) can be labeled differently, depending on the maintainer’s intention. We measure maintainability as the amount of work required to modify, test, and maintain our software base in response to changes in environmental elements. This measure may depend on who is perform- ing the maintenance task and that individual’s level of skill or knowledge. | |
-| Modularity  | Capability of a product to limit changes to one component from affecting other components. (Backend)  | SC3 |
-| Updateability  | Updateability refers to the capability of a software system to efficiently receive, install, and integrate updates, patches, security fixes, and minor enhancements while maintaining system integrity and minimizing service disruption. | SC5 |
-| Testability  | Capability of a product to enable an objective and feasible test to be designed and performed to determine whether a requirement is met. | |
-| Verifiability  | The capability of a product or system to be proven correct and complete, allowing for the checking of the correctness of statements or claims, and the replication or confirmation of results by independent means.  | |
+| Analysability  | The architecture must be able to detect causes of failure using testing, etc.  | |
+| Maintainability  | The architecture needs to be maintainable to modifications after the baseline is established. | |
+| Modularity  | The reference architecture needs to be capability o to limit changes to one component from affecting other components. | SC3 |
+| Updateability  | The reference architecture needs to be capable to efficiently receive, install, and integrate updates, patches, security fixes, and minor enhancements while maintaining system integrity and minimizing service disruption. | SC5 |
+| Testability  | The architecture needs to be capable to enable an objective and feasible test to be designed and performed to determine whether a requirement is met. | |
+| Verifiability  | The architecture  needs to be capable to be proven correct and complete, allowing for the checking of the correctness of statements or claims, and the replication or confirmation of results by independent means.  | |
 
 ### Operable
 
 | Quality Goal  | Description |  Scenario ID |
 | ------------- | ------------- | ------------- |
-| Auditability  | … what the product has to do (usually retain records) to permit the required audit checks.  | |
-| Autonomy | The ability of a system or component to operate independently, without requiring continuous control or intervention from external entities.  | |
-| Backward compatibility  | Backward compatibility is a property of an operating system, product, or technology that allows for interoperability with an older legacy system, or with input designed for such a system, especially in telecommunications and computing.  | |
-| Compatibility  | Capability of a product to exchange information with other products, and/or to perform its required functions while sharing the same common environments and resources.  | SC4 |
-| Deployability  | Deployability refers to a property of software indicating that it may be deployed, that is, allocated to an environment for execution—within a predictable and acceptable amount of time and effort. Moreover, if the new deployment is not meeting its specifications, it may be rolled back, again within a predictable and acceptable amount of time and effort.  | SC6 |
-| Ease of Use | Ease of use is a basic concept that describes how easily users can use a product. Design teams define specific metrics per project—e.g., “Users must be able to tap Find within 3 seconds of accessing the interface.” —and aim to optimize ease of use while offering maximum functionality and respecting business limitations. | SC1 |
-| Governability  | Governability is the degree to which an organization can direct and control a system through policies that are defined, communicated, monitored, and enforced.  | SC5 |
-| Interaction capability  | capability of a product to be interacted with by specified users to exchange information between a user and a system via the user interface to complete the intended task  | |
-| Interoperability  | Work (together) with other products or systems.  | SC2, SC3, SC4, SC8 |
-| Learnability  | Capability of a product to have specified users learn to use specified product functions within a specified amount of time. | SC1 |
-| Legal Requirements  | Legal Requirement means any federal, state, local, municipal, foreign or other law, statute, constitution, principle of common law, resolution, ordinance, code, edict, decree, rule, regulation, ruling or requirement issued, enacted, adopted, promulgated, implemented or otherwise put into effect by or under the authority of any Governmental Body.  | |
-| Redundancy  | The goal (required quality) can be twofold: free of redudancy (or repetition), avoid duplication have (controlled) redundancy or repetition, e.g. with redundant hardware or certain parts of systems to avoid downtime due to failures (e.g. due to hardware defects or component/service overload or similar).  | |
-| Understandability  | Understandability is the concept that a system should be presented so that (somebody) can easily comprehend it. The more understandable a system is, the easier it will be for engineers to change it in a predictable and safe manner.  | SC1 |
-| Usability | Capability of a product to be used by specified users to exchange information between a user and an interactive system via the user interface to complete the intended task.  | |
+| Auditability  | The architecture must fullfil certain checks to be realized  | |
+| Interoperability  | The reference architecture should be able to work with other products or systems.  | SC2, SC3, SC4, SC8 |
+| Learnability  | The reference architectures functions should be learnable within a specified amount of time. | SC1 |
+| Understandability  | The reference architecture should be presented so that (somebody) can easily comprehend it.   | SC1 |
 
 
 ### Reliable
 
 | Quality Goal  | Description |  Scenario ID |
 | ------------- | ------------- | ------------- |
-| Availability  | Capability of a product to be accessible and operational when required for use.  | |
-| Certifiability  | The degree to which a system can be certified to meet specific regulatory, safety, or quality standards through demonstration of compliance evidence.  | |
-| Clarity | The quality of being coherent and intelligible.  | SC1 |
-| Correctness | Provide accurate results when used by intended users for intended functions. | |
-| Credibility  | Credibility comprises the objective and subjective components of the believability of a source or message.  | |
-| Data Integrity  | Data integrity refers to the maintenance and assurance of accuracy, consistency, and reliability of data over its entire life cycle. It ensures that data remains unaltered and consistent from creation to deletion, maintaining its original state unless specifically modified through authorized processes. | SC7 |
-| Durability | The ability of a software system to remain useful and meet user needs over a long period, particularly in the face of changing business requirements and technological advancements.  | SC2, SC3, SC4, SC5, SC8 |
-| Fault isolation  | An method that enables to identify which component or parameter of the system is responsible for a fault or the symptoms of the faulty behavior.  | |
-| Fault tolerance  | Capability of a product to operate as intended despite the presence of hardware or software faults. | |
-| Functional completeness | Provide a set of functions that covers all the specified tasks and intended users’ objectives.  | |
-| Functional suitability  | Provide functions that meet stated and implied needs of intended users when it is used under specified conditions. | |
-| Functionality  | Functionality is the ability of the system to do the work for which it was intended. | |
-| Reliability | Capability of a product to perform specified functions under specified conditions for a specified period of time without interruptions and failures. | |
-| Stability  |  When adding new features, existing parts can remain largely unchanged.  | SC2 SC3, SC4, SC8  |
+| Availability  | The architecture should be accessible and operational when required for use.  | |
+| Certifiability  | The architecture has to meet specific regulatory,  or quality standards through demonstration of compliance evidence.  | |
+| Correctness | The architecture has to provide accurate results when used by intended users for intended functions. | |
+| Data Integrity  | The architecture must ensure that the used data remains unaltered and consistent from creation to deletion, maintaining its original state unless specifically modified through authorized processes. | SC7 |
+| Durability | The reference architecture has to remain useful and meet user needs over a long period, particularly in the face of changing business requirements and technological advancements.  | SC2, SC3, SC4, SC5, SC8 |
+| Fault isolation  | The architecture needs methods that enables to identify which component or parameter of the system is responsible for a fault or the symptoms of the faulty behavior.  | SC5 |
+| Fault tolerance  | The architecture should be capable to operate as intended despite the presence of hardware or software faults. | |
+| Functional suitability  | The reference architecture should provide functions that meet stated and implied needs of intended users when it is used under specified conditions. | |
+| Stability  |  The reference architecture remains largely unchanged, when adding new features. | SC2 SC3, SC4, SC8  |
 | Suitability  | Provide functions that meet stated and implied needs of intended users when it is used under specified conditions.  | |
 | Timeliness | The degree to which data is up-to-date and available when needed for decision-making or processing. | |
 | Transparency  | the quality of being easy to see through.  | |
