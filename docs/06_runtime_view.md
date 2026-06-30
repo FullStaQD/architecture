@@ -60,7 +60,7 @@ The transpilation pipeline consists of 6 steps:
 
 3. Routing Stage
     - As described in the step before, a perfect connectivity between the qubits can not always be achieved. Therefore this stage adds additional operations to adapt to these constraints.
-    - Using the  circuit and hardware topology as inputs, it can create  a physically compatible circuit by inserting SWAP gates to move information between previously not connected qubits.
+    - Using the circuit and hardware topology as inputs, it can create a physically compatible circuit by inserting SWAP gates to move information between previously disconnected qubits.
 
 4. Translation Stage
     - This stage rewrites all previously chosen gates into the specific native gates supported by the target hardware's Instruction Set Architecture (ISA). 
