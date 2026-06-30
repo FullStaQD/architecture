@@ -138,15 +138,31 @@ In this scenario, we want to show how our architecture behaves and interacts usi
     - Planning problems in highly individualised mass production
 
 ### Application Layer - Downwards
-1. Cloud Optimisation Application
+1. Cloud Optimisation Application:
+   - Processes the MaxCut problem instance and forwards the information to the QUBO Transformator
+
 2. QUBO Transformator
+   - Creates a QUBO, using the information of the Cloud Optimisation Application
+
 3. Ising Transformator
+   - Transforms the QUBO into an Ising Hamiltonian
+
 4. Penalty Encoder
+   - Checks if the required optimization problem needs a penalty factor and adjusts it.
+     
 5. QAOA
-6. QAOA Program Generator
+   - QAOA is a hybrid algorithm which uses tunable parameters.
+   - It encodes the Ising Hamiltonian into a quantum circuit
    
+6. QAOA Program Generator
+    - With the parametrised circuit the program generator creates a program for the transpilation pipeline in the system layer.
+ 
 ### System Layer - Downwards
+--
 1. Noise Suppression
+   - Noise Supression reduces the error rate by actively canceling noise using clever pulse timing or add redudancy to detect and fix errors.
+   - It takes an optimized circuit and adds the above mentioned operations.
+   
    
 ### Physical Layer - Downwards
 -- 
@@ -154,7 +170,8 @@ In this scenario, we want to show how our architecture behaves and interacts usi
 -- 
 ### Application Layer - Upwards
 7. SPSA
-
+   - Similar to COBYLA, SPSA is classical optimizer used for optimizing the parameters of the QAOA algorithm. 
+   - It updates the parameters and sends them to the QAOA Program Generator, where the program is computed again until the optimizer terminates.
    
 ## Embedded QPU {#_runtime_scenario_3}
 In this scenario, we demonstrate an integration of a quantum processing unit (QPU) into a hybrid safety software system with non-functional properties.
@@ -168,17 +185,28 @@ In this scenario, we demonstrate an integration of a quantum processing unit (QP
 
 ### Application Layer - Downwards
 1. Collision Probability App
+   - Takes the environment data and forwards the lidar, camera and gps data to the Feature Vector Encoder
+   
 2. Feature Vector Encoder
+   - Encodes a feature vector based on the ionformation of the collision probability app
+   
 3. Angle Encoder
+   - Used the feature vector to create a quantum state, which represents the given information 
+
 4. Quantum Kernel Method
+   - The quantum kernel method creates a qiskit program, which can then be forwarded to the system layer
    
 ### System Layer - Downwards
-1. Probabilistic Error Cancellation
+1. Probabilistic Error Cancellation (PEC_1)
+   - Probabilistic Error Cancellation is an error mitigation technique, which reduces the error rate by measuring how much noise each gate creates and creating "ideal", noise-free gates by a combination of the noisy gates. 
+   - Run the circuit multiple times, where the gate you replace is randomly chosen.
    
 ### Physical Layer - Downwards
 -- 
 ### System Layer - Upwards
-2. Probabilistic Error Cancellation
+2. Probabilistic Error Cancellation (PEC_2)
+   - In this step, we finish the PEC from before using the combination of all measurements and creating an average.
    
 ### Application Layer - Upwards
 5. Collision Probability App
+   - Sends the result to the device/software that requested the job. 
