@@ -3,7 +3,7 @@ As briefly mentioned in the 'Introduction and Goals' section, there are quality 
 In this section, we want to describe these goals in more detail and want to present some scenarios, in which they are needed.
 
 ## Quality Requirements Overview {#_quality_requirements_overview}
-We sort the quality requirements after the arc42 design (https://quality.arc42.org/qualities/). Afterwards, we present the scenarios that can appear in the reference architecture, and we define which quality goal needs to be fulfilled in each scenario. We use "reference architecture" to define the quality goals of the concept and "architecture" for the realization of such an architecture.
+We sort the quality requirements after the [arc42 quality model](https://quality.arc42.org/qualities/). Afterwards, we present the scenarios that can appear in the reference architecture, and we define which quality goal needs to be fulfilled in each scenario. We use "reference architecture" to define the quality goals of the concept and "architecture" for the realization of such an architecture.
 
 ### Efficient
 
