@@ -7,7 +7,7 @@ assignees: ''
 ---
 
 **Summary:**
-*Please summarise the limitation you would like to report in one or two sentences.*
+*Please briefly summarise the limitation you would like to report.*
 
 **Scenario:**
 *Please describe a scenario where the limitation arises. Be specific and highlight what exactly cannot be accomplished.*

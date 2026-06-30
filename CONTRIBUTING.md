@@ -16,7 +16,7 @@ Here’s what’s included:
 
 ## Code of Conduct
 This project and everyone participating in it is governed by our
-[Code of Conduct](./CODE_OF_CONDUCT.md) (tl;dr: be respectful!).
+[Code of Conduct](./CODE_OF_CONDUCT.md).
 By participating, you are expected to uphold this code.
 Please report unacceptable behaviour to
 [fullstaqd@lists.kit.edu](mailto:fullstaqd@lists.kit.edu).
@@ -91,8 +91,9 @@ Architecture.
    A maintainer (other than the author) needs to sign off the PR for it to be
    approved.
 4. **Board approval for major changes:**
-   After the initial release of the Reference Architecture, major changes also
-   need to be approved by a board of experts including different stakeholders.
+   After the first public release of the Reference Architecture, major changes
+   also need to be approved by a board of experts including different
+   stakeholders.
    For now, this board will be made up of the FullStaQD working package leads
    but in the long term, we plan to open up this board to experts from the
    community in both academia and industry.

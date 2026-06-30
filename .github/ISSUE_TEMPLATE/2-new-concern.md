@@ -7,7 +7,7 @@ assignees: ''
 ---
 
 **Summary:**
-*Please summarise the concern you would like to report in one or two sentences.*
+*Please briefly summarise the concern you would like to report.*
 
 **New concern:**
 *Please describe the concern in more detail and mention in what context it is applicable.*
