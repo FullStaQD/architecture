@@ -71,7 +71,7 @@ We sort the quality requirements after the [arc42 quality model](https://quality
 | Data Integrity  | The architecture must ensure that the used data remains unaltered and consistent from creation to deletion, maintaining its original state unless specifically modified through authorized processes. | SC7 |
 | Durability | The reference architecture has to remain useful and meet user needs over a long period, particularly in the face of changing business requirements and technological advancements.  | SC2, SC3, SC4, SC5, SC8 |
 | Fault isolation  | The architecture needs methods that enables to identify which component or parameter of the system is responsible for a fault or the symptoms of the faulty behavior.  | SC5 |
-| Fault tolerance  | The architecture should be capable to operate as intended despite the presence of hardware or software faults. | |
+| Fault tolerance  | The architecture should be capable to operate as intended despite the presence of smaller hardware or software faults. | |
 | Functional suitability  | The reference architecture should provide functions that meet stated and implied needs of intended users when it is used under specified conditions. | |
 | Stability  |  The reference architecture remains largely unchanged, when adding new features. | SC2 SC3, SC4, SC8  |
 | Timeliness | The architecture should profile the resources to the moment, when its needed for the decision-making or processing e.G. backend-information.| |
