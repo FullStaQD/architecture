@@ -1,5 +1,5 @@
 # Quality Requirements {#section-quality-scenarios}
-As breifly mentioned in the 'Introduction and Goals' section, there are quality goals, we want to achieve in the FullStaQD reference architecture. 
+As briefly mentioned in the 'Introduction and Goals' section, there are quality goals, we want to achieve in the FullStaQD reference architecture. 
 In this section, we want to describe these goals in more detail and want to present some scenarios, in which they are needed.
 
 ## Quality Requirements Overview {#_quality_requirements_overview}
