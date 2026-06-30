@@ -149,9 +149,9 @@ In this scenario, we want to show how our architecture behaves and interacts usi
 1. Noise Suppression
    
 ### Physical Layer - Downwards
-- 
+-- 
 ### System Layer - Upwards
-- 
+-- 
 ### Application Layer - Upwards
 7. SPSA
 
@@ -176,7 +176,7 @@ In this scenario, we demonstrate an integration of a quantum processing unit (QP
 1. Probabilistic Error Cancellation
    
 ### Physical Layer - Downwards
-- 
+-- 
 ### System Layer - Upwards
 2. Probabilistic Error Cancellation
    
