@@ -26,7 +26,7 @@ It has the following specifications:
 </figure>
 
 
-### Application Layer (Downwards)
+### Application Layer - Downwards
 
 1. Simulation App:
     - The Simulation App is the entry point for this scenario.
@@ -119,17 +119,17 @@ The transpilation pipeline consists of 6 steps:
 
 
 ## Quantum Cloud Services {#_runtime_scenario_2}
-Quantum Cloud Services for optimisation problems
+In this scenario, we want to show how our architecture behaves and interacts using a NP-hard combinatorial optimisation problem. Since the System and Physical Layer are almost identical to the first scenario, we only document the new building blocks. 
 
 <figure markdown="span">
   ![](./images/RuntimeView-scenario2.png)
 </figure>
 
 
-- Solving NP-hard combinatorial optimisation problems
+- Approximating the optimal Max-Cut
 - Input: Max-Cut instance
-- Output: Solution or approximation to the Max-Cut instance
-
+- Output: A cut consisting of a set of edges
+  
 - Use cases:
     - Flight-gate assignment in airports
     - Electronic Design Automation
@@ -137,12 +137,48 @@ Quantum Cloud Services for optimisation problems
     - Paint-shop scheduling
     - Planning problems in highly individualised mass production
 
+### Application Layer - Downwards
+1. Cloud Optimisation Application
+2. QUBO Transformator
+3. Ising Transformator
+4. Penalty Encoder
+5. QAOA
+6. QAOA Program Generator
+   
+### System Layer - Downwards
+1. Noise Suppression
+   
+### Physical Layer - Downwards
+- 
+### System Layer - Upwards
+- 
+### Application Layer - Upwards
+7. SPSA
 
-Variieren des system layer in additon to scenario 1 ...
-
+   
 ## Embedded QPU {#_runtime_scenario_3}
-Embedded quantum computing for non-functional properties
+In this scenario, we demonstrate an integration of a quantum processing unit (QPU) into a hybrid safety software system with non-functional properties.
 
 <figure markdown="span">
   ![](./images/RuntimeView-scenario3.png)
 </figure>
+- Compute the probability of a collision and give it to the executive unit.
+- Input: Environment data
+- Output: Collision probability
+
+### Application Layer - Downwards
+1. Collision Probability App
+2. Feature Vector Encoder
+3. Angle Encoder
+4. Quantum Kernel Method
+   
+### System Layer - Downwards
+1. Probabilistic Error Cancellation
+   
+### Physical Layer - Downwards
+- 
+### System Layer - Upwards
+2. Probabilistic Error Cancellation
+   
+### Application Layer - Upwards
+5. Collision Probability App
