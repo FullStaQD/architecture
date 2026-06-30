@@ -103,7 +103,7 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 Scenario ID | Scenario  | Description | 
 |-------------| ------------- | ------------- | 
 | SC1 | Getting Introduced to the Architecture  | A new user (idepedently of his background) wants to learn about the architecture and use it.  |
-| SC2 | New Programming Language  | A new programming language for quantum computing is getting introducted and is not represented in the reference architecture. |
+| SC2 | New Programming Language  | A new programming language for quantum computing is introduced and is not represented in the reference architecture. |
 | SC3 | New Hardware Provider  | A new hardware is introduced, which should be integrated into the reference architecture |
 | SC4 | Integration of HPC  | A Stakeholder wants to use a program, which needs a HPC and a quantum processor.  |
 | SC5 | Errors in the Architecture  | A Stakeholder finds an undefined space or error in the reference architecture  |
