@@ -15,7 +15,7 @@ We sort the quality requirements after the arc42 design (https://quality.arc42.o
 | Conciseness | The architectures content needs to be clearly but briefly described.  | SC1 |
 | Effectiveness  | The architecture is able to produce the desired result/output. | |
 | Efficiency  | The architecture capable of producing desired results with little or no waste (as of time or materials). | SC6  |
-| Latency | The time delay of some changes in the refrence architecture should be minimal.  |  |
+| Latency | The time delay of some changes in the reference architecture should be minimal.  |  |
 | Performance | The architecture should perform its functions efficiently in the use of of resources and withing a specified time and throughput parameters.  | SC6 |
 | Profitability  | The reference architecture needs to be profitable in an industrial sense.  | |
 | Resource utilization | The reference architecture doesnt use more than the specified amount of resources to perform its function under specified conditions.  | SC6 |
