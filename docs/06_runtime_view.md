@@ -37,7 +37,7 @@ It has the following specifications:
    - The Hamiltonian formulation maps the electron integrals into a fermonic Hamiltonian.
 
 6. Jordan-Wigner:
-   - The Jordan-Wigner Transformation allows a qubit representation using a fermonic Hamiltonian and turning it into a spin Hamiltonian, which is equivalent to a chain of qubits.
+    - The Jordan-Wigner Transformation allows a qubit representation using a fermonic Hamiltonian and turns it into a spin Hamiltonian, which is equivalent to a set of qubits.
      
 8. VQE (Variational Quantum Eigensolver):
    - The VQE Algorithm is a hybrid algorithm, which uses the qubit hamiltonian to create a parameterised quantum circuit.
