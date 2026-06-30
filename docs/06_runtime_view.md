@@ -40,7 +40,7 @@ It has the following specifications:
     - The Jordan-Wigner Transformation allows a qubit representation using a fermonic Hamiltonian and turns it into a spin Hamiltonian, which is equivalent to a set of qubits.
      
 8. VQE (Variational Quantum Eigensolver):
-   - The VQE Algorithm is a hybrid algorithm, which uses the qubit hamiltonian to create a parameterised quantum circuit.
+    - The VQE Algorithm is a hybrid algorithm, which uses the qubit Hamiltonian to create a parameterised quantum circuit.
 
 9. VQE Program Generator
     - With the parametrised circuit the program generator creates a program for the transpilation pipeline in the system layer.
