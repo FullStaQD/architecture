@@ -20,11 +20,7 @@ It has the following specifications:
 -  Output: ground state energy
 -  Used in: material science, battery design, catalyst research, …
 
-
-<figure markdown="span">
-  ![](./images/runtime-view-scenario1-Application-Layer-Downwards.drawio.pdf)
-</figure>
-
+  ![](./images/RuntimeView-scenario1.png)
 
 ### Application Layer - Downwards
 
@@ -121,9 +117,7 @@ The transpilation pipeline consists of 6 steps:
 ## Quantum Cloud Services {#_runtime_scenario_2}
 In this scenario, we want to show how our architecture behaves and interacts using a NP-hard combinatorial optimisation problem. Since the System and Physical Layer are almost identical to the first scenario, we only document the new building blocks. 
 
-<figure markdown="span">
   ![](./images/RuntimeView-scenario2.png)
-</figure>
 
 
 - Approximating the optimal Max-Cut
@@ -176,9 +170,8 @@ In this scenario, we want to show how our architecture behaves and interacts usi
 ## Embedded QPU {#_runtime_scenario_3}
 In this scenario, we demonstrate an integration of a quantum processing unit (QPU) into a hybrid safety software system with non-functional properties.
 
-<figure markdown="span">
   ![](./images/RuntimeView-scenario3.png)
-</figure>
+
 - Compute the probability of a collision and give it to the executive unit.
 - Input: Environment data
 - Output: Collision probability
