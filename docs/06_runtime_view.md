@@ -55,7 +55,7 @@ The transpilation pipeline consists of 6 steps:
       
 2. Layout Stage
     - This stage maps the input circuit's virtual qubits to the target's physical hardware qubits.
-    - Ideally, the algorithm maps the qubit next to each other, which interact the most. 
+    - Ideally, the algorithm maps the qubit that interact the most next to each other. 
     - While it does not guarantee continuous connectivity or direct execution validity, finding an optimal initial layout is a important, computationally expensive step that minimizes error rates and reduces the need for subsequent routing.
 
 3. Routing Stage
