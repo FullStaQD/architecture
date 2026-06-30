@@ -6,7 +6,7 @@ The reference architecture is divided into three layers and cross-layer concerns
 | Module  | Description | 
 | ------------- | ------------- | 
 | Application Layer | Contains all components on a high-level programming language or algorithmic level  |
-| System Layer  | Contains all components to adjust high-level program to the specific hardware and to integrate HPCs |
+| System Layer  | Contains all components to adjust high-level program to the specific hardware and to integrate HPC |
 | Physical Layer  | Contains all components on a physical layer, which indirectly/directly communicated with the quantum backend  |
 | Cross-Layer Concerns  | Contains all components like Testing, Benchmarking, Simulations, Tools, Visualization, ...  |
 
