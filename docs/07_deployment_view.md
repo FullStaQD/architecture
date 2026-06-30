@@ -32,11 +32,11 @@ solutions to problems that are otherwise impossible to solve.
 For the execution of quantum software in an HPC environment, three execution
 environments are particularly important:
 
-* The **Login Node** is a machine that acts as an entrypoint to the datacentre.
+* The **Login Node** is a machine that acts as an entry point to the datacentre.
   It allows developers/operators/researchers to bring the *Use Case Source Code*
   to the datacentre, and to generate executables for the *Quantum* and
   *Classical Kernels* from it with the *Hybrid Compiler*.
-* The **HPC Cluster** is the heart of the HPC datacentre.
+* The **HPC Cluster** is at the core of the HPC datacentre.
   It is made up of CPUs, accelerators (such as GPUs) and storage facilities that
   allow running large classical workloads such as the *Classical Kernel* that
   was compiled on the login node.
@@ -46,7 +46,8 @@ environments are particularly important:
 * In a quantum software context, a special device within the HPC Cluster is the
   **QPU Node** which is made up of a physical **Quantum Device** (a.k.a. QPU or
   quantum computer) and a **Co-Processor**.
-  The Co-Processor is a classical computer (or FPGA?) that runs the **firmware**
-  of the Quantum Device so that it can execute the compiled *Quantum Kernel*.
+  The Co-Processor is a classical computer <!-- TODO: or FPGA? --> that runs the
+  **firmware** of the Quantum Device so that it can execute the compiled
+  *Quantum Kernel*.
   Furthermore, the Co-Processor runs code that requires a low latency or high
   bandwidth to the Quantum Device such as control flow or *QEC Decoder* tasks.
