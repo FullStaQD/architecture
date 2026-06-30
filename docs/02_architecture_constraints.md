@@ -1,5 +1,15 @@
 # Architecture Constraints {#section-architecture-constraints}
 
+This section covers architecture constraints, that is limitations to the design
+of quantum software systems and this reference architecture which haven't been
+covered as
+[functional requirements](./01_introduction_and_goals.md#_requirements_overview)
+or [quality goals](./10_quality_requirements.md).
+Many of these constraints are set out in the funding goals of the 
+[FullStaQD project](https://www.digital.iao.fraunhofer.de/en/competences/quantum-computing/FullStaQD.html)
+which funded this reference architecture to strengthen the quantum software
+ecosystem through modularisation, compatibility and reuse.
+
 ## Open Source
 * The FullStaQD Reference Architecture must be open source.
   This means that the architecture documentation must be openly available,
@@ -12,8 +22,7 @@
 ## Commercial Use
 * The architecture must allow for proprietary software to be used.
   Reference implementations must allow commercial use and proprietary
-  extensions, e.g. through well-defined interfaces or permissive licensing (no
-  copy-left).
+  extensions, e.g. through well-defined interfaces or permissive licensing.
 
 ## Release Cycle
 * A first draft of the Reference Architecture should be released around the
