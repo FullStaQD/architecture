@@ -13,17 +13,6 @@ The reference architecture is divided into three layers and cross-layer concerns
 ![](./images/Reference-Architecture-Introduction.png)
 
 
-## Requirements Overview {#_requirements_overview}
-To establish a solid foundation for the reference architecture and ensure alignment across all stakeholders, we are now defining the key requirements that will guide its design and implementation.
-
-| Requirement  | Description | 
-| ------------- | ------------- | 
-| Open Source  | The reference architecture and most of its building blocks in the layers are open source |
-| Communication | The reference architecture allows changes through communication with the community  |
-| Modular  | Systems or whole Layers can be integrated and are exchangeable into the reference architecture using specific interfaces  |
-
-
-
 ## Quality Goals {#_quality_goals}
 To maintain a state of the art reference architecture in the quantum ecosystem, we list a few of our most important quality goals for this architecture.
 
@@ -32,12 +21,12 @@ To maintain a state of the art reference architecture in the quantum ecosystem, 
 | Operability  | The reference architecture can be understood, learned, used and is attractive to users from academia and industry  |
 | Compatibility  | HPCs can be integrated into the reference architecture using specific interfaces  |
 | Maintainability  | The reference architecture can be modified, corrected, adapted or improved due to changes in the environment or requirements  |
-| Functional Suitability  | The reference architecture provides functions that meet the needs.  |
+| Modular  | Systems or whole Layers can be integrated and are exchangeable into the reference architecture using specific interfaces  |
 | Reliability  | The reference architecture can maintain a high level of performance  when used under specific conditions  |
 
 ## Stakeholders {#_stakeholders}
 The FullStaQD reference architecture is designed for research at universities as well as for practical use within the industry.
-For further Information visit our website: LINK
+For further Information visit our website: [LINK](https://tva.kastel.kit.edu/english/research_fullstaqd.php)
 
 
 ## Methodology  
