@@ -1,5 +1,5 @@
 # Introduction and Goals {#section-introduction-and-goals}
-The FullStaQD reference architecture is the first step towards a full stack, which ensures compatability and interoperability of various components in the quantum ecosystem. We want to develop a reference architecture with uniform standardised interfaces, which is consistent, modular and open. This reference architecture would reinforce the german quantum computing ecosystem by demonstrating the technical feasibility of quantum applications in the german industry, while also covering a wide quantum computing landscape.
+The FullStaQD reference architecture is the first step towards a modular full quantum software stack, which ensures compatibility and interoperability of various components in the quantum ecosystem. We want to develop a reference architecture with uniform standardised interfaces, which is consistent, modular and open. This reference architecture would reinforce the german quantum computing ecosystem by demonstrating the technical feasibility of quantum applications in the german industry, while also covering a wide quantum computing landscape.
 
 The reference architecture is divided into three layers and cross-layer concerns (see [building block view](./05_building_block_view.md)).
 
