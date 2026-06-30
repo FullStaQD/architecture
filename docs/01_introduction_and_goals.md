@@ -8,7 +8,7 @@ The reference architecture is divided into three layers and cross-layer concerns
 | Application Layer | Contains all components on a high-level programming language or algorithmic level  |
 | System Layer  | Contains all components to adjust high-level program to the specific hardware and to integrate HPC |
 | Physical Layer  | Contains all components on a physical layer which indirectly/directly communicate with the physical quantum device  |
-| Cross-Layer Concerns  | Contains all components like Testing, Benchmarking, Simulations, Tools, Visualization, ...  |
+| Cross-Layer Concerns  | Is part of each Layer and contains all components like Testing, Benchmarking, Simulations, Tools, Visualization, ...  |
 
 ![](./images/Reference-Architecture-Introduction.png)
 
@@ -30,17 +30,14 @@ To maintain a state of the art reference architecture in the quantum ecosystem, 
 | Quality Goal  | Description | 
 | ------------- | ------------- | 
 | Operability  | The reference architecture can be understood, learned, used and is attractive to users from academia and industry  |
-| Compatibility  | Systems can be integrated into the reference architecture using specific interfaces  |
+| Compatibility  | HPCs can be integrated into the reference architecture using specific interfaces  |
 | Maintainability  | The reference architecture can be modified, corrected, adapted or improved due to changes in the environment or requirements  |
 | Functional Suitability  | The reference architecture provides functions that meet the needs.  |
-| Realiability  | The reference architecture can maintain a high level of performance when used under specific conditions  |
+| Reliability  | The reference architecture can maintain a high level of performance  when used under specific conditions  |
 
 ## Stakeholders {#_stakeholders}
 The FullStaQD reference architecture is designed for research at universities as well as for practical use within the industry.
 For further Information visit our website: LINK
-
-
-
 
 
 ## Methodology  
