@@ -88,8 +88,15 @@ Architecture.
    a ready PR.
    Reviews should address both the conceptual change and the quality of its
    textual and pictoral descriptions.
-   Two maintainers need to sign off the PR for it to be approved.
-4. **Merging and releasing changes:**
+   A maintainer (other than the author) needs to sign off the PR for it to be
+   approved.
+4. **Board approval for major changes:**
+   After the initial release of the Reference Architecture, major changes also
+   need to be approved by a board of experts including different stakeholders.
+   For now, this board will be made up of the FullStaQD working package leads
+   but in the long term, we plan to open up this board to experts from the
+   community in both academia and industry.
+5. **Merging and releasing changes:**
    We distinguish two types of changes for our release schedule:
    * **Minor improvements** to the documentation can be merged and released as
      soon as they are approved.
@@ -105,11 +112,11 @@ Architecture.
 ## Maintainers
 Maintainers are core contributors of the project.
 They are further responsible for triaging issues, approving pull requests,
-releasing new versions of the architecture, and upholding the code of conduct.
+releasing new versions of the architecture, seeking the board's approval for
+major changes, and upholding the code of conduct.
 
-While the initial version of this project is being developed at KIT as part of
-the FullStaQD project, maintainership is with the corresponding researchers at
-KIT.
+While this project is being developed at KIT as part of the FullStaQD project,
+maintainership is with the corresponding researchers at KIT.
 In later stages of this project, we intend to expand the maintainer team to
 include other contributors based on their merit and expertise and including a
 diverse mix of stakeholders from industry and academia.
