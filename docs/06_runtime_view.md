@@ -29,7 +29,7 @@ It has the following specifications:
     - It takes the molecule specification and passes it down to the Hartree-Fock algorithm
 
 2. Hartree-Fock:
-    - The Hartree-Fock is the first transformation step to get from the molecule input to a quantum ready representation
+    - The Hartree-Fock algorithm is the first transformation step to get from the molecule input to a quantum ready representation
     - Its input is the molecular geometry in our scenario
     - The output are the electron integrals.
 
