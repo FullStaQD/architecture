@@ -26,7 +26,7 @@ To maintain a state of the art reference architecture in the quantum ecosystem, 
 
 ## Stakeholders {#_stakeholders}
 The FullStaQD reference architecture is designed for research at universities as well as for practical use within the industry.
-For further Information visit our website: [LINK](https://tva.kastel.kit.edu/english/research_fullstaqd.php)
+For further Information visit [our website](https://tva.kastel.kit.edu/english/research_fullstaqd.php).
 
 
 ## Methodology  
