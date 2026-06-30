@@ -26,7 +26,7 @@ It has the following specifications:
 
 1. Simulation App:
     - The Simulation App is the entry point for this scenario.
-    - It takes the molecule specification and passes it down to the Hartree-Fock 
+    - It takes the molecule specification and passes it down to the Hartree-Fock algorithm
 
 2. Hartree-Fock:
     - The Hartree-Fock is the first transformation step to get from the molecule input to a quantum ready representation
