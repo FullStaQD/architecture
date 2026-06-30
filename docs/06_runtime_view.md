@@ -202,4 +202,4 @@ In this scenario, we demonstrate an integration of a quantum processing unit (QP
    
 ### Application Layer - Upwards
 5. Collision Probability App
-   - Sends the result to the device/software that requested the job. 
+    - Sends the result to the device/software that requested the job. 
