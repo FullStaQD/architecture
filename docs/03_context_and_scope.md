@@ -2,8 +2,14 @@
 
 Quantum software systems can be any system that involves tasks solved on quantum
 computers.
-As this reference architecture remains highly general, we characterise typical
-properties of the context of such systems rather than one specific context.
+The FullStaQD Reference Architecture provides a way to organise the internals of
+such quantum software systems (see e.g.
+[building block view](./05_building_block_view.md)).
+In this section, we characterise the boundaries of these quantum software
+systems as well as typical interactions with external systems and actors.
+As the FullStaQD Reference Architecture remains highly general, this context
+specification is highly general too, and we recommend analysing the context and
+scope again for concrete instantiations of this reference architecture.
 
 ## Business Context {#_business_context}
 
@@ -22,7 +28,6 @@ properties of the context of such systems rather than one specific context.
   quantum software system
   (see [application layer](./05_building_block_view.md)).
   <!--
-    TODO: link workflow tooling at a means to alleviate this issue.
     TODO: consider making HPC systems an explicit external system in the
           diagram.
   -->
