@@ -143,7 +143,7 @@ In this scenario, we want to show how our architecture behaves and interacts usi
     - Transforms the QUBO into an Ising Hamiltonian
 
 4. Penalty Encoder
-   - Checks if the required optimization problem needs a penalty factor and adjusts it.
+    - Checks if the required optimization problem needs a penalty factor and adjusts it.
      
 5. QAOA
    - QAOA is a hybrid algorithm which uses tunable parameters.
