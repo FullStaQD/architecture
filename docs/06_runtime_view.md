@@ -137,7 +137,7 @@ In this scenario, we want to show how our architecture behaves and interacts usi
     - Processes the MaxCut problem instance and forwards the information to the QUBO Transformator
 
 2. QUBO Transformator
-   - Creates a QUBO, using the information of the Cloud Optimisation Application
+    - Creates a QUBO, using the information of the Cloud Optimisation Application
 
 3. Ising Transformator
    - Transforms the QUBO into an Ising Hamiltonian
