@@ -164,8 +164,8 @@ In this scenario, we want to show how our architecture behaves and interacts usi
 -- 
 ### Application Layer - Upwards
 7. SPSA
-   - Similar to COBYLA, SPSA is classical optimizer used for optimizing the parameters of the QAOA algorithm. 
-   - It updates the parameters and sends them to the QAOA Program Generator, where the program is computed again until the optimizer terminates.
+    - Similar to COBYLA, SPSA is classical optimizer used for optimizing the parameters of the QAOA algorithm. 
+    - It updates the parameters and sends them to the QAOA Program Generator, where the program is computed again until the optimizer terminates.
    
 ## Embedded QPU {#_runtime_scenario_3}
 In this scenario, we demonstrate an integration of a quantum processing unit (QPU) into a hybrid safety software system with non-functional properties.
