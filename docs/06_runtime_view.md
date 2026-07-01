@@ -154,8 +154,8 @@ In this scenario, we want to show how our architecture behaves and interacts usi
  
 ### System Layer - Downwards
 1. Noise Suppression
-   - Noise Supression reduces the error rate by actively canceling noise using clever pulse timing or add redudancy to detect and fix errors.
-   - It takes an optimized circuit and adds the above mentioned operations.
+    - Noise Supression reduces the error rate by actively canceling noise using clever pulse timing or add redudancy to detect and fix errors.
+    - It takes an optimized circuit and adds the above mentioned operations.
    
    
 ### Physical Layer - Downwards
