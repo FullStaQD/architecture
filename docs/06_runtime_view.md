@@ -191,8 +191,8 @@ In this scenario, we demonstrate an integration of a quantum processing unit (QP
    
 ### System Layer - Downwards
 1. Probabilistic Error Cancellation (PEC_1)
-   - Probabilistic Error Cancellation is an error mitigation technique, which reduces the error rate by measuring how much noise each gate creates and creating "ideal", noise-free gates by a combination of the noisy gates. 
-   - Run the circuit multiple times, where the gate you replace is randomly chosen.
+    - Probabilistic Error Cancellation is an error mitigation technique, which reduces the error rate by measuring how much noise each gate creates and creating "ideal", noise-free gates by a combination of the noisy gates. 
+    - Run the circuit multiple times, where the gate you replace is randomly chosen.
    
 ### Physical Layer - Downwards
 -- 
