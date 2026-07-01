@@ -20,6 +20,7 @@ It has the following specifications:
 -  Output: ground state energy
 -  Used in: material science, battery design, catalyst research, …
 
+
   ![](./images/RuntimeView-scenario1.png)
 
 ### Application Layer - Downwards
@@ -47,7 +48,7 @@ It has the following specifications:
  
 ### System Layer - Downwards
 
-The transpilation pipeline consists of 6 steps:
+The [Qiskit Transpilation Pipeline](https://quantum.cloud.ibm.com/docs/en/guides/transpile) consists of 6 steps:
 
 1. Initialization Stage
     - Using the quantum program from the Application Layer, the transpilation pipeline can start.
@@ -66,7 +67,7 @@ The transpilation pipeline consists of 6 steps:
     - This stage rewrites all previously chosen gates into the specific native gates supported by the target hardware's Instruction Set Architecture (ISA). 
 
 5. Optimization Stage 
-    - This stage executes low-level, hardware-aware refinements on circuits that are already compatible with the target's Instruction Set Architecture (ISA).
+    - This stage executes low-level, hardware-aware refinements on circuits that are already compatible with the target's Instruction Set Architecture (ISA) to reduce redundancy.
 
 6. Scheduling Stage 
     - The scheduling stage receives an ISA-compatible circuit and inserts explicit delay instructions to accurately reflect qubit idle periods, hardware timing constraints and to reduce error rate.
