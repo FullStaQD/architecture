@@ -178,16 +178,16 @@ In this scenario, we demonstrate an integration of a quantum processing unit (QP
 
 ### Application Layer - Downwards
 1. Collision Probability App
-   - Takes the environment data and forwards the lidar, camera and gps data to the Feature Vector Encoder
+    - Takes the environment data and forwards the lidar, camera and gps data to the Feature Vector Encoder
    
 2. Feature Vector Encoder
-   - Encodes a feature vector based on the ionformation of the collision probability app
+    - Encodes a feature vector based on the ionformation of the collision probability app
    
 3. Angle Encoder
-   - Used the feature vector to create a quantum state, which represents the given information 
+    - Used the feature vector to create a quantum state, which represents the given information 
 
 4. Quantum Kernel Method
-   - The quantum kernel method creates a qiskit program, which can then be forwarded to the system layer
+    - The quantum kernel method creates a qiskit program, which can then be forwarded to the system layer
    
 ### System Layer - Downwards
 1. Probabilistic Error Cancellation (PEC_1)
