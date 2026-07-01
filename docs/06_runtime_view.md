@@ -199,7 +199,7 @@ In this scenario, we demonstrate an integration of a quantum processing unit (QP
 -- 
 ### System Layer - Upwards
 2. Probabilistic Error Cancellation (PEC_2)
-   - In this step, we finish the PEC from before using the combination of all measurements and creating an average.
+    - In this step, we finish the PEC from before using the combination of all measurements and creating an average.
    
 ### Application Layer - Upwards
 5. Collision Probability App
