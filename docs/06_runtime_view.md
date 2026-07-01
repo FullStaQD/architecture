@@ -140,7 +140,7 @@ In this scenario, we want to show how our architecture behaves and interacts usi
     - Creates a QUBO, using the information of the Cloud Optimisation Application
 
 3. Ising Transformator
-   - Transforms the QUBO into an Ising Hamiltonian
+    - Transforms the QUBO into an Ising Hamiltonian
 
 4. Penalty Encoder
    - Checks if the required optimization problem needs a penalty factor and adjusts it.
