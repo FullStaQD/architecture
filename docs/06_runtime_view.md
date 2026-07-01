@@ -134,7 +134,7 @@ In this scenario, we want to show how our architecture behaves and interacts usi
 
 ### Application Layer - Downwards
 1. Cloud Optimisation Application:
-   - Processes the MaxCut problem instance and forwards the information to the QUBO Transformator
+    - Processes the MaxCut problem instance and forwards the information to the QUBO Transformator
 
 2. QUBO Transformator
    - Creates a QUBO, using the information of the Cloud Optimisation Application
