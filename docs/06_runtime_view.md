@@ -107,7 +107,7 @@ The [Qiskit Transpilation Pipeline](https://quantum.cloud.ibm.com/docs/en/guides
     - When the classical optimizer terminates, the Program Generator gives the optimal result towards the Error Mitigation Method.
       
 12. Zero Noise Extrapolation
-    - The Zero Noise Extrapolation (ZNE) is a error mitigation method, which can reduce the error rate by using an expectation value and a circuit has input
+    - Zero Noise Extrapolation (ZNE) is a error mitigation method, which can reduce the error rate by using an expectation value and a circuit has input
     - It creates a program to measure a new expectation value with a circuit, which has still the same function but uses more gates. 
     - This process is repeated multiple times and lead towards a noise pattern, which allows to reduce the error rate by extrapolation.
     
