@@ -146,8 +146,8 @@ In this scenario, we want to show how our architecture behaves and interacts usi
     - Checks if the required optimization problem needs a penalty factor and adjusts it.
      
 5. QAOA
-   - QAOA is a hybrid algorithm which uses tunable parameters.
-   - It encodes the Ising Hamiltonian into a quantum circuit
+    - QAOA is a hybrid algorithm which uses tunable parameters.
+    - It encodes the Ising Hamiltonian into a quantum circuit
    
 6. QAOA Program Generator
     - With the parametrised circuit the program generator creates a program for the transpilation pipeline in the system layer.
