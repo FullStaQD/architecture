@@ -35,7 +35,7 @@ It has the following specifications:
     - The output are the electron integrals.
 
 4. Hamiltonian Formulator:
-   - The Hamiltonian formulation maps the electron integrals into a fermonic Hamiltonian.
+    - The Hamiltonian formulation maps the electron integrals into a fermonic Hamiltonian.
 
 6. Jordan-Wigner:
     - The Jordan-Wigner Transformation allows a qubit representation using a fermonic Hamiltonian and turns it into a spin Hamiltonian, which is equivalent to a set of qubits.
