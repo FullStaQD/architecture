@@ -5,10 +5,7 @@ of quantum software systems and this reference architecture which haven't been
 covered as
 [functional requirements](./01_introduction_and_goals.md#_requirements_overview)
 or [quality goals](./10_quality_requirements.md).
-Many of these constraints are set out in the funding goals of the 
-[FullStaQD project][fullstaqd]
-which funded this reference architecture to strengthen the quantum software
-ecosystem through modularisation, compatibility and reuse.
+
 
 ## Open Source
 The [FullStaQD project][fullstaqd] seeks to be community-driven and target a
@@ -41,7 +38,6 @@ as follows:
 * The first version of the Reference Architecture must be released by the end
   of September 2026 in order to be used by partners within the FullStaQD
   project.
-* Further changes to the Reference Architecture should be released
-  infrequently but at a fixed cycle.
+* Further changes to the Reference Architecture will be released as part of a defined change process.
 
 [fullstaqd]: https://www.digital.iao.fraunhofer.de/en/competences/quantum-computing/FullStaQD.html
