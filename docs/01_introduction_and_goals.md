@@ -1,5 +1,5 @@
 # Introduction and Goals {#section-introduction-and-goals}
-The FullStaQD reference architecture is the first step towards a modular full quantum software stack, which ensures compatibility and interoperability of various components in the quantum ecosystem. We want to develop a reference architecture with uniform standardised interfaces, which is consistent, modular and open. This reference architecture would reinforce the german quantum computing ecosystem by demonstrating the technical feasibility of quantum applications in the german industry, while also covering a wide quantum computing landscape.
+The FullStaQD reference architecture is the first step towards a modular full quantum software stack, which ensures compatibility and interoperability of various components in the quantum ecosystem. We want to develop a reference architecture with uniform standardised interfaces, which is consistent, modular and open. 
 
 The reference architecture is divided into three layers and cross-layer concerns (see [building block view](./05_building_block_view.md)).
 
@@ -21,7 +21,7 @@ To maintain a state of the art reference architecture in the quantum ecosystem, 
 | Operability  | The reference architecture can be understood, learned, used and is attractive to users from academia and industry  |
 | Compatibility  | HPCs can be integrated into the reference architecture using specific interfaces  |
 | Maintainability  | The reference architecture can be modified, corrected, adapted or improved due to changes in the environment or requirements  |
-| Modular  | Systems or whole Layers can be integrated and are exchangeable into the reference architecture using specific interfaces  |
+| Modularity  | Systems or whole Layers can be integrated and are exchangeable into the reference architecture using specific interfaces  |
 | Reliability  | The reference architecture can maintain a high level of performance  when used under specific conditions  |
 
 ## Stakeholders {#_stakeholders}
@@ -30,13 +30,15 @@ For further Information visit [our website](https://tva.kastel.kit.edu/english/r
 
 
 ## Methodology  
-To fulfill the requirements and goals of the architecture, we use various state of the art methods, which are also used to design classical software architecture, which includes
+To fulfill the requirements and goals of the reference architecture, we consider several key aspects that are fundamental to the design of modern software architectures:
 
 - the multitude of perspective of stakeholders and use cases
 - the multitude of abstractions, where most expertise of stakeholders focuses only a specified area
 - the multitude of languages, which are used by the different domain experts  (physicists, software-engineers, mathematicians, ...)
 - the rapid advancement in the quantum eco system
 
+
+To address these aspects and continuously validate and refine the reference architecture, we employ a set of state-of-the-art architecture methods:
  <!--  Hier könnte man Paper oder Ergebnisse hinten noch als Spalte in Zukunft Verlinken -->
 | Method  | Description | Reason | 
 | ------------- | ------------- | ------------- | 
