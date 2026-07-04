@@ -24,14 +24,14 @@ A detailed overview of the components of the layers can be seen in the [building
 
 
 ## Quality Goals {#_quality_goals}
-To maintain a state of the art reference architecture in the quantum ecosystem, we list a few of our most important quality goals for this architecture.
+To maintain a state of the art reference architecture in the quantum ecosystem, we consider the following quality goals as most important for this architecture.
 
 | Quality Goal  | Description | 
 | ------------- | ------------- | 
 | Operability  | The reference architecture can be understood, learned, used and is attractive to users from academia and industry  |
 | Compatibility  | HPCs can be integrated into the reference architecture using specific interfaces  |
-| Maintainability  | The reference architecture can be modified, corrected, adapted or improved due to changes in the environment or requirements  |
-| Modularity  | Systems or whole Layers can be integrated and are exchangeable into the reference architecture using specific interfaces  |
+| Maintainability  | The reference architecture can be modified, corrected, adapted or improved due to changes in the environment or requirements with ease |
+| Modularity  | Systems, components or whole layers can be integrated and are exchangeable into the reference architecture using specific interfaces  |
 | Reliability  | The reference architecture can maintain a high level of performance  when used under specific conditions  |
 
 ## Stakeholders {#_stakeholders}
