@@ -50,6 +50,10 @@ To address these aspects and continuously validate and refine the reference arch
 
 
 
+This project is funded by the BMFTR. 
+
+![](./images/BMFTR_Logo.svg)
+
 
 
 
