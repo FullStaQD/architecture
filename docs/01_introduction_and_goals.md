@@ -1,7 +1,17 @@
 # Introduction and Goals {#section-introduction-and-goals}
-The FullStaQD reference architecture is the first step towards a modular full quantum software stack, which ensures compatibility and interoperability of various components in the quantum ecosystem. We want to develop a reference architecture with uniform standardised interfaces, which is consistent, modular and open. 
+The FullStaQD reference architecture is the first step towards a modular quantum full software stack, which ensures compatibility and interoperability of various components in the quantum ecosystem. We aim to develop a reference architecture with uniform standardised interfaces, which is consistent, modular and open. 
 
-The reference architecture is divided into three layers and cross-layer concerns (see [building block view](./05_building_block_view.md)).
+
+## Overview 
+The reference architecture is divided into three layers: Application- , System- and Physical Layer.
+
+![](./images/Reference-Architecture-Introduction.png)
+
+
+
+In addition to these three layers, the architecture also defines cross-layer concerns, which can show up in any of the layers. 
+
+The table below provides a brief description of the layers and the cross-layer concerns.
 
 | Module  | Description | 
 | ------------- | ------------- | 
@@ -10,7 +20,7 @@ The reference architecture is divided into three layers and cross-layer concerns
 | Physical Layer  | Contains all components on a physical layer which indirectly/directly communicate with the physical quantum device  |
 | Cross-Layer Concerns  | Is part of each Layer and contains all components like Testing, Benchmarking, Simulations, Tools, Visualization, ...  |
 
-![](./images/Reference-Architecture-Introduction.png)
+A detailed overview of the components of the layers can be seen in the [building block view](./05_building_block_view.md).
 
 
 ## Quality Goals {#_quality_goals}
