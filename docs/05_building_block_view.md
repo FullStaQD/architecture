@@ -44,10 +44,6 @@ in high-level languages using algorithms, SDKs and libraries.
 
 - The architecture layer must be extensible for new algorithms and abstractions.
 
-!!! warning "TODO"
-    
-    These characteristics are not measurable yet and do not set a target value!
-
 ##### See also
 * [Whitebox view of the Application Layer](#_white_box_app_layer)
 
@@ -101,7 +97,7 @@ following needs:
 
 In the reference implementation, this interface will at first be realised with
 [Qrisp's MLIR interface](https://qrisp.eu/reference/Jasp/MLIR%20Interface.html)
-which currently supports low-level states and opearations but is intended to capture Qrisp's [high-level features](https://qrisp.eu/index.html#key-features)
+which currently supports low-level states and operations but is intended to capture Qrisp's [high-level features](https://qrisp.eu/index.html#key-features)
 at some point.
 The concrete interface for submitting compilation and execution jobs is yet to
 be determined.
@@ -196,7 +192,7 @@ software stack.
   [Xanadu's Pennylane](https://pennylane.ai).
 
 #### Important Interfaces
-We have characterised the building blocks merely through an abstract
+We have described the building blocks merely through an abstract
 characterisation above, and we will characterise the interfaces between them in
 a similar fashion:
 
@@ -224,32 +220,72 @@ a similar fashion:
 </figure>
 
 #### Motivation
-The compiler is split into a quantum and a classical compiler to allow re-using
-existing, highly-optimised compiler infrastructure such as gcc while giving
-emphasis to extensibility in quantum compilation through a plugin system.
-The plugin system also allows integrating proprietary extensions to the
-compiler.
+The main task of the system layer is compile translate high-level quantum
+program specifications into low-level programs that can be executed on physical
+quantum hardware.
+Furthermore, the system layer also covers the integration into high-performance
+computing (HPC) systems.
+These two responsibilities are realised through separate building blocks:
+the **HPC Runtime** component and the **Compiler** component.
 
 #### Contained Building Blocks
 
-- **Frontend:** Used as a facade; shields the core of the compiler from the
-  details of the application layer.
-  Frontend is to be understood as a programming language frontend for the
-  compiler (cf.
-  [`gcc`'s page on frontends](https://gcc.gnu.org/frontends.html)), meaning
-  frontends for different languages or SDKs could be integrated in the future.
-- **Classical Compiler:** Integrates established compiler infrastructure (e.g.
-  [`gcc`](https://gcc.gnu.org)) to compile classical parts of the program with
-  state-of-the-art optimisations.
-- **Quantum Compiler:** Compiles high-level specifications of [quantum-kernels](./12_glossary.md#quantum-kernel) to
-  low-level, device-specific instructions.
-  The compilation process involves passes and dialects and it is extensible
-  through a plugin system.
-- **Backend:** The backend is a bridge between the compiler and the physical
-  layer.
+- **HPC Runtime:** This component covers the integration of quantum and hybrid
+  programs into HPC systems.
+  It includes the following components:
+    - The **Runtime Compiler** is based on the full Compiler component
+      but focuses on compilation tasks which must be done during the runtime of a
+      quantum HPC workload (e.g. re-optimising circuits instructions for changing
+      properties of the hardware such as gate fidelities).
+    - A specialised **Resource Scheduler** might be necessary to allow the HPC
+      system to take into account QPU resources.
+- **Compiler:** The purpose of a hybrid quantum compiler is to translate the
+  high-level program specification from the application to low-level
+  instructions executable on the physical layer.
+  It includes the following sub-components:
+  It includes a **Frontend** that acts as a facade to the compiler that parses a
+  some program specification format (e.g. source code or an intermediate
+  representation), splits it into a classical and a
+  [quantum kernel](./12_glossary.md#quantum-kernel), and calls the classical and
+  quantum compiler with these kernels, respecitvely.
+    - **Frontend:** A frontend acts as a facade to the compiler that parses some
+      program specification format (such as source code or an intermediate
+      representation, splits it into a classical and a
+      [quantum kernel](./12_glossary.md#quantum-kernel), and calls the classical
+      and quantum compiler with these kernels, respectively.
+      The term "frontend" is to be understood as a programming language frontend
+      for the compiler (cf.
+      [`gcc`'s page on frontends](https://gcc.gnu.org/frontends.html)), meaning
+      frontends for different languages or SDKs could be integrated in the future.
+    - **Classical Compiler:** Integrates established compiler infrastructure (e.g.
+      [`gcc`](https://gcc.gnu.org)) to compile classical parts of the program with
+      state-of-the-art optimisations.
+    - **Quantum Compiler:** Compiles high-level specifications of [quantum-kernels](./12_glossary.md#quantum-kernel) to
+      low-level, device-specific instructions.
+      The compilation process involves passes and dialects and it is extensible
+      through a plugin system.
+    - **Backend:** The backend is a bridge between the compiler and the physical
+      layer.
 
 #### Important Interfaces
-!!! warning "TODO"
+
+- As discussed in the interfaces section for the
+  [overall system](#_whitebox_overall_system), the interface between the
+  application needs to allow submitting program specifications for compilation
+  and execution.
+  There might be different formats (i.e. languages) for high-level program
+  specifications and the compiler will be able to handle different formats
+  through multiple frontend components, one for each format.
+- The [overall system](#_whitebox_overall_system) interface section also
+  discussed that the interface between the system and physical layer needs to
+  allow querying device characteristics and submitting jobs.
+  These capabilities are needed by the quantum compiler (for device-specific
+  compilation) and resource scheduler (for job submission and resource
+  allocation), respectively.
+- Another important interface will be the plugin interface of the quantum
+  compiler which will allow for proprietary extensions of the compilation task
+  to contribute compilation passes or dialects.
+- The remaining interfaces in the system layer are internal.
 
 ### White Box Physical Layer {#_white_box_phys_layer}
 
