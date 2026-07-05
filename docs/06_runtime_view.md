@@ -125,7 +125,7 @@ In this scenario, we want to show how our architecture behaves and interacts usi
   ![](./images/RuntimeView-scenario2.png)
 
 
-It has the following specifications:
+It has the following specification:
 
 - Input: Max-Cut instance
 - Output: A cut consisting of a set of edges
