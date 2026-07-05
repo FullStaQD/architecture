@@ -29,7 +29,7 @@ To maintain a state of the art reference architecture in the quantum ecosystem, 
 | Quality Goal  | Description | 
 | ------------- | ------------- | 
 | Operability  | The reference architecture can be understood, learned, used and is attractive to users from academia and industry  |
-| Compatibility  | HPCs can be integrated into the reference architecture using specific interfaces  |
+| Compatibility  | HPCs and existing infrastructure can be integrated into the reference architecture using specific interfaces  |
 | Maintainability  | The reference architecture can be modified, corrected, adapted or improved due to changes in the environment or requirements with ease |
 | Modularity  | Systems, components or whole layers can be integrated and are exchangeable into the reference architecture using specific interfaces  |
 | Reliability  | The reference architecture can maintain a high level of performance  when used under specific conditions  |
@@ -53,7 +53,7 @@ To address these aspects and continuously validate and refine the reference arch
 | Method  | Description | Reason | 
 | ------------- | ------------- | ------------- | 
 | Scenario-based analysis | Using predefined scenarios of use cases on the reference architecture  | To assess how well the reference architecture covers the predefined use cases and to identify the common requirements shared by the components on which those use cases depend |
-| Requirement Survey  | Sending surveys to Stakeholders asking for requirements and needs for their components | Obtaining high-level input on the requirements that the reference architecture must fulfill  |
+| Requirement Survey  | Sending surveys to stakeholders asking for requirements and needs for their components | Obtaining high-level input on the requirements that the reference architecture must fulfill  |
 | Interview with Stakeholders  | In-depth interviews with stakeholders about the reference architecture and their respective positions  | Acquiring detailed insights of Stakeholders and adopt their input  |
 | Workshops  | Regular on-site exchange with the consortium  | Updating partners of current status and discussing next steps |
 | Community Engagement | Allowing open requests and discussion about the reference architecture through our ticket system | Ensuring external input, extendability and exchangability | 
