@@ -67,7 +67,7 @@ This project is supportet and fundedby the German Federal Ministry of Research, 
 [![alt text][image]][hyperlink]
 
 [hyperlink]: https://www.bmftr.bund.de/EN/Home/home_node.html
-[image]: ./images/BMFTR_Logo.jpeg
+[image]: ./images/BMFTR_Logo.jpg
 
 
 
