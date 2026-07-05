@@ -3,7 +3,7 @@ The FullStaQD reference architecture is the first step towards a modular quantum
 
 
 ## Overview 
-The reference architecture is divided into three layers: Application- , System- and Physical Layer.
+The reference architecture is divided into three layers: Application , System and Physical Layer.
 
 ![](./images/Reference-Architecture-Introduction.png)
 
@@ -20,7 +20,7 @@ The table below provides a brief description of the layers and the cross-layer c
 | Physical Layer  | Contains all components on a physical layer which indirectly/directly communicate with the physical quantum device  |
 | Cross-Layer Concerns  | Is part of each Layer and contains all components like Testing, Benchmarking, Simulations, Tools, Visualization, ...  |
 
-A detailed overview of the components of the layers can be seen in the [building block view](./05_building_block_view.md).
+A detailed breakdown of the components of the layers can be seen in the [building block view](./05_building_block_view.md).
 
 
 ## Quality Goals {#_quality_goals}
@@ -31,7 +31,7 @@ To maintain a state of the art reference architecture in the quantum ecosystem, 
 | Operability  | The reference architecture can be understood, learned, used and is attractive to users from academia and industry  |
 | Compatibility  | HPCs and existing infrastructure can be integrated into the reference architecture using specific interfaces  |
 | Maintainability  | The reference architecture can be modified, corrected, adapted or improved due to changes in the environment or requirements with ease |
-| Modularity  | Systems, components or whole layers can be integrated and are exchangeable into the reference architecture using specific interfaces  |
+| Modularity  | Systems, components or whole layers can be integrated and are exchangeable into the reference architecture using specified interfaces  |
 | Reliability  | The reference architecture can maintain a high level of performance  when used under specific conditions  |
 
 ## Stakeholders {#_stakeholders}
@@ -60,7 +60,7 @@ To address these aspects and continuously validate and refine the reference arch
 
 
 
-This project is supportet and fundedby the German Federal Ministry of Research, Technology and Space in project FullStaQD under Grant No.: 01MQ25001F.
+This project is supported and funded by the German Federal Ministry of Research, Technology and Space in project FullStaQD under Grant No.: 01MQ25001F.
 
  
 
