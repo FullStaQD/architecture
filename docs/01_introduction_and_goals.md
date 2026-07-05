@@ -62,7 +62,20 @@ To address these aspects and continuously validate and refine the reference arch
 
 This project is supportet and fundedby the German Federal Ministry of Research, Technology and Space in project FullStaQD under Grant No.: 01MQ25001F.
 
-![](./images/BMFTR_Logo.svg)   <img src="./images/HightechAgendaLogo.jpg" alt="drawing" width="200"/>  
+ 
+
+[![alt text][image]][hyperlink]
+
+[hyperlink]: https://www.bmftr.bund.de/EN/Home/home_node.html
+[image]: ./images/BMFTR_Logo.jpeg
+
+
+
+[![alt text][image1]][hyperlink1]
+
+[hyperlink1]: https://www.bmftr.bund.de/EN/Technology/HightechAgenda/HightechAgenda.html
+[image1]: ./images/HightechAgendaLogo.jpg
+
 
 
 
