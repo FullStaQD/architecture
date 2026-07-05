@@ -38,6 +38,6 @@ as follows:
 * The first version of the Reference Architecture must be released by the end
   of September 2026 in order to be used by partners within the FullStaQD
   project.
-* Further changes to the Reference Architecture will be released as part of a defined change process.
+* Further changes to the Reference Architecture will be released as specified in our [change process](https://github.com/FullStaQD/architecture/blob/main/CONTRIBUTING.md#changing-the-architecture).
 
 [fullstaqd]: https://www.digital.iao.fraunhofer.de/en/competences/quantum-computing/FullStaQD.html
