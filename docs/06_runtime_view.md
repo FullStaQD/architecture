@@ -2,11 +2,11 @@
 The runtime view documents the concrete behaviour and interaction of the building blocks. Based on [Carbonelli et al.'s work](https://link.springer.com/content/pdf/10.1007/978-3-031-64136-7_12.pdf), we demonstrate how typical quantum use cases are represented in the architecture. The demonstration shows one scenario in detail for each use case, starting at the user input, continuing through the execution, and concluding with the return value to the user.
 We document these steps through an activity diagram, in which each architecture layer is divided by a swim lane.  We focus on the steps and interfaces during the execution process rather than describing the building blocks in detail.
 
-!!! note "Architecture Note Scenarios"
+<!---!!! note "Architecture Note Scenarios"
 
         - An architecture must work for its use cases
             - Scenarios can be used to test architectural decisions
-            - Representative scenario selection is crucial
+            - Representative scenario selection is crucial -->
 
 
 
