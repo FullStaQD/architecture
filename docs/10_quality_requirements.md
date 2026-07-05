@@ -39,7 +39,7 @@ We sort the quality requirements after the [arc42 quality model](https://quality
 
 | Quality Goal  | Description |  Scenario ID |
 | ------------- | ------------- | ------------- |
-| Modularity  | The reference architecture needs to be capabable to limit changes to one component from affecting other components e.G. exchanging quantum hardware. | SC3 |
+| Modularity  | The reference architecture needs limit changes to one component from affecting other components, e.g. exchanging quantum hardware should not affect the application layer. | SC3 |
 | Updateability  | The reference architecture needs to be capable to efficiently receive, install, and integrate updates, patches, security fixes, and minor enhancements while maintaining system integrity and minimizing service disruption. | SC5 |
 
 ### Operable
