@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block announce %}
+<style>
+  [data-md-component="announce"] .md-banner {
+    background-color: #f4a500;
+  }
+  [data-md-component="announce"] .md-banner .md-banner__inner {
+    font-size: medium;
+    color: var(--md-typeset-color);
+  }
+</style>
+<b>⚠️ Internal pre-release:</b>
+Please let us know about any issues you find with this architecture by
+<a href="https://github.com/FullStaQD/architecture/issues/new/choose">opening an issue</a>.
+{% endblock %}
