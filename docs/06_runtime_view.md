@@ -19,7 +19,7 @@ It has the following specifications:
 -  Input: molecule specification
 -  Output: ground state energy
 -  Used in:
-   -  material science
+   - material science
    - battery design,
    - catalyst research
 
