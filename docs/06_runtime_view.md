@@ -2,23 +2,26 @@
 The runtime view documents the concrete behaviour and interaction of the building blocks. Based on [Carbonelli et al.'s work](https://link.springer.com/content/pdf/10.1007/978-3-031-64136-7_12.pdf), we demonstrate how typical quantum use cases are represented in the architecture. The demonstration shows one scenario in detail for each use case, starting at the user input, continuing through the execution, and concluding with the return value to the user.
 We document these steps through an activity diagram, in which each architecture layer is divided by a swim lane.  We focus on the steps and interfaces during the execution process rather than describing the building blocks in detail.
 
-!!! note "Architecture Note Scenarios"
+<!---!!! note "Architecture Note Scenarios"
 
         - An architecture must work for its use cases
             - Scenarios can be used to test architectural decisions
-            - Representative scenario selection is crucial
+            - Representative scenario selection is crucial -->
 
 
 
 ## Quantum simulation for material science, chemistry and physics {#_runtime_scenario_1}
 
-This scenario describes the how quatum computing can be used for material science, chemistry and physics. 
+This scenario describes the how quantum computing can be used for material science, chemistry and physics. 
 
 It has the following specifications:
 
 -  Input: molecule specification
 -  Output: ground state energy
--  Used in: material science, battery design, catalyst research, …
+-  Used in:
+   - material science
+   - battery design,
+   - catalyst research
 
 
   ![](./images/RuntimeView-scenario1.png)
@@ -72,6 +75,7 @@ The [Qiskit Transpilation Pipeline](https://quantum.cloud.ibm.com/docs/en/guides
 6. Scheduling Stage 
     - The scheduling stage receives an ISA-compatible circuit and inserts explicit delay instructions to accurately reflect qubit idle periods, hardware timing constraints and to reduce error rate.
     - It ensures the final output remains ISA-compatible while updating start-time metadata and optionally applying walltime-sensitive transformations.
+    - This concludes the Qiskit transpilation pipeline.
 
 7. Circuit-Command Mapping
     - Using the ISA-compatible circuit, additional information like number of measurements demanded and a translation table, which translated the commands into backend compatible commands, this steps gives a list of operations to the device and firmware of the hardware.
@@ -121,11 +125,11 @@ In this scenario, we want to show how our architecture behaves and interacts usi
   ![](./images/RuntimeView-scenario2.png)
 
 
-- Approximating the optimal Max-Cut
+It has the following specification:
+
 - Input: Max-Cut instance
 - Output: A cut consisting of a set of edges
-  
-- Use cases:
+- Used in:
     - Flight-gate assignment in airports
     - Electronic Design Automation
     - Trajectory optimization in air traffic
@@ -175,7 +179,11 @@ In this scenario, we demonstrate an integration of a quantum processing unit (QP
 - Compute the probability of a collision and give it to the executive unit.
 - Input: Environment data
 - Output: Collision probability
-
+- Used in:
+  - autonomous driving
+  - drones
+ 
+    
 ### Application Layer - Downwards
 1. Collision Probability App
     - Takes the environment data and forwards the lidar, camera and gps data to the Feature Vector Encoder
