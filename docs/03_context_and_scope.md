@@ -12,12 +12,12 @@ specification is highly general too, and we recommend analysing the context and
 scope again for concrete instantiations of this reference architecture.
 
 ## Business Context {#_business_context}
+The business contect describes how the quantum software system interacts with external entities. A brief overview can be seen in the following:
 
-<figure markdown="span">
   ![](./images/Business-Context.excalidraw.png)
-</figure>
 
-* The **Quantum Software System** is at the heart of the above diagram.
+
+* The **Quantum Software System** is at the center of the above diagram.
   Its [internal structure](./05_building_block_view.md),
   [behaviour](./06_runtime_view.md) and [deployment](./07_deployment_view.md)
   are characterised in the respective sections.
