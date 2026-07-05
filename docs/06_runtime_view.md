@@ -129,7 +129,7 @@ It has the following specifications:
 
 - Input: Max-Cut instance
 - Output: A cut consisting of a set of edges
-- Use in:
+- Used in:
     - Flight-gate assignment in airports
     - Electronic Design Automation
     - Trajectory optimization in air traffic
