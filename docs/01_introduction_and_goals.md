@@ -3,7 +3,7 @@ The FullStaQD reference architecture is the first step towards modular full-stac
 
 
 ## Overview 
-The reference architecture is divided into three layers: Application , System and Physical Layer.
+The reference architecture is divided into three layers: Application, System and Physical Layer.
 
 ![](./images/Reference-Architecture-Introduction.png)
 
