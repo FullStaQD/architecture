@@ -9,36 +9,34 @@
 ### Motivation
 
 Quantum software is highly complex, so we use a layered architecture to
-decompose such systems into three layers: the application, system, and physical
-layer.
+decompose such systems into three layers: the Application, System, and Physical
+Layer.
 We rectify this decision with the following three perspectives:
 
-- **Abstraction:** Software in the application layer is implemented on a high
+- **Abstraction:** Software in the Application Layer is implemented on a high
   level and independently from concrete quantum devices.
-  The system layer compiles high-level specifications into device-specific
-  instructions and software in the physical layer targets specific devices with
+  The System Layer compiles high-level specifications into device-specific
+  instructions and software in the Physical Layer targets specific devices with
   low-level control.
-- **Skills**: Developing software for the application layer requires abstract
+- **Skills**: Developing software for the Application Layer requires abstract
   knowledge of quantum computing (e.g. the circuit model) but no understanding
   of its physical implementations is required.
-  For working on the system layer, developers need to have a broad understanding
+  For working on the System Layer, developers need to have a broad understanding
   of various quantum device architectures and
   [deployment concerns](./07_deployment_view.md).
   Detailed knowledge for concrete quantum devices is required to program and
-  operate quantum backends in the physical layer.
-- **Operation**: In the application layer, manual programming or specification for
+  operate quantum backends in the Physical Layer.
+- **Operation**: In the Application Layer, manual programming or specification for
   individual use cases is required.
-  Compilation in the system layer is mostly automated with only high-level
+  Compilation in the System Layer is mostly automated with only high-level
   compilation settings needing to be configured.
-  Execution on the physical layer is fully automated.
+  Execution on the Physical Layer is fully automated.
 
 ### Contained Building Blocks
 
 #### Application Layer
 This layer will involve use-case-specific quantum and hybrid programs, written
 in high-level languages using algorithms, SDKs and libraries.
-
-<!-- *\<Interface(s)\>* -->
 
 ##### Quality Characteristics
 
@@ -48,26 +46,26 @@ in high-level languages using algorithms, SDKs and libraries.
 * [Whitebox view of the Application Layer](#_white_box_app_layer)
 
 #### System Layer
-The system layer is responsible for compiling high-level program specifications
-from the application layer to low-level, device-specific instructions to be
-executed in the physical layer, taking into account the quantum device
+The System Layer is responsible for compiling high-level program specifications
+from the Application Layer to low-level, device-specific instructions to be
+executed in the Physical Layer, taking into account the quantum device
 architecture (e.g. superconducting vs. neutral atom, topology / connectivity)
 and possibly HPC concerns.
 
 ##### Quality Characteristics
 
-- The physical layer must be extensible for new quantum device architectures.
-- The physical layer must be extensible for new quantum compilation passes.
-- The physical layer should be extensible to work with different intermediate
+- The System Layer must be extensible for new quantum device architectures.
+- The System Layer must be extensible for new quantum compilation passes.
+- The System Layer should be extensible to work with different intermediate
   representations.
-- The physical layer should minimise execution cost by optimising generated
+- The System Layer should minimise execution cost by optimising generated
   instructions.
 
 ##### See also
 * [Whitebox view of the System Layer](#_white_box_sys_layer)
 
 #### Physical Layer
-The physical layer executes the programs it receives from the system layers by
+The Physical Layer executes the programs it receives from the System Layer by
 controlling the physical quantum device.
 It is also responsible for calibrating the device and monitoring it (e.g.
 fidelities).
@@ -84,7 +82,7 @@ The interface between the Application and System Layers needs to serve the
 following needs:
 
 * It needs to transmit program specifications from the Application Layer to the
-  System layer.
+  System Layer.
   In the short term, low-level representations like OpenQASM or Qrisp's
   intermediate representation format will suffice but in the long term, programs
   written in high-level quantum programming languages (like
@@ -93,11 +91,12 @@ following needs:
 * It needs to allow submitting program specification for compilation and
   execution with suitable options available for configuring the compiler.
   Furthermore, the progress and results of execution and compilation tasks
-  should be reported back to the Application layer.
+  should be reported back to the Application Layer.
 
 In the reference implementation, this interface will at first be realised with
 [Qrisp's MLIR interface](https://qrisp.eu/reference/Jasp/MLIR%20Interface.html)
-which currently supports low-level states and operations but is intended to capture Qrisp's [high-level features](https://qrisp.eu/index.html#key-features)
+which currently supports low-level states and operations but is intended to
+capture Qrisp's [high-level features](https://qrisp.eu/index.html#key-features)
 at some point.
 The concrete interface for submitting compilation and execution jobs is yet to
 be determined.
@@ -138,7 +137,7 @@ satisfy these needs exactly.
 #### Motivation
 
 A lot of different software components exist that can be classified as part of
-the application layer and the above figure presents a rough sketch of their
+the Application Layer and the above figure presents a rough sketch of their
 dependencies.
 Most quantum software that is freely available today makes use of (usually
 python-based) SDKs to build quantum circuits.
@@ -153,25 +152,26 @@ software stack.
 
 - **Use Case:** This component encapsulates the configuration of the quantum
   software stack for a specific use case.
-  It is also responsible for interfacing with external IT systems if the quantum
-  application is to be integrated into an existing IT system (see [context section](./03_context_and_scope.md)).
+  It is also responsible for interfacing with External IT Systems if the quantum
+  application is to be integrated into an existing IT system
+  (see [context section](./03_context_and_scope.md)).
   As the Use Case component characterises the interface between quantum and
   classical computation, it will have one or more dedicated
   [**Quantum Kernels**](./12_glossary.md#quantum-kernel) which encapsulate the
   parts of the program that are to be run on a quantum computer. 
-  Use case components are highly specific for the context and task they are used
+  Use Case components are highly specific for the context and task they are used
   in.
   Reusable code will often live in the Quantum SDK or Problem Transformation
   libraries.
     - **Integration Tooling**: Some tools specifically target the task of
       integrating quantum applications into existing IT infrastructure.
-      This includes for example workflow modeling tools (e.g. with the
-      [Kipu Quantum Hub](https://docs.hub.kipu-quantum.com)) and problem
-      decomposition tools (e.g. with the
+      This includes for example **Workflow Modeling** tools (e.g. with the
+      [Kipu Quantum Hub](https://docs.hub.kipu-quantum.com)) and **Problem
+      Decomposition** tools (e.g. with the
       [ProvideQ Toolbox](https://tva.kastel.kit.edu/english/research_177.php))
       which improve the accessibility of quantum computing and provide
-      standardised web APIs which can be integrated into typical IT infrastructure
-      more easily.
+      standardised web APIs which can be integrated into typical IT
+      infrastructure more easily.
       Integration tools typically depend on Use Case implementations which they
       wrap with their own abstractions and interfaces but they can also take a
       more fine-grained approach and provide direct access to the Problem
@@ -182,12 +182,12 @@ software stack.
   [qubovert](https://qubovert.readthedocs.io/en/latest/),
   [Qiskit Finance](https://github.com/qiskit-community/qiskit-finance)).
   Many of these tools directly use the Quantum SDK's building blocks.
-- **Quantum SDK:** The quantum SDK contains common building blocks for quantum
+- **Quantum SDK:** The Quantum SDK contains common building blocks for quantum
   software such as circuits and types (e.g.
   [qrisp's quantum variables](https://qrisp.eu/reference/Core/index.html#quantumvariable)),
   algorithm templates (e.g. VQE, QAOA, QPE) and optimisers (e.g. Adam or
   Rotosolve) for hybrid algorithms.
-  Popular examples for quantum SDKs include [Eclipse's qrisp](https://qrisp.eu),
+  Popular examples for Quantum SDKs include [Eclipse's qrisp](https://qrisp.eu),
   [IBM's Qiskit](https://github.com/Qiskit/qiskit) and
   [Xanadu's Pennylane](https://pennylane.ai).
 
@@ -196,10 +196,10 @@ We have described the building blocks merely through an abstract
 characterisation above, and we will characterise the interfaces between them in
 a similar fashion:
 
-* One major interface is the Quantum SDK, the language that developers use to
-  specify their quantum applications, and therefore, Use Case implementations,
-  Problem Transformations and some Integration Tooling may depend on the chosen
-  Quantum SDK.
+* One major interface is provided by the Quantum SDK, the language that
+  developers use to specify their quantum applications, and therefore, Use Case
+  implementations, Problem Transformations and some Integration Tooling may
+  depend on the chosen Quantum SDK.
   The [2025 Quantum Open Source Survey](https://unitaryfoundation.github.io/survey-2025/#Software)
   shows that there is currently no single favourite among the available
   Quantum SDKs, so to facilitate adoption of a standardised quantum software
@@ -211,7 +211,8 @@ a similar fashion:
 * Integration Tooling can provide access to the Use Case implementations and
   Problem Transformations with a unified interfaces (e.g. for progress updates
   and configuration) but the data/payload types for the submitted problem
-  instances are still specific to the Use Case implementation and Problem Transformation which they wrap. 
+  instances are still specific to the Use Case implementation and Problem
+  Transformation which they wrap. 
 
 ### White Box System Layer {#_white_box_sys_layer}
 
@@ -220,7 +221,7 @@ a similar fashion:
 </figure>
 
 #### Motivation
-The main task of the system layer is compile translate high-level quantum
+The main task of the System Layer is compile translate high-level quantum
 program specifications into low-level programs that can be executed on physical
 quantum hardware.
 Furthermore, the system layer also covers the integration into high-performance
@@ -248,11 +249,11 @@ the **HPC Runtime** component and the **Compiler** component.
   representation), splits it into a classical and a
   [quantum kernel](./12_glossary.md#quantum-kernel), and calls the classical and
   quantum compiler with these kernels, respecitvely.
-    - **Frontend:** A frontend acts as a facade to the compiler that parses some
+    - **Frontend:** A Frontend acts as a facade to the compiler that parses some
       program specification format (such as source code or an intermediate
       representation, splits it into a classical and a
-      [quantum kernel](./12_glossary.md#quantum-kernel), and calls the classical
-      and quantum compiler with these kernels, respectively.
+      [quantum kernel](./12_glossary.md#quantum-kernel), and calls the Classical
+      and Quantum Compiler with these kernels, respectively.
       The term "frontend" is to be understood as a programming language frontend
       for the compiler (cf.
       [`gcc`'s page on frontends](https://gcc.gnu.org/frontends.html)), meaning
@@ -260,36 +261,37 @@ the **HPC Runtime** component and the **Compiler** component.
     - **Classical Compiler:** Integrates established compiler infrastructure (e.g.
       [`gcc`](https://gcc.gnu.org)) to compile classical parts of the program with
       state-of-the-art optimisations.
-    - **Quantum Compiler:** Compiles high-level specifications of [quantum-kernels](./12_glossary.md#quantum-kernel) to
-      low-level, device-specific instructions.
+    - **Quantum Compiler:** Compiles high-level specifications of
+      [quantum-kernels](./12_glossary.md#quantum-kernel) to low-level,
+      device-specific instructions.
       The compilation process involves passes and dialects and it is extensible
       through a plugin system.
-    - **Backend:** The backend is a bridge between the compiler and the physical
-      layer.
+    - **Backend:** The backend is a bridge between the Compiler and the Physical
+      Layer.
 
 #### Important Interfaces
 
 - As discussed in the interfaces section for the
-  [overall system](#_whitebox_overall_system), the interface between the
-  application needs to allow submitting program specifications for compilation
-  and execution.
+  [overall system](#_whitebox_overall_system), the interface to the
+  Application Layer needs to allow submitting program specifications for
+  compilation and execution.
   There might be different formats (i.e. languages) for high-level program
   specifications and the compiler will be able to handle different formats
-  through multiple frontend components, one for each format.
+  through multiple Frontend components, one for each format.
 - The [overall system](#_whitebox_overall_system) interface section also
-  discussed that the interface between the system and physical layer needs to
+  discussed that the interface between the System and Physical Layer needs to
   allow querying device characteristics and submitting jobs.
-  These capabilities are needed by the quantum compiler (for device-specific
-  compilation) and resource scheduler (for job submission and resource
+  These capabilities are needed by the Quantum Compiler (for device-specific
+  compilation) and Resource Scheduler (for job submission and resource
   allocation), respectively.
-- Another important interface will be the plugin interface of the quantum
-  compiler which will allow for proprietary extensions of the compilation task
+- Another important interface will be the plugin interface of the Quantum
+  Compiler which will allow for proprietary extensions of the compilation task
   to contribute compilation passes or dialects.
-- The remaining interfaces in the system layer are internal.
+- The remaining interfaces in the System Layer are internal.
 
 The reference implementation's concrete interfaces between adjacent layers are
 specified in the [overall system](#_whitebox_overall_system) section.
-The quantum compiler's plugin interface is still to be designed.
+The Quantum Compiler's plugin interface is still to be designed.
 
 ### White Box Physical Layer {#_white_box_phys_layer}
 
@@ -298,37 +300,37 @@ The quantum compiler's plugin interface is still to be designed.
 </figure>
 
 #### Motivation
-The physical layer is responsible for the execution of quantum programs, either
+The Physical Layer is responsible for the execution of quantum programs, either
 on physical quantum hardware or a classical simulator.
 Its implementation is highly dependent on the hardware architecture, vendor and
 concrete device.
 As such, the key architectural characteristic here is to either have the vendor
-implement our interface towards the system layer, or to implement an adapter
+implement our interface towards the System Layer, or to implement an adapter
 that translates our interface to the vendor's interface.
 
 #### Contained Building Blocks
 * **Common Quantum Device Interface Adapter:** This component acts as a facade
   to the quantum device's internals by implementing the common quantum device
-  interface used between the system and physical layer.
+  interface used between the System and Physical Layer.
   If the quantum simulator or the quantum device firmware already implements the
   common quantum device interface, this component is not needed.
 * **Quantum System Controller:** This component contains the firmware of the
   physical quantum device.
   It is responsible for controlling the physical quantum device, for example
   triggering lasers and sensors in superconducting hardware.
-* **Simulator:** Instead of a physical quantum device with a quantum system
-  controller the execution of the quantum program can also be carried out by a
-  quantum computing simulator running on classical hardware.
-  A physical layer implementation will usually either have a simulator or a
+* **Simulator:** Instead of a physical quantum device with a Quantum System
+  Controller the execution of the quantum program can also be carried out by a
+  quantum computing Simulator running on classical hardware.
+  A Physical Layer implementation will usually either have a simulator or a
   physical quantum device but not both. 
 
 #### Important Interfaces
-- The common quantum device interface used by the system layer to interact with
-  the physical layer is described in the
+- The common quantum device interface used by the System Layer to interact with
+  the Physical Layer is described in the
   [overall system](#_whitebox_overall_system) section.
-- Within the physical layer, the protocols and interfaced used are highly
+- Within the Physical Layer, the protocols and interfaced used are highly
   dependent on the concrete quantum device or simulator.
-  This dependency is hidden to the system layer by the common quantum device
+  This dependency is hidden to the System Layer by the common quantum device
   interface.
 
 The reference implementation's concrete interfaces between adjacent layers are
