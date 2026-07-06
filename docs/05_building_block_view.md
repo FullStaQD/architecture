@@ -40,7 +40,11 @@ in high-level languages using algorithms, SDKs and libraries.
 
 ##### Quality Characteristics
 
-- The architecture layer must be extensible for new algorithms and abstractions.
+- The Application Layer must be extensible for new quantum and hybrid
+  algorithms.
+- The Application Layer must be extensible for new quantum programming
+  abstractions.
+- The Application Layer must be extensible for new quantum applications.
 
 ##### See also
 * [Whitebox view of the Application Layer](#_white_box_app_layer)
