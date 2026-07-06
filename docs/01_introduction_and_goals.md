@@ -48,7 +48,7 @@ To fulfill the requirements and goals of the reference architecture, we consider
 - the rapid advancement in the quantum eco system
 
 
-To address these aspects and continuously validate and refine the reference architecture, we employ a set of state-of-the-art architecture methods:
+To address these aspects and continuously validate and refine the reference architecture, we employ a set of state-of-the-art methods from classical software engineering:
  <!--  Hier könnte man Paper oder Ergebnisse hinten noch als Spalte in Zukunft Verlinken -->
 | Method  | Description | Reason | 
 | ------------- | ------------- | ------------- | 
