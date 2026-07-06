@@ -64,17 +64,15 @@ This project is supported and funded by the German Federal Ministry of Research,
 
  
 
-[![alt text][image]][hyperlink]
+<figure markdown="span">
+    [![With funding from the German Federal Ministry of Research, Technology and Space (BMFTR)][bmftr-logo]{: style="max-width: 40%; display: inline-block;"}][bmftr-link]
+    [![High-tech Agenda Germany][htad-logo]{: style="max-width: 40%; display: inline-block;"}][htad-link]
+</figure>
 
-[hyperlink]: https://www.bmftr.bund.de/EN/Home/home_node.html
-[image]: ./images/BMFTR_Logo.jpg
-
-
-
-[![alt text][image1]][hyperlink1]
-
-[hyperlink1]: https://www.bmftr.bund.de/EN/Technology/HightechAgenda/HightechAgenda.html
-[image1]: ./images/HightechAgendaLogo.jpg
+[bmftr-link]: https://www.bmftr.bund.de/EN/Home/home_node.html
+[bmftr-logo]: ./images/BMFTR_Logo.jpg
+[htad-link]: https://www.bmftr.bund.de/EN/Technology/HightechAgenda/HightechAgenda.html
+[htad-logo]: ./images/HightechAgendaLogo.jpg
 
 
 
