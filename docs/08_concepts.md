@@ -1,15 +1,9 @@
 # Cross-cutting Concepts {#section-concepts}
 
-## *\<Concept 1\>* {#_concept_1}
 
-*\<explanation\>*
+!!! warning
 
-## *\<Concept 2\>* {#_concept_2}
+    The Cross-Cutting Concepts are still in work. 
+    
+    This will be filled as we progress.
 
-*\<explanation\>*
-
-...​
-
-## *\<Concept n\>* {#_concept_n}
-
-*\<explanation\>*
