@@ -39,7 +39,7 @@ We sort the quality requirements after the [arc42 quality model](https://quality
 
 | Quality Goal  | Description |  Scenario ID |
 | ------------- | ------------- | ------------- |
-| Modularity  | The reference architecture needs to be capability to limit changes to one component from affecting other components e.G. exchanging quantum hardware. | SC3 |
+| Modularity  | The reference architecture needs to limit changes to one component from affecting other components, e.g. exchanging quantum hardware should not affect the application layer. | SC3 |
 | Updateability  | The reference architecture needs to be capable to efficiently receive, install, and integrate updates, patches, security fixes, and minor enhancements while maintaining system integrity and minimizing service disruption. | SC5 |
 
 ### Operable
@@ -135,7 +135,7 @@ We sort the quality requirements after the [arc42 quality model](https://quality
 ## Quality Scenarios {#_quality_scenarios}
 Scenario ID | Scenario  | Description | 
 |-------------| ------------- | ------------- | 
-| SC1 | Getting Introduced to the Architecture  | A new user (idepedently of his background) can understand the architecture with ease and use it  |
+| SC1 | Getting Introduced to the Architecture  | A new user (independently of his background) can understand the architecture with ease and use it  |
 | SC2 | New Programming Language  | A new programming language for quantum computing is introduced, is not represented in the reference architecture and can easily be integrated. |
 | SC3 | New Hardware Provider  | A new hardware is introduced, which should be integrated with ease into the reference architecture. |
 | SC4 | Integration of HPC  | The possibility that a Stakeholder wants to use a program, which needs a HPC and a quantum processor.  |
