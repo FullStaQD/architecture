@@ -15,7 +15,7 @@ template for documenting of software and system architecture.
     in our GitHub repository.
 
 
-## Table of contents 
+## Table of Contents 
 
 1. [Introduction and Goals](./01_introduction_and_goals.md)
 2. [Architecture Constraints](./02_architecture_constraints.md)
