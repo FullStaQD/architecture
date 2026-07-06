@@ -53,7 +53,8 @@ in high-level languages using algorithms, SDKs and libraries.
 The System Layer is responsible for compiling high-level program specifications
 from the Application Layer to low-level, device-specific instructions to be
 executed in the Physical Layer, taking into account the quantum device
-architecture (e.g. superconducting vs. neutral atom, topology / connectivity)
+architecture (e.g. physical implementation such as superconducting or neutral
+atom qubits, topology / connectivity)
 and possibly HPC concerns.
 
 ##### Quality Characteristics
@@ -167,19 +168,19 @@ software stack.
   in.
   Reusable code will often live in the Quantum SDK or Problem Transformation
   libraries.
-    - **Integration Tooling**: Some tools specifically target the task of
-      integrating quantum applications into existing IT infrastructure.
-      This includes for example **Workflow Modeling** tools (e.g. with the
-      [Kipu Quantum Hub](https://docs.hub.kipu-quantum.com)) and **Problem
-      Decomposition** tools (e.g. with the
-      [ProvideQ Toolbox](https://tva.kastel.kit.edu/english/research_177.php))
-      which improve the accessibility of quantum computing and provide
-      standardised web APIs which can be integrated into typical IT
-      infrastructure more easily.
-      Integration tools typically depend on Use Case implementations which they
-      wrap with their own abstractions and interfaces but they can also take a
-      more fine-grained approach and provide direct access to the Problem
-      Transformation and Quantum SDK building blocks. 
+- **Integration Tooling**: Some tools specifically target the task of
+  integrating quantum applications into existing IT infrastructure.
+  This includes for example **Workflow Modeling** tools (e.g. with the
+  [Kipu Quantum Hub](https://docs.hub.kipu-quantum.com)) and **Problem
+  Decomposition** tools (e.g. with the
+  [ProvideQ Toolbox](https://tva.kastel.kit.edu/english/research_177.php))
+  which improve the accessibility of quantum computing and provide
+  standardised web APIs which can be integrated into typical IT
+  infrastructure more easily.
+  Integration tools typically depend on Use Case implementations which they
+  wrap with their own abstractions and interfaces but they can also take a
+  more fine-grained approach and provide direct access to the Problem
+  Transformation and Quantum SDK building blocks. 
 - **Problem Transformations:** This component is symbolic for the many
   available tools for transforming scientific, engineering and commercial
   problems into quantum formulations (e.g.
@@ -208,8 +209,7 @@ a similar fashion:
   shows that there is currently no single favourite among the available
   Quantum SDKs, so to facilitate adoption of a standardised quantum software
   stack, it will be important to build integrations of multiple popular SDKs
-  into the rest of the stack.
-<!-- TODO: quantum sdk to sys layer -->
+  into the rest of the stack. <!-- TODO: quantum sdk to sys layer -->
 * Use Case implementations and Problem Transformations provide highly individual
   interfaces since the problems they accept depend on their purpose.
 * Integration Tooling can provide access to the Use Case implementations and
