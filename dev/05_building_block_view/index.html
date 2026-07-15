@@ -1,0 +1,1653 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://fullstaqd.github.io/architecture/dev/05_building_block_view/">
+      
+      
+        <link rel="prev" href="../04_solution_strategy/">
+      
+      
+        <link rel="next" href="../06_runtime_view/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+    
+    
+      
+        <title>Building Block View - FullStaQD Reference Architecture</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#section-building-block-view" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<style>
+  [data-md-component="announce"] .md-banner {
+    background-color: #f4a500;
+  }
+  [data-md-component="announce"] .md-banner .md-banner__inner {
+    font-size: medium;
+    color: var(--md-typeset-color);
+  }
+</style>
+<b>⚠️ Internal pre-release:</b>
+Please let us know about any issues you find with this architecture by
+<a href="https://github.com/FullStaQD/architecture/issues/new/choose">opening an issue</a>.
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="FullStaQD Reference Architecture" class="md-header__button md-logo" aria-label="FullStaQD Reference Architecture" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FullStaQD Reference Architecture
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Building Block View
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fullstaqd/architecture" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    FullStaQD/architecture
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="FullStaQD Reference Architecture" class="md-nav__button md-logo" aria-label="FullStaQD Reference Architecture" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FullStaQD Reference Architecture
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fullstaqd/architecture" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    FullStaQD/architecture
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_introduction_and_goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction and Goals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_architecture_constraints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Constraints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_context_and_scope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Context and Scope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_solution_strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building Block View
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building Block View
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_whitebox_overall_system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Whitebox Overall System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Whitebox Overall System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motivation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contained-building-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contained Building Blocks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contained Building Blocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Interfaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Important Interfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#between-the-application-and-system-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Between the Application and System Layers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#between-the-system-and-physical-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Between the System and Physical Layers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_level_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_white_box_app_layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        White Box Application Layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="White Box Application Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motivation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motivation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contained-building-blocks_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contained Building Blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-interfaces_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Interfaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_white_box_sys_layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        White Box System Layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="White Box System Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motivation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motivation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contained-building-blocks_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contained Building Blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-interfaces_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Interfaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_white_box_phys_layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        White Box Physical Layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="White Box Physical Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motivation_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motivation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contained-building-blocks_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contained Building Blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-interfaces_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Interfaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_runtime_view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runtime View
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_deployment_view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment View
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-cutting Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_architecture_decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Decisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_quality_requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_technical_risks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risks and Technical Debts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12_glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_whitebox_overall_system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Whitebox Overall System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Whitebox Overall System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motivation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contained-building-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contained Building Blocks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contained Building Blocks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Interfaces
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Important Interfaces">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#between-the-application-and-system-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Between the Application and System Layers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#between-the-system-and-physical-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Between the System and Physical Layers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_level_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Level 2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_white_box_app_layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        White Box Application Layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="White Box Application Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motivation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motivation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contained-building-blocks_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contained Building Blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-interfaces_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Interfaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_white_box_sys_layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        White Box System Layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="White Box System Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motivation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motivation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contained-building-blocks_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contained Building Blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-interfaces_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Interfaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_white_box_phys_layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        White Box Physical Layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="White Box Physical Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motivation_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motivation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contained-building-blocks_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contained Building Blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-interfaces_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Interfaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/fullstaqd/architecture/edit/main/docs/05_building_block_view.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/fullstaqd/architecture/raw/main/docs/05_building_block_view.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="section-building-block-view">Building Block View</h1>
+<h2 id="_whitebox_overall_system">Whitebox Overall System</h2>
+<figure>
+  <img alt="" src="../images/Building-Blocks-L1.excalidraw.png" />
+</figure>
+<h3 id="motivation">Motivation</h3>
+<p>Quantum software is highly complex, so we use a layered architecture to
+decompose such systems into three layers: the Application, System, and Physical
+Layer.
+We rectify this decision with the following three perspectives:</p>
+<ul>
+<li><strong>Abstraction:</strong> Software in the Application Layer is implemented on a high
+  level and independently from concrete quantum devices.
+  The System Layer compiles high-level specifications into device-specific
+  instructions and software in the Physical Layer targets specific devices with
+  low-level control.</li>
+<li><strong>Skills</strong>: Developing software for the Application Layer requires abstract
+  knowledge of quantum computing (e.g. the circuit model) but no understanding
+  of its physical implementations is required.
+  For working on the System Layer, developers need to have a broad understanding
+  of various quantum device architectures and
+  <a href="../07_deployment_view/">deployment concerns</a>.
+  Detailed knowledge for concrete quantum devices is required to program and
+  operate quantum backends in the Physical Layer.</li>
+<li><strong>Operation</strong>: In the Application Layer, manual programming or specification for
+  individual use cases is required.
+  Compilation in the System Layer is mostly automated with only high-level
+  compilation settings needing to be configured.
+  Execution on the Physical Layer is fully automated.</li>
+</ul>
+<h3 id="contained-building-blocks">Contained Building Blocks</h3>
+<h4 id="application-layer">Application Layer</h4>
+<p>This layer will involve use-case-specific quantum and hybrid programs, written
+in high-level languages using algorithms, SDKs and libraries.</p>
+<h5 id="quality-characteristics">Quality Characteristics</h5>
+<ul>
+<li>The Application Layer must be extensible for new quantum and hybrid
+  algorithms.</li>
+<li>The Application Layer must be extensible for new quantum programming
+  abstractions.</li>
+<li>The Application Layer must be extensible for new quantum applications.</li>
+</ul>
+<h5 id="see-also">See also</h5>
+<ul>
+<li><a href="#_white_box_app_layer">Whitebox view of the Application Layer</a></li>
+</ul>
+<h4 id="system-layer">System Layer</h4>
+<p>The System Layer is responsible for compiling high-level program specifications
+from the Application Layer to low-level, device-specific instructions to be
+executed in the Physical Layer, taking into account the quantum device
+architecture (e.g. physical implementation such as superconducting or neutral
+atom qubits, topology / connectivity)
+and possibly HPC concerns.</p>
+<h5 id="quality-characteristics_1">Quality Characteristics</h5>
+<ul>
+<li>The System Layer must be extensible for new quantum device architectures.</li>
+<li>The System Layer must be extensible for new quantum compilation passes.</li>
+<li>The System Layer should be extensible to work with different intermediate
+  representations.</li>
+<li>The System Layer should minimise execution cost by optimising generated
+  instructions.</li>
+</ul>
+<h5 id="see-also_1">See also</h5>
+<ul>
+<li><a href="#_white_box_sys_layer">Whitebox view of the System Layer</a></li>
+</ul>
+<h4 id="physical-layer">Physical Layer</h4>
+<p>The Physical Layer executes the programs it receives from the System Layer by
+controlling the physical quantum device.
+It is also responsible for calibrating the device and monitoring it (e.g.
+fidelities).</p>
+<h5 id="quality-characteristics_2">Quality Characteristics</h5>
+<ul>
+<li>The classical co-processor must be able to run decoders in real-time.</li>
+</ul>
+<h5 id="see-also_2">See also</h5>
+<ul>
+<li><a href="#_white_box_phys_layer">Whitebox view of the Physical Layer</a></li>
+</ul>
+<h3 id="important-interfaces">Important Interfaces</h3>
+<h4 id="between-the-application-and-system-layers">Between the Application and System Layers</h4>
+<p>The interface between the Application and System Layers needs to serve the
+following needs:</p>
+<ul>
+<li>It needs to transmit program specifications from the Application Layer to the
+  System Layer.
+  In the short term, low-level representations like OpenQASM or Qrisp's
+  intermediate representation format will suffice but in the long term, programs
+  written in high-level quantum programming languages (like
+  <a href="https://doi.org/10.1109/QCE60285.2024.10293">QPI</a>) will be transmitted,
+  represented as their source code.</li>
+<li>It needs to allow submitting program specification for compilation and
+  execution with suitable options available for configuring the compiler.
+  Furthermore, the progress and results of execution and compilation tasks
+  should be reported back to the Application Layer.</li>
+</ul>
+<p>In the reference implementation, this interface will at first be realised with
+<a href="https://qrisp.eu/reference/Jasp/MLIR%20Interface.html">Qrisp's MLIR interface</a>
+which currently supports low-level states and operations but is intended to
+capture Qrisp's <a href="https://qrisp.eu/index.html#key-features">high-level features</a>
+at some point.
+The concrete interface for submitting compilation and execution jobs is yet to
+be determined.</p>
+<h4 id="between-the-system-and-physical-layers">Between the System and Physical Layers</h4>
+<p>The interface between the System and Physical Layers needs to serve the
+following needs:</p>
+<ul>
+<li>It needs to allow the System Layer to submit low-level quantum program
+  specifications to the Physical Layer.</li>
+<li>It needs to allow the System Layer to query properties (like hardware
+  architecture, instruction set, topology or gate fidelities) of the quantum
+  device managed by the system layer. </li>
+</ul>
+<p>In the reference implementation, the
+<a href="https://munich-quantum-software-stack.github.io/QDMI/">Quantum Device Management Interface (QDMI)</a>
+will be used as its
+<a href="https://munich-quantum-software-stack.github.io/QDMI/latest/md_docs_2rationale.html">Job and Query interfaces</a>
+satisfy these needs exactly.</p>
+<h2 id="_level_2">Level 2</h2>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The internal architecture of each layer is under the authority of the
+respective team.
+This section shallowly digs into the details the layers nonetheless to give
+an overview of each layer's responsibilities.
+Understanding this separation of concerns is a necessary precondition for
+analysing the interfaces between the layers.</p>
+</div>
+<h3 id="_white_box_app_layer">White Box Application Layer</h3>
+<figure>
+  <img alt="" src="../images/Building-Blocks-L2-Application-Layer.excalidraw.png" />
+</figure>
+<h4 id="motivation_1">Motivation</h4>
+<p>A lot of different software components exist that can be classified as part of
+the Application Layer and the above figure presents a rough sketch of their
+dependencies.
+Most quantum software that is freely available today makes use of (usually
+python-based) SDKs to build quantum circuits.
+Furthermore, many tools exist for transforming various scientific, engineering
+and commercial problems into quantum formulations, and there exist several tools
+for configuring these transformations in a low-code manner.
+Fully developed quantum solutions will likely have to implement a custom
+component in the long term to interface between existing systems and the quantum
+software stack.</p>
+<h4 id="contained-building-blocks_1">Contained Building Blocks</h4>
+<ul>
+<li><strong>Use Case:</strong> This component encapsulates the configuration of the quantum
+  software stack for a specific use case.
+  It is also responsible for interfacing with External IT Systems if the quantum
+  application is to be integrated into an existing IT system
+  (see <a href="../03_context_and_scope/">context section</a>).
+  As the Use Case component characterises the interface between quantum and
+  classical computation, it will have one or more dedicated
+  <a href="../12_glossary/#quantum-kernel"><strong>Quantum Kernels</strong></a> which encapsulate the
+  parts of the program that are to be run on a quantum computer. 
+  Use Case components are highly specific for the context and task they are used
+  in.
+  Reusable code will often live in the Quantum SDK or Problem Transformation
+  libraries.</li>
+<li><strong>Integration Tooling</strong>: Some tools specifically target the task of
+  integrating quantum applications into existing IT infrastructure.
+  This includes for example <strong>Workflow Modeling</strong> tools (e.g. with the
+  <a href="https://docs.hub.kipu-quantum.com">Kipu Quantum Hub</a>) and <strong>Problem
+  Decomposition</strong> tools (e.g. with the
+  <a href="https://tva.kastel.kit.edu/english/research_177.php">ProvideQ Toolbox</a>)
+  which improve the accessibility of quantum computing and provide
+  standardised web APIs which can be integrated into typical IT
+  infrastructure more easily.
+  Integration tools typically depend on Use Case implementations which they
+  wrap with their own abstractions and interfaces but they can also take a
+  more fine-grained approach and provide direct access to the Problem
+  Transformation and Quantum SDK building blocks. </li>
+<li><strong>Problem Transformations:</strong> This component is symbolic for the many
+  available tools for transforming scientific, engineering and commercial
+  problems into quantum formulations (e.g.
+  <a href="https://qubovert.readthedocs.io/en/latest/">qubovert</a>,
+  <a href="https://github.com/qiskit-community/qiskit-finance">Qiskit Finance</a>).
+  Many of these tools directly use the Quantum SDK's building blocks.</li>
+<li><strong>Quantum SDK:</strong> The Quantum SDK contains common building blocks for quantum
+  software such as circuits and types (e.g.
+  <a href="https://qrisp.eu/reference/Core/index.html#quantumvariable">qrisp's quantum variables</a>),
+  algorithm templates (e.g. VQE, QAOA, QPE) and optimisers (e.g. Adam or
+  Rotosolve) for hybrid algorithms.
+  Popular examples for Quantum SDKs include <a href="https://qrisp.eu">Eclipse's qrisp</a>,
+  <a href="https://github.com/Qiskit/qiskit">IBM's Qiskit</a> and
+  <a href="https://pennylane.ai">Xanadu's Pennylane</a>.</li>
+</ul>
+<h4 id="important-interfaces_1">Important Interfaces</h4>
+<p>We have described the building blocks merely through an abstract
+characterisation above, and we will characterise the interfaces between them in
+a similar fashion:</p>
+<ul>
+<li>One major interface is provided by the Quantum SDK, the language that
+  developers use to specify their quantum applications, and therefore, Use Case
+  implementations, Problem Transformations and some Integration Tooling may
+  depend on the chosen Quantum SDK.
+  The <a href="https://unitaryfoundation.github.io/survey-2025/#Software">2025 Quantum Open Source Survey</a>
+  shows that there is currently no single favourite among the available
+  Quantum SDKs, so to facilitate adoption of a standardised quantum software
+  stack, it will be important to build integrations of multiple popular SDKs
+  into the rest of the stack. <!-- TODO: quantum sdk to sys layer --></li>
+<li>Use Case implementations and Problem Transformations provide highly individual
+  interfaces since the problems they accept depend on their purpose.</li>
+<li>Integration Tooling can provide access to the Use Case implementations and
+  Problem Transformations with a unified interfaces (e.g. for progress updates
+  and configuration) but the data/payload types for the submitted problem
+  instances are still specific to the Use Case implementation and Problem
+  Transformation which they wrap. </li>
+</ul>
+<h3 id="_white_box_sys_layer">White Box System Layer</h3>
+<figure>
+  <img alt="" src="../images/Building-Blocks-L2-System-Layer.excalidraw.png" />
+</figure>
+<h4 id="motivation_2">Motivation</h4>
+<p>The main task of the System Layer is compile translate high-level quantum
+program specifications into low-level programs that can be executed on physical
+quantum hardware.
+Furthermore, the system layer also covers the integration into high-performance
+computing (HPC) systems.
+These two responsibilities are realised through separate building blocks:
+the <strong>HPC Runtime</strong> component and the <strong>Compiler</strong> component.</p>
+<h4 id="contained-building-blocks_2">Contained Building Blocks</h4>
+<ul>
+<li><strong>HPC Runtime:</strong> This component covers the integration of quantum and hybrid
+  programs into HPC systems.
+  It includes the following components:<ul>
+<li>The <strong>Runtime Compiler</strong> is based on the full Compiler component
+  but focuses on compilation tasks which must be done during the runtime of a
+  quantum HPC workload (e.g. re-optimising circuits instructions for changing
+  properties of the hardware such as gate fidelities).</li>
+<li>A specialised <strong>Resource Scheduler</strong> might be necessary to allow the HPC
+  system to take into account QPU resources.</li>
+</ul>
+</li>
+<li><strong>Compiler:</strong> The purpose of a hybrid quantum compiler is to translate the
+  high-level program specification from the application to low-level
+  instructions executable on the physical layer.
+  It includes the following sub-components:
+  It includes a <strong>Frontend</strong> that acts as a facade to the compiler that parses a
+  some program specification format (e.g. source code or an intermediate
+  representation), splits it into a classical and a
+  <a href="../12_glossary/#quantum-kernel">quantum kernel</a>, and calls the classical and
+  quantum compiler with these kernels, respecitvely.<ul>
+<li><strong>Frontend:</strong> A Frontend acts as a facade to the compiler that parses some
+  program specification format (such as source code or an intermediate
+  representation, splits it into a classical and a
+  <a href="../12_glossary/#quantum-kernel">quantum kernel</a>, and calls the Classical
+  and Quantum Compiler with these kernels, respectively.
+  The term "frontend" is to be understood as a programming language frontend
+  for the compiler (cf.
+  <a href="https://gcc.gnu.org/frontends.html"><code>gcc</code>'s page on frontends</a>), meaning
+  frontends for different languages or SDKs could be integrated in the future.</li>
+<li><strong>Classical Compiler:</strong> Integrates established compiler infrastructure (e.g.
+  <a href="https://gcc.gnu.org"><code>gcc</code></a>) to compile classical parts of the program with
+  state-of-the-art optimisations.</li>
+<li><strong>Quantum Compiler:</strong> Compiles high-level specifications of
+  <a href="../12_glossary/#quantum-kernel">quantum-kernels</a> to low-level,
+  device-specific instructions.
+  The compilation process involves passes and dialects and it is extensible
+  through a plugin system.</li>
+<li><strong>Backend:</strong> The backend is a bridge between the Compiler and the Physical
+  Layer.</li>
+</ul>
+</li>
+</ul>
+<h4 id="important-interfaces_2">Important Interfaces</h4>
+<ul>
+<li>As discussed in the interfaces section for the
+  <a href="#_whitebox_overall_system">overall system</a>, the interface to the
+  Application Layer needs to allow submitting program specifications for
+  compilation and execution.
+  There might be different formats (i.e. languages) for high-level program
+  specifications and the compiler will be able to handle different formats
+  through multiple Frontend components, one for each format.</li>
+<li>The <a href="#_whitebox_overall_system">overall system</a> interface section also
+  discussed that the interface between the System and Physical Layer needs to
+  allow querying device characteristics and submitting jobs.
+  These capabilities are needed by the Quantum Compiler (for device-specific
+  compilation) and Resource Scheduler (for job submission and resource
+  allocation), respectively.</li>
+<li>Another important interface will be the plugin interface of the Quantum
+  Compiler which will allow for proprietary extensions of the compilation task
+  to contribute compilation passes or dialects.</li>
+<li>The remaining interfaces in the System Layer are internal.</li>
+</ul>
+<p>The reference implementation's concrete interfaces between adjacent layers are
+specified in the <a href="#_whitebox_overall_system">overall system</a> section.
+The Quantum Compiler's plugin interface is still to be designed.</p>
+<h3 id="_white_box_phys_layer">White Box Physical Layer</h3>
+<figure>
+  <img alt="" src="../images/Building-Blocks-L2-Physical-Layer.excalidraw.png" />
+</figure>
+<h4 id="motivation_3">Motivation</h4>
+<p>The Physical Layer is responsible for the execution of quantum programs, either
+on physical quantum hardware or a classical simulator.
+Its implementation is highly dependent on the hardware architecture, vendor and
+concrete device.
+As such, the key architectural characteristic here is to either have the vendor
+implement our interface towards the System Layer, or to implement an adapter
+that translates our interface to the vendor's interface.</p>
+<h4 id="contained-building-blocks_3">Contained Building Blocks</h4>
+<ul>
+<li><strong>Common Quantum Device Interface Adapter:</strong> This component acts as a facade
+  to the quantum device's internals by implementing the common quantum device
+  interface used between the System and Physical Layer.
+  If the quantum simulator or the quantum device firmware already implements the
+  common quantum device interface, this component is not needed.</li>
+<li><strong>Quantum System Controller:</strong> This component contains the firmware of the
+  physical quantum device.
+  It is responsible for controlling the physical quantum device, for example
+  triggering lasers and sensors in superconducting hardware.</li>
+<li><strong>Simulator:</strong> Instead of a physical quantum device with a Quantum System
+  Controller the execution of the quantum program can also be carried out by a
+  quantum computing Simulator running on classical hardware.
+  A Physical Layer implementation will usually either have a simulator or a
+  physical quantum device but not both. </li>
+</ul>
+<h4 id="important-interfaces_3">Important Interfaces</h4>
+<ul>
+<li>The common quantum device interface used by the System Layer to interact with
+  the Physical Layer is described in the
+  <a href="#_whitebox_overall_system">overall system</a> section.</li>
+<li>Within the Physical Layer, the protocols and interfaced used are highly
+  dependent on the concrete quantum device or simulator.
+  This dependency is hidden to the System Layer by the common quantum device
+  interface.</li>
+</ul>
+<p>The reference implementation's concrete interfaces between adjacent layers are
+specified in the <a href="#_whitebox_overall_system">overall system</a> section.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.action.edit", "content.action.view"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

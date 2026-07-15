@@ -1,0 +1,1585 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://fullstaqd.github.io/architecture/dev/10_quality_requirements/">
+      
+      
+        <link rel="prev" href="../09_architecture_decisions/">
+      
+      
+        <link rel="next" href="../11_technical_risks/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+    
+    
+      
+        <title>Quality Requirements - FullStaQD Reference Architecture</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#section-quality-scenarios" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<style>
+  [data-md-component="announce"] .md-banner {
+    background-color: #f4a500;
+  }
+  [data-md-component="announce"] .md-banner .md-banner__inner {
+    font-size: medium;
+    color: var(--md-typeset-color);
+  }
+</style>
+<b>⚠️ Internal pre-release:</b>
+Please let us know about any issues you find with this architecture by
+<a href="https://github.com/FullStaQD/architecture/issues/new/choose">opening an issue</a>.
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="FullStaQD Reference Architecture" class="md-header__button md-logo" aria-label="FullStaQD Reference Architecture" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FullStaQD Reference Architecture
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Quality Requirements
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fullstaqd/architecture" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    FullStaQD/architecture
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="FullStaQD Reference Architecture" class="md-nav__button md-logo" aria-label="FullStaQD Reference Architecture" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FullStaQD Reference Architecture
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fullstaqd/architecture" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    FullStaQD/architecture
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_introduction_and_goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction and Goals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_architecture_constraints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Constraints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_context_and_scope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Context and Scope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_solution_strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_building_block_view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building Block View
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_runtime_view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runtime View
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_deployment_view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment View
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-cutting Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_architecture_decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Decisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality Requirements
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_quality_requirements_overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Requirements Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-requirements-for-the-reference-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Requirements for the Reference Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quality Requirements for the Reference Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#efficient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Efficient
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flexible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flexible
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintainable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintainable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reliable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reliable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-requirement-for-the-implementation-of-an-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Requirement for the implementation of an Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quality Requirement for the implementation of an Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#efficient_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Efficient
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flexible_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flexible
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintainable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintainable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reliable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reliable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_quality_scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Scenarios
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_technical_risks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risks and Technical Debts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12_glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_quality_requirements_overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Requirements Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-requirements-for-the-reference-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Requirements for the Reference Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quality Requirements for the Reference Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#efficient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Efficient
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flexible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flexible
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintainable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintainable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reliable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reliable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-requirement-for-the-implementation-of-an-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Requirement for the implementation of an Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quality Requirement for the implementation of an Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#efficient_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Efficient
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flexible_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flexible
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maintainable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Maintainable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reliable_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reliable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_quality_scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Scenarios
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/fullstaqd/architecture/edit/main/docs/10_quality_requirements.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/fullstaqd/architecture/raw/main/docs/10_quality_requirements.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="section-quality-scenarios">Quality Requirements</h1>
+<p>As briefly mentioned in the <a href="../01_introduction_and_goals/">Introduction and Goals section</a>, there are quality goals, we want to achieve in the FullStaQD reference architecture. 
+In this section, we want to describe these goals in more detail and want to present some scenarios, in which they are needed.</p>
+<h2 id="_quality_requirements_overview">Quality Requirements Overview</h2>
+<p>We sort the quality requirements after the <a href="https://quality.arc42.org/qualities/">arc42 quality model</a>. Afterwards, we present the scenarios that can appear in the reference architecture, and we define which quality goal needs to be fulfilled in each scenario. We use "reference architecture" to define the quality goals of the concept and "architecture" for the realization of such an architecture.</p>
+<h2 id="quality-requirements-for-the-reference-architecture">Quality Requirements for the Reference Architecture</h2>
+<h3 id="efficient">Efficient</h3>
+<table>
+<thead>
+<tr>
+<th>Quality Goal</th>
+<th>Description</th>
+<th>Scenario ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Coherence</td>
+<td>The reference architecture is logically or aesthetically ordered or integrated.</td>
+<td>SC1</td>
+</tr>
+<tr>
+<td>Latency</td>
+<td>The data transmission latency between components e.G. between quantum device and QEC decoder must be minimised.</td>
+<td></td>
+</tr>
+<tr>
+<td>Profitability</td>
+<td>The reference architecture needs to be profitable in an industrial sense.</td>
+<td></td>
+</tr>
+<tr>
+<td>Resource utilization</td>
+<td>The quantum compiler should optimise quantum programs in order to minimise the number of required qubits and gates.</td>
+<td>SC6</td>
+</tr>
+<tr>
+<td>Simplicity</td>
+<td>The reference architecture needs to be easy to read, understand, and correctly modify.</td>
+<td>SC1</td>
+</tr>
+<tr>
+<td>Sustainability</td>
+<td>The reference architecture has to meet the needs of the present without compromising the ability of future generations to meet their own needs. It emphasizes the long-term viability, resilience, and adaptability of the system, considering environmental, economic, and social factors.</td>
+<td>SC2, SC3, SC8</td>
+</tr>
+</tbody>
+</table>
+<h3 id="flexible">Flexible</h3>
+<table>
+<thead>
+<tr>
+<th>Quality Goal</th>
+<th>Description</th>
+<th>Scenario ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adaptability</td>
+<td>The reference architecture needs to be capable to be effectively and efficiently adapted for or transferred to different hardware.</td>
+<td>SC2, SC3, SC4</td>
+</tr>
+<tr>
+<td>Agility</td>
+<td>The reference architecture can be rapidly changed, if needed.</td>
+<td>SC2, SC3, SC4, SC5, SC8</td>
+</tr>
+<tr>
+<td>Composability</td>
+<td>The components of the reference architecture should be exchangeable with equivalent components e.G. different hardware backends.</td>
+<td></td>
+</tr>
+<tr>
+<td>Configurability</td>
+<td>The components of the reference architecture needs to be configurable to support specific needs of the user and be more adaptable.</td>
+<td>SC2, SC3, SC4, SC8</td>
+</tr>
+<tr>
+<td>Evolvability</td>
+<td>The reference architecture needs to adapt to changes in its environment, requirements, and implementation technologies in a cost-effective way.</td>
+<td>SC2, SC3, SC5, SC8</td>
+</tr>
+<tr>
+<td>Extensibility</td>
+<td>We want to be able to extend quantum software systems with new compilation passes, problem transformations and applications.</td>
+<td>SC2, SC3, SC4</td>
+</tr>
+<tr>
+<td>Integrability</td>
+<td>The reference architecture can integrate software components or systems with ease into the existing IT infrastructure of stakeholders.</td>
+<td>SC2, SC3, SC4, SC8</td>
+</tr>
+<tr>
+<td>Interchangeability</td>
+<td>The reference architecture should be interchangeable, which allows it to substitute one component, part, or element with another of the same type without requiring modifications to the system or loss of functionality.</td>
+<td>SC3</td>
+</tr>
+<tr>
+<td>Internationalization</td>
+<td>The reference architecture should be understandable to an international audience.</td>
+<td></td>
+</tr>
+<tr>
+<td>Scalability</td>
+<td>Because of the rapidly evolving field of quantum technology, the reference architecture should be scalable in terms of job size, kernel amount, ....</td>
+<td>SC8</td>
+</tr>
+</tbody>
+</table>
+<h3 id="maintainable">Maintainable</h3>
+<table>
+<thead>
+<tr>
+<th>Quality Goal</th>
+<th>Description</th>
+<th>Scenario ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modularity</td>
+<td>The reference architecture needs to limit changes to one component from affecting other components, e.g. exchanging quantum hardware should not affect the application layer.</td>
+<td>SC3</td>
+</tr>
+<tr>
+<td>Updateability</td>
+<td>The reference architecture needs to be capable to efficiently receive, install, and integrate updates, patches, security fixes, and minor enhancements while maintaining system integrity and minimizing service disruption.</td>
+<td>SC5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="operable">Operable</h3>
+<table>
+<thead>
+<tr>
+<th>Quality Goal</th>
+<th>Description</th>
+<th>Scenario ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Interoperability</td>
+<td>The reference architecture should be able to work with other products or systems.</td>
+<td>SC2, SC3, SC4, SC8</td>
+</tr>
+<tr>
+<td>Understandability</td>
+<td>The reference architecture should be presented so that (somebody) can easily comprehend it.</td>
+<td>SC1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="reliable">Reliable</h3>
+<table>
+<thead>
+<tr>
+<th>Quality Goal</th>
+<th>Description</th>
+<th>Scenario ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Durability</td>
+<td>The reference architecture has to remain useful and meet user needs over a long period, particularly in the face of changing business requirements and technological advancements.</td>
+<td>SC2, SC3, SC4, SC5, SC8</td>
+</tr>
+<tr>
+<td>Functional suitability</td>
+<td>The reference architecture should provide functions that meet stated and implied needs of intended users when it is used under specified conditions.</td>
+<td></td>
+</tr>
+<tr>
+<td>Stability</td>
+<td>The reference architecture remains largely unchanged, when adding new features.</td>
+<td>SC2 SC3, SC4, SC8</td>
+</tr>
+</tbody>
+</table>
+<h3 id="usable">Usable</h3>
+<table>
+<thead>
+<tr>
+<th>Quality Goal</th>
+<th>Description</th>
+<th>Scenario ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accessibility</td>
+<td>The reference architecture needs to be usable by people with the widest range of characteristics and capabilities to achieve a specified goal in a specified context of use.</td>
+<td>SC1</td>
+</tr>
+<tr>
+<td>Discoverability</td>
+<td>The reference architecture needs to be well documented and presented, so that users can find easily new or unknown features, content, and functionalities within a product or system without prior knowledge of their existence.</td>
+<td>SC1</td>
+</tr>
+<tr>
+<td>Inclusivity</td>
+<td>The reference architecture is intended be utilised by people of various backgrounds</td>
+<td>SC1</td>
+</tr>
+<tr>
+<td>Intuitiveness</td>
+<td>The reference architectures interface, behavior, and information, enabling immediate understanding and effective use without prior learning or training.</td>
+<td>SC1</td>
+</tr>
+<tr>
+<td>Readability</td>
+<td>The reference architecture needs to be easy to read</td>
+<td>SC1</td>
+</tr>
+<tr>
+<td>Self-descriptiveness</td>
+<td>The reference architecture should be able to present appropriate information, where needed by the user, to make its capabilities and use immediately obvious to the user without excessive interactions with a product or other resources.</td>
+<td>SC1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="quality-requirement-for-the-implementation-of-an-architecture">Quality Requirement for the implementation of an Architecture</h2>
+<h3 id="efficient_1">Efficient</h3>
+<table>
+<thead>
+<tr>
+<th>Quality Goal</th>
+<th>Description</th>
+<th>Scenario ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cohesion</td>
+<td>The modules of the architecture belong and work together as intended.</td>
+<td></td>
+</tr>
+<tr>
+<td>Compliance</td>
+<td>The architecture should obey the rules of state of the art standards.</td>
+<td></td>
+</tr>
+<tr>
+<td>Conciseness</td>
+<td>The architectures content needs to be clearly but briefly described.</td>
+<td>SC1</td>
+</tr>
+<tr>
+<td>Effectiveness</td>
+<td>The architecture is able to produce the desired result/output.</td>
+<td></td>
+</tr>
+<tr>
+<td>Efficiency</td>
+<td>The architecture capable of producing desired results with little or no waste (as of time or materials).</td>
+<td>SC6</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>The architecture should perform its functions efficiently in the use of of resources and withing a specified time and throughput parameters.</td>
+<td>SC6</td>
+</tr>
+</tbody>
+</table>
+<h3 id="flexible_1">Flexible</h3>
+<table>
+<thead>
+<tr>
+<th>Quality Goal</th>
+<th>Description</th>
+<th>Scenario ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Elasticity</td>
+<td>The architecture needs to be able to adapt to workload changes, while trying to remain as close to the estimated costs as possible.</td>
+<td>SC6</td>
+</tr>
+<tr>
+<td>Independence</td>
+<td>The architectures components should only perform on task and do not excessively interact with other components.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="maintainable_1">Maintainable</h3>
+<table>
+<thead>
+<tr>
+<th>Quality Goal</th>
+<th>Description</th>
+<th>Scenario ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Analysability</td>
+<td>The architecture must be able to detect causes of failure using testing, etc.</td>
+<td></td>
+</tr>
+<tr>
+<td>Maintainability</td>
+<td>The architecture needs must allow modifications with ease after the baseline is established.</td>
+<td></td>
+</tr>
+<tr>
+<td>Testability</td>
+<td>The architecture needs to be capable to enable an objective and feasible test to be designed and performed to determine whether a requirement is met.</td>
+<td></td>
+</tr>
+<tr>
+<td>Verifiability</td>
+<td>The architecture  needs to be capable to be proven correct and complete, allowing for the checking of the correctness of statements or claims, and the replication or confirmation of results by independent means.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="operable_1">Operable</h3>
+<table>
+<thead>
+<tr>
+<th>Quality Goal</th>
+<th>Description</th>
+<th>Scenario ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auditability</td>
+<td>The architecture must fullfil certain checks to be realized</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="reliable_1">Reliable</h3>
+<table>
+<thead>
+<tr>
+<th>Quality Goal</th>
+<th>Description</th>
+<th>Scenario ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Availability</td>
+<td>The architecture should be accessible and operational when required for use.</td>
+<td></td>
+</tr>
+<tr>
+<td>Certifiability</td>
+<td>The architecture has to meet specific regulatory,  or quality standards through demonstration of compliance evidence.</td>
+<td></td>
+</tr>
+<tr>
+<td>Correctness</td>
+<td>The architecture has to provide accurate results when used by intended users for intended functions.</td>
+<td></td>
+</tr>
+<tr>
+<td>Data Integrity</td>
+<td>The architecture must ensure that the used data remains unaltered and consistent from creation to deletion, maintaining its original state unless specifically modified through authorized processes.</td>
+<td>SC7</td>
+</tr>
+<tr>
+<td>Fault isolation</td>
+<td>The architecture needs methods that enables to identify which component or parameter of the system is responsible for a fault or the symptoms of the faulty behavior.</td>
+<td>SC5</td>
+</tr>
+<tr>
+<td>Fault tolerance</td>
+<td>The architecture should be capable to operate as intended despite the presence of  hardware or software faults.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="secure">Secure</h3>
+<table>
+<thead>
+<tr>
+<th>Quality Goal</th>
+<th>Description</th>
+<th>Scenario ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Confidentiality</td>
+<td>The architecture should not give access to data to entities which are unauthorized to have access.</td>
+<td>SC7</td>
+</tr>
+<tr>
+<td>Privacy</td>
+<td>The architecture should only collect the necessary personal information and delete it when it is no longer needed.</td>
+<td>SC7</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_quality_scenarios">Quality Scenarios</h2>
+<table>
+<thead>
+<tr>
+<th>Scenario ID</th>
+<th>Scenario</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SC1</td>
+<td>Getting Introduced to the Architecture</td>
+<td>A new user (independently of his background) can understand the architecture with ease and use it</td>
+</tr>
+<tr>
+<td>SC2</td>
+<td>New Programming Language</td>
+<td>A new programming language for quantum computing is introduced, is not represented in the reference architecture and can easily be integrated.</td>
+</tr>
+<tr>
+<td>SC3</td>
+<td>New Hardware Provider</td>
+<td>A new hardware is introduced, which should be integrated with ease into the reference architecture.</td>
+</tr>
+<tr>
+<td>SC4</td>
+<td>Integration of HPC</td>
+<td>The possibility that a Stakeholder wants to use a program, which needs a HPC and a quantum processor.</td>
+</tr>
+<tr>
+<td>SC5</td>
+<td>Errors in the Architecture</td>
+<td>A Stakeholder finds an undefined space or error in the reference architecture and can report it.</td>
+</tr>
+<tr>
+<td>SC6</td>
+<td>Cost Estimation of Quantum Program</td>
+<td>A Stakeholder pays a certain amount of money per time period for his program and gets information how long his program runs.</td>
+</tr>
+<tr>
+<td>SC7</td>
+<td>Running a job</td>
+<td>When a job is run in architecture, the job content must be protected from outside interference to prevent research from being accessed.</td>
+</tr>
+<tr>
+<td>SC8</td>
+<td>A new architecture is introduced</td>
+<td>A new architecture/stack for the quantum eco system is introduced, which may or may not be similar to our reference architecture can be integrated.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.action.edit", "content.action.view"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
