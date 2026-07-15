@@ -1,0 +1,1504 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://fullstaqd.github.io/architecture/0.1.0/06_runtime_view/">
+      
+      
+        <link rel="prev" href="../05_building_block_view/">
+      
+      
+        <link rel="next" href="../07_deployment_view/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+    
+    
+      
+        <title>Runtime View - FullStaQD Reference Architecture</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#section-runtime-view" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+            
+<style>
+  [data-md-component="announce"] .md-banner {
+    background-color: #f4a500;
+  }
+  [data-md-component="announce"] .md-banner .md-banner__inner {
+    font-size: medium;
+    color: var(--md-typeset-color);
+  }
+</style>
+<b>⚠️ Internal pre-release:</b>
+Please let us know about any issues you find with this architecture by
+<a href="https://github.com/FullStaQD/architecture/issues/new/choose">opening an issue</a>.
+
+          </div>
+          
+        </aside>
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="FullStaQD Reference Architecture" class="md-header__button md-logo" aria-label="FullStaQD Reference Architecture" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FullStaQD Reference Architecture
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Runtime View
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/fullstaqd/architecture" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    FullStaQD/architecture
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="FullStaQD Reference Architecture" class="md-nav__button md-logo" aria-label="FullStaQD Reference Architecture" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    FullStaQD Reference Architecture
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/fullstaqd/architecture" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    FullStaQD/architecture
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_introduction_and_goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction and Goals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_architecture_constraints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Constraints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_context_and_scope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Context and Scope
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_solution_strategy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Solution Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_building_block_view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building Block View
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runtime View
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Runtime View
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_runtime_scenario_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantum simulation for material science, chemistry and physics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quantum simulation for material science, chemistry and physics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-layer-downwards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Layer - Downwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-layer-downwards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Layer - Downwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-layer-upwards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Layer - Upwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-layer-upwards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Layer - Upwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_runtime_scenario_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantum Cloud Services
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quantum Cloud Services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-layer-downwards_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Layer - Downwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-layer-downwards_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Layer - Downwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-layer-downwards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical Layer - Downwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-layer-upwards_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Layer - Upwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-layer-upwards_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Layer - Upwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_runtime_scenario_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embedded QPU
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Embedded QPU">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-layer-downwards_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Layer - Downwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-layer-downwards_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Layer - Downwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-layer-downwards_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical Layer - Downwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-layer-upwards_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Layer - Upwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-layer-upwards_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Layer - Upwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_deployment_view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment View
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cross-cutting Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_architecture_decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Decisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_quality_requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quality Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_technical_risks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risks and Technical Debts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12_glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_runtime_scenario_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantum simulation for material science, chemistry and physics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quantum simulation for material science, chemistry and physics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-layer-downwards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Layer - Downwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-layer-downwards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Layer - Downwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-layer-upwards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Layer - Upwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-layer-upwards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Layer - Upwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_runtime_scenario_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quantum Cloud Services
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quantum Cloud Services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-layer-downwards_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Layer - Downwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-layer-downwards_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Layer - Downwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-layer-downwards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical Layer - Downwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-layer-upwards_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Layer - Upwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-layer-upwards_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Layer - Upwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_runtime_scenario_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Embedded QPU
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Embedded QPU">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-layer-downwards_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Layer - Downwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-layer-downwards_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Layer - Downwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#physical-layer-downwards_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical Layer - Downwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-layer-upwards_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Layer - Upwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-layer-upwards_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Layer - Upwards
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/fullstaqd/architecture/edit/main/docs/06_runtime_view.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/fullstaqd/architecture/raw/main/docs/06_runtime_view.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="section-runtime-view">Runtime View</h1>
+<p>The runtime view documents the concrete behaviour and interaction of the building blocks. Based on <a href="https://link.springer.com/content/pdf/10.1007/978-3-031-64136-7_12.pdf">Carbonelli et al.'s work</a>, we demonstrate how typical quantum use cases are represented in the architecture. The demonstration shows one scenario in detail for each use case, starting at the user input, continuing through the execution, and concluding with the return value to the user.
+We document these steps through an activity diagram, in which each architecture layer is divided by a swim lane.  We focus on the steps and interfaces during the execution process rather than describing the building blocks in detail.</p>
+<!---!!! note "Architecture Note Scenarios"
+
+        - An architecture must work for its use cases
+            - Scenarios can be used to test architectural decisions
+            - Representative scenario selection is crucial -->
+
+<h2 id="_runtime_scenario_1">Quantum simulation for material science, chemistry and physics</h2>
+<p>This scenario describes the how quantum computing can be used for material science, chemistry and physics. </p>
+<p>It has the following specifications:</p>
+<ul>
+<li>Input: molecule specification</li>
+<li>Output: ground state energy</li>
+<li>Used in:</li>
+<li>material science</li>
+<li>battery design,</li>
+<li>catalyst research</li>
+</ul>
+<p><img alt="" src="../images/RuntimeView-scenario1.png" /></p>
+<h3 id="application-layer-downwards">Application Layer - Downwards</h3>
+<ol>
+<li>
+<p>Simulation App:</p>
+<ul>
+<li>The Simulation App is the entry point for this scenario.</li>
+<li>It takes the molecule specification and passes it down to the Hartree-Fock algorithm</li>
+</ul>
+</li>
+<li>
+<p>Hartree-Fock:</p>
+<ul>
+<li>The Hartree-Fock algorithm is the first transformation step to get from the molecule input to a quantum ready representation</li>
+<li>Its input is the molecular geometry in our scenario</li>
+<li>The output are the electron integrals.</li>
+</ul>
+</li>
+<li>
+<p>Hamiltonian Formulator:</p>
+<ul>
+<li>The Hamiltonian formulation maps the electron integrals into a fermonic Hamiltonian.</li>
+</ul>
+</li>
+<li>
+<p>Jordan-Wigner:</p>
+<ul>
+<li>The Jordan-Wigner Transformation allows a qubit representation using a fermonic Hamiltonian and turns it into a spin Hamiltonian, which is equivalent to a set of qubits.</li>
+</ul>
+</li>
+<li>
+<p>VQE (Variational Quantum Eigensolver):</p>
+<ul>
+<li>The VQE Algorithm is a hybrid algorithm, which uses the qubit Hamiltonian to create a parameterised quantum circuit.</li>
+</ul>
+</li>
+<li>
+<p>VQE Program Generator</p>
+<ul>
+<li>With the parametrised circuit the program generator creates a program for the transpilation pipeline in the system layer.</li>
+</ul>
+</li>
+</ol>
+<h3 id="system-layer-downwards">System Layer - Downwards</h3>
+<p>The <a href="https://quantum.cloud.ibm.com/docs/en/guides/transpile">Qiskit Transpilation Pipeline</a> consists of 6 steps:</p>
+<ol>
+<li>
+<p>Initialization Stage</p>
+<ul>
+<li>Using the quantum program from the Application Layer, the transpilation pipeline can start.</li>
+<li>The first step of the transpilation pipeline is breaking down multi- and custom made qubit- gates into one- or two-qubit operations.</li>
+</ul>
+</li>
+<li>
+<p>Layout Stage</p>
+<ul>
+<li>This stage maps the input circuit's virtual qubits to the target's physical hardware qubits.</li>
+<li>Ideally, the algorithm maps the qubit that interact the most next to each other. </li>
+<li>While it does not guarantee continuous connectivity or direct execution validity, finding an optimal initial layout is a important, computationally expensive step that minimizes error rates and reduces the need for subsequent routing.</li>
+</ul>
+</li>
+<li>
+<p>Routing Stage</p>
+<ul>
+<li>As described in the step before, a perfect connectivity between the qubits can not always be achieved. Therefore this stage adds additional operations to adapt to these constraints.</li>
+<li>Using the circuit and hardware topology as inputs, it can create a physically compatible circuit by inserting SWAP gates to move information between previously disconnected qubits.</li>
+</ul>
+</li>
+<li>
+<p>Translation Stage</p>
+<ul>
+<li>This stage rewrites all previously chosen gates into the specific native gates supported by the target hardware's Instruction Set Architecture (ISA). </li>
+</ul>
+</li>
+<li>
+<p>Optimization Stage </p>
+<ul>
+<li>This stage executes low-level, hardware-aware refinements on circuits that are already compatible with the target's Instruction Set Architecture (ISA) to reduce redundancy.</li>
+</ul>
+</li>
+<li>
+<p>Scheduling Stage </p>
+<ul>
+<li>The scheduling stage receives an ISA-compatible circuit and inserts explicit delay instructions to accurately reflect qubit idle periods, hardware timing constraints and to reduce error rate.</li>
+<li>It ensures the final output remains ISA-compatible while updating start-time metadata and optionally applying walltime-sensitive transformations.</li>
+<li>This concludes the Qiskit transpilation pipeline.</li>
+</ul>
+</li>
+<li>
+<p>Circuit-Command Mapping</p>
+<ul>
+<li>Using the ISA-compatible circuit, additional information like number of measurements demanded and a translation table, which translated the commands into backend compatible commands, this steps gives a list of operations to the device and firmware of the hardware.</li>
+</ul>
+</li>
+</ol>
+<h3 id="physical-layer">Physical Layer</h3>
+<ol>
+<li>
+<p>Superconducting Device and Firmware:</p>
+<ul>
+<li>Using digital hardware instructions and pulse definitions, this process converts these commands into physical signals to control operations on the quantum chip. </li>
+<li>It outputs a Microwave Signal List directly to the quantum hardware, translating digital instructions into executable physical actions.</li>
+</ul>
+</li>
+<li>
+<p>Molecule Laser:</p>
+<ul>
+<li>The Molecule Laser uses the Microwave Signal List to execute the quantum operations on the physical hardware.</li>
+<li>When all operations are done, the Molecule Laser sends a status flag to the Energy Sensor</li>
+</ul>
+</li>
+<li>
+<p>Energy Sensor:</p>
+<ul>
+<li>When the Molecule Laser updated its status, this step measures the qubit energy levels </li>
+</ul>
+</li>
+</ol>
+<h3 id="system-layer-upwards">System Layer - Upwards</h3>
+<ol>
+<li>Transpilation<ul>
+<li>In this step, the qubit energy levels are transformed into an expectation value.</li>
+<li>To do this, additional backend data is needed to interpret the measured results.</li>
+</ul>
+</li>
+</ol>
+<h3 id="application-layer-upwards">Application Layer - Upwards</h3>
+<ol>
+<li>
+<p>COBYLA</p>
+<ul>
+<li>COBYLA is a classical optimizer which needs an expectation value as input.</li>
+<li>It compares the expectation value to the last one (if it exists) and tries to optimize the parameters of the VQE algorithm.</li>
+<li>After an local optimal solution is found or the maximum of iterations is reached, the classical optimizer terminates</li>
+</ul>
+</li>
+<li>
+<p>VQE Program Generator</p>
+<ul>
+<li>The Program Generator updates the parameters of the COBYLA algorithm and starts the process again.</li>
+<li>When the classical optimizer terminates, the Program Generator gives the optimal result towards the Error Mitigation Method.</li>
+</ul>
+</li>
+<li>
+<p>Zero Noise Extrapolation</p>
+<ul>
+<li>Zero Noise Extrapolation (ZNE) is a error mitigation method, which can reduce the error rate by using an expectation value and a circuit has input</li>
+<li>It creates a program to measure a new expectation value with a circuit, which has still the same function but uses more gates. </li>
+<li>This process is repeated multiple times and lead towards a noise pattern, which allows to reduce the error rate by extrapolation.</li>
+</ul>
+</li>
+<li>
+<p>Simulation App</p>
+<ul>
+<li>The error-optimized expectation value is given towards the simulation app, which then visualize it as ground state energy for the user.</li>
+</ul>
+</li>
+</ol>
+<h2 id="_runtime_scenario_2">Quantum Cloud Services</h2>
+<p>In this scenario, we want to show how our architecture behaves and interacts using a NP-hard combinatorial optimisation problem. Since the System and Physical Layer are almost identical to the first scenario, we only document the new building blocks. </p>
+<p><img alt="" src="../images/RuntimeView-scenario2.png" /></p>
+<p>It has the following specification:</p>
+<ul>
+<li>Input: Max-Cut instance</li>
+<li>Output: A cut consisting of a set of edges</li>
+<li>Used in:<ul>
+<li>Flight-gate assignment in airports</li>
+<li>Electronic Design Automation</li>
+<li>Trajectory optimization in air traffic</li>
+<li>Paint-shop scheduling</li>
+<li>Planning problems in highly individualised mass production</li>
+</ul>
+</li>
+</ul>
+<h3 id="application-layer-downwards_1">Application Layer - Downwards</h3>
+<ol>
+<li>
+<p>Cloud Optimisation Application:</p>
+<ul>
+<li>Processes the MaxCut problem instance and forwards the information to the QUBO Transformator</li>
+</ul>
+</li>
+<li>
+<p>QUBO Transformator</p>
+<ul>
+<li>Creates a QUBO, using the information of the Cloud Optimisation Application</li>
+</ul>
+</li>
+<li>
+<p>Ising Transformator</p>
+<ul>
+<li>Transforms the QUBO into an Ising Hamiltonian</li>
+</ul>
+</li>
+<li>
+<p>Penalty Encoder</p>
+<ul>
+<li>Checks if the required optimization problem needs a penalty factor and adjusts it.</li>
+</ul>
+</li>
+<li>
+<p>QAOA</p>
+<ul>
+<li>QAOA is a hybrid algorithm which uses tunable parameters.</li>
+<li>It encodes the Ising Hamiltonian into a quantum circuit</li>
+</ul>
+</li>
+<li>
+<p>QAOA Program Generator</p>
+<ul>
+<li>With the parametrised circuit the program generator creates a program for the transpilation pipeline in the system layer.</li>
+</ul>
+</li>
+</ol>
+<h3 id="system-layer-downwards_1">System Layer - Downwards</h3>
+<ol>
+<li>Noise Suppression<ul>
+<li>Noise Supression reduces the error rate by actively canceling noise using clever pulse timing or add redudancy to detect and fix errors.</li>
+<li>It takes an optimized circuit and adds the above mentioned operations.</li>
+</ul>
+</li>
+</ol>
+<h3 id="physical-layer-downwards">Physical Layer - Downwards</h3>
+<p>-- </p>
+<h3 id="system-layer-upwards_1">System Layer - Upwards</h3>
+<p>-- </p>
+<h3 id="application-layer-upwards_1">Application Layer - Upwards</h3>
+<ol>
+<li>SPSA<ul>
+<li>Similar to COBYLA, SPSA is classical optimizer used for optimizing the parameters of the QAOA algorithm. </li>
+<li>It updates the parameters and sends them to the QAOA Program Generator, where the program is computed again until the optimizer terminates.</li>
+</ul>
+</li>
+</ol>
+<h2 id="_runtime_scenario_3">Embedded QPU</h2>
+<p>In this scenario, we demonstrate an integration of a quantum processing unit (QPU) into a hybrid safety software system with non-functional properties.</p>
+<p><img alt="" src="../images/RuntimeView-scenario3.png" /></p>
+<ul>
+<li>Compute the probability of a collision and give it to the executive unit.</li>
+<li>Input: Environment data</li>
+<li>Output: Collision probability</li>
+<li>Used in:</li>
+<li>autonomous driving</li>
+<li>drones</li>
+</ul>
+<h3 id="application-layer-downwards_2">Application Layer - Downwards</h3>
+<ol>
+<li>
+<p>Collision Probability App</p>
+<ul>
+<li>Takes the environment data and forwards the lidar, camera and gps data to the Feature Vector Encoder</li>
+</ul>
+</li>
+<li>
+<p>Feature Vector Encoder</p>
+<ul>
+<li>Encodes a feature vector based on the ionformation of the collision probability app</li>
+</ul>
+</li>
+<li>
+<p>Angle Encoder</p>
+<ul>
+<li>Used the feature vector to create a quantum state, which represents the given information </li>
+</ul>
+</li>
+<li>
+<p>Quantum Kernel Method</p>
+<ul>
+<li>The quantum kernel method creates a qiskit program, which can then be forwarded to the system layer</li>
+</ul>
+</li>
+</ol>
+<h3 id="system-layer-downwards_2">System Layer - Downwards</h3>
+<ol>
+<li>Probabilistic Error Cancellation (PEC_1)<ul>
+<li>Probabilistic Error Cancellation is an error mitigation technique, which reduces the error rate by measuring how much noise each gate creates and creating "ideal", noise-free gates by a combination of the noisy gates. </li>
+<li>Run the circuit multiple times, where the gate you replace is randomly chosen.</li>
+</ul>
+</li>
+</ol>
+<h3 id="physical-layer-downwards_1">Physical Layer - Downwards</h3>
+<p>-- </p>
+<h3 id="system-layer-upwards_2">System Layer - Upwards</h3>
+<ol>
+<li>Probabilistic Error Cancellation (PEC_2)<ul>
+<li>In this step, we finish the PEC from before using the combination of all measurements and creating an average.</li>
+</ul>
+</li>
+</ol>
+<h3 id="application-layer-upwards_2">Application Layer - Upwards</h3>
+<ol>
+<li>Collision Probability App<ul>
+<li>Sends the result to the device/software that requested the job. </li>
+</ul>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.action.edit", "content.action.view"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
