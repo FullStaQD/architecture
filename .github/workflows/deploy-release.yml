@@ -1,0 +1,24 @@
+# Adapted from https://github.com/squidfunk/mkdocs-material/discussions/4759#discussioncomment-4405468
+name: Deploy release version of the docs
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write # for writing to gh-pages branch
+
+jobs:
+  deploy-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+      - name: Install uv
+        uses: astral-sh/setup-uv@v8.3.2
+        with:
+          enable-cache: true
+      - name: Install project dependencies (incl. Python)
+        run: uv sync --locked --all-extras --dev
+      - name: Build Docs Website
+        run: uv run mike deploy --push --update-aliases ${{ github.event.release.tag_name }} latest
