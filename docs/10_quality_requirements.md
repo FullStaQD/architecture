@@ -17,19 +17,19 @@ We sort the quality requirements after the [arc42 quality model](https://quality
 | Profitability  | The reference architecture needs to be profitable in an industrial sense.  | |
 | Resource utilization | The quantum compiler should optimise quantum programs in order to minimise the number of required qubits and gates.  | [SC6](#_quality_scenarios) |
 | Simplicity  | The reference architecture needs to be easy to read, understand, and correctly modify.  | [SC1](#_quality_scenarios) |
-| Sustainability  | The reference architecture has to meet the needs of the present without compromising the ability of future generations to meet their own needs. It emphasizes the long-term viability, resilience, and adaptability of the system, considering environmental, economic, and social factors.  | [SC2](#_quality_scenarios), [SC3](#_quality_scenarios), [SC8](#_quality_scenarios) |
+| Sustainability  | The reference architecture has to meet the needs of the present without compromising the ability of future generations to meet their own needs. It emphasizes the long-term viability, resilience, and adaptability of the system, considering environmental, economic, and social factors.  | [SC2, SC3, SC8](#_quality_scenarios) |
 
 ### Flexible
 
 | Quality Goal  | Description |  Scenario ID |
 | ------------- | ------------- | ------------- |
-| Adaptability  | The reference architecture needs to be capable to be effectively and efficiently adapted for or transferred to different hardware. | [SC2](#_quality_scenarios), [SC3](#_quality_scenarios), [SC4](#_quality_scenarios) |
-| Agility  | The reference architecture can be rapidly changed, if needed.  | [SC2](#_quality_scenarios), [SC3](#_quality_scenarios), [SC4](#_quality_scenarios), [SC5](#_quality_scenarios), [SC8](#_quality_scenarios)|
+| Adaptability  | The reference architecture needs to be capable to be effectively and efficiently adapted for or transferred to different hardware. | [SC2, SC3, SC4](#_quality_scenarios) |
+| Agility  | The reference architecture can be rapidly changed, if needed.  | [SC2, SC3, SC4, SC5, SC8](#_quality_scenarios)|
 | Composability  | The components of the reference architecture should be exchangeable with equivalent components e.G. different hardware backends. |  |
-| Configurability | The components of the reference architecture needs to be configurable to support specific needs of the user and be more adaptable. | [SC2](#_quality_scenarios), [SC3](#_quality_scenarios), [SC4](#_quality_scenarios), [SC8](#_quality_scenarios) |
-| Evolvability  | The reference architecture needs to adapt to changes in its environment, requirements, and implementation technologies in a cost-effective way.  | [SC2](#_quality_scenarios), [SC3](#_quality_scenarios), [SC5](#_quality_scenarios), [SC8](#_quality_scenarios) |
-| Extensibility  | We want to be able to extend quantum software systems with new compilation passes, problem transformations and applications.  | [SC2](#_quality_scenarios), [SC3](#_quality_scenarios), [SC4](#_quality_scenarios)  |
-| Integrability  | The reference architecture can integrate software components or systems with ease into the existing IT infrastructure of stakeholders.  | [SC2](#_quality_scenarios), [SC3](#_quality_scenarios), [SC4](#_quality_scenarios), [SC8](#_quality_scenarios)|
+| Configurability | The components of the reference architecture needs to be configurable to support specific needs of the user and be more adaptable. | [SC2, SC3, SC4, SC8](#_quality_scenarios) |
+| Evolvability  | The reference architecture needs to adapt to changes in its environment, requirements, and implementation technologies in a cost-effective way.  | [SC2, SC3, SC5, SC8](#_quality_scenarios) |
+| Extensibility  | We want to be able to extend quantum software systems with new compilation passes, problem transformations and applications.  | [SC2, SC3, SC4](#_quality_scenarios)  |
+| Integrability  | The reference architecture can integrate software components or systems with ease into the existing IT infrastructure of stakeholders.  | [SC2, SC3, SC4, SC8](#_quality_scenarios)|
 | Interchangeability | The reference architecture should be interchangeable, which allows it to substitute one component, part, or element with another of the same type without requiring modifications to the system or loss of functionality. | [SC3](#_quality_scenarios) |
 | Internationalization  | The reference architecture should be understandable to an international audience. | |
 | Scalability  | Because of the rapidly evolving field of quantum technology, the reference architecture should be scalable in terms of job size, kernel amount, .... | [SC8](#_quality_scenarios) |
@@ -46,7 +46,7 @@ We sort the quality requirements after the [arc42 quality model](https://quality
 
 | Quality Goal  | Description |  Scenario ID |
 | ------------- | ------------- | ------------- |
-| Interoperability  | The reference architecture should be able to work with other products or systems.  | [SC2](#_quality_scenarios), [SC3](#_quality_scenarios), [SC4](#_quality_scenarios), [SC8](#_quality_scenarios) |
+| Interoperability  | The reference architecture should be able to work with other products or systems.  | [SC2, SC3, SC4, SC8](#_quality_scenarios) |
 | Understandability  | The reference architecture should be presented so that (somebody) can easily comprehend it.   | [SC1](#_quality_scenarios) |
 
 
@@ -54,9 +54,9 @@ We sort the quality requirements after the [arc42 quality model](https://quality
 
 | Quality Goal  | Description |  Scenario ID |
 | ------------- | ------------- | ------------- |
-| Durability | The reference architecture has to remain useful and meet user needs over a long period, particularly in the face of changing business requirements and technological advancements.  | [SC2](#_quality_scenarios), [SC3](#_quality_scenarios), [SC4](#_quality_scenarios), [SC5](#_quality_scenarios), [SC8](#_quality_scenarios) |
+| Durability | The reference architecture has to remain useful and meet user needs over a long period, particularly in the face of changing business requirements and technological advancements.  | [SC2, SC3, SC4, SC5, SC8](#_quality_scenarios) |
 | Functional suitability  | The reference architecture should provide functions that meet stated and implied needs of intended users when it is used under specified conditions. | |
-| Stability  |  The reference architecture remains largely unchanged, when adding new features. | [SC2](#_quality_scenarios) [SC3](#_quality_scenarios), [SC4](#_quality_scenarios), [SC8](#_quality_scenarios)  |
+| Stability  |  The reference architecture remains largely unchanged, when adding new features. | [SC2, SC3, SC4, SC8](#_quality_scenarios)  |
 
 ### Usable
 
