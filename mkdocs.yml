@@ -20,3 +20,8 @@ markdown_extensions:
 repo_url: https://github.com/fullstaqd/architecture
 repo_name: FullStaQD/architecture
 edit_uri: edit/main/docs/
+site_url: https://fullstaqd.github.io/architecture/
+
+extra: 
+  version:
+    provider: mike
