@@ -248,14 +248,9 @@ the **HPC Runtime** component and the **Compiler** component.
   high-level program specification from the application to low-level
   instructions executable on the physical layer.
   It includes the following sub-components:
-  It includes a **Frontend** that acts as a facade to the compiler that parses a
-  some program specification format (e.g. source code or an intermediate
-  representation), splits it into a classical and a
-  [quantum kernel](./12_glossary.md#quantum-kernel), and calls the classical and
-  quantum compiler with these kernels, respecitvely.
-    - **Frontend:** A Frontend acts as a facade to the compiler that parses some
-      program specification format (such as source code or an intermediate
-      representation, splits it into a classical and a
+    - **Frontend:** Acts as a facade to the Compiler that parses some
+      program specification format (e.g. source code or an intermediate
+      representation), splits it into a classical and a
       [quantum kernel](./12_glossary.md#quantum-kernel), and calls the Classical
       and Quantum Compiler with these kernels, respectively.
       The term "frontend" is to be understood as a programming language frontend
