@@ -20,5 +20,9 @@ jobs:
           enable-cache: true
       - name: Install project dependencies (incl. Python)
         run: uv sync --locked --all-extras --dev
+      - name: Configure git username and email
+        run: |
+          git config --global user.name "FullStaQD Architecture Automation"
+          git config --global user.email "no-reply@fullstaqd.de"
       - name: Build and deploy dev version
         run: uv run mike deploy --push dev
