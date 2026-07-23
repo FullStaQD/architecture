@@ -1502,15 +1502,10 @@ the <strong>HPC Runtime</strong> component and the <strong>Compiler</strong> com
 <li><strong>Compiler:</strong> The purpose of a hybrid quantum compiler is to translate the
   high-level program specification from the application to low-level
   instructions executable on the physical layer.
-  It includes the following sub-components:
-  It includes a <strong>Frontend</strong> that acts as a facade to the compiler that parses a
-  some program specification format (e.g. source code or an intermediate
+  It includes the following sub-components:<ul>
+<li><strong>Frontend:</strong> Acts as a facade to the Compiler that parses some
+  program specification format (e.g. source code or an intermediate
   representation), splits it into a classical and a
-  <a href="../12_glossary/#quantum-kernel">quantum kernel</a>, and calls the classical and
-  quantum compiler with these kernels, respecitvely.<ul>
-<li><strong>Frontend:</strong> A Frontend acts as a facade to the compiler that parses some
-  program specification format (such as source code or an intermediate
-  representation, splits it into a classical and a
   <a href="../12_glossary/#quantum-kernel">quantum kernel</a>, and calls the Classical
   and Quantum Compiler with these kernels, respectively.
   The term "frontend" is to be understood as a programming language frontend
