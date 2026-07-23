@@ -9,7 +9,13 @@ authors = [
     {name = "Ina Schaefer"}
 ]
 requires-python = ">=3.14"
-dependencies = [
-    "mike>=2.2.0",
-    "mkdocs-material>=9.7.4",
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "mike",
+    "zensical>=0.0.51",
 ]
+
+[tool.uv.sources]
+mike = { git = "https://github.com/squidfunk/mike.git" }
