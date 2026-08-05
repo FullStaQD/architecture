@@ -233,21 +233,21 @@ This scenario covers the use of Quantum Machine Learning in collision detection.
     - Takes the real-time camera images and forwards the image data to the preprocessing
    
 2. Preprocessing
-    - Takes the image data as input and resizes, rescales, denoises, recolors, ... the images for the suited purpose
+    - Takes the image data as input and performs resizing, rescaling, color conversion, region-of-interest extraction and denoising
 
 3. Residual Network (ResNet)
-    - Trained ResNet uses the image data to extract the features of an image
+    - Trained ResNet Backbone uses the image data to extract the features of an image
     - Creates a feature vector and forwards the Principal Component Analysis
 
 4. Principal Component Analysis (PCA)
-    - Uses the feature vectore and reduces the number of features
-
+    - Due to the limitation fof number of qubits, this  reduces the number of features of the feature vector
+      
 5. Angle Encoding
     - Encodes each feature using rotational gates
     - Creates an encoded quantum state 
    
 6. Quantum Neural Network
-    - Appends the encoded quantum state to a parametrised circuit state
+    - Appends the encoded quantum state to a variational circuit circuit
     - Sends programm to the System Layer
       
 ### System Layer - Downwards
@@ -264,10 +264,10 @@ This scenario covers the use of Quantum Machine Learning in collision detection.
     - Gives the Simulation App a collision probability
     
 8. Cross-Entropy Loss
-    - Calculates the loss of the probabilities
+    - Calculates the loss of the probabilities of the features
        
 10. Backpropagation
-    - Takes in the loss and calculates the loss gradient
+    - Takes in the loss of the features and calculates the loss gradient
       
 12. Adaptive Moment Estimation (ADAM)
     - Uses the loss gradient to optimize the parameter of the quantum neural network.
