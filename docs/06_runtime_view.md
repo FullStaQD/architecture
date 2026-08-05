@@ -211,3 +211,68 @@ In this scenario, we demonstrate an integration of a quantum processing unit (QP
 ### Application Layer - Upwards
 5. Collision Probability App
     - Sends the result to the device/software that requested the job. 
+
+
+
+
+## Collision Detection using Quantum Machine Learning {#_runtime_scenario_4}
+This scenario covers the use of Quantum Machine Learning in collision detection. We show how a QML use case behaves in the architecture using the inference run time and the training run time in dotted lines.
+
+  ![](./images/RuntimeView-scenario4.png)
+
+- Compute the probability of a collision and decide which action to take
+- Input: Real-time Camera Images
+- Output: Action
+- Used in:
+  - autonomous driving
+  - drones
+ 
+    
+### Application Layer - Downwards
+1. Simulation App
+    - Takes the real-time camera images and forwards the image data to the preprocessing
+   
+2. Preprocessing
+    - Takes the image data as input and resizes, rescales, denoises, recolors, ... the images for the suited purpose
+
+3. Residual Network (ResNet)
+    - Trained ResNet uses the image data to extract the features of an image
+    - Creates a feature vector and forwards the Principal Component Analysis
+
+4. Principal Component Analysis (PCA)
+    - Uses the feature vectore and reduces the number of features
+
+5. Angle Encoding
+    - Encodes each feature using rotational gates
+    - Creates an encoded quantum state 
+   
+6. Quantum Neural Network
+    - Appends the encoded quantum state to a parametrised circuit state
+    - Sends programm to the System Layer
+      
+### System Layer - Downwards
+--
+
+### Physical Layer - Downwards
+-- 
+### System Layer - Upwards
+--
+### Application Layer - Upwards
+
+7. Softmax Function
+    - Transforms expectation values of each feature into probabilities
+    - Gives the Simulation App a collision probability
+    
+8. Cross-Entropy Loss
+    - Calculates the loss of the probabilities
+       
+10. Backpropagation
+    - Takes in the loss and calculates the loss gradient
+      
+12. Adaptive Moment Estimation (ADAM)
+    - Uses the loss gradient to optimize the parameter of the quantum neural network.
+
+
+
+
+
