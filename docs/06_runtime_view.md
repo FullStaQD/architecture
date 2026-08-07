@@ -225,8 +225,8 @@ In the figure below, depicts the inference process with regular arrows, and the 
 - Input: Real-time Camera Images
 - Output: Action
 - Used in:
-  - autonomous driving
-  - drones
+    - autonomous driving
+    - drones
  
     
 ### Application Layer - Downwards
