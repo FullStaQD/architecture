@@ -1212,7 +1212,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="gRxLXf8EdxetjgPlxvwo" name="scenario4">
-    <mxGraphModel dx="1124" dy="667" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="955" dy="567" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1260,7 +1260,7 @@
             <mxPoint x="1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="5ZdUSdfnYlOw7YFe5ygN-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Simulation App" vertex="1">
+        <mxCell id="5ZdUSdfnYlOw7YFe5ygN-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Collision Detection App" vertex="1">
           <mxGeometry height="40" width="840" x="140.70000000000002" y="80" as="geometry" />
         </mxCell>
         <mxCell id="5ZdUSdfnYlOw7YFe5ygN-9" edge="1" parent="1" source="5ZdUSdfnYlOw7YFe5ygN-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="5ZdUSdfnYlOw7YFe5ygN-19">
