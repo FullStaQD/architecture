@@ -230,7 +230,7 @@ In the figure below, depicts the inference process with regular arrows, and the 
  
     
 ### Application Layer - Downwards
-1. Simulation App
+1. Collision Detection App
     - Takes the real-time camera images and forwards the image data to the preprocessing
    
 2. Preprocessing
@@ -248,29 +248,25 @@ In the figure below, depicts the inference process with regular arrows, and the 
     - Creates an encoded quantum state 
    
 6. Quantum Neural Network
-    - Appends the encoded quantum state to a variational circuit circuit
-    - Sends programm to the System Layer
+    - Appends a variational quantum circuit to the encoded quantum state
+    - Sends program to the System Layer
       
-### System Layer - Downwards
---
+### System Layer & Physical Layer- Downwards
+- As described in the other use cases
 
-### Physical Layer - Downwards
--- 
-### System Layer - Upwards
---
 ### Application Layer - Upwards
 
-7. Softmax Function
+7. Softmax Function 
     - Transforms expectation values of each feature into probabilities
-    - Gives the Simulation App a collision probability
+    - Gives the Collision Detection App a collision probability
     
-8. Cross-Entropy Loss
+8. Cross-Entropy Loss (training only)
     - Calculates the loss of the probabilities of the features
        
-10. Backpropagation
+10. Backpropagation (training only)
     - Takes in the loss of the features and calculates the loss gradient
       
-12. Adaptive Moment Estimation (ADAM)
+12. Adaptive Moment Estimation (ADAM) (training only)
     - Uses the loss gradient to optimize the parameter of the quantum neural network.
 
 
