@@ -241,7 +241,7 @@ In the figure below, depicts the inference process with regular arrows, and the 
     - Creates a feature vector and forwards the Principal Component Analysis
 
 4. Principal Component Analysis (PCA)
-    - Due to the limitation fof number of qubits, this  reduces the number of features of the feature vector
+    - Due to the limitation in the number of qubits, this step reduces the number of features in the feature vector
       
 5. Angle Encoding
     - Encodes each feature using rotational gates
