@@ -251,7 +251,7 @@ The figure below depicts the inference process with regular arrows and the train
     - Appends a variational quantum circuit to the encoded quantum state
     - Sends program to the System Layer
       
-### System Layer & Physical Layer- Downwards
+### System Layer & Physical Layer
 Refer to [use case 1](#_runtime_scenario_1) for a full explanation.
 
 ### Application Layer - Upwards
