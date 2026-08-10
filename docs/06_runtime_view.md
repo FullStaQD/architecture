@@ -252,7 +252,7 @@ The figure below depicts the inference process with regular arrows and the train
     - Sends program to the System Layer
       
 ### System Layer & Physical Layer- Downwards
-- As described in the other use cases
+Refer to [use case 1](#_runtime_scenario_1) for a full explanation.
 
 ### Application Layer - Upwards
 
