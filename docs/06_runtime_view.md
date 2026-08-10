@@ -217,7 +217,7 @@ In this scenario, we demonstrate an integration of a quantum processing unit (QP
 
 ## Collision Detection using Quantum Machine Learning {#_runtime_scenario_4}
 This scenario covers how a Quantum Machine Learning (QML) collision detection use case maps to the layers of our architecture.
-In the figure below, depicts the inference process with regular arrows, and the training process with additional dotted arrows.
+The figure below depicts the inference process with regular arrows and the training process with additional dotted arrows.
 
   ![](./images/RuntimeView-scenario4.png)
 
