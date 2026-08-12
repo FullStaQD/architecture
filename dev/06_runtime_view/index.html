@@ -653,6 +653,56 @@ Please let us know about any issues you find with this architecture by
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_runtime_scenario_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Collision Detection using Quantum Machine Learning
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Collision Detection using Quantum Machine Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-layer-downwards_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Application Layer - Downwards
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-layer-physical-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        System Layer &amp; Physical Layer
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-layer-upwards_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Application Layer - Upwards
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1073,6 +1123,56 @@ Please let us know about any issues you find with this architecture by
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_runtime_scenario_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Collision Detection using Quantum Machine Learning
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Collision Detection using Quantum Machine Learning">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#application-layer-downwards_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Application Layer - Downwards
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-layer-physical-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        System Layer &amp; Physical Layer
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-layer-upwards_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Application Layer - Upwards
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1419,6 +1519,92 @@ We document these steps through an activity diagram, in which each architecture 
 <ol>
 <li>Collision Probability App<ul>
 <li>Sends the result to the device/software that requested the job. </li>
+</ul>
+</li>
+</ol>
+<h2 id="_runtime_scenario_4">Collision Detection using Quantum Machine Learning</h2>
+<p>This scenario covers how a Quantum Machine Learning (QML) collision detection use case maps to the layers of our architecture.
+The figure below depicts the inference process with regular arrows and the training process with additional dotted arrows.</p>
+<p><img alt="" src=".././images/RuntimeView-scenario4.png" /></p>
+<ul>
+<li>Compute the probability of a collision and decide which action to take</li>
+<li>Input: Real-time Camera Images</li>
+<li>Output: Action</li>
+<li>Used in:<ul>
+<li>autonomous driving</li>
+<li>drones</li>
+</ul>
+</li>
+</ul>
+<h3 id="application-layer-downwards_3">Application Layer - Downwards</h3>
+<ol>
+<li>
+<p>Collision Detection App</p>
+<ul>
+<li>Takes the real-time camera images and forwards the image data to the preprocessing</li>
+</ul>
+</li>
+<li>
+<p>Preprocessing</p>
+<ul>
+<li>Takes the image data as input and performs resizing, rescaling, color conversion, region-of-interest extraction and denoising</li>
+</ul>
+</li>
+<li>
+<p>Residual Network (ResNet)</p>
+<ul>
+<li>Trained ResNet Backbone uses the image data to extract the features of an image</li>
+<li>Creates a feature vector and forwards the Principal Component Analysis</li>
+</ul>
+</li>
+<li>
+<p>Principal Component Analysis (PCA)</p>
+<ul>
+<li>Due to the limitation in the number of qubits, this step reduces the number of features in the feature vector</li>
+</ul>
+</li>
+<li>
+<p>Angle Encoding</p>
+<ul>
+<li>Encodes each feature using rotational gates</li>
+<li>Creates an encoded quantum state </li>
+</ul>
+</li>
+<li>
+<p>Quantum Neural Network</p>
+<ul>
+<li>Appends a variational quantum circuit to the encoded quantum state</li>
+<li>Sends program to the System Layer</li>
+</ul>
+</li>
+</ol>
+<h3 id="system-layer-physical-layer">System Layer &amp; Physical Layer</h3>
+<p>Refer to <a href="#_runtime_scenario_1">use case 1</a> for a full explanation.</p>
+<h3 id="application-layer-upwards_3">Application Layer - Upwards</h3>
+<ol>
+<li>
+<p>Softmax Function </p>
+<ul>
+<li>Transforms expectation values of each feature into probabilities</li>
+<li>Gives the Collision Detection App a collision probability</li>
+</ul>
+</li>
+<li>
+<p>Cross-Entropy Loss (training only)</p>
+<ul>
+<li>Calculates the loss of the probabilities of the features</li>
+</ul>
+</li>
+<li>
+<p>Backpropagation (training only)</p>
+<ul>
+<li>Takes in the loss of the features and calculates the loss gradient</li>
+</ul>
+</li>
+<li>
+<p>Adaptive Moment Estimation (ADAM) (training only)</p>
+<ul>
+<li>Uses the loss gradient to optimize the parameter of the quantum neural network.</li>
 </ul>
 </li>
 </ol>
