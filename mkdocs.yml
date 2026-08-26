@@ -52,18 +52,18 @@ nav:
   - index.md
   - Reference Architecture:
     - reference-architecture/index.md
-    - reference-architecture/01_introduction_and_goals.md
-    - reference-architecture/02_architecture_constraints.md
-    - reference-architecture/03_context_and_scope.md
-    - reference-architecture/04_solution_strategy.md
-    - reference-architecture/05_building_block_view.md
-    - reference-architecture/06_runtime_view.md
-    - reference-architecture/07_deployment_view.md
-    - reference-architecture/08_concepts.md
-    - reference-architecture/09_architecture_decisions.md
-    - reference-architecture/10_quality_requirements.md
-    - reference-architecture/11_technical_risks.md
-    - reference-architecture/12_glossary.md
+    - reference-architecture/introduction-and-goals.md
+    - reference-architecture/architecture-constraints.md
+    - reference-architecture/context-and-scope.md
+    - reference-architecture/solution-strategy.md
+    - reference-architecture/building-block-view.md
+    - reference-architecture/runtime-view.md
+    - reference-architecture/deployment-view.md
+    - reference-architecture/cross-cutting-concepts.md
+    - reference-architecture/architecture-decisions.md
+    - reference-architecture/quality-requirements.md
+    - reference-architecture/technical-risks.md
+    - reference-architecture/glossary.md
   - Scenario-Based Analysis:
     - scenario-based-analysis/index.md
     - scenario-based-analysis/material-simulation.md

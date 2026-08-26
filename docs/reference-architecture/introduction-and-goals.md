@@ -20,7 +20,7 @@ The table below provides a brief description of the layers and the cross-layer c
 | Physical Layer  | Contains all components on a physical layer which indirectly/directly communicate with the physical quantum device  |
 | Cross-Layer Concerns  | Is part of each Layer and contains all components like Testing, Benchmarking, Simulations, Tools, Visualization, ...  |
 
-A detailed breakdown of the components of the layers can be seen in the [building block view](./05_building_block_view.md).
+A detailed breakdown of the components of the layers can be seen in the [building block view](./building-block-view.md).
 
 
 ## Quality Goals {#_quality_goals}
