@@ -26,6 +26,7 @@ theme:
   features:
     - content.action.edit
     - content.action.view
+    - navigation.tabs
 markdown_extensions: 
   - attr_list
   - md_in_html # for using markdown in <figure>s
@@ -46,3 +47,28 @@ site_url: https://fullstaqd.github.io/architecture/
 extra: 
   version:
     provider: mike
+
+nav:
+  - index.md
+  - Reference Architecture:
+    - reference-architecture/index.md
+    - reference-architecture/01_introduction_and_goals.md
+    - reference-architecture/02_architecture_constraints.md
+    - reference-architecture/03_context_and_scope.md
+    - reference-architecture/04_solution_strategy.md
+    - reference-architecture/05_building_block_view.md
+    - reference-architecture/06_runtime_view.md
+    - reference-architecture/07_deployment_view.md
+    - reference-architecture/08_concepts.md
+    - reference-architecture/09_architecture_decisions.md
+    - reference-architecture/10_quality_requirements.md
+    - reference-architecture/11_technical_risks.md
+    - reference-architecture/12_glossary.md
+  - Scenario-Based Analysis:
+    - scenario-based-analysis/index.md
+    - scenario-based-analysis/material-simulation.md
+    - scenario-based-analysis/cloud-optimisation.md
+    - scenario-based-analysis/embedded.md
+    - scenario-based-analysis/quantum-machine-learning.md
+  - Reference Implementation:
+    - reference-implementation/index.md
