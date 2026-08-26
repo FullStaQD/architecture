@@ -66,7 +66,7 @@ nav:
     - reference-architecture/glossary.md
   - Scenario-Based Analysis:
     - scenario-based-analysis/index.md
-    - scenario-based-analysis/material-simulation.md
+    - scenario-based-analysis/quantum-simulation.md
     - scenario-based-analysis/cloud-optimisation.md
     - scenario-based-analysis/embedded.md
     - scenario-based-analysis/quantum-machine-learning.md
