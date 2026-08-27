@@ -66,8 +66,15 @@ integration tooling in the
 [Application Layer](./05_building_block_view.md#_white_box_app_layer) or the
 data collection component itself. 
 
-## Metering
-todo
+## Authentication and Metering
+In cloud and HPC environments where multiple users can submit workloads, access
+to resources needs to be controlled through an authentication mechanism and
+resource usage must be recorded to enable billing or budgeting.
 
-## Authentification
-todo
+!!! warning "Work in Progress"
+
+    This cross-cutting concept and its influence on the reference architecture
+    is currently being investigated as part of the FullStaQD project.
+    More detailed guidance on how to implement Authentication and Metering in
+    Quantum Software Systems will follow in a future release of this
+    documentation.
