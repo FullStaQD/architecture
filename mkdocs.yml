@@ -1,10 +1,31 @@
-site_name: FullStaQD Reference Architecture
+site_name: FullStaQD Architecture Documentation
 theme:
   name: material
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: lucide/sun-moon
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: lucide/sun
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: lucide/moon
+        name: Switch to system preference
+  logo: images/fullstaqd-logo-square.png
+  favicon: images/fullstaqd-logo-square.png
   features:
     - content.action.edit
     - content.action.view
-  custom_dir: overrides
 markdown_extensions: 
   - attr_list
   - md_in_html # for using markdown in <figure>s
