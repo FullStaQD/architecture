@@ -37,7 +37,34 @@ for implementing fault tolerance measures:
 [^preskill-nisq]: Preskill, J. [Quantum Computing in the NISQ era and beyond](https://quantum-journal.org/papers/q-2018-08-06-79/). Quantum 2, 79 (2018).
 
 ## Monitoring
-todo
+Large-scale deployments of quantum software systems will require extensive
+monitoring to allow operators to ensure smooth operation of these systems.
+Such monitoring will be most useful when it captures montoring data (such as
+logs and metrics) across all components that run live during the execution of
+quantum software workloads, and when individual datapoints can be traced to
+the corresponding workloads.
+
+Monitoring will require a separate data collection building block that all
+layers can access.
+For the extraction of logs and metrics, two common patterns are to be expected:
+
+* Data-producing components can implement routines that directly send metrics
+  and logs to the data collection component.
+  This would make such components depend on the data collection interface, which
+  is only likely for tighly integrated systems or when a common data collection
+  interface emerges.
+* Lightweight wrapper components can extract logs and metrics from individual
+  data-producing components.
+  This approach introduces some overhead but decouples the data collection
+  component from the rest of the stack.
+<!-- TODO: cite common pattern for data extraction from classical monitoring software -->
+
+Besides data collection, there will need to be an interface that allows
+operators to access monitoring data.
+Such a component could be a standalone tool, or it could be bundled with
+integration tooling in the
+[Application Layer](./05_building_block_view.md#_white_box_app_layer) or the
+data collection component itself. 
 
 ## Metering
 todo
