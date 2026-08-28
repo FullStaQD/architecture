@@ -4,6 +4,7 @@ theme:
   features:
     - content.action.edit
     - content.action.view
+    - content.footnote.tooltips
   custom_dir: overrides
 markdown_extensions: 
   - attr_list
@@ -14,6 +15,7 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - footnotes
 
   - toc:
       toc_depth: 4
