@@ -23,3 +23,23 @@ We visualise the decoding loop in the following sequence diagram:
 <figure markdown="span">
     ![sequence diagram for the QEC decoding loop](./images/qec-decoding-loop.svg){style="max-width: 80%"}
 </figure>
+
+## A Full-Stack Example
+Here we visualise a concrete example from our scenario-based analysis <!-- TODO: link SBA part once #41 is merged -->
+to illustrate what's involved in the full-stack execution of a quantum software
+application.
+This scenario covers an application in material simulation, check out the
+[scenario's documentation](#_runtime_scenario_1) for the details. <!-- TODO: update link when #41 is merged -->
+
+!!! warning "A common misconception"
+
+    Note that this diagram does not characterise any deployment properties.
+    For example, the VQE algorithm and COBYLA optimiser depicted in the
+    application layer do not necessarily have to be executed in a python
+    environment and could also be compiled to be executed in a cloud,
+    high-performance, or other runtime environment.
+    See [Deployment View](./07_deployment_view.md) for deployment concerns.
+
+<figure markdown="span">
+    ![activity diagram showing a material simulation scenario](./images/RuntimeView-scenario1.png){style="max-width: 95%"}
+</figure>
