@@ -1,4 +1,51 @@
-# Runtime View {#section-runtime-view}
+# Runtime View
+In the runtime view section, we document behavioural properties between building
+blocks and artifacts that are typical for quantum software systems.
+
+!!! info
+
+    Learn more about runtime view documentation for software architecture in the
+    [arc42 guide](https://docs.arc42.org/section-6/).
+
+## QEC Decoding Loop {#qec-decoding-loop}
+Quantum Error Correction (QEC) will likely play a crucial role in making quantum
+computers fault tolerant. <!--TODO: link cross-cutting concerns section once merged--><!--TODO cite-->
+To realise QEC in practice, syndrome measurements must be executed, syndromes
+must be decoded, and corrections must be applied at a high pace to reduce the
+logical error rate effectively[^sparse-blossom].
+The decoding loop is executed repeatedly during the execution of the encoded
+quantum program, so the syndrome measurements have to be realised as mid-circuit
+measurements.
+
+[^sparse-blossom]: Higgott, O. & Gidney, C. [Sparse Blossom: correcting a million errors per core second with minimum-weight matching](https://doi.org/10.22331/q-2025-01-20-1600). Quantum 9, 1600 (2025).
+
+We visualise the decoding loop in the following sequence diagram:
+<figure markdown="span">
+    ![sequence diagram for the QEC decoding loop](./images/qec-decoding-loop.svg){style="max-width: 80%"}
+</figure>
+
+## A Full-Stack Example
+Here we visualise a concrete example from our scenario-based analysis <!-- TODO: link SBA part once #41 is merged -->
+to illustrate what's involved in the full-stack execution of a quantum software
+application.
+This scenario covers an application in material simulation, check out the
+[scenario's documentation](#_runtime_scenario_1) for the details. <!-- TODO: update link when #41 is merged -->
+
+!!! warning "A common misconception"
+
+    Note that this diagram does not characterise any deployment properties.
+    For example, the VQE algorithm and COBYLA optimiser depicted in the
+    application layer do not necessarily have to be executed in a python
+    environment and could also be compiled to be executed in a cloud,
+    high-performance, or other runtime environment.
+    See [Deployment View](./07_deployment_view.md) for deployment concerns.
+
+<figure markdown="span">
+    ![activity diagram showing a material simulation scenario](./images/RuntimeView-scenario1.png){style="max-width: 95%"}
+</figure>
+
+---
+
 The runtime view documents the concrete behaviour and interaction of the building blocks. Based on [Carbonelli et al.'s work](https://link.springer.com/content/pdf/10.1007/978-3-031-64136-7_12.pdf), we demonstrate how typical quantum use cases are represented in the architecture. The demonstration shows one scenario in detail for each use case, starting at the user input, continuing through the execution, and concluding with the return value to the user.
 We document these steps through an activity diagram, in which each architecture layer is divided by a swim lane.  We focus on the steps and interfaces during the execution process rather than describing the building blocks in detail.
 
