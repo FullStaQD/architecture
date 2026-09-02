@@ -10,4 +10,4 @@ which will allow re-evaluating them when circumstances change.
 We use a three-layered architecture for the top-level decomposition of quantum
 software systems.
 The rationale behind this decision is documented in
-[the building block view's motivation section](./05_building_block_view.md#motivation).
+[the building block view's motivation section](./building-block-view.md#motivation).
