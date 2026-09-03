@@ -170,21 +170,18 @@ software stack.
   libraries.
 - **Integration Tooling**: Some tools specifically target the task of
   integrating quantum applications into existing IT infrastructure.
-  This includes for example **Workflow Modeling** tools (e.g. with the
-  [Kipu Quantum Hub](https://docs.hub.kipu-quantum.com)) and **Problem
-  Decomposition** tools (e.g. with the
-  [ProvideQ Toolbox](https://tva.kastel.kit.edu/english/research_177.php))
+  This includes for example parts of the
+  [Kipu Quantum Hub](https://docs.hub.kipu-quantum.com) and the
+  [ProvideQ Toolbox](https://tva.kastel.kit.edu/english/research_177.php)
   which improve the accessibility of quantum computing and provide
   standardised web APIs which can be integrated into typical IT
   infrastructure more easily.
   Integration tools typically depend on Use Case implementations which they
-  wrap with their own abstractions and interfaces but they can also take a
-  more fine-grained approach and provide direct access to the Problem
-  Transformation and Quantum SDK building blocks. 
+  wrap with their own abstractions and interfaces. 
 - **Problem Transformations:** This component is symbolic for the many
   available tools for transforming scientific, engineering and commercial
-  problems into quantum formulations (e.g.
-  [qubovert](https://qubovert.readthedocs.io/en/latest/),
+  problems into quantum formulations (e.g. Solvers, 
+  [qubovert](https://qubovert.readthedocs.io/en/latest/), and
   [Qiskit Finance](https://github.com/qiskit-community/qiskit-finance)).
   Many of these tools directly use the Quantum SDK's building blocks.
 - **Quantum SDK:** The Quantum SDK contains common building blocks for quantum
@@ -203,8 +200,7 @@ a similar fashion:
 
 * One major interface is provided by the Quantum SDK, the language that
   developers use to specify their quantum applications, and therefore, Use Case
-  implementations, Problem Transformations and some Integration Tooling may
-  depend on the chosen Quantum SDK.
+  implementations, Problem Transformations depend on the chosen Quantum SDK.
   The [2025 Quantum Open Source Survey](https://unitaryfoundation.github.io/survey-2025/#Software)
   shows that there is currently no single favourite among the available
   Quantum SDKs, so to facilitate adoption of a standardised quantum software
@@ -212,11 +208,9 @@ a similar fashion:
   into the rest of the stack. <!-- TODO: quantum sdk to sys layer -->
 * Use Case implementations and Problem Transformations provide highly individual
   interfaces since the problems they accept depend on their purpose.
-* Integration Tooling can provide access to the Use Case implementations and
-  Problem Transformations with a unified interfaces (e.g. for progress updates
+* Integration Tooling can provide access to the Use Case implementations with a unified interfaces (e.g. for progress updates
   and configuration) but the data/payload types for the submitted problem
-  instances are still specific to the Use Case implementation and Problem
-  Transformation which they wrap. 
+  instances are still specific to the Use Case implementation which it wraps. 
 
 ### White Box System Layer {#_white_box_sys_layer}
 
