@@ -200,8 +200,7 @@ a similar fashion:
 
 * One major interface is provided by the Quantum SDK, the language that
   developers use to specify their quantum applications, and therefore, Use Case
-  implementations, Problem Transformations and some Integration Tooling may
-  depend on the chosen Quantum SDK.
+  implementations, Problem Transformations depend on the chosen Quantum SDK.
   The [2025 Quantum Open Source Survey](https://unitaryfoundation.github.io/survey-2025/#Software)
   shows that there is currently no single favourite among the available
   Quantum SDKs, so to facilitate adoption of a standardised quantum software
@@ -209,11 +208,9 @@ a similar fashion:
   into the rest of the stack. <!-- TODO: quantum sdk to sys layer -->
 * Use Case implementations and Problem Transformations provide highly individual
   interfaces since the problems they accept depend on their purpose.
-* Integration Tooling can provide access to the Use Case implementations and
-  Problem Transformations with a unified interfaces (e.g. for progress updates
+* Integration Tooling can provide access to the Use Case implementations with a unified interfaces (e.g. for progress updates
   and configuration) but the data/payload types for the submitted problem
-  instances are still specific to the Use Case implementation and Problem
-  Transformation which they wrap. 
+  instances are still specific to the Use Case implementation which it wraps. 
 
 ### White Box System Layer {#_white_box_sys_layer}
 
