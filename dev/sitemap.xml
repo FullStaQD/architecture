@@ -4,39 +4,60 @@
         <loc>https://fullstaqd.github.io/architecture/dev/</loc>
       </url>
       <url>
-        <loc>https://fullstaqd.github.io/architecture/dev/01_introduction_and_goals/</loc>
+        <loc>https://fullstaqd.github.io/architecture/dev/reference-architecture/</loc>
       </url>
       <url>
-        <loc>https://fullstaqd.github.io/architecture/dev/02_architecture_constraints/</loc>
+        <loc>https://fullstaqd.github.io/architecture/dev/reference-architecture/introduction-and-goals/</loc>
       </url>
       <url>
-        <loc>https://fullstaqd.github.io/architecture/dev/03_context_and_scope/</loc>
+        <loc>https://fullstaqd.github.io/architecture/dev/reference-architecture/architecture-constraints/</loc>
       </url>
       <url>
-        <loc>https://fullstaqd.github.io/architecture/dev/04_solution_strategy/</loc>
+        <loc>https://fullstaqd.github.io/architecture/dev/reference-architecture/context-and-scope/</loc>
       </url>
       <url>
-        <loc>https://fullstaqd.github.io/architecture/dev/05_building_block_view/</loc>
+        <loc>https://fullstaqd.github.io/architecture/dev/reference-architecture/solution-strategy/</loc>
       </url>
       <url>
-        <loc>https://fullstaqd.github.io/architecture/dev/06_runtime_view/</loc>
+        <loc>https://fullstaqd.github.io/architecture/dev/reference-architecture/building-block-view/</loc>
       </url>
       <url>
-        <loc>https://fullstaqd.github.io/architecture/dev/07_deployment_view/</loc>
+        <loc>https://fullstaqd.github.io/architecture/dev/reference-architecture/runtime-view/</loc>
       </url>
       <url>
-        <loc>https://fullstaqd.github.io/architecture/dev/08_concepts/</loc>
+        <loc>https://fullstaqd.github.io/architecture/dev/reference-architecture/deployment-view/</loc>
       </url>
       <url>
-        <loc>https://fullstaqd.github.io/architecture/dev/09_architecture_decisions/</loc>
+        <loc>https://fullstaqd.github.io/architecture/dev/reference-architecture/cross-cutting-concepts/</loc>
       </url>
       <url>
-        <loc>https://fullstaqd.github.io/architecture/dev/10_quality_requirements/</loc>
+        <loc>https://fullstaqd.github.io/architecture/dev/reference-architecture/architecture-decisions/</loc>
       </url>
       <url>
-        <loc>https://fullstaqd.github.io/architecture/dev/11_technical_risks/</loc>
+        <loc>https://fullstaqd.github.io/architecture/dev/reference-architecture/quality-requirements/</loc>
       </url>
       <url>
-        <loc>https://fullstaqd.github.io/architecture/dev/12_glossary/</loc>
+        <loc>https://fullstaqd.github.io/architecture/dev/reference-architecture/technical-risks/</loc>
+      </url>
+      <url>
+        <loc>https://fullstaqd.github.io/architecture/dev/reference-architecture/glossary/</loc>
+      </url>
+      <url>
+        <loc>https://fullstaqd.github.io/architecture/dev/scenario-based-analysis/</loc>
+      </url>
+      <url>
+        <loc>https://fullstaqd.github.io/architecture/dev/scenario-based-analysis/quantum-simulation/</loc>
+      </url>
+      <url>
+        <loc>https://fullstaqd.github.io/architecture/dev/scenario-based-analysis/cloud-optimisation/</loc>
+      </url>
+      <url>
+        <loc>https://fullstaqd.github.io/architecture/dev/scenario-based-analysis/embedded/</loc>
+      </url>
+      <url>
+        <loc>https://fullstaqd.github.io/architecture/dev/scenario-based-analysis/quantum-machine-learning/</loc>
+      </url>
+      <url>
+        <loc>https://fullstaqd.github.io/architecture/dev/reference-implementation/</loc>
       </url>
 </urlset>
