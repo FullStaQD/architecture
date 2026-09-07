@@ -1,0 +1,14 @@
+# Solution Strategy {#section-solution-strategy}
+
+As explained in the [introduction](./index.md), the main
+goal of this reference architecture is to simplify the development of full stack
+quantum software by enabling reuse through a modular approach.
+In the following table, we explain how we address our most significant quality
+goals:
+
+| Goal | Architektural Approach | Details |
+|-|-|-|
+| Modularity | The FullStaQD Reference Architecture fosters modularity by providing a clear structure and separation of concerns with well-defined interfaces. On the highest level, we use a three-layered architecture to separate different abstractions and skills. The interfaces between these layers ensure that changes to either component should affect at most other components within the same layer. | See [Quality Goals](./quality-requirements.md) for details on this goal and [Building Block View](./building-block-view.md) for the structural decomposition of quantum software systems. |
+| Extensibility | The FullStaQD Reference Architecture leaves a high degree of freedom within the three layers to allow for a wide variety of changes and extensions. Specifically, new quantum algorithms and applications should be implementable on top of the chosen quantum SDK within the application layer, new compilation techniques can be added to the compiler with a plugin system, and new hardware can be connected by adopting the common quantum device interface. | See [Quality Goals](./quality-requirements.md) for details on this goal and [Building Block View](./building-block-view.md) for the the interfaces of the system. |
+| Open-source vs business models | The FullStaQD Reference Architecture provides an open-source framework that simplifies the integration of open as well as proprietary quantum sofware and quantum hardware. For example, the application layer's integration tooling can help with the integration of quantum software into existing IT infrastructure, the quantum compiler's plugin system allows for proprietary compilation techniques to be integrated, and interface between the system and physical layer allows for quantum hardware vendors to integrate their proprietary hardware and firmware using a standard interface | See [Architectural Constraints](./architecture-constraints.md) for this discussion and [Building Block View](./building-block-view.md) for a description of the interfaces. |
+| Performance | The FullStaQD Reference Architecture addresses general quantum software performance needs through hybrid quantum-classical compilation and by deploying performance-critical software on suitable hardware. | See [Quality Goals](./quality-requirements.md) for details on this goals and [Deployment View](./deployment-view.md) for performance-aware, hybrid deployment scenarios. |

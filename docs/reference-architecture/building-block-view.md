@@ -23,7 +23,7 @@ We rectify this decision with the following three perspectives:
   of its physical implementations is required.
   For working on the System Layer, developers need to have a broad understanding
   of various quantum device architectures and
-  [deployment concerns](./07_deployment_view.md).
+  [deployment concerns](./deployment-view.md).
   Detailed knowledge for concrete quantum devices is required to program and
   operate quantum backends in the Physical Layer.
 - **Operation**: In the Application Layer, manual programming or specification for
@@ -159,10 +159,10 @@ software stack.
   software stack for a specific use case.
   It is also responsible for interfacing with External IT Systems if the quantum
   application is to be integrated into an existing IT system
-  (see [context section](./03_context_and_scope.md)).
+  (see [context section](./context-and-scope.md)).
   As the Use Case component characterises the interface between quantum and
   classical computation, it will have one or more dedicated
-  [**Quantum Kernels**](./12_glossary.md#quantum-kernel) which encapsulate the
+  [**Quantum Kernels**](./glossary.md#quantum-kernel) which encapsulate the
   parts of the program that are to be run on a quantum computer. 
   Use Case components are highly specific for the context and task they are used
   in.
@@ -251,7 +251,7 @@ the **HPC Runtime** component and the **Compiler** component.
     - **Frontend:** Acts as a facade to the Compiler that parses some
       program specification format (e.g. source code or an intermediate
       representation), splits it into a classical and a
-      [quantum kernel](./12_glossary.md#quantum-kernel), and calls the Classical
+      [quantum kernel](./glossary.md#quantum-kernel), and calls the Classical
       and Quantum Compiler with these kernels, respectively.
       The term "frontend" is to be understood as a programming language frontend
       for the compiler (cf.
@@ -261,7 +261,7 @@ the **HPC Runtime** component and the **Compiler** component.
       [`gcc`](https://gcc.gnu.org)) to compile classical parts of the program with
       state-of-the-art optimisations.
     - **Quantum Compiler:** Compiles high-level specifications of
-      [quantum-kernels](./12_glossary.md#quantum-kernel) to low-level,
+      [quantum-kernels](./glossary.md#quantum-kernel) to low-level,
       device-specific instructions.
       The compilation process involves passes and dialects and it is extensible
       through a plugin system.

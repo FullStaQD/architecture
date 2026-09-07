@@ -1,31 +1,42 @@
-# Welcome!
+# Home
 
-This site contains the architectural documentation for the FullStaQD reference
-architecture.
-Its structure is based on [arc42](https://arc42.org) (version 9.0), an open
-template for documenting of software and system architecture.
+<figure markdown="span">
+  ![FullStaQD Logo](./images/fullstaqd-logo-name.png){: style="max-width: 80%; display: inline-block;"}
+</figure>
 
-!!! tip "Help us improve this architecture!"
+Welcome to the FullStaQD Architecture documentation!
+This site is divided into three sections:
 
-    This is an open architecture capturing a wide range of quantum software
-    systems.
-    Please let us know about quantum software use cases that cannot be
-    accompanied with this architecture by
-    [raising an issue](https://github.com/FullStaQD/architecture/issues/new/choose)
-    in our GitHub repository.
+1. The [FullStaQD Reference Architecture](./reference-architecture/) documents a
+   generic quantum software architecture and how it arises from architecturally
+   significant requirements of quantum software systems.
+   The reference architecture is designed to capture generic properties of
+   quantum software architecture rather than a concrete architecture.
+   This allows the reference architecture to move along with the state of the
+   art even as concrete interfaces change.
+2. Our [Scenario-Based Analysis](./scenario-based-analysis/) evaluates how our
+   reference architecture considerations hold up in concrete usage scenarios.
+   These tests are our guardrails for making sure every evolution of the
+   reference architecture can meet the needs of the various different
+   applications.
+3. We also document the concrete architecture in the
+   [FullStaQD Reference Implementation](./reference-implementation) which shows
+   how concrete open-source components developed in the FullStaQD project make
+   up an instantiation of the reference architecture.
 
+This project is part of [FullStaQD](https://fullstaqd.de), a German flagship
+project in quantum software research that aims to improve modularity and
+interoperability in the quantum software ecosystem.
+FullStaQD is supported and funded by the German Federal Ministry of Research,
+Technology and Space (BMFTR) under Grant No. `01MQ25001F`.
 
-## Table of Contents 
+<figure markdown="span">
+    [![With funding from the German Federal Ministry of Research, Technology and Space (BMFTR)][bmftr-logo]{: style="max-width: 40%; display: inline-block;"}][bmftr-link]
+    [![High-tech Agenda Germany][htad-logo]{: style="max-width: 40%; display: inline-block;"}][htad-link]
+</figure>
 
-1. [Introduction and Goals](./01_introduction_and_goals.md)
-2. [Architecture Constraints](./02_architecture_constraints.md)
-3. [Context and Scope](./03_context_and_scope.md)
-4. [Solution Strategy](./04_solution_strategy.md)
-5. [Building Block View](./05_building_block_view.md)
-6. [Runtime View](./06_runtime_view.md)
-7. [Deployment View](./07_deployment_view.md)
-8. [Cross-cutting Concepts](./08_concepts.md)
-9. [Architecture Decisions](./09_architecture_decisions.md)
-10. [Quality Requirements](./10_quality_requirements.md)
-11. [Risks and Technical Debts](./11_technical_risks.md)
-12. [Glossary](./12_glossary.md)
+[bmftr-link]: https://www.bmftr.bund.de/EN/Home/home_node.html
+[bmftr-logo]: ./images/BMFTR_Logo.jpg
+[htad-link]: https://www.bmftr.bund.de/EN/Technology/HightechAgenda/HightechAgenda.html
+[htad-logo]: ./images/HightechAgendaLogo.jpg
+
