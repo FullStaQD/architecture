@@ -170,9 +170,9 @@ software stack.
   libraries.
 - **Integration Tooling**: Some tools specifically target the task of
   integrating quantum applications into existing IT infrastructure.
-  This includes for example parts of the
-  [Kipu Quantum Hub](https://docs.hub.kipu-quantum.com) and the
-  [ProvideQ Toolbox](https://tva.kastel.kit.edu/english/research_177.php)
+  This includes for example REST API wrappers for use cases, as implemented for example in
+  [Kipu Quantum Hub's Services](https://docs.hub.kipu-quantum.com/services/using-a-service) or the
+  [ProvideQ Toolbox's REST interface](https://api.provideq.kit.edu/webjars/swagger-ui/index.html)
   which improve the accessibility of quantum computing and provide
   standardised web APIs which can be integrated into typical IT
   infrastructure more easily.
