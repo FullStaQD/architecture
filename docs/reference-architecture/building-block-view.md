@@ -180,8 +180,7 @@ software stack.
   wrap with their own abstractions and interfaces. 
 - **Problem Transformations:** This component is symbolic for the many
   available tools for transforming scientific, engineering and commercial
-  problems into quantum formulations (e.g. Solvers, 
-  [qubovert](https://qubovert.readthedocs.io/en/latest/), and
+  problems into quantum formulations (e.g. ProvideQ's Solvers, the [qubovert](https://qubovert.readthedocs.io/en/latest/) Python library, and
   [Qiskit Finance](https://github.com/qiskit-community/qiskit-finance)).
   Many of these tools directly use the Quantum SDK's building blocks.
 - **Quantum SDK:** The Quantum SDK contains common building blocks for quantum
