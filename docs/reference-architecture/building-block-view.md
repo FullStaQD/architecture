@@ -208,7 +208,7 @@ a similar fashion:
   into the rest of the stack. <!-- TODO: quantum sdk to sys layer -->
 * Use Case implementations and Problem Transformations provide highly individual
   interfaces since the problems they accept depend on their purpose.
-* Integration Tooling can provide access to the Use Case implementations with a unified interfaces (e.g. for progress updates
+* Integration Tooling can provide access to the Use Case implementations with a unified interface (e.g. for progress updates
   and configuration) but the data/payload types for the submitted problem
   instances are still specific to the Use Case implementation which it wraps. 
 
