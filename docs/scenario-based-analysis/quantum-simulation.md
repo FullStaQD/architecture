@@ -79,7 +79,7 @@ The [Qiskit Transpilation Pipeline](https://quantum.cloud.ibm.com/docs/en/guides
     - When all operations are done, the molecule Laser sends a status flag to the energy sensor
 
 3. Energy Sensor:
-    - When the molecule laser has executed its job and updated its status, this step measures the qubit energy levels 
+    - When the molecule laser has completed its job and updated its status, this step measures the qubit energy levels 
 
 ## System Layer - Upwards 
 
