@@ -36,7 +36,7 @@ for implementing fault tolerance measures:
 
 [^preskill-nisq]: Preskill, J. [Quantum Computing in the NISQ era and beyond](https://quantum-journal.org/papers/q-2018-08-06-79/). Quantum 2, 79 (2018).
 
-## Monitoring
+## Monitoring {#monitoring}
 Large-scale deployments of quantum software systems will require extensive
 monitoring to allow operators to ensure smooth operation of these systems.
 Such monitoring will be most useful when it captures montoring data (such as
@@ -78,3 +78,50 @@ resource usage must be recorded to enable billing or budgeting.
     More detailed guidance on how to implement Authentication and Metering in
     Quantum Software Systems will follow in a future release of this
     documentation.
+
+## Design and Development Support Tooling {#design-and-development-support-tooling}
+Some quantum software tools are not directly part of the implementation of
+quantum software stacks but instead aim to support their design and development
+process.
+A key characteristic of these tools is that they are not fully automated but
+instead support a developer's implementation decisions.
+Furthermore, many of these tools go across the boundaries of individual layers
+to enable a holistic treatment of the quantum software stack.
+
+Typical examples for Design and Development Support Tooling include:
+
+- Low-code tools for assembling quantum applications (e.g. the
+  [ProvideQ Toolbox](https://provideq.kit.edu)'s visual problem decomposition
+  tools,
+  [Kipu Quantum Workflows](https://docs.hub.kipu-quantum.com/services/workflow/air-traffic-tutorial)
+  based on [CAMUNDA](https://docs.camunda.io), or the
+  [QuaST Decision Tree](https://www.quast-decisiontree.com/tree))
+- Agentic AI Tools supporting the the choice of
+  [building blocks](./building-block-view.md) and algorithms, or supporting the
+  implementation of business use cases with quantum algorithms (e.g.
+  Kipu Quantum's [Paqari AI Agent](https://kipu-quantum.com/paqari))
+- Integrated Development Environments (IDEs) (e.g. the
+  [IBM Quantum Composer](https://quantum.cloud.ibm.com/composer) for editing
+  OpenQASM and Qiskit programs)
+- Visualisation tools for inspecting the results of quantum computations,
+  intermediary results or [monitoring data](#monitoring)
+- Testing, benchmarking and verification tools
+
+??? question "Aren't compilers development tools too?"
+
+    Compilers are traditionally considered development tools, used to compile
+    programs once for a few common compilation targets (e.g. standard OS's, x86
+    and ARM instruction sets) and then not needed for the execution anymore.
+    In quantum computing, they take up a slightly different role as compilation
+    targets are much more nuanced since more different hardware modalities are
+    available.
+    Furthermore, some researchers <!-- TODO cite interview study once available -->
+    suggest that compilation should also adapt the compiled program to the
+    current state of the hardware, informed by drift and fidelity metrics.
+    Therefore, compilers cannot be separated from the application, as it is the
+    case for the design and development tools discussed in this section.
+
+    Another reason for the different treatment of compilers lies in their degree
+    of automation.
+    Compilers should be able to run without further user input whereas our
+    Design and Development Support Tooling merely supports the developer.
