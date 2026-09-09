@@ -75,7 +75,7 @@ The [Qiskit Transpilation Pipeline](https://quantum.cloud.ibm.com/docs/en/guides
     - It outputs a Microwave Signal List directly to the quantum hardware, translating digital instructions into executable physical actions.
     
 2. Molecule Laser:
-    - The molecule Laser uses the microwave signal list to execute the quantum operations on the physical hardware.
+    - The molecule laser uses the microwave signal list to execute the quantum operations on the physical hardware.
     - When all operations are done, the molecule Laser sends a status flag to the energy sensor
 
 3. Energy Sensor:
