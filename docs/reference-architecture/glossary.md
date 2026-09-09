@@ -15,13 +15,13 @@ Quantum Error Correction (QEC) uses redundancy to detect and correct errors occu
 
 See also:
 
-* [IBM Quantum Blog](https://www.ibm.com/quantum/blog/quantum-error-suppression-mitigation-correction) for an accessible overview of QEC, QES and QEM.
+* [IBM Quantum Blog](https://www.ibm.com/quantum/blog/quantum-error-suppression-mitigation-correction) for an accessible overview of QEC, QES and QEM
 * [Nielsen and Chuang](https://doi.org/10.1017/CBO9780511976667) as well as [Terhal](https://doi.org/10.1103/RevModPhys.87.307) for further background on the fundamentals of QEC
 * Google's recent Nature publication on [Quantum error correction below the surface code](https://doi.org/10.1038/s41586-024-08449-y)
 * [IBM Tutorial](https://quantum.cloud.ibm.com/learning/en/courses/foundations-of-quantum-error-correction) for practical foundations of QEC
 
 ## Quantum Error Suppression {#quantum-error-suppression}
-Quantum Error Suppression (QES) aims to reduce errors at or close to their physical source by exploiting prior knowledge about unwanted hardware effects like noise. Instead of correcting errors after they have occurred, suppression techniques modify the hardware control to prevent, or reduce their impact, for example through techniques such as dynamical decoupling. QES can therefore improve the reliability of quantum operations with comparatively low resource overhead: its effectiveness is limited by the type of noise and available control resources, and residual errors can accumulate over time.
+Quantum Error Suppression (QES) aims to reduce errors at or close to their physical source by exploiting prior knowledge about unwanted hardware effects like noise. Instead of correcting errors after they have occurred, suppression techniques modify the hardware control to prevent, or reduce their impact, for example through techniques such as dynamical decoupling. QES can therefore improve the reliability of quantum operations with comparatively low resource overhead but its effectiveness is limited by the type of noise and available control resources, and residual errors can accumulate over time.
 
 See also:
 
