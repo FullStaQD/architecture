@@ -125,3 +125,10 @@ Typical examples for Design and Development Support Tooling include:
     of automation.
     Compilers should be able to run without further user input whereas our
     Design and Development Support Tooling merely supports the developer.
+
+??? info "Rationale"
+
+    The rationale behind making Design and Development Support Tooling a
+    cross-cutting concern is explained in the
+    [architectural decisions](./architecture-decisions.md#2-separate-devtools)
+    section.
