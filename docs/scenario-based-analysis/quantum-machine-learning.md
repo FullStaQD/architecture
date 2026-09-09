@@ -2,8 +2,7 @@
 This scenario covers how a Quantum Machine Learning (QML) collision detection use case maps to the layers of our architecture.
 The figure below depicts the inference process with regular arrows and the training process with additional dotted arrows.
 
-In this scenario the probability of a collision is computed using QML and camera data, which is afterwards used to take action. 
-- Input: Real-time Camera Images
+- Input: Real-time camera images
 - Output: Action
 - Used in:
     - autonomous driving
