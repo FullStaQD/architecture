@@ -20,5 +20,4 @@ Our analysis currently covers the following scenarios:
 
 1. [Quantum Simulation for Material Science, Chemistry and Physics](./quantum-simulation.md)
 2. [Quantum Cloud Services for Optimisation Problems](./cloud-optimisation.md)
-3. [Collision Detection with an Embedded QPU](./embedded.md)
-4. [Collision Detection using Quantum Machine Learning](./quantum-machine-learning.md)
+3. [Collision Detection using Quantum Machine Learning](./quantum-machine-learning.md)
