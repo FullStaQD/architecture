@@ -2,7 +2,7 @@
 
 This scenario describes the how quantum computing can be used for material science, chemistry and physics. 
 
-It has the following specifications:
+It has the following specification:
 
 -  Input: molecule specification
 -  Output: ground state energy
