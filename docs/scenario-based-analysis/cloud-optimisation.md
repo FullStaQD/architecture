@@ -1,9 +1,6 @@
 # Quantum Cloud Services for Optimisation Problems
 In this scenario, we want to show how our architecture behaves and interacts using a NP-hard combinatorial optimisation problem. Since the System and Physical Layer are almost identical to the first scenario, we only document the new building blocks. 
 
-  ![](./images/cloud-optimisation.png)
-
-
 It has the following specification:
 
 - Input: Max-Cut instance
@@ -12,12 +9,15 @@ It has the following specification:
     - Flight-gate assignment in airports
     - Electronic Design Automation
     - Trajectory optimization in air traffic
-    - Paint-shop scheduling
-    - Planning problems in highly individualised mass production
+
+
+  ![](./images/cloud-optimisation.png)
+
+
 
 ## Application Layer - Downwards
 1. Cloud Optimisation Application:
-    - Processes the MaxCut problem instance and forwards the information to the QUBO Transformator
+    - Processes the MaxCut problem instance and forwards the problem information to the QUBO Transformator
 
 2. QUBO Transformator
     - Creates a QUBO, using the information of the Cloud Optimisation Application
@@ -37,15 +37,15 @@ It has the following specification:
  
 ## System Layer - Downwards
 1. Noise Suppression
-    - Noise Supression reduces the error rate by actively canceling noise using clever pulse timing or add redudancy to detect and fix errors.
+    - Noise Supression reduces the error rate by actively canceling noise using adjusted pulse timing or add redundancy to detect and reduce errors.
     - It takes an optimized circuit and adds the above mentioned operations.
    
    
-## Physical Layer - Downwards
--- 
-## System Layer - Upwards
--- 
+## Physical Layer - Downwards & System Layer - Upwards
+Refer to [quantum simuluation scenario](./quantum-simulation.md) for a full explanation.
+
+
 ## Application Layer - Upwards
 7. SPSA
-    - Similar to COBYLA, SPSA is classical optimizer used for optimizing the parameters of the QAOA algorithm. 
+    - SPSA is classical optimizer used for optimizing the parameters of the QAOA algorithm. 
     - It updates the parameters and sends them to the QAOA Program Generator, where the program is computed again until the optimizer terminates.
