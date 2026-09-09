@@ -5,11 +5,11 @@ software engineering.
 It uses concrete usage scenarios for the system under design to test whether the
 architecture can hold up to the requirements of its use cases.
 
-In FullStaQD, we used this method to guide the design of our
-[reference architecture](../reference-architecture/).
-We document them here for others to use in the evaluation of their own
+In FullStaQD, we use this method to guide the design of our
+reference architecture.
+Additionally, we document the scenarios for stakeholders to use them in the evaluation of their own
 quantum software architecture instantiations, and for ourselves to evaluate
-architectural decisions in future editions of our reference architecture.
+architectural decisions in future versions of our reference architecture.
 
 Our set of scenarios was originally inspired by
 [Carbonelli et al.'s work](https://doi.org/10.1007/978-3-031-64136-7_12) which
