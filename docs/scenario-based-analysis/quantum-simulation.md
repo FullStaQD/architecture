@@ -72,7 +72,7 @@ The [Qiskit Transpilation Pipeline](https://quantum.cloud.ibm.com/docs/en/guides
 
 1. Superconducting Device and Firmware:
     - Using digital hardware instructions and pulse definitions, this process converts these commands into physical signals to control operations on the quantum chip. 
-    - It outputs a Microwave Signal List directly to the quantum hardware, translating digital instructions into executable physical actions.
+    - It outputs a microwave signal list directly to the quantum hardware, translating digital instructions into executable physical actions.
     
 2. Molecule Laser:
     - The molecule laser uses the microwave signal list to execute the quantum operations on the physical hardware.
