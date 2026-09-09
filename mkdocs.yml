@@ -68,7 +68,6 @@ nav:
     - scenario-based-analysis/index.md
     - scenario-based-analysis/quantum-simulation.md
     - scenario-based-analysis/cloud-optimisation.md
-    - scenario-based-analysis/embedded.md
     - scenario-based-analysis/quantum-machine-learning.md
   - Reference Implementation:
     - reference-implementation/index.md
