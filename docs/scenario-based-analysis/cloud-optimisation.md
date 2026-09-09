@@ -41,7 +41,7 @@ It has the following specification:
     - It takes an optimized circuit and adds the above mentioned operations.
    
    
-## Physical Layer - Downwards & System Layer - Upwards
+## Physical Layer & System Layer - Upwards
 Refer to [quantum simuluation scenario](./quantum-simulation.md) for a full explanation.
 
 
