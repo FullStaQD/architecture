@@ -27,17 +27,6 @@ quantum computing, which yields the following constraint:
   Reference implementations must allow commercial use and proprietary
   extensions, e.g. through well-defined interfaces or permissive licensing.
 
-## Release Cycle
-As one of [FullStaQD][fullstaqd]'s core goals is to provide stable interfaces
-but also to keep up with the state of the art, the release cycle is constrained
-as follows: 
 
-* A first draft of the Reference Architecture should be released around the
-  end of June 2026 to gather feedback from project partners ahead of the first
-  full version.
-* The first version of the Reference Architecture must be released by the end
-  of September 2026 in order to be used by partners within the FullStaQD
-  project.
-* Further changes to the Reference Architecture will be released as specified in our [change process](https://github.com/FullStaQD/architecture/blob/main/CONTRIBUTING.md#changing-the-architecture).
 
 [fullstaqd]: https://www.digital.iao.fraunhofer.de/en/competences/quantum-computing/FullStaQD.html
