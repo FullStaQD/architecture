@@ -47,8 +47,8 @@ The [Qiskit Transpilation Pipeline](https://quantum.cloud.ibm.com/docs/en/guides
       
 2. Layout Stage
     - This stage maps the input circuit's virtual qubits to the target's physical hardware qubits.
-    - Ideally, the algorithm maps the qubit that interact the most next to each other. 
-    - While it does not guarantee continuous connectivity or direct execution validity, finding an optimal initial layout is a important, computationally expensive step that minimizes error rates and reduces the need for subsequent routing.
+    - The algorithm tries to map the qubits that interact the most next to each other. 
+
 
 3. Routing Stage
     - As described in the step before, a perfect connectivity between the qubits can not always be achieved. Therefore this stage adds additional operations to adapt to these constraints.
@@ -75,11 +75,11 @@ The [Qiskit Transpilation Pipeline](https://quantum.cloud.ibm.com/docs/en/guides
     - It outputs a Microwave Signal List directly to the quantum hardware, translating digital instructions into executable physical actions.
     
 2. Molecule Laser:
-    - The Molecule Laser uses the Microwave Signal List to execute the quantum operations on the physical hardware.
-    - When all operations are done, the Molecule Laser sends a status flag to the Energy Sensor
+    - The molecule Laser uses the microwave signal list to execute the quantum operations on the physical hardware.
+    - When all operations are done, the molecule Laser sends a status flag to the energy sensor
 
 3. Energy Sensor:
-    - When the Molecule Laser updated its status, this step measures the qubit energy levels 
+    - When the molecule laser has executed its job and updated its status, this step measures the qubit energy levels 
 
 ## System Layer - Upwards 
 
