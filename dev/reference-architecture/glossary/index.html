@@ -813,6 +813,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#quantum-error-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quantum Error Correction
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-error-suppression" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quantum Error Suppression
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-error-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quantum Error Mitigation
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1125,6 +1158,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#quantum-error-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quantum Error Correction
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-error-suppression" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quantum Error Suppression
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quantum-error-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quantum Error Mitigation
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1162,8 +1228,33 @@
 The term highlights that the kernel program is part of a bigger program which is
 executed across heterogeneous hardware (meaning there might be CPUs, GPUs, QPUs
 or other types of processors involved).</p>
-<p>See also:
-* <a href="https://docs.nvidia.com/cuda/cuda-programming-guide/01-introduction/programming-model.html#heterogeneous-systems">GPU Kernels in the CUDA Programming Language</a></p>
+<p>See also:</p>
+<ul>
+<li><a href="https://docs.nvidia.com/cuda/cuda-programming-guide/01-introduction/programming-model.html#heterogeneous-systems">GPU Kernels in the CUDA Programming Language</a></li>
+</ul>
+<h2 id="quantum-error-correction">Quantum Error Correction</h2>
+<p>Quantum Error Correction (QEC) uses redundancy to detect and correct errors occuring throughout quantum computation. Logical qubits are encoded across multiple physical qubits, allowing errors to be detected by measuring whether the redundancies are still intact. Detected errors can subsequently be corrected while preserving the encoded quantum information. QEC therefore introduces a substantial resource overhead, but is the fundamental approach towards fault-tolerant quantum computation (FTQC), as sufficiently low physical error rates can, theoretically, be suppressed to arbitrarily low logical error rates through fault-tolerant error correction.</p>
+<p>See also:</p>
+<ul>
+<li><a href="https://www.ibm.com/quantum/blog/quantum-error-suppression-mitigation-correction">IBM Quantum Blog</a> for an accessible overview of QEC, QES and QEM</li>
+<li><a href="https://doi.org/10.1017/CBO9780511976667">Nielsen and Chuang</a> as well as <a href="https://doi.org/10.1103/RevModPhys.87.307">Terhal</a> for further background on the fundamentals of QEC</li>
+<li>Google's recent Nature publication on <a href="https://doi.org/10.1038/s41586-024-08449-y">Quantum error correction below the surface code</a></li>
+<li><a href="https://quantum.cloud.ibm.com/learning/en/courses/foundations-of-quantum-error-correction">IBM Tutorial</a> for practical foundations of QEC</li>
+</ul>
+<h2 id="quantum-error-suppression">Quantum Error Suppression</h2>
+<p>Quantum Error Suppression (QES) aims to reduce errors at or close to their physical source by exploiting prior knowledge about unwanted hardware effects like noise. Instead of correcting errors after they have occurred, suppression techniques modify the hardware control to prevent, or reduce their impact, for example through techniques such as dynamical decoupling. QES can therefore improve the reliability of quantum operations with comparatively low resource overhead but its effectiveness is limited by the type of noise and available control resources, and residual errors can accumulate over time.</p>
+<p>See also:</p>
+<ul>
+<li><a href="https://doi.org/10.1103/PhysRevApplied.20.064027">Ezzell et al.</a> for a survey of different dynamical decoupling approaches and their performance</li>
+<li><a href="https://doi.org/10.1103/PhysRevLett.82.2417">Viola et al.</a> for the underlying principles</li>
+</ul>
+<h2 id="quantum-error-mitigation">Quantum Error Mitigation</h2>
+<p>Quantum Error Mitigation (QEM) reduces the effect of noise on computational results. It typically combines multiple noisy circuit executions with classical post-processing to estimate expectation values that are closer to their ideal, noise-free values. Common techniques include Zero Noise Extrapolation (ZNE) and Probabilistic Error Cancellation (PEC); however, these methods can incur substantial sampling overhead.</p>
+<p>See also:</p>
+<ul>
+<li><a href="https://doi.org/10.1103/PhysRevX.7.021050">Li and Benjamin</a> as well as <a href="https://doi.org/10.1103/PhysRevLett.119.180509">Temme et al.</a> for more information about foundational approaches to QEM</li>
+<li><a href="https://doi.org/10.1038/s41567-023-02042-2">van den Berg et al.</a> for a recent development of PEC towards larger quantum processors</li>
+</ul>
 
 
 
