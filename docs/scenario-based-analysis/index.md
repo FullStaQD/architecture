@@ -7,7 +7,7 @@ architecture can hold up to the requirements of its use cases.
 
 In FullStaQD, we use this method to guide the design of our
 [reference architecture](../reference-architecture/).
-Additionally, we document the scenarios for stakeholders to use them in the evaluation of their own
+Additionally, we document the scenarios for other software architects to use them in the evaluation of their own
 quantum software architecture instantiations, and for ourselves to evaluate
 architectural decisions in future versions of our reference architecture.
 
