@@ -11,6 +11,11 @@ See also:
 * [GPU Kernels in the CUDA Programming Language](https://docs.nvidia.com/cuda/cuda-programming-guide/01-introduction/programming-model.html#heterogeneous-systems)
 
 ## Quantum Error Correction {#quantum-error-correction}
+
+!!! info
+
+    In the FullStaQD reference architecture, QEC is discussed in the [fault tolerance](./cross-cutting-concepts.md#fault-tolerance) section.
+
 Quantum Error Correction (QEC) uses redundancy to detect and correct errors occuring throughout quantum computation. Logical qubits are encoded across multiple physical qubits, allowing errors to be detected by measuring whether the redundancies are still intact. Detected errors can subsequently be corrected while preserving the encoded quantum information. QEC therefore introduces a substantial resource overhead, but is the fundamental approach towards fault-tolerant quantum computation (FTQC), as sufficiently low physical error rates can, theoretically, be suppressed to arbitrarily low logical error rates through fault-tolerant error correction.
 
 See also:
@@ -21,6 +26,11 @@ See also:
 * [IBM Tutorial](https://quantum.cloud.ibm.com/learning/en/courses/foundations-of-quantum-error-correction) for practical foundations of QEC
 
 ## Quantum Error Suppression {#quantum-error-suppression}
+
+!!! info
+
+    In the FullStaQD reference architecture, QES is discussed in the [fault tolerance](./cross-cutting-concepts.md#fault-tolerance) section.
+
 Quantum Error Suppression (QES) aims to reduce errors at or close to their physical source by exploiting prior knowledge about unwanted hardware effects like noise. Instead of correcting errors after they have occurred, suppression techniques modify the hardware control to prevent, or reduce their impact, for example through techniques such as dynamical decoupling. QES can therefore improve the reliability of quantum operations with comparatively low resource overhead but its effectiveness is limited by the type of noise and available control resources, and residual errors can accumulate over time.
 
 See also:
@@ -29,6 +39,11 @@ See also:
 * [Viola et al.](https://doi.org/10.1103/PhysRevLett.82.2417) for the underlying principles
 
 ## Quantum Error Mitigation {#quantum-error-mitigation}
+
+!!! info
+
+    In the FullStaQD reference architecture, QEM is discussed in the [fault tolerance](./cross-cutting-concepts.md#fault-tolerance) section.
+
 Quantum Error Mitigation (QEM) reduces the effect of noise on computational results. It typically combines multiple noisy circuit executions with classical post-processing to estimate expectation values that are closer to their ideal, noise-free values. Common techniques include Zero Noise Extrapolation (ZNE) and Probabilistic Error Cancellation (PEC); however, these methods can incur substantial sampling overhead.
 
 See also:

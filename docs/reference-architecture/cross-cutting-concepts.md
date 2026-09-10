@@ -6,8 +6,10 @@ In this section, we describe concepts whose implementation concerns many
 ## Fault Tolerance
 Noise is deemed on of the most severe limitations of today's quantum computing
 devices[^preskill-nisq].
-Many methods in Quantum Error Correction, Quantum Error Mitigation and Quantum
-Error Suppression have been developed to reduce noise with different techniques.
+Many methods in [Quantum Error Correction](./glossary.md#quantum-error-correction),
+[Quantum Error Mitigation](./glossary.md#quantum-error-mitigation) and
+[Quantum Error Suppression](./glossary.md#quantum-error-suppression) have been
+developed to reduce noise with different techniques.
 Experts suggest that several methods will likely be combined to achieve optimal
 performance. <!-- TODO cite interview study or other source -->
 These methods vary greatly in the mathematical concepts behind them as well as
