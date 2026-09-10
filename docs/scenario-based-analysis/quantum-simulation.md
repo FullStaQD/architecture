@@ -47,7 +47,7 @@ The [Qiskit Transpilation Pipeline](https://quantum.cloud.ibm.com/docs/en/guides
       
 2. Layout Stage
     - This stage maps the input circuit's virtual qubits to the target's physical hardware qubits.
-    - The algorithm tries to map the qubits that interact the most next to each other. 
+    - The algorithm's goal is to map the qubits in such a way that frequently-interacting virtual qubits end up next to each other in the physical hardware. 
 
 
 3. Routing Stage
