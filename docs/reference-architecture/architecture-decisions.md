@@ -19,10 +19,9 @@ a [cross-cutting concept](./cross-cutting-concepts.md).
 This decision was driven by two main arguments:
 
 1. Separation of concerns:
-   Design and Development Support Tooling is not part of the application being
-   developed.
-   More specifically, they are used during the development of quantum software
-   but they are not needed for its execution[^compiler-no-devtool].
+   Design and Development Support Tooling is used to develop quantum software
+   but it's not needed for the execution of the developed
+   software[^compiler-no-devtool].
 2. Not layer-specific:
    Design and Development Support Tools exist for purposes on various layers,
    and some tools even cover multiple layers.
