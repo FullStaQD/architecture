@@ -23,7 +23,7 @@ This site is divided into three sections:
    how concrete open-source components developed in the FullStaQD project make
    up an instantiation of the reference architecture.
 
-Our Reference Architecture is a living document, open to community input and continuously evolving alongside the quantum computing research. We welcome feedback and suggestions, which can be submitted using our [change process](https://github.com/FullStaQD/architecture/blob/main/CONTRIBUTING.md#changing-the-architecture).
+Our Reference Architecture is a living document, open to community input and continuously evolving alongside quantum computing research. We welcome feedback and suggestions, which can be submitted using our [change process](https://github.com/FullStaQD/architecture/blob/main/CONTRIBUTING.md#changing-the-architecture).
 
 This project is part of [FullStaQD](https://fullstaqd.de), a German flagship
 project in quantum software research that aims to improve modularity and
