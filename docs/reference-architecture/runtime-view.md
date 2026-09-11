@@ -1,5 +1,5 @@
 # Runtime View
-In the runtime view section, we document behavioural properties between building
+In this section, we document behavioural properties between building
 blocks and artifacts that are typical for quantum software systems.
 
 !!! info
@@ -30,15 +30,18 @@ In the [building block view](./05_building_block_view.md), we argue for the need
 of a common interface between the [System Layer](./05_building_block_view.md#system-layer)
 and the [Physical Layer](./05_building_block_view.md#physical-layer), and we
 call this interface the *Common Quantum Device Interface*.
-It serves two main tasks:
+It serves two main tasks for the System Layer:
 
 1. **Querying device data:**
-   Some compilation passes in the Physical Layer need to access device meta data
+   Some compilation passes in the System Layer need to access device meta data
    such as the qubit topology, decoherence times or calibration data.
 2. **Submitting quantum jobs:**
    The host application needs to submit compiled quantum workloads to the
    quantum device for execution.
 
+From the perspective of the Physical Layer, all functionality is shielded from
+the System Layer through the Common Quantum Device Interface, which acts as a
+facade.
 The sequence diagram below illustrates how the Physical and System Layers
 typically interact using the Common Quantum Device Interface:
 
