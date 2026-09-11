@@ -12,8 +12,7 @@ This site is divided into three sections:
    significant requirements of quantum software systems.
    The reference architecture is designed to capture generic properties of
    quantum software architecture rather than a concrete architecture.
-   This allows the reference architecture to move along with the state of the
-   art even as concrete interfaces change.
+   This allows the reference architecture to move along with the state of the art even as concrete interfaces change.
 2. Our [Scenario-Based Analysis](./scenario-based-analysis/) evaluates how our
    reference architecture considerations hold up in concrete usage scenarios.
    These tests are our guardrails for making sure every evolution of the
@@ -23,6 +22,8 @@ This site is divided into three sections:
    [FullStaQD Reference Implementation](./reference-implementation) which shows
    how concrete open-source components developed in the FullStaQD project make
    up an instantiation of the reference architecture.
+
+Our Reference Architecture is a living document, open to community input and continuously evolving alongside quantum computing research. We welcome feedback and suggestions, which can be submitted using our [change process](https://github.com/FullStaQD/architecture/blob/main/CONTRIBUTING.md#changing-the-architecture).
 
 This project is part of [FullStaQD](https://fullstaqd.de), a German flagship
 project in quantum software research that aims to improve modularity and
