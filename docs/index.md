@@ -12,7 +12,7 @@ This site is divided into three sections:
    significant requirements of quantum software systems.
    The reference architecture is designed to capture generic properties of
    quantum software architecture rather than a concrete architecture.
-   This allows the reference architecture to move along with the state-of-the-art even as concrete interfaces change.
+   This allows the reference architecture to move along with the state of the art even as concrete interfaces change.
 2. Our [Scenario-Based Analysis](./scenario-based-analysis/) evaluates how our
    reference architecture considerations hold up in concrete usage scenarios.
    These tests are our guardrails for making sure every evolution of the
