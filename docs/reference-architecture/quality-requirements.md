@@ -1,7 +1,7 @@
 # Quality Requirements {#section-quality-scenarios}
 Quality Requirements are a key component in designing an architecture. They describe non-functional properties of a system and must be addressed at an architectural level, as changes for addressing quality requirements can become difficult or expensive afterwards.
 
-This section describes typical quality requirements that are relevant to quantum software systems in general. Although many of these quality requirements have been addressed in the design of the reference architecture, they still need to be taken into account during implementation. Specific implementations may have additional quality requirements, which are not covered. To show the usability of the quality requirements, we also describe and assign example scenarios. As a guideline for this section, we use the [arc42 quality model](https://quality.arc42.org/qualities/).
+This section describes typical quality requirements that are relevant to quantum software systems in general. Although many of these quality requirements have been addressed in the design of the reference architecture, they still need to be taken into account during implementation. Specific implementations may have additional quality requirements, which are not covered. To show the usability of the quality requirements, we also describe and assign example scenarios. Our quality terminology is in line with the [arc42 quality model](https://quality.arc42.org/qualities/) but tailored towards quantum software.
 
 
 ## Quality Requirement for the instantiation of the reference architecture
