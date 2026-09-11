@@ -21,13 +21,13 @@ The data transmission latency between components e.G. between quantum device and
 ### Maintainability 
 The architecture needs must allow modifications with ease after the baseline is established. ([SC2,SC4](#quality-scenarios))
 ### Modularity  
-The reference architecture needs to limit changes to one component from affecting other components, e.g. exchanging quantum hardware should not affect the application layer. ([SC4](#quality-scenarios))
+The architecture needs to limit changes to one component from affecting other components, e.g. exchanging quantum hardware should not affect the application layer. ([SC4](#quality-scenarios))
 ### Interchangeability 
-The reference architecture should be interchangeable, which allows it to substitute one component, part, or element with another of the same type without requiring modifications to the system or loss of functionality. This including different SDKs, compilers and hardware backends. ([SC2](#quality-scenarios))
+The architecture should be interchangeable, which allows it to substitute one component, part, or element with another of the same type without requiring modifications to the system or loss of functionality. This including different SDKs, compilers and hardware backends. ([SC2](#quality-scenarios))
 ### Resource utilization 
 The quantum compiler should optimise quantum programs in order to minimise the number of required qubits and gates. An inefficient quantum program can lead to high costs for the user. ([SC1](#quality-scenarios))
 ### Scalability 
-Because of the rapidly evolving field of quantum technology, the reference architecture should be scalable in terms of job size, kernel amount, ... ([SC2](#quality-scenarios))
+Because of the rapidly evolving field of quantum technology, the architecture should be scalable in terms of job size, kernel amount, ... ([SC2](#quality-scenarios))
 ### Testability 
 The architecture needs to be capable to enable an objective and feasible test to be designed and performed to determine whether a requirement is met.
 
