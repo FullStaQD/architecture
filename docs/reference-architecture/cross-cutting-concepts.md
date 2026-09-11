@@ -4,7 +4,7 @@ In this section, we describe concepts whose implementation concerns many
 [building blocks](./05_building_block_view.md) across the stack.
 More specifically, this includes concepts that can be implemented on either of
 the three layers (or on a combination of them), and tools that depend on all
-three layers.
+layers.
 
 ## Fault Tolerance
 Noise is deemed on of the most severe limitations of today's quantum computing
@@ -39,14 +39,14 @@ for implementing fault tolerance measures:
    physical device's topology and fidelities.
    <p>
    Similarly, some Quantum Error Suppression and Quantum Error Mitigation
-   techniques could be injected into the program through a compilation pass.
-   This allows the compiler to introduce apply them automatically while still
-   being able to tailor them to the target device.
+   techniques could be injected into the program through compilation passes.
+   This allows the compiler to apply them automatically while still being able
+   to tailor them to the target device.
    </p>
 3. **Application-specific:**
    Some Quantum Error Mitigation and Quantum Error Correction techniques are
    highly application-specific and could be implemented along with the Use Case
-   implementation in the.
+   implementation in the Application Layer.
    Common primitives and utilities for implementing these techniques can also be
    part of Quantum SDKs and related libaries
    (see [Application Layer](./05_building_block_view.md#_white_box_app_layer)).
