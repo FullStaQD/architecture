@@ -13,7 +13,7 @@ Due to the fast evolving field of quantum computing, the architecture needs to a
 ### Extensibility  ([SC2](#example-scenarios-and-their-expectation))
 We want to be able to extend quantum software systems with new compilation passes, problem transformations and applications. 
 ### Fault tolerance ([SC3](#example-scenarios-and-their-expectation))
-The architecture needs to have countermeasures to reduce the error rate caused by the noisy quantum hardware, so that it can operate as intended. 
+Quantum software systems must be resilient to noise on hardware, i.e. quantum programs should produce their intended result even in the presence of noise.
 ### Integrability  ([SC2](#example-scenarios-and-their-expectation))
 The architecture allows software components or systems to be easily integrated into the existing IT infrastructure of stakeholders. It is important to ensure that stakeholders are motivated to use the architecture.
 ### Latency ([SC3](#example-scenarios-and-their-expectation))
