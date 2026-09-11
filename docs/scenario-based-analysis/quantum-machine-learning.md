@@ -2,14 +2,15 @@
 This scenario covers how a Quantum Machine Learning (QML) collision detection use case maps to the layers of our architecture.
 The figure below depicts the inference process with regular arrows and the training process with additional dotted arrows.
 
-  ![](./images/quantum-machine-learning.png)
-
-- Compute the probability of a collision and decide which action to take
-- Input: Real-time Camera Images
+- Input: Real-time camera images
 - Output: Action
 - Used in:
     - autonomous driving
     - drones
+
+
+  ![](./images/quantum-machine-learning.png)
+
 
 ## Application Layer - Downwards
 1. Collision Detection App
@@ -20,7 +21,7 @@ The figure below depicts the inference process with regular arrows and the train
 
 3. Residual Network (ResNet)
     - Trained ResNet Backbone uses the image data to extract the features of an image
-    - Creates a feature vector and forwards the Principal Component Analysis
+    - Creates a feature vector and forwards the Principal Component Analysis (PCA)
 
 4. Principal Component Analysis (PCA)
     - Due to the limitation in the number of qubits, this step reduces the number of features in the feature vector
@@ -34,7 +35,7 @@ The figure below depicts the inference process with regular arrows and the train
     - Sends program to the System Layer
       
 ## System Layer & Physical Layer
-Refer to [quantum simuluation scenario](./quantum-simulation.md) for a full explanation.
+Refer to [quantum simulation scenario](./quantum-simulation.md) for a full explanation.
 
 ## Application Layer - Upwards
 

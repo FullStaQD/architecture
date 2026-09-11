@@ -2,7 +2,7 @@
 
 This scenario describes the how quantum computing can be used for material science, chemistry and physics. 
 
-It has the following specifications:
+It has the following specification:
 
 -  Input: molecule specification
 -  Output: ground state energy
@@ -47,8 +47,8 @@ The [Qiskit Transpilation Pipeline](https://quantum.cloud.ibm.com/docs/en/guides
       
 2. Layout Stage
     - This stage maps the input circuit's virtual qubits to the target's physical hardware qubits.
-    - Ideally, the algorithm maps the qubit that interact the most next to each other. 
-    - While it does not guarantee continuous connectivity or direct execution validity, finding an optimal initial layout is a important, computationally expensive step that minimizes error rates and reduces the need for subsequent routing.
+    - The algorithm's goal is to map the qubits in such a way that frequently-interacting virtual qubits end up next to each other in the physical hardware. 
+
 
 3. Routing Stage
     - As described in the step before, a perfect connectivity between the qubits can not always be achieved. Therefore this stage adds additional operations to adapt to these constraints.
@@ -72,14 +72,14 @@ The [Qiskit Transpilation Pipeline](https://quantum.cloud.ibm.com/docs/en/guides
 
 1. Superconducting Device and Firmware:
     - Using digital hardware instructions and pulse definitions, this process converts these commands into physical signals to control operations on the quantum chip. 
-    - It outputs a Microwave Signal List directly to the quantum hardware, translating digital instructions into executable physical actions.
+    - It outputs a microwave signal list directly to the quantum hardware, translating digital instructions into executable physical actions.
     
 2. Molecule Laser:
-    - The Molecule Laser uses the Microwave Signal List to execute the quantum operations on the physical hardware.
-    - When all operations are done, the Molecule Laser sends a status flag to the Energy Sensor
+    - The molecule laser uses the microwave signal list to execute the quantum operations on the physical hardware.
+    - When all operations are done, the molecule Laser sends a status flag to the energy sensor
 
 3. Energy Sensor:
-    - When the Molecule Laser updated its status, this step measures the qubit energy levels 
+    - When the molecule laser has completed its job and updated its status, this step measures the qubit energy levels 
 
 ## System Layer - Upwards 
 
