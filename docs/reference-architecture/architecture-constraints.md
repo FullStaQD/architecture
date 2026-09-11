@@ -3,8 +3,7 @@
 This section covers architectural constraints, that is limitations to the design
 of quantum software systems and this reference architecture which haven't been
 covered as
-[quality goals](./introduction-and-goals.md#_quality_goals) of the reference architecture
-or [quality requirements](./quality-requirements.md) of its instantiation.
+[quality requirements](./quality-requirements.md) of the system under design.
 
 
 ## Open Source
