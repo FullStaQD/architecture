@@ -7,7 +7,7 @@ This section describes typical quality requirements that are relevant to quantum
 ## Quality Requirement for the instantiation of the reference architecture
 
 ### Adaptability  ([SC2,SC4](#example-scenarios-and-their-expectation))
-The architecture needs to be capable to be effectively and efficiently adapted for or transferred to different hardware. 
+Quantum software systems should be adaptable to different quantum computing hardware.
 ### Evolvability  ([SC4](#example-scenarios-and-their-expectation))
 Due to the fast evolving field of quantum computing, the architecture needs to adapt to changes in its environment, requirements, and implementation technologies in a cost-effective way. These changes could involve new software, algorithms, or hardware technology. 
 ### Extensibility  ([SC2](#example-scenarios-and-their-expectation))
