@@ -9,7 +9,7 @@ blocks and artifacts that are typical for quantum software systems.
 
 ## QEC Decoding Loop {#qec-decoding-loop}
 Quantum Error Correction (QEC) will likely play a crucial role in making quantum
-computers fault tolerant. <!--TODO: link cross-cutting concerns section once merged--><!--TODO cite-->
+computers [fault tolerant](./cross-cutting-concepts.md#fault-tolerance).
 To realise QEC in practice, syndrome measurements must be executed, syndromes
 must be decoded, and corrections must be applied at a high pace to reduce the
 logical error rate effectively[^sparse-blossom].
@@ -26,9 +26,9 @@ We visualise the decoding loop in the following sequence diagram:
 
 ## Interaction between the System and Physical Layers {#sys-phys-interaction}
 
-In the [building block view](./05_building_block_view.md), we argue for the need
-of a common interface between the [System Layer](./05_building_block_view.md#system-layer)
-and the [Physical Layer](./05_building_block_view.md#physical-layer), and we
+In the [building block view](./building-block-view.md), we argue for the need
+of a common interface between the [System Layer](./building-block-view.md#system-layer)
+and the [Physical Layer](./building-block-view.md#physical-layer), and we
 call this interface the *Common Quantum Device Interface*.
 It serves two main tasks for the System Layer:
 
@@ -50,11 +50,11 @@ typically interact using the Common Quantum Device Interface:
 </figure>
 
 ## A Full-Stack Example
-Here we visualise a concrete example from our scenario-based analysis <!-- TODO: link SBA part once #41 is merged -->
-to illustrate what's involved in the full-stack execution of a quantum software
-application.
+Here we visualise a concrete example from our
+[scenario-based analysis](../scenario-based-analysis/) to illustrate what's
+involved in the full-stack execution of a quantum software application.
 This scenario covers an application in material simulation, check out the
-[scenario's documentation](#_runtime_scenario_1) for the details. <!-- TODO: update link when #41 is merged -->
+[scenario's documentation](../scenario-based-analysis/quantum-simulation.md) for the details.
 
 !!! warning "A common misconception"
 
@@ -63,8 +63,8 @@ This scenario covers an application in material simulation, check out the
     application layer do not necessarily have to be executed in a python
     environment and could also be compiled to be executed in a cloud,
     high-performance, or other runtime environment.
-    See [Deployment View](./07_deployment_view.md) for deployment concerns.
+    See [Deployment View](./deployment-view.md) for deployment concerns.
 
 <figure markdown="span">
-    ![activity diagram showing a material simulation scenario](./images/RuntimeView-scenario1.png){style="max-width: 95%"}
+    ![activity diagram showing a material simulation scenario](../scenario-based-analysis/images/quantum-simulation.png){style="max-width: 95%"}
 </figure>
