@@ -585,6 +585,23 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Runtime View
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="././" class="md-nav__link md-nav__link--active">
         
   
@@ -600,6 +617,59 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#qec-decoding-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        QEC Decoding Loop
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sys-phys-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Interaction between the System and Physical Layers
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-full-stack-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        A Full-Stack Example
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -981,6 +1051,11 @@
                       
                     
                     
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
                   
                   <div class="md-sidebar__inner">
                     
@@ -992,6 +1067,47 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#qec-decoding-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        QEC Decoding Loop
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sys-phys-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Interaction between the System and Physical Layers
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-full-stack-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        A Full-Stack Example
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1023,11 +1139,73 @@
 
 
 <h1 id="runtime-view">Runtime View</h1>
+<p>In this section, we document behavioural properties between building
+blocks and artifacts that are typical for quantum software systems.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Learn more about runtime view documentation for software architecture in the
+<a href="https://docs.arc42.org/section-6/">arc42 guide</a>.</p>
+</div>
+<h2 id="qec-decoding-loop">QEC Decoding Loop</h2>
+<p>Quantum Error Correction (QEC) will likely play a crucial role in making quantum
+computers <a href=".././cross-cutting-concepts/#fault-tolerance">fault tolerant</a>.
+To realise QEC in practice, syndrome measurements must be executed, syndromes
+must be decoded, and corrections must be applied at a high pace to reduce the
+logical error rate effectively<sup id="fnref:sparse-blossom"><a class="footnote-ref" href="#fn:sparse-blossom">1</a></sup>.
+The decoding loop is executed repeatedly during the execution of the encoded
+quantum program, so the syndrome measurements have to be realised as mid-circuit
+measurements.</p>
+<p>We visualise the decoding loop in the following sequence diagram:</p>
+<figure>
+    <img alt="sequence diagram for the QEC decoding loop" src=".././images/qec-decoding-loop.svg" style="max-width: 80%" />
+</figure>
+<h2 id="sys-phys-interaction">Interaction between the System and Physical Layers</h2>
+<p>In the <a href=".././building-block-view/">building block view</a>, we argue for the need
+of a common interface between the <a href=".././building-block-view/#system-layer">System Layer</a>
+and the <a href=".././building-block-view/#physical-layer">Physical Layer</a>, and we
+call this interface the <em>Common Quantum Device Interface</em>.
+It serves two main tasks for the System Layer:</p>
+<ol>
+<li><strong>Querying device data:</strong>
+   Some compilation passes in the System Layer need to access device meta data
+   such as the qubit topology, decoherence times or calibration data.</li>
+<li><strong>Submitting quantum jobs:</strong>
+   The host application needs to submit compiled quantum workloads to the
+   quantum device for execution.</li>
+</ol>
+<p>From the perspective of the Physical Layer, all functionality is shielded from
+the System Layer through the Common Quantum Device Interface, which acts as a
+facade.
+The sequence diagram below illustrates how the Physical and System Layers
+typically interact using the Common Quantum Device Interface:</p>
+<figure>
+    <img alt="sequence diagram displaying a typical interaction between the system and physical layers" src=".././images/sys-phys-interaction.svg" style="max-width: 95%" />
+</figure>
+<h2 id="a-full-stack-example">A Full-Stack Example</h2>
+<p>Here we visualise a concrete example from our
+<a href="../../scenario-based-analysis/">scenario-based analysis</a> to illustrate what's
+involved in the full-stack execution of a quantum software application.
+This scenario covers an application in material simulation, check out the
+<a href="../../scenario-based-analysis/quantum-simulation/">scenario's documentation</a> for the details.</p>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The runtime view documentation is still work-in-progress.</p>
-<p>For examples on typical activities in our reference architectures, check out
-our <a href="../../scenario-based-analysis/">scenario-based analysis documentation</a>.</p>
+<p class="admonition-title">A common misconception</p>
+<p>Note that this diagram does not characterise any deployment properties.
+For example, the VQE algorithm and COBYLA optimiser depicted in the
+application layer do not necessarily have to be executed in a python
+environment and could also be compiled to be executed in a cloud,
+high-performance, or other runtime environment.
+See <a href=".././deployment-view/">Deployment View</a> for deployment concerns.</p>
+</div>
+<figure>
+    <img alt="activity diagram showing a material simulation scenario" src="../../scenario-based-analysis/images/quantum-simulation.png" style="max-width: 95%" />
+</figure>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:sparse-blossom">
+<p>Higgott, O. &amp; Gidney, C. <a href="https://doi.org/10.22331/q-2025-01-20-1600">Sparse Blossom: correcting a million errors per core second with minimum-weight matching</a>. Quantum 9, 1600 (2025).&#160;<a class="footnote-backref" href="#fnref:sparse-blossom" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
 </div>
 
 
