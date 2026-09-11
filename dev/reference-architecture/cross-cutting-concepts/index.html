@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#section-concepts" class="md-skip">
+        <a href="#cross-cutting-concepts" class="md-skip">
           Skip to content
         </a>
       
@@ -639,6 +639,23 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Cross-cutting Concepts
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="././" class="md-nav__link md-nav__link--active">
         
   
@@ -654,6 +671,70 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fault-tolerance" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Fault Tolerance
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Monitoring
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-and-metering" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Authentication and Metering
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-and-development-support-tooling" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Design and Development Support Tooling
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -981,6 +1062,11 @@
                       
                     
                     
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
                   
                   <div class="md-sidebar__inner">
                     
@@ -992,6 +1078,58 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fault-tolerance" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Fault Tolerance
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Monitoring
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-and-metering" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Authentication and Metering
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-and-development-support-tooling" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Design and Development Support Tooling
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1022,11 +1160,160 @@
   
 
 
-<h1 id="section-concepts">Cross-cutting Concepts</h1>
+<h1 id="cross-cutting-concepts">Cross-cutting Concepts</h1>
+<p>In this section, we describe concepts whose implementation concerns many
+<a href=".././building-block-view/">building blocks</a> across the stack.
+More specifically, this includes concepts that can be implemented on either of
+the three layers (or on a combination of them), and tools that depend on all
+layers.</p>
+<h2 id="fault-tolerance">Fault Tolerance</h2>
+<p>Noise is deemed one of the most severe limitations of today's quantum computing
+devices<sup id="fnref:preskill-nisq"><a class="footnote-ref" href="#fn:preskill-nisq">1</a></sup>.
+Many methods in <a href=".././glossary/#quantum-error-correction">Quantum Error Correction</a>,
+<a href=".././glossary/#quantum-error-mitigation">Quantum Error Mitigation</a> and
+<a href=".././glossary/#quantum-error-suppression">Quantum Error Suppression</a> have been
+developed to reduce noise with different techniques.
+Experts suggest that several methods will likely be combined to achieve optimal
+performance. <!-- TODO cite interview study or other source -->
+These methods vary greatly in the mathematical concepts behind them as well as
+the environments they can be used.</p>
+<p>Within the FullStaQD reference architecture, we identify three typical places
+for implementing fault tolerance measures:</p>
+<ol>
+<li><strong>Firmware-bundled:</strong>
+   Some hardware vendors suggest that they want to bundle highly optimised and
+   highly device-specific error correction and supression techniques within
+   their device firmware (see
+   <a href=".././building-block-view/#_white_box_phys_layer">Physical Layer</a>).
+   Such measures would effectively be hidden in the device such that higher
+   layers could treat the quantum device's logical qubits as physical qubits
+   with an improved error rate.</li>
+<li>
+<p><strong>Compilation:</strong>
+   Researchers often frame Quantum Error Correction as a compilation step that
+   maps logical operations to their physical, fault-tolerant implementations.
+   Such an approach could be implemented as a compilation pass within the
+   <a href=".././building-block-view/#_white_box_sys_layer">System Layer</a>'s Compiler.
+   As the Compiler can access figures of merit from its compilation target,
+   QEC compilation passes can implement their mapping while respecting the
+   physical device's topology and fidelities.
+ <br />
+<p>
+   Similarly, some Quantum Error Suppression and Quantum Error Mitigation
+   techniques could be injected into the program through compilation passes.
+   This allows the compiler to apply them automatically while still being able
+   to tailor them to the target device.
+   </p></p>
+</li>
+<li>
+<p><strong>Application-specific:</strong>
+   Some Quantum Error Mitigation and Quantum Error Correction techniques are
+   highly application-specific and could be implemented along with the Use Case
+   implementation in the Application Layer.
+   Common primitives and utilities for implementing these techniques can also be
+   part of Quantum SDKs and related libaries
+   (see <a href=".././building-block-view/#_white_box_app_layer">Application Layer</a>).</p>
+</li>
+</ol>
+<h2 id="monitoring">Monitoring</h2>
+<p>Large-scale deployments of quantum software systems will require extensive
+monitoring to allow operators to ensure smooth operation of these systems.
+Such monitoring will be most useful when it captures montoring data (such as
+logs and metrics) across all components that run live during the execution of
+quantum software workloads, and when individual datapoints can be traced to
+the corresponding workloads.</p>
+<p>Monitoring will require a separate data collection building block that all
+layers can access.
+For the extraction of logs and metrics, two common patterns are to be expected:</p>
+<ul>
+<li>Data-producing components can implement routines that directly send metrics
+  and logs to the data collection component.
+  This would make such components depend on the data collection interface, which
+  is only likely for tighly integrated systems or when a common data collection
+  interface emerges.</li>
+<li>Lightweight wrapper components can extract logs and metrics from individual
+  data-producing components.
+  This approach introduces some overhead but decouples the data collection
+  component from the rest of the stack.</li>
+</ul>
+<!-- TODO: cite common pattern for data extraction from classical monitoring software -->
+
+<p>Besides data collection, there will need to be an interface that allows
+operators to access monitoring data.
+Such a component could be a standalone tool, or it could be bundled with
+integration tooling in the
+<a href=".././building-block-view/#_white_box_app_layer">Application Layer</a> or the
+data collection component itself. </p>
+<h2 id="authentication-and-metering">Authentication and Metering</h2>
+<p>In cloud and HPC environments where multiple users can submit workloads, access
+to resources needs to be controlled through an authentication mechanism and
+resource usage must be recorded to enable billing or budgeting.</p>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The Cross-Cutting Concepts are still in work. </p>
-<p>This will be filled as we progress.</p>
+<p class="admonition-title">Work in Progress</p>
+<p>This cross-cutting concept and its influence on the reference architecture
+is currently being investigated as part of the FullStaQD project.
+More detailed guidance on how to implement Authentication and Metering in
+Quantum Software Systems will follow in a future release of this
+documentation.</p>
+</div>
+<h2 id="design-and-development-support-tooling">Design and Development Support Tooling</h2>
+<p>Some quantum software tools are not directly part of the implementation of
+quantum software stacks but instead aim to support their design and development
+process.
+A key characteristic of these tools is that they are not fully automated but
+instead support a developer's implementation decisions.
+Furthermore, many of these tools go across the boundaries of individual layers
+to enable a holistic treatment of the quantum software stack.</p>
+<p>Typical examples for Design and Development Support Tooling include:</p>
+<ul>
+<li>Low-code tools for assembling quantum applications (e.g. the
+  <a href="https://provideq.kit.edu">ProvideQ Toolbox</a>'s visual problem decomposition
+  tools,
+  <a href="https://docs.hub.kipu-quantum.com/services/workflow/air-traffic-tutorial">Kipu Quantum Workflows</a>
+  based on <a href="https://docs.camunda.io">CAMUNDA</a>, or the
+  <a href="https://www.quast-decisiontree.com/tree">QuaST Decision Tree</a>)</li>
+<li>Agentic AI Tools supporting the the choice of components and algorithms, or
+  supporting the implementation of business use cases with quantum algorithms
+  (e.g. Kipu Quantum's <a href="https://kipu-quantum.com/paqari">Paqari AI Agent</a>)</li>
+<li>Integrated Development Environments (IDEs) (e.g. the
+  <a href="https://quantum.cloud.ibm.com/composer">IBM Quantum Composer</a> for editing
+  OpenQASM and Qiskit programs)</li>
+<li>Visualisation tools for inspecting the results of quantum computations,
+  intermediary results or <a href="#monitoring">monitoring data</a></li>
+<li>Testing, benchmarking and verification tools</li>
+</ul>
+<details class="question">
+<summary>Aren't compilers development tools too?</summary>
+<p>Compilers are traditionally considered development tools, used to compile
+programs once for a few common compilation targets (e.g. standard OS's, x86
+and ARM instruction sets) and then not needed for the execution anymore.
+In quantum computing, they take up a slightly different role as compilation
+targets are much more nuanced since more different hardware modalities are
+available.
+Furthermore, some researchers <!-- TODO cite interview study once available -->
+suggest that compilation should also adapt the compiled program to the
+current state of the hardware, informed by drift and fidelity metrics.
+Therefore, compilers cannot be separated from the application, as it is the
+case for the design and development tools discussed in this section.</p>
+<p>Another reason for the different treatment of compilers lies in their degree
+of automation.
+Compilers should be able to run without further user input whereas our
+Design and Development Support Tooling merely supports the developer.</p>
+</details>
+<details class="info">
+<summary>Rationale</summary>
+<p>The rationale behind making Design and Development Support Tooling a
+cross-cutting concern is explained in the
+<a href=".././architecture-decisions/#2-separate-devtools">architectural decisions</a>
+section.</p>
+</details>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:preskill-nisq">
+<p>Preskill, J. <a href="https://quantum-journal.org/papers/q-2018-08-06-79/">Quantum Computing in the NISQ era and beyond</a>. Quantum 2, 79 (2018).&#160;<a class="footnote-backref" href="#fnref:preskill-nisq" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
 </div>
 
 
@@ -1079,7 +1366,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["content.action.edit","content.action.view","navigation.tabs"],"search":"../../assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":{"provider":"mike"}}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["content.action.edit","content.action.view","content.footnote.tooltips","navigation.tabs"],"search":"../../assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":{"provider":"mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7f30b55.min.js"></script>

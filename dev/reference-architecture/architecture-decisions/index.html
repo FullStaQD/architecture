@@ -726,6 +726,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#2-separate-devtools" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        002: Separate Design and Development Support Tooling from the main stack
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1063,6 +1074,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#2-separate-devtools" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        002: Separate Design and Development Support Tooling from the main stack
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1106,6 +1128,33 @@ which will allow re-evaluating them when circumstances change. </p>
 software systems.
 The rationale behind this decision is documented in
 <a href=".././building-block-view/#motivation">the building block view's motivation section</a>.</p>
+<h2 id="2-separate-devtools">002: Separate Design and Development Support Tooling from the main stack</h2>
+<p>In the FullStaQD Reference Architecture, we have made
+<a href=".././cross-cutting-concepts/#design-and-development-support-tooling">Design and Development Support Tooling</a>
+a <a href=".././cross-cutting-concepts/">cross-cutting concept</a>.
+This decision was driven by two main arguments:</p>
+<ol>
+<li>Separation of concerns:
+   Design and Development Support Tooling is used to develop quantum software
+   but it's not needed for the execution of the developed
+   software<sup id="fnref:compiler-no-devtool"><a class="footnote-ref" href="#fn:compiler-no-devtool">1</a></sup>.</li>
+<li>Not layer-specific:
+   Design and Development Support Tools exist for purposes on various layers,
+   and some tools even cover multiple layers.</li>
+</ol>
+<p>Alternatively, one could have added one Design and Development Support Tooling
+building block to each layer (adding redundancy and cluttering the main stack),
+or one could have added a separate high-level building block next to the three
+layers (which is conceptually similar to a cross-cutting concern).</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:compiler-no-devtool">
+<p>See <a href=".././cross-cutting-concepts/#design-and-development-support-tooling">Design and Development Support Tooling</a> for a discussion on
+why the compiler is in the main stack nonetheless.&#160;<a class="footnote-backref" href="#fnref:compiler-no-devtool" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
@@ -1157,7 +1206,7 @@ The rationale behind this decision is documented in
     
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["content.action.edit","content.action.view","navigation.tabs"],"search":"../../assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":{"provider":"mike"}}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["content.action.edit","content.action.view","content.footnote.tooltips","navigation.tabs"],"search":"../../assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":{"provider":"mike"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.d7f30b55.min.js"></script>
