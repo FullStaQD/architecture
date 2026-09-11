@@ -24,6 +24,28 @@ We visualise the decoding loop in the following sequence diagram:
     ![sequence diagram for the QEC decoding loop](./images/qec-decoding-loop.svg){style="max-width: 80%"}
 </figure>
 
+## Interaction between the System and Physical Layers {#sys-phys-interaction}
+
+In the [building block view](./05_building_block_view.md), we argue for the need
+of a common interface between the [System Layer](./05_building_block_view.md#system-layer)
+and the [Physical Layer](./05_building_block_view.md#physical-layer), and we
+call this interface the *Common Quantum Device Interface*.
+It serves two main tasks:
+
+1. **Querying device data:**
+   Some compilation passes in the Physical Layer need to access device meta data
+   such as the qubit topology, decoherence times or calibration data.
+2. **Submitting quantum jobs:**
+   The host application needs to submit compiled quantum workloads to the
+   quantum device for execution.
+
+The sequence diagram below illustrates how the Physical and System Layers
+typically interact using the Common Quantum Device Interface:
+
+<figure markdown="span">
+    ![sequence diagram displaying a typical interaction between the system and physical layers](./images/sys-phys-interaction.svg){style="max-width: 95%"}
+</figure>
+
 ## A Full-Stack Example
 Here we visualise a concrete example from our scenario-based analysis <!-- TODO: link SBA part once #41 is merged -->
 to illustrate what's involved in the full-stack execution of a quantum software
