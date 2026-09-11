@@ -114,13 +114,18 @@ following needs:
   specifications to the Physical Layer.
 * It needs to allow the System Layer to query properties (like hardware
   architecture, instruction set, topology or gate fidelities) of the quantum
-  device managed by the system layer. 
+  device managed by the system layer.
 
 In the reference implementation, the
 [Quantum Device Management Interface (QDMI)](https://munich-quantum-software-stack.github.io/QDMI/)
 will be used as its
 [Job and Query interfaces](https://munich-quantum-software-stack.github.io/QDMI/latest/md_docs_2rationale.html)
 satisfy these needs exactly.
+
+??? info "Interaction patterns"
+
+    We discuss typical interaction patterns between the System and Physical
+    Layers in a [separate runtime view section](./06_runtime_view.md#sys-phys-interaction).
 
 ## Level 2 {#_level_2}
 
