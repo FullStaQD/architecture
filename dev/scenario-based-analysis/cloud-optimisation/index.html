@@ -955,21 +955,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#physical-layer-downwards" class="md-nav__link">
+  <a href="#physical-layer-system-layer-upwards" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Physical Layer - Downwards
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#system-layer-upwards" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        System Layer - Upwards
+        Physical Layer &amp; System Layer - Upwards
       </span>
     </span>
   </a>
@@ -1119,21 +1108,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#physical-layer-downwards" class="md-nav__link">
+  <a href="#physical-layer-system-layer-upwards" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Physical Layer - Downwards
-      </span>
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#system-layer-upwards" class="md-nav__link">
-    <span class="md-ellipsis">
-      <span class="md-typeset">
-        System Layer - Upwards
+        Physical Layer &amp; System Layer - Upwards
       </span>
     </span>
   </a>
@@ -1184,7 +1162,6 @@
 
 <h1 id="quantum-cloud-services-for-optimisation-problems">Quantum Cloud Services for Optimisation Problems</h1>
 <p>In this scenario, we want to show how our architecture behaves and interacts using a NP-hard combinatorial optimisation problem. Since the System and Physical Layer are almost identical to the first scenario, we only document the new building blocks. </p>
-<p><img alt="" src=".././images/cloud-optimisation.png" /></p>
 <p>It has the following specification:</p>
 <ul>
 <li>Input: Max-Cut instance</li>
@@ -1193,17 +1170,16 @@
 <li>Flight-gate assignment in airports</li>
 <li>Electronic Design Automation</li>
 <li>Trajectory optimization in air traffic</li>
-<li>Paint-shop scheduling</li>
-<li>Planning problems in highly individualised mass production</li>
 </ul>
 </li>
 </ul>
+<p><img alt="" src=".././images/cloud-optimisation.png" /></p>
 <h2 id="application-layer-downwards">Application Layer - Downwards</h2>
 <ol>
 <li>
 <p>Cloud Optimisation Application:</p>
 <ul>
-<li>Processes the MaxCut problem instance and forwards the information to the QUBO Transformator</li>
+<li>Processes the MaxCut problem instance and forwards the problem information to the QUBO Transformator</li>
 </ul>
 </li>
 <li>
@@ -1241,19 +1217,17 @@
 <h2 id="system-layer-downwards">System Layer - Downwards</h2>
 <ol>
 <li>Noise Suppression<ul>
-<li>Noise Supression reduces the error rate by actively canceling noise using clever pulse timing or add redudancy to detect and fix errors.</li>
+<li>Noise Supression reduces the error rate by actively canceling noise using adjusted pulse timing or add redundancy to detect and reduce errors.</li>
 <li>It takes an optimized circuit and adds the above mentioned operations.</li>
 </ul>
 </li>
 </ol>
-<h2 id="physical-layer-downwards">Physical Layer - Downwards</h2>
-<p>-- </p>
-<h2 id="system-layer-upwards">System Layer - Upwards</h2>
-<p>-- </p>
+<h2 id="physical-layer-system-layer-upwards">Physical Layer &amp; System Layer - Upwards</h2>
+<p>Refer to <a href=".././quantum-simulation/">quantum simuluation scenario</a> for a full explanation.</p>
 <h2 id="application-layer-upwards">Application Layer - Upwards</h2>
 <ol>
 <li>SPSA<ul>
-<li>Similar to COBYLA, SPSA is classical optimizer used for optimizing the parameters of the QAOA algorithm. </li>
+<li>SPSA is classical optimizer used for optimizing the parameters of the QAOA algorithm. </li>
 <li>It updates the parameters and sends them to the QAOA Program Generator, where the program is computed again until the optimizer terminates.</li>
 </ul>
 </li>

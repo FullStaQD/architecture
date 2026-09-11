@@ -1141,10 +1141,8 @@
 <h1 id="collision-detection-using-quantum-machine-learning">Collision Detection using Quantum Machine Learning</h1>
 <p>This scenario covers how a Quantum Machine Learning (QML) collision detection use case maps to the layers of our architecture.
 The figure below depicts the inference process with regular arrows and the training process with additional dotted arrows.</p>
-<p><img alt="" src=".././images/quantum-machine-learning.png" /></p>
 <ul>
-<li>Compute the probability of a collision and decide which action to take</li>
-<li>Input: Real-time Camera Images</li>
+<li>Input: Real-time camera images</li>
 <li>Output: Action</li>
 <li>Used in:<ul>
 <li>autonomous driving</li>
@@ -1152,6 +1150,7 @@ The figure below depicts the inference process with regular arrows and the train
 </ul>
 </li>
 </ul>
+<p><img alt="" src=".././images/quantum-machine-learning.png" /></p>
 <h2 id="application-layer-downwards">Application Layer - Downwards</h2>
 <ol>
 <li>
@@ -1170,7 +1169,7 @@ The figure below depicts the inference process with regular arrows and the train
 <p>Residual Network (ResNet)</p>
 <ul>
 <li>Trained ResNet Backbone uses the image data to extract the features of an image</li>
-<li>Creates a feature vector and forwards the Principal Component Analysis</li>
+<li>Creates a feature vector and forwards the Principal Component Analysis (PCA)</li>
 </ul>
 </li>
 <li>
@@ -1195,7 +1194,7 @@ The figure below depicts the inference process with regular arrows and the train
 </li>
 </ol>
 <h2 id="system-layer-physical-layer">System Layer &amp; Physical Layer</h2>
-<p>Refer to <a href=".././quantum-simulation/">quantum simuluation scenario</a> for a full explanation.</p>
+<p>Refer to <a href=".././quantum-simulation/">quantum simulation scenario</a> for a full explanation.</p>
 <h2 id="application-layer-upwards">Application Layer - Upwards</h2>
 <ol>
 <li>Softmax Function <ul>

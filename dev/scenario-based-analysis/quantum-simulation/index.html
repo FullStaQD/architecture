@@ -1184,7 +1184,7 @@
 
 <h1 id="quantum-simulation-for-material-science-chemistry-and-physics">Quantum simulation for material science, chemistry and physics</h1>
 <p>This scenario describes the how quantum computing can be used for material science, chemistry and physics. </p>
-<p>It has the following specifications:</p>
+<p>It has the following specification:</p>
 <ul>
 <li>Input: molecule specification</li>
 <li>Output: ground state energy</li>
@@ -1252,8 +1252,7 @@
 <p>Layout Stage</p>
 <ul>
 <li>This stage maps the input circuit's virtual qubits to the target's physical hardware qubits.</li>
-<li>Ideally, the algorithm maps the qubit that interact the most next to each other. </li>
-<li>While it does not guarantee continuous connectivity or direct execution validity, finding an optimal initial layout is a important, computationally expensive step that minimizes error rates and reduces the need for subsequent routing.</li>
+<li>The algorithm's goal is to map the qubits in such a way that frequently-interacting virtual qubits end up next to each other in the physical hardware. </li>
 </ul>
 </li>
 <li>
@@ -1296,20 +1295,20 @@
 <p>Superconducting Device and Firmware:</p>
 <ul>
 <li>Using digital hardware instructions and pulse definitions, this process converts these commands into physical signals to control operations on the quantum chip. </li>
-<li>It outputs a Microwave Signal List directly to the quantum hardware, translating digital instructions into executable physical actions.</li>
+<li>It outputs a microwave signal list directly to the quantum hardware, translating digital instructions into executable physical actions.</li>
 </ul>
 </li>
 <li>
 <p>Molecule Laser:</p>
 <ul>
-<li>The Molecule Laser uses the Microwave Signal List to execute the quantum operations on the physical hardware.</li>
-<li>When all operations are done, the Molecule Laser sends a status flag to the Energy Sensor</li>
+<li>The molecule laser uses the microwave signal list to execute the quantum operations on the physical hardware.</li>
+<li>When all operations are done, the molecule Laser sends a status flag to the energy sensor</li>
 </ul>
 </li>
 <li>
 <p>Energy Sensor:</p>
 <ul>
-<li>When the Molecule Laser updated its status, this step measures the qubit energy levels </li>
+<li>When the molecule laser has completed its job and updated its status, this step measures the qubit energy levels </li>
 </ul>
 </li>
 </ol>
