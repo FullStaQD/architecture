@@ -57,24 +57,3 @@ To address these aspects and continuously validate and refine the reference arch
 | Interview with Stakeholders  | In-depth interviews with stakeholders about the reference architecture and their respective positions  | Acquiring detailed insights of Stakeholders and adopt their input  |
 | Workshops  | Regular on-site exchange with the consortium  | Updating partners of current status and discussing next steps |
 | Community Engagement | Allowing open requests and discussion about the reference architecture through our ticket system | Ensuring external input, extendability and exchangability | 
-
-
-
-This project is supported and funded by the German Federal Ministry of Research, Technology and Space in project FullStaQD under Grant No.: 01MQ25001F.
-
- 
-
-<figure markdown="span">
-    [![With funding from the German Federal Ministry of Research, Technology and Space (BMFTR)][bmftr-logo]{: style="max-width: 40%; display: inline-block;"}][bmftr-link]
-    [![High-tech Agenda Germany][htad-logo]{: style="max-width: 40%; display: inline-block;"}][htad-link]
-</figure>
-
-[bmftr-link]: https://www.bmftr.bund.de/EN/Home/home_node.html
-[bmftr-logo]: ./images/BMFTR_Logo.jpg
-[htad-link]: https://www.bmftr.bund.de/EN/Technology/HightechAgenda/HightechAgenda.html
-[htad-logo]: ./images/HightechAgendaLogo.jpg
-
-
-
-
-
