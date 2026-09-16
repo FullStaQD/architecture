@@ -34,10 +34,43 @@ To maintain a state of the art reference architecture in the quantum ecosystem, 
 | Modularity  | Systems, components or whole layers can be integrated and are exchangeable into the reference architecture using specified interfaces  |
 | Reliability  | The reference architecture can maintain a high level of performance  when used under specific conditions  |
 
-## Stakeholders {#_stakeholders}
-The FullStaQD reference architecture is designed for research at universities as well as for practical use within the industry.
-For further Information visit [our website](https://tva.kastel.kit.edu/english/research_fullstaqd.php).
+## Stakeholders {#stakeholders}
+Quantum software systems is developed and used by stakeholders with different
+motives, interests and constraints.
+These forces influence the design of software systems, and software architecture
+in particular.
+For example, stakeholders can demand different levels of abstractions:
+Business users of quantum software benefit from a high level of abstraction to
+inform their decisions whereas quantum firmware developers need access to all
+technical details.
 
+Schmidbauer et al.[^stakeholder-personas-ref] present the following persona
+hypothesis, that is a characterisation of the typical stakeholders in quantum
+software:
+
+| Category | Stakeholders |
+|-|-|
+| *Application-oriented* | business user, early adopter, government contractor |
+| *Application- and hardware-oriented* | simulation-focused engineer, researcher |
+| *Hardware-oriented* | platform builder, quantum algorithm designer, HPC engineer, embedded quantum developer |
+
+In the FullStaQD Reference Architecture, we keep stakeholders in mind throughout
+the architecture design.
+Most prominently, the reference architecture uses a
+[three-layered architecture](./building-block-view.md) to offer different levels
+of abstraction to different stakeholders. 
+
+??? info "More about stakeholders"
+
+    More info on documenting stakeholders can be found in the
+    [arc42 docs](https://docs.arc42.org/section-1/#13-stakeholder).
+    For a recent study on stakeholders in quantum software, check out the
+    ["Know You Qubits, Know Your Users: Personas for Quantum Software"][stakeholder-personas-link]
+    paper by Schmidbauer et al..
+
+[^stakeholder-personas-ref]: Schmidbauer, L. ["Know You Qubits, Know Your Users: Personas for Quantum Software"][stakeholder-personas-link]. Preprint on arXiv (2026).
+
+[stakeholder-personas-link]: https://arxiv.org/abs/2608.18598
 
 ## Methodology  
 To fulfill the requirements and goals of the reference architecture, we consider several key aspects that are fundamental to the design of modern software architectures:
