@@ -42,7 +42,7 @@ It has the following specification:
    
    
 ## Physical Layer & System Layer - Upwards
-Refer to [quantum simuluation scenario](./quantum-simulation.md) for a full explanation.
+Refer to [quantum simulation scenario](./quantum-simulation.md) for a full explanation.
 
 
 ## Application Layer - Upwards
