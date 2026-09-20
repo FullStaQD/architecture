@@ -15,8 +15,10 @@ Our set of scenarios was originally inspired by
 [Carbonelli et al.'s work](https://doi.org/10.1007/978-3-031-64136-7_12) which
 presented three industrial usage scenarios for quantum computing.
 We have since extended our scenarios with the goal of covering a representative
-set.
+set [^representative-study].
 Our analysis currently covers the following scenarios:
+
+[^representative-study]: Quantum Technology and Application Consortium–QUTAC info@ qutac. de, et al. [Industry quantum computing applications](https://link.springer.com/article/10.1140/epjqt/s40507-021-00114-x) EPJ Quantum Technology 8.1 (2021)
 
 1. [Quantum Simulation for Material Science, Chemistry and Physics](./quantum-simulation.md)
 2. [Quantum Cloud Services for Optimisation Problems](./cloud-optimisation.md)
