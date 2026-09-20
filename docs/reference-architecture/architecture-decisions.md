@@ -20,7 +20,7 @@ This decision was driven by two main arguments:
 
 1. Separation of concerns:
    Design and Development Support Tooling is used to develop quantum software
-   but it's not needed for the execution of the developed
+   but it is not needed for the execution of the developed
    software[^compiler-no-devtool].
 2. Not layer-specific:
    Design and Development Support Tools exist for purposes on various layers,
