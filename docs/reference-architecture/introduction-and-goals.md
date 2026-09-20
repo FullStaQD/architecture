@@ -1,6 +1,12 @@
 # Introduction and Goals {#section-introduction-and-goals}
 The FullStaQD reference architecture is the first step towards modular full-stack quantum software, which ensures compatibility and interoperability of various components in the quantum ecosystem. We aim to develop a reference architecture with uniform standardised interfaces, which is consistent, modular and open. 
 
+!!! info
+
+    "[A reference architecture] refers to a special type of software architecture that captures the essence of the architectures of a set of software systems of a given domain. Its purpose is to be a guidance for the development, standardization, and evolution of systems." [^Nakagawa].
+
+
+[^Nakagawa]: Nakagawa, Elisa Yumi, Flavio Oquendo, and Martin Becker [Ramodel: A reference model for reference architectures](10.1109/WICSA-ECSA.212.49) Joint Working IEEE/IFIP Conference on Software Architecture and European Conference on Software Architecture. IEEE (2012)
 
 ## Overview 
 The reference architecture is divided into three layers: Application, System and Physical Layer.
