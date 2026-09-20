@@ -53,8 +53,7 @@ extra:
 nav:
   - index.md
   - Reference Architecture:
-    - reference-architecture/index.md
-    - reference-architecture/introduction-and-goals.md
+    - Introduction: reference-architecture/index.md
     - reference-architecture/architecture-constraints.md
     - reference-architecture/context-and-scope.md
     - reference-architecture/solution-strategy.md
