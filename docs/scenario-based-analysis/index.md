@@ -2,7 +2,7 @@
 
 Scenario-based analysis is an architecture evaluation method from classical
 software engineering [^state-of-the-art-analysis].
-It uses concrete usage scenarios for the system under design to test whether the
+It uses concrete usage scenarios for the system under design to verify whether the
 architecture can hold up to the requirements of its use cases.
 
 In FullStaQD, we use this method to guide the design of our
