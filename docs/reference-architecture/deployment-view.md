@@ -8,7 +8,7 @@ This section documents a few common deployment scenarios.
   ![](./images/Deployment-Single-Machine.excalidraw.png)
 </figure>
 
-While developing quantum software, it is common to test the software on a local
+While developing quantum software, it is common to execute the software on a local
 machine.
 In this most simple scenario, a full instantiation of the quantum software stack
 is installed on a single non-quantum device such as a developer's laptop or
