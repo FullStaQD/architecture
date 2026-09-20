@@ -25,6 +25,7 @@ A detailed breakdown of the components of the layers can be seen in the [buildin
 
 ## Quality Goals {#_quality_goals}
 To maintain a state of the art reference architecture in the quantum ecosystem, we consider the following quality goals as most important for this architecture.
+Further details regarding the overall requirements for the architecture can be found in the [quality requirements](./quality-requirements.md) chapter.
 
 | Quality Goal  | Description | 
 | ------------- | ------------- | 
