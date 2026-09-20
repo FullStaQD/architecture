@@ -1,7 +1,7 @@
 # Architecture Constraints {#section-architecture-constraints}
 
 This section covers architectural constraints, that is limitations to the design
-of quantum software systems and this reference architecture which haven't been
+of quantum software systems and this reference architecture which have not been
 covered as
 [quality requirements](./quality-requirements.md) of the system under design.
 
