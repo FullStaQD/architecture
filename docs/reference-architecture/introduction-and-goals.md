@@ -70,9 +70,9 @@ This project is supported and funded by the German Federal Ministry of Research,
 </figure>
 
 [bmftr-link]: https://www.bmftr.bund.de/EN/Home/home_node.html
-[bmftr-logo]: ./images/BMFTR_Logo.jpg
+[bmftr-logo]: ../images/BMFTR_Logo.jpg
 [htad-link]: https://www.bmftr.bund.de/EN/Technology/HightechAgenda/HightechAgenda.html
-[htad-logo]: ./images/HightechAgendaLogo.jpg
+[htad-logo]: ../images/HightechAgendaLogo.jpg
 
 
 
