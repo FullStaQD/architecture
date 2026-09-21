@@ -108,19 +108,23 @@ how to realise these varous cross-cutting concepts.
     </figcaption>
 </figure>
 
-## Quality Goals {#_quality_goals}
-To maintain a state of the art reference architecture in the quantum ecosystem, we consider the following quality goals as most important for this architecture.
+## Quality Requirements Overview
+The architectural decisions taken in the FullStaQD Reference Architecture are
+driven by the quality requirements typically found in quantum software systems.
+The following list is a summary of the most significant quality requirements;
+the full list can be found in the
+[quality requirements](./quality-requirements.md) section.
 
-| Quality Goal  | Description | 
+| Quality Requirement { style="width: 1%; white-space: nowrap;" } | Description | 
 | ------------- | ------------- | 
-| Operability  | The reference architecture can be understood, learned, used and is attractive to users from academia and industry  |
-| Compatibility  | HPCs and existing infrastructure can be integrated into the reference architecture using specific interfaces  |
-| Maintainability  | The reference architecture can be modified, corrected, adapted or improved due to changes in the environment or requirements with ease |
-| Modularity  | Systems, components or whole layers can be integrated and are exchangeable into the reference architecture using specified interfaces  |
-| Reliability  | The reference architecture can maintain a high level of performance  when used under specific conditions  |
+| [Extensibility](./quality-requirements.md#extensibility) | Quantum software systems can be extended with new use cases, SDKs, compiler passes, fault tolerance measures, and quantum devices. |
+| [Integrability](./quality-requirements.md#integrability) | Quantum software systems can be integrated into existing IT infrastructure, and High-Performance-Computing systems in particular. |
+| [Modularity](./quality-requirements.md#modularity) | Changes to one component should not affect other components. |
+| [Fault Tolerance](./quality-requirements.md#fault-tolerance) | The quantum software system can produce correct results in the presence of noise. |
+| [Maintainability](./quality-requirements.md#maintainability) | The reference architecture can be modified, corrected, adapted or improved due to changes in the environment or requirements with ease. |
 
 ## Stakeholders {#stakeholders}
-Quantum software systems is developed and used by stakeholders with different
+Quantum software systems are developed and used by stakeholders with different
 motives, interests and constraints.
 These forces influence the design of software systems, and software architecture
 in particular.
