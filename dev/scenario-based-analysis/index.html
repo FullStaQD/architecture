@@ -1023,26 +1023,37 @@
 
 
 <h1 id="scenario-based-analysis">Scenario-Based Analysis</h1>
-<p>Scenario-based analysis is an archictecture evaluation method from classical
-software engineering.
+<p>Scenario-based analysis is an architecture evaluation method from classical
+software engineering <sup id="fnref:state-of-the-art-analysis"><a class="footnote-ref" href="#fn:state-of-the-art-analysis">1</a></sup>.
 It uses concrete usage scenarios for the system under design to test whether the
 architecture can hold up to the requirements of its use cases.</p>
 <p>In FullStaQD, we use this method to guide the design of our
-<a href="../reference-architecture/">reference architecture</a>.
+<a href="../reference-architecture/">reference architecture</a>. At the current stage of the reference architecture, the scenario-based analysis focuses on the building block and runtime view. An extension to include the deployment view is planned for the future.
 Additionally, we document the scenarios for other software architects to use them in the evaluation of their own
 quantum software architecture instantiations, and for ourselves to evaluate
 architectural decisions in future versions of our reference architecture.</p>
 <p>Our set of scenarios was originally inspired by
 <a href="https://doi.org/10.1007/978-3-031-64136-7_12">Carbonelli et al.'s work</a> which
 presented three industrial usage scenarios for quantum computing.
-We have since extended our scenarios with the goal of covering a representative
-set.
+We have since adjusted our scenarios with the goal of covering a representative
+set <sup id="fnref:representative-study"><a class="footnote-ref" href="#fn:representative-study">2</a></sup>.
 Our analysis currently covers the following scenarios:</p>
 <ol>
 <li><a href="./quantum-simulation/">Quantum Simulation for Material Science, Chemistry and Physics</a></li>
 <li><a href="./cloud-optimisation/">Quantum Cloud Services for Optimisation Problems</a></li>
 <li><a href="./quantum-machine-learning/">Collision Detection using Quantum Machine Learning</a></li>
 </ol>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:state-of-the-art-analysis">
+<p>R. Kazman, G. Abowd, L. Bass and P. Clements <a href="https://doi.org/10.1109/52.542294">Scenario-based analysis of software architecture</a> IEEE software 13.6 (1996)&#160;<a class="footnote-backref" href="#fnref:state-of-the-art-analysis" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:representative-study">
+<p>Quantum Technology and Application Consortium–QUTAC et al. <a href="https://link.springer.com/article/10.1140/epjqt/s40507-021-00114-x">Industry quantum computing applications</a> EPJ Quantum Technology 8.1 (2021)&#160;<a class="footnote-backref" href="#fnref:representative-study" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
