@@ -161,21 +161,29 @@ of abstraction to different stakeholders.
 
 [stakeholder-personas-link]: https://arxiv.org/abs/2608.18598
 
-## Methodology  
-To fulfill the requirements and goals of the reference architecture, we consider several key aspects that are fundamental to the design of modern software architectures:
+## Methodology
+The design of the FullStaQD Reference Architecture follows best practices from
+software engineering.
+As such, it is driven by architecturally significant requirements that are
+typically found in quantum software.
+The domain of quantum software is highly complex as (1) it involves stateholders
+and use cases with various different perspectives, (2) it still lacks common
+abstractions and a common language, and (3) the field is still evolving rapidly.
 
-- the multitude of perspective of stakeholders and use cases
-- the multitude of abstractions, where most expertise of stakeholders focuses only a specified area
-- the multitude of languages, which are used by the different domain experts  (physicists, software-engineers, mathematicians, ...)
-- the rapid advancement in the quantum eco system
+To find the architecturally significant requirements despite these challenges,
+several state-of-the-art methods from classical software engineering were
+employed:
 
+| Method | Description | Reason | 
+| - | - | - | 
+| [Scenario-Based Analysis](../scenario-based-analysis) | Using predefined scenarios of use cases on the reference architecture  | To assess how well the reference architecture covers the predefined scenarios and to identify the common requirements shared by the components on which those scenarios depend |
+| Requirement Survey | Sending surveys to stakeholders asking for requirements and needs for their components | Obtaining high-level input on the requirements that the reference architecture must fulfill  |
+| Interview Survey | In-depth interviews with experts of various architectural concerns (e.g. HPC, hardware, compilation) about the architecturally significant requirements in their area of expertise | Evaluating the reference architecture and gathering detailed input from various areas |
+| Workshops | On-site workshops with relevant partners from the FullStaQD consortium | Evaluating and improving the reference architecture |
+| Community Engagement | Presenting the FullStaQD Reference Architecture at conferences and designing it openly on GitHub | Gathering feedback from a broad audience and promoting interoperability |
 
-To address these aspects and continuously validate and refine the reference architecture, we employ a set of state-of-the-art methods from classical software engineering:
- <!--  Hier könnte man Paper oder Ergebnisse hinten noch als Spalte in Zukunft Verlinken -->
-| Method  | Description | Reason | 
-| ------------- | ------------- | ------------- | 
-| [Scenario-Based Analysis](../scenario-based-analysis)| Using predefined scenarios of use cases on the reference architecture  | To assess how well the reference architecture covers the predefined scenarios and to identify the common requirements shared by the components on which those scenarios depend.  |
-| Requirement Survey  | Sending surveys to stakeholders asking for requirements and needs for their components | Obtaining high-level input on the requirements that the reference architecture must fulfill  |
-| Interview with Stakeholders  | In-depth interviews with stakeholders about the reference architecture and their respective positions  | Acquiring detailed insights of Stakeholders and adopt their input  |
-| Workshops  | Regular on-site exchange with the consortium  | Updating partners of current status and discussing next steps |
-| Community Engagement | Allowing open requests and discussion about the reference architecture through our ticket system | Ensuring external input, extendability and exchangability | 
+??? example "Publication of study results"
+
+    The investigations mentioned above are still ongoing efforts.
+    The FullStaQD Reference Architecture team intends to publish key results
+    from these studies once the they are complete. 
