@@ -15,7 +15,7 @@ This site is divided into three sections:
    This allows the reference architecture to move along with the state of the art even as concrete interfaces change.
 2. Our [Scenario-Based Analysis](./scenario-based-analysis/) evaluates how our
    reference architecture considerations hold up in concrete usage scenarios.
-   These tests are our guardrails for making sure every evolution of the
+   These scenarios are our guardrails for making sure every evolution of the
    reference architecture can meet the needs of the various different
    applications.
 3. We also document the concrete architecture in the
