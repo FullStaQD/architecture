@@ -78,27 +78,35 @@ documentation template (v9.0) for section organisation.
 [^fortier-osi-model]: Fortier, P. J. & Michel, H. E. ["15 - Analysis of Computer Networks Components"](https://doi.org/10.1016/B978-155558260-9/50015-1), in Computer Systems Performance Evaluation and Prediction (2003).
 
 
-## Overview 
-The reference architecture is divided into three layers: Application, System and Physical Layer.
+## Overview
+The FullStaQD Reference Architecture uses a three-layered architecture to
+structure quantum software systems into different levels of abstraction:
+
+1. Quantum programs are first specified in the **Application Layer** which is
+   largely device-independent and offers high-level programming tooling.
+2. The **System Layer**'s purpose is to translate these programs into efficient
+   low-level representations, taking into account execution environment
+   properties both from quantum devices and HPC resources.
+3. Quantum programs are executed in the **Physical Layer** which contains
+   quantum device firmware or simulators, and adapters exposing the features of 
+   those devices under a unified interface.
+
+A detailed breakdown of the components of the layers can be found in the
+[building block view](./building-block-view.md).
+
+Not all responsibilities in the quantum software stack can generally be
+associated with a single layer, some need to be implemented across layers, like
+Fault Tolerance, Monitoring, or Development Tooling.
+The [cross-cutting concepts](./cross-cutting-concepts.md) section elaborates on
+how to realise these varous cross-cutting concepts.
 
 <figure markdown="span">
     ![](./images/Reference-Architecture-Introduction.png){ style="max-width: min(100%, 20rem)" }
+    <figcaption>
+        A visualisation of the reference architecture's three layers:
+        Application Layer, System Layer, and Physical Layer
+    </figcaption>
 </figure>
-
-
-In addition to these three layers, the architecture also defines cross-layer concerns, which can show up in any of the layers. 
-
-The table below provides a brief description of the layers and the cross-layer concerns.
-
-| Module  | Description | 
-| ------------- | ------------- | 
-| Application Layer | Contains all components on a high-level programming language or algorithmic level  |
-| System Layer  | Contains all components to adjust high-level program to the specific hardware and to integrate HPC |
-| Physical Layer  | Contains all components on a physical layer which indirectly/directly communicate with the physical quantum device  |
-| Cross-Layer Concerns  | Is part of each Layer and contains all components like Testing, Benchmarking, Simulations, Tools, Visualization, ...  |
-
-A detailed breakdown of the components of the layers can be seen in the [building block view](./building-block-view.md).
-
 
 ## Quality Goals {#_quality_goals}
 To maintain a state of the art reference architecture in the quantum ecosystem, we consider the following quality goals as most important for this architecture.
