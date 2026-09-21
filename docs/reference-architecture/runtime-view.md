@@ -1,6 +1,7 @@
 # Runtime View
 In this section, we document the runtime view, which describes the concrete behavior and interaction of the building blocks across various scenarios.
-This provides valuable insights into the system and enables us to better understand key properties of its execution process.
+This provides valuable insights into the requirements of the components and enables us to better understand key properties of its execution process.
+
 !!! info
 
     Learn more about runtime view documentation for software architecture in the
