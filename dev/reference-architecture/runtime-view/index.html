@@ -635,10 +635,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#qec-decoding-loop" class="md-nav__link">
+  <a href="#quantum-software-application-execution" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        QEC Decoding Loop
+        Quantum Software Application Execution
       </span>
     </span>
   </a>
@@ -657,10 +657,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#a-full-stack-example" class="md-nav__link">
+  <a href="#qec-decoding-loop" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        A Full-Stack Example
+        QEC Decoding Loop
       </span>
     </span>
   </a>
@@ -1075,10 +1075,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#qec-decoding-loop" class="md-nav__link">
+  <a href="#quantum-software-application-execution" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        QEC Decoding Loop
+        Quantum Software Application Execution
       </span>
     </span>
   </a>
@@ -1097,10 +1097,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#a-full-stack-example" class="md-nav__link">
+  <a href="#qec-decoding-loop" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        A Full-Stack Example
+        QEC Decoding Loop
       </span>
     </span>
   </a>
@@ -1139,25 +1139,29 @@
 
 
 <h1 id="runtime-view">Runtime View</h1>
-<p>In this section, we document behavioural properties between building
-blocks and artifacts that are typical for quantum software systems.</p>
+<p>In this section, we document the runtime view, which describes the concrete behavior and interaction of the building blocks across various scenarios.
+This provides valuable insights into the requirements of the components and enables us to better understand key properties of its execution process.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Learn more about runtime view documentation for software architecture in the
 <a href="https://docs.arc42.org/section-6/">arc42 guide</a>.</p>
 </div>
-<h2 id="qec-decoding-loop">QEC Decoding Loop</h2>
-<p>Quantum Error Correction (QEC) will likely play a crucial role in making quantum
-computers <a href=".././cross-cutting-concepts/#fault-tolerance">fault tolerant</a>.
-To realise QEC in practice, syndrome measurements must be executed, syndromes
-must be decoded, and corrections must be applied at a high pace to reduce the
-logical error rate effectively<sup id="fnref:sparse-blossom"><a class="footnote-ref" href="#fn:sparse-blossom">1</a></sup>.
-The decoding loop is executed repeatedly during the execution of the encoded
-quantum program, so the syndrome measurements have to be realised as mid-circuit
-measurements.</p>
-<p>We visualise the decoding loop in the following sequence diagram:</p>
+<h2 id="quantum-software-application-execution">Quantum Software Application Execution</h2>
+<p>Here we visualise a concrete example from our
+<a href="../../scenario-based-analysis/">scenario-based analysis</a> to illustrate a quantum software application is executed across different layers.
+This scenario covers an application in material simulation, check out the
+<a href="../../scenario-based-analysis/quantum-simulation/">scenario's documentation</a> for the details.</p>
+<div class="admonition warning">
+<p class="admonition-title">A common misconception</p>
+<p>Note that this diagram does not characterise any deployment properties.
+For example, the VQE algorithm and COBYLA optimiser depicted in the
+application layer do not necessarily have to be executed in a python
+environment and could also be compiled to be executed in a cloud,
+high-performance, or other runtime environment.
+See <a href=".././deployment-view/">Deployment View</a> for deployment concerns.</p>
+</div>
 <figure>
-    <img alt="sequence diagram for the QEC decoding loop" src=".././images/qec-decoding-loop.svg" style="max-width: 80%" />
+    <img alt="activity diagram showing a material simulation scenario" src="../../scenario-based-analysis/images/quantum-simulation.png" style="max-width: 95%" />
 </figure>
 <h2 id="sys-phys-interaction">Interaction between the System and Physical Layers</h2>
 <p>In the <a href=".././building-block-view/">building block view</a>, we argue for the need
@@ -1181,23 +1185,18 @@ typically interact using the Common Quantum Device Interface:</p>
 <figure>
     <img alt="sequence diagram displaying a typical interaction between the system and physical layers" src=".././images/sys-phys-interaction.svg" style="max-width: 95%" />
 </figure>
-<h2 id="a-full-stack-example">A Full-Stack Example</h2>
-<p>Here we visualise a concrete example from our
-<a href="../../scenario-based-analysis/">scenario-based analysis</a> to illustrate what's
-involved in the full-stack execution of a quantum software application.
-This scenario covers an application in material simulation, check out the
-<a href="../../scenario-based-analysis/quantum-simulation/">scenario's documentation</a> for the details.</p>
-<div class="admonition warning">
-<p class="admonition-title">A common misconception</p>
-<p>Note that this diagram does not characterise any deployment properties.
-For example, the VQE algorithm and COBYLA optimiser depicted in the
-application layer do not necessarily have to be executed in a python
-environment and could also be compiled to be executed in a cloud,
-high-performance, or other runtime environment.
-See <a href=".././deployment-view/">Deployment View</a> for deployment concerns.</p>
-</div>
+<h2 id="qec-decoding-loop">QEC Decoding Loop</h2>
+<p>Quantum Error Correction (QEC) will likely play a crucial role in making quantum
+computers <a href=".././cross-cutting-concepts/#fault-tolerance">fault tolerant</a>.
+To realise QEC in practice, syndrome measurements must be executed, syndromes
+must be decoded, and corrections must be applied at a high pace to reduce the
+logical error rate effectively<sup id="fnref:sparse-blossom"><a class="footnote-ref" href="#fn:sparse-blossom">1</a></sup>.
+The decoding loop is executed repeatedly during the execution of the encoded
+quantum program, so the syndrome measurements have to be realised as mid-circuit
+measurements.</p>
+<p>We visualise the decoding loop in the following sequence diagram:</p>
 <figure>
-    <img alt="activity diagram showing a material simulation scenario" src="../../scenario-based-analysis/images/quantum-simulation.png" style="max-width: 95%" />
+    <img alt="sequence diagram for the QEC decoding loop" src=".././images/qec-decoding-loop.svg" style="max-width: 80%" />
 </figure>
 <div class="footnote">
 <hr />
