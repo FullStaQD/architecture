@@ -123,7 +123,7 @@ Typical examples for Design and Development Support Tooling include:
   intermediary results or [monitoring data](#monitoring)
 - Testing, benchmarking and verification tools
 
-??? question "Are not compilers development tools too?"
+??? question "Are compilers not development tools too?"
 
     Compilers are traditionally considered development tools, used to compile
     programs once for a few common compilation targets (e.g. standard OS's, x86
