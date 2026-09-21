@@ -1,6 +1,6 @@
 # Architecture Decisions {#section-design-decisions}
-This section documents important, large scale and controversial decisions taken
-in the design of the FullStaQD Reference Architecture.
+This section documents important and large-scale decisions where
+multiple viable alternatives existed.
 This list excludes smaller-scale or less important decisions which may be
 documented in the sections that they apply to.
 The goal of this section is to provide the rationale behind major decisions
