@@ -29,16 +29,22 @@ documentation template (v9.0) for section organisation.
 
 !!! info "What is a reference architecture?"
 
+    A reference architecture describes the common architecture of a set of
+    software systems.
+    Therefore, it is essential to first understand what software architecture is
+    and how it can be useful.
+
     **Software Architecture:**
     In software engineering, the architecture of a software system describes its
     high-level design.
     Software architectures are ideally designed after researching the
-    requirements of the system under design, and before designing the
-    fine-grained structure of the system.
+    requirements of the system, and before designing the fine-grained structure
+    of the system.
     Thinking about the high-level structure of a system early on in its design
     process allows the architect to address *architecturally significant
-    requirements* -- such requirements are usually hard or expensive to retrofit
-    once the system has been implemented already.
+    requirements*.
+    Such requirements are usually hard or expensive to retrofit once the system
+    has been implemented already.
     A typical example for architecturally significant requirements is a
     performance requirement since tight performance bounds can often only be
     achieved with the right technologies (e.g. programming languages or
@@ -118,7 +124,7 @@ the full list can be found in the
 | Quality Requirement { style="width: 1%; white-space: nowrap;" } | Description | 
 | ------------- | ------------- | 
 | [Extensibility](./quality-requirements.md#extensibility) | Quantum software systems can be extended with new use cases, SDKs, compiler passes, fault tolerance measures, and quantum devices. |
-| [Integrability](./quality-requirements.md#integrability) | Quantum software systems can be integrated into existing IT infrastructure, and High-Performance-Computing systems in particular. |
+| [Integrability](./quality-requirements.md#integrability) | Quantum software systems can be integrated into existing IT infrastructure, and High-Performance-Computing (HPC) systems in particular. |
 | [Modularity](./quality-requirements.md#modularity) | Changes to one component should not affect other components. |
 | [Fault Tolerance](./quality-requirements.md#fault-tolerance) | The quantum software system can produce correct results in the presence of noise. |
 | [Maintainability](./quality-requirements.md#maintainability) | The reference architecture can be modified, corrected, adapted or improved due to changes in the environment or requirements with ease. |
@@ -166,7 +172,7 @@ The design of the FullStaQD Reference Architecture follows best practices from
 software engineering.
 As such, it is driven by architecturally significant requirements that are
 typically found in quantum software.
-The domain of quantum software is highly complex as (1) it involves stateholders
+The domain of quantum software is highly complex as (1) it involves stakeholders
 and use cases with various different perspectives, (2) it still lacks common
 abstractions and a common language, and (3) the field is still evolving rapidly.
 
