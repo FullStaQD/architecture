@@ -14,7 +14,7 @@
         <link rel="prev" href="./..">
       
       
-        <link rel="next" href="./introduction-and-goals/">
+        <link rel="next" href="./architecture-constraints/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Welcome! - FullStaQD Architecture Documentation</title>
+        <title>FullStaQD Reference Architecture - FullStaQD Architecture Documentation</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome" class="md-skip">
+        <a href="#fullstaqd-reference-architecture" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Welcome!
+              FullStaQD Reference Architecture
             
           </span>
         </div>
@@ -430,7 +430,7 @@
   <span class="md-ellipsis">
     
   
-  Welcome!
+  Introduction
 
     
   </span>
@@ -447,7 +447,7 @@
   <span class="md-ellipsis">
     
   
-  Welcome!
+  Introduction
 
     
   </span>
@@ -473,10 +473,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Table of Contents
+        Overview
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-requirements-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quality Requirements Overview
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stakeholders" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stakeholders
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Methodology
       </span>
     </span>
   </a>
@@ -487,33 +520,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="./introduction-and-goals/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-  Introduction and Goals
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -1053,10 +1059,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       <span class="md-typeset">
-        Table of Contents
+        Overview
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality-requirements-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quality Requirements Overview
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stakeholders" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stakeholders
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Methodology
       </span>
     </span>
   </a>
@@ -1094,35 +1133,258 @@
   
 
 
-<h1 id="welcome">Welcome!</h1>
-<p>This site contains the architectural documentation for the FullStaQD reference
-architecture.
-Its structure is based on <a href="https://arc42.org">arc42</a> (version 9.0), an open
-template for documenting of software and system architecture.</p>
+<h1 id="fullstaqd-reference-architecture">FullStaQD Reference Architecture</h1>
+<p>The FullStaQD Reference Architecture provides architectural guidance to address
+requirements commonly found in quantum software systems.
+Its key goal is to foster interoperability and modularity in quantum software.
+As a reference architecture, this project remains on a fairly high level,
+describing abstract responsibilities in typical components and interfaces rather
+than enforcing the use of specific packages or protocols.
+<a href="../reference-implementation/">Reference Implementations</a> for these abstract
+parts are also developed within the FullStaQD project and will be made available
+at a later date.</p>
+<p>This introductory page provides a brief overview of key elements in the
+reference architecture, as well as the methodology which was used to develop
+the reference architecture.
+More detailed guidance is available in the respective sections of the reference
+architecture documentation which can be accessed on the left.
+This documentation roughly follows the <a href="https://arc42.org">arc42</a> architecture
+documentation template (v9.0) for section organisation.</p>
 <div class="admonition tip">
-<p class="admonition-title">Help us improve this architecture!</p>
-<p>This is an open architecture capturing a wide range of quantum software
-systems.
-Please let us know about quantum software use cases that cannot be
-accompanied with this architecture by
-<a href="https://github.com/FullStaQD/architecture/issues/new/choose">raising an issue</a>
-in our GitHub repository.</p>
+<p class="admonition-title">Help us improve the reference architecture!</p>
+<p>The FullStaQD Reference Architecture is designed in the open on GitHub.
+We warmly invite the community to give feedback, to discuss improvements,
+and to collaborate on making it useful for practical use.</p>
+<p>Check out our
+<a href="https://github.com/FullStaQD/architecture/blob/main/CONTRIBUTING.md">contribution guide</a>
+on GitHub!</p>
 </div>
-<h2 id="table-of-contents">Table of Contents</h2>
+<div class="admonition info">
+<p class="admonition-title">What is a reference architecture?</p>
+<p>A reference architecture describes the common architecture of a set of
+software systems.
+Therefore, it is essential to first understand what software architecture is
+and how it can be useful.</p>
+<p><strong>Software Architecture:</strong>
+In software engineering, the architecture of a software system describes its
+high-level design.
+Software architectures are ideally designed after researching the
+requirements of the system, and before designing the fine-grained structure
+of the system.
+Thinking about the high-level structure of a system early on in its design
+process allows the architect to address <em>architecturally significant
+requirements</em>.
+Such requirements are usually hard or expensive to retrofit once the system
+has been implemented already.
+A typical example for architecturally significant requirements is a
+performance requirement since tight performance bounds can often only be
+achieved with the right technologies (e.g. programming languages or
+databases), and with tight couplings between components that require
+low-latency or high-bandwidth communication.</p>
+<p><strong>Reference Architecture:</strong>
+A reference architecture adds another level of abstraction compared to
+concrete software architectures.
+It describes the "essence of the architectures of a set of software systems
+of a given domain" and "its purpose is to be a guidance for the development,
+standardization, and evolution of systems."<sup id="fnref:nakagawa-refarch-model"><a class="footnote-ref" href="#fn:nakagawa-refarch-model">1</a></sup>
+Reference architectures can be used to describe families or product lines of
+software systems, and here we use it to describe the family of quantum
+software systems.</p>
+<p><strong>Example:</strong>
+The well-known OSI telecommunications model is a well-known example which
+can be considered a reference architecture.
+It defines seven abstractions layers which characterise a separation of
+concerns in telecommunications without specifying concrete implementations
+for these layers, or concrete protocols between them.
+The OSI model can be <em>instantiated</em> to describe WWW systems, for example
+using TCP on the transport layer, SSL on the presentation
+layer, and HTTP on the application layer.
+The reference architecture is abstract enough to be stable w.r.t. changes of
+the concrete protocols (e.g. using a different encryption protocol on the
+presentation layer) yet it is concrete enough to provide a common structure
+to telecommunications systems.</p>
+<p><figure markdown="span">
+    <img alt="" src="./images/osi-model.png" style="max-width: min(100%, 25rem)" />
+    <em>Visualisation of the OSI model, adapted from Fortier et al.<sup id="fnref:fortier-osi-model"><a class="footnote-ref" href="#fn:fortier-osi-model">2</a></sup>.</em>
+</figure></p>
+</div>
+<h2 id="overview">Overview</h2>
+<p>The FullStaQD Reference Architecture uses a three-layered architecture to
+structure quantum software systems into different levels of abstraction:</p>
 <ol>
-<li><a href="./introduction-and-goals/">Introduction and Goals</a></li>
-<li><a href="./architecture-constraints/">Architecture Constraints</a></li>
-<li><a href="./context-and-scope/">Context and Scope</a></li>
-<li><a href="./solution-strategy/">Solution Strategy</a></li>
-<li><a href="./building-block-view/">Building Block View</a></li>
-<li><a href="./runtime-view/">Runtime View</a></li>
-<li><a href="./deployment-view/">Deployment View</a></li>
-<li><a href="./cross-cutting-concepts/">Cross-cutting Concepts</a></li>
-<li><a href="./architecture-decisions/">Architecture Decisions</a></li>
-<li><a href="./quality-requirements/">Quality Requirements</a></li>
-<li><a href="./technical-risks/">Risks and Technical Debts</a></li>
-<li><a href="./glossary/">Glossary</a></li>
+<li>Quantum programs are first specified in the <strong>Application Layer</strong> which is
+   largely device-independent and offers high-level programming tooling.</li>
+<li>The <strong>System Layer</strong>'s purpose is to translate these programs into efficient
+   low-level representations, taking into account execution environment
+   properties both from quantum devices and HPC resources.</li>
+<li>Quantum programs are executed in the <strong>Physical Layer</strong> which contains
+   quantum device firmware or simulators, and adapters exposing the features of 
+   those devices under a unified interface.</li>
 </ol>
+<p>A detailed breakdown of the components of the layers can be found in the
+<a href="./building-block-view/">building block view</a>.</p>
+<p>Not all responsibilities in the quantum software stack can generally be
+associated with a single layer, some need to be implemented across layers, like
+Fault Tolerance, Monitoring, or Development Tooling.
+The <a href="./cross-cutting-concepts/">cross-cutting concepts</a> section elaborates on
+how to realise these varous cross-cutting concepts.</p>
+<figure>
+    <img alt="" src="./images/Reference-Architecture-Introduction.png" style="max-width: min(100%, 20rem)" />
+    <figcaption>
+        A visualisation of the reference architecture's three layers:
+        Application Layer, System Layer, and Physical Layer
+    </figcaption>
+</figure>
+<h2 id="quality-requirements-overview">Quality Requirements Overview</h2>
+<p>The architectural decisions taken in the FullStaQD Reference Architecture are
+driven by the quality requirements typically found in quantum software systems.
+The following list is a summary of the most significant quality requirements;
+the full list can be found in the
+<a href="./quality-requirements/">quality requirements</a> section.</p>
+<table>
+<thead>
+<tr>
+<th style="width: 1%; white-space: nowrap;">Quality Requirement</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="./quality-requirements/#extensibility">Extensibility</a></td>
+<td>Quantum software systems can be extended with new use cases, SDKs, compiler passes, fault tolerance measures, and quantum devices.</td>
+</tr>
+<tr>
+<td><a href="./quality-requirements/#integrability">Integrability</a></td>
+<td>Quantum software systems can be integrated into existing IT infrastructure, and High-Performance-Computing (HPC) systems in particular.</td>
+</tr>
+<tr>
+<td><a href="./quality-requirements/#modularity">Modularity</a></td>
+<td>Changes to one component should not affect other components.</td>
+</tr>
+<tr>
+<td><a href="./quality-requirements/#fault-tolerance">Fault Tolerance</a></td>
+<td>The quantum software system can produce correct results in the presence of noise.</td>
+</tr>
+<tr>
+<td><a href="./quality-requirements/#maintainability">Maintainability</a></td>
+<td>The reference architecture can be modified, corrected, adapted or improved due to changes in the environment or requirements with ease.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stakeholders">Stakeholders</h2>
+<p>Quantum software systems are developed and used by stakeholders with different
+motives, interests and constraints.
+These forces influence the design of software systems, and software architecture
+in particular.
+For example, stakeholders can demand different levels of abstractions:
+Business users of quantum software benefit from a high level of abstraction to
+inform their decisions whereas quantum firmware developers need access to all
+technical details.</p>
+<p>Schmidbauer et al.<sup id="fnref:stakeholder-personas-ref"><a class="footnote-ref" href="#fn:stakeholder-personas-ref">3</a></sup> present the following persona
+hypothesis, that is a characterisation of the typical stakeholders in quantum
+software:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Stakeholders</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Application-oriented</em></td>
+<td>business user, early adopter, government contractor</td>
+</tr>
+<tr>
+<td><em>Application- and hardware-oriented</em></td>
+<td>simulation-focused engineer, researcher</td>
+</tr>
+<tr>
+<td><em>Hardware-oriented</em></td>
+<td>platform builder, quantum algorithm designer, HPC engineer, embedded quantum developer</td>
+</tr>
+</tbody>
+</table>
+<p>In the FullStaQD Reference Architecture, we keep stakeholders in mind throughout
+the architecture design.
+Most prominently, the reference architecture uses a
+<a href="./building-block-view/">three-layered architecture</a> to offer different levels
+of abstraction to different stakeholders. </p>
+<details class="info">
+<summary>More about stakeholders</summary>
+<p>More info on documenting stakeholders can be found in the
+<a href="https://docs.arc42.org/section-1/#13-stakeholder">arc42 docs</a>.
+For a recent study on stakeholders in quantum software, check out the
+<a href="https://arxiv.org/abs/2608.18598">"Know You Qubits, Know Your Users: Personas for Quantum Software"</a>
+paper by Schmidbauer et al..</p>
+</details>
+<h2 id="methodology">Methodology</h2>
+<p>The design of the FullStaQD Reference Architecture follows best practices from
+software engineering.
+As such, it is driven by architecturally significant requirements that are
+typically found in quantum software.
+The domain of quantum software is highly complex as (1) it involves stakeholders
+and use cases with various different perspectives, (2) it still lacks common
+abstractions and a common language, and (3) the field is still evolving rapidly.</p>
+<p>To find the architecturally significant requirements despite these challenges,
+several state-of-the-art methods from classical software engineering were
+employed:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../scenario-based-analysis">Scenario-Based Analysis</a></td>
+<td>Using predefined scenarios of use cases on the reference architecture</td>
+<td>To assess how well the reference architecture covers the predefined scenarios and to identify the common requirements shared by the components on which those scenarios depend</td>
+</tr>
+<tr>
+<td>Requirement Survey</td>
+<td>Sending surveys to stakeholders asking for requirements and needs for their components</td>
+<td>Obtaining high-level input on the requirements that the reference architecture must fulfill</td>
+</tr>
+<tr>
+<td>Interview Survey</td>
+<td>In-depth interviews with experts of various architectural concerns (e.g. HPC, hardware, compilation) about the architecturally significant requirements in their area of expertise</td>
+<td>Evaluating the reference architecture and gathering detailed input from various areas</td>
+</tr>
+<tr>
+<td>Workshops</td>
+<td>On-site workshops with relevant partners from the FullStaQD consortium</td>
+<td>Evaluating and improving the reference architecture</td>
+</tr>
+<tr>
+<td>Community Engagement</td>
+<td>Presenting the FullStaQD Reference Architecture at conferences and designing it openly on GitHub</td>
+<td>Gathering feedback from a broad audience and promoting interoperability</td>
+</tr>
+</tbody>
+</table>
+<details class="example">
+<summary>Publication of study results</summary>
+<p>The investigations mentioned above are still ongoing efforts.
+The FullStaQD Reference Architecture team intends to publish key results
+from these studies once the they are complete. </p>
+</details>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:nakagawa-refarch-model">
+<p>Nakagawa, E. Y., Oquendo, F. &amp; Becker, M. <a href="https://doi.org/10.1109/WICSA-ECSA.212.49">"RAModel: A Reference Model for Reference Architectures"</a>. 2012 Joint Working IEEE/IFIP Conference on Software Architecture and European Conference on Software Architecture (2012).&#160;<a class="footnote-backref" href="#fnref:nakagawa-refarch-model" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:fortier-osi-model">
+<p>Fortier, P. J. &amp; Michel, H. E. <a href="https://doi.org/10.1016/B978-155558260-9/50015-1">"15 - Analysis of Computer Networks Components"</a>, in Computer Systems Performance Evaluation and Prediction (2003).&#160;<a class="footnote-backref" href="#fnref:fortier-osi-model" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:stakeholder-personas-ref">
+<p>Schmidbauer, L. <a href="https://arxiv.org/abs/2608.18598">"Know You Qubits, Know Your Users: Personas for Quantum Software"</a>. Preprint on arXiv (2026).&#160;<a class="footnote-backref" href="#fnref:stakeholder-personas-ref" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
