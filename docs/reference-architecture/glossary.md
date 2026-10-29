@@ -2,12 +2,13 @@
 
 ## Quantum Processing Unit (QPU) {#quantum-processing-unit}
 Quantum computers are sometimes referred to as quantum processing units (QPUs)
-to emphasise their role as a specialised processing unit which is part of a
+to emphasise their role as a specialised processing unit that is part of a
 larger system.
-Similarly to how
-[graphics processing units](https://en.wikipedia.org/wiki/Graphics_processing_unit) (GPUs)
-can be used to offload tasks involving image processing (e.g. matrix
-computations), QPUs can be used to offload quantum computations.
+In these larger systems, QPUs can be used to offload quantum computation tasks
+which are otherwise expensive to solve on a CPU.
+QPUs therefore function as accelerators, similarly to how 
+[graphics processing units](https://en.wikipedia.org/wiki/Graphics_processing_unit)&nbsp;(GPUs)
+can be used to offload image processing tasks like matrix multiplications.
 This accelerator perspective is often taken in the context of quantum software
 system [deployments](./deployment-view.md) such as high-performance computing
 centres.
