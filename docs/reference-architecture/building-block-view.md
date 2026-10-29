@@ -241,7 +241,8 @@ the **HPC Runtime** component and the **Compiler** component.
       quantum HPC workload (e.g. re-optimising circuits instructions for changing
       properties of the hardware such as gate fidelities).
     - A specialised **Resource Scheduler** might be necessary to allow the HPC
-      system to take into account QPU resources.
+      system to take into account [QPU](./glossary.md#quantum-processing-unit)
+      resources.
 - **Compiler:** The purpose of a hybrid quantum compiler is to translate the
   high-level program specification from the application to low-level
   instructions executable on the physical layer.

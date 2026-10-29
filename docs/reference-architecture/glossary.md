@@ -1,10 +1,22 @@
 # Glossary {#section-glossary}
 
+## Quantum Processing Unit (QPU) {#quantum-processing-unit}
+Quantum computers are sometimes referred to as quantum processing units (QPUs)
+to emphasise their role as a specialised processing unit which is part of a
+larger system.
+Similarly to how
+[graphics processing units](https://en.wikipedia.org/wiki/Graphics_processing_unit) (GPUs)
+can be used to offload tasks involving image processing (e.g. matrix
+computations), QPUs can be used to offload quantum computations.
+This accelerator perspective is often taken in the context of quantum software
+system [deployments](./deployment-view.md) such as high-performance computing
+centres.
+
 ## Quantum Kernel {#quantum-kernel}
 A quantum kernel is a program to be executed on a quantum computer.
 The term highlights that the kernel program is part of a bigger program which is
-executed across heterogeneous hardware (meaning there might be CPUs, GPUs, QPUs
-or other types of processors involved).
+executed across heterogeneous hardware (meaning there might be CPUs, GPUs,
+[QPUs](#quantum-processing-unit) or other types of processors involved).
 
 See also:
 

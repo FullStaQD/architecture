@@ -26,8 +26,9 @@ It is a common belief in the quantum software community that quantum computers
 will be most useful as accelerators in High-Performance Computing (HPC)
 datacentres.
 A key feature of HPC clusters is that they integrate enormous amounts of
-computation resources (such as CPUs, GPUs, and potentially QPUs) to compute
-solutions to problems that are otherwise impossible to solve.
+computation resources (such as CPUs, GPUs, and potentially
+[QPUs](./glossary.md#quantum-processing-unit)) to compute solutions to problems
+that are otherwise impossible to solve.
 
 For the execution of quantum software in an HPC environment, three execution
 environments are particularly important:
@@ -44,8 +45,9 @@ environments are particularly important:
   components such as the *Runtime Compiler* and the *Resource Scheduler* which
   are responsible for distributing the workfload onto the available resources.
 * In a quantum software context, a special device within the HPC Cluster is the
-  **QPU Node** which is made up of a physical **Quantum Device** (a.k.a. QPU or
-  quantum computer) and a **Co-Processor**.
+  **QPU Node** which is made up of a physical **Quantum Device** (a.k.a.
+  [QPU](./glossary.md#quantum-processing-unit) or quantum computer) and a
+  **Co-Processor**.
   The Co-Processor is a classical computer <!-- TODO: or FPGA? --> that runs the
   **firmware** of the Quantum Device so that it can execute the compiled
   *Quantum Kernel*.
