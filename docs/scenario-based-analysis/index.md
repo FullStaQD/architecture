@@ -12,7 +12,7 @@ quantum software architecture instantiations, and for ourselves to evaluate
 architectural decisions in future versions of our reference architecture. 
 
 In order to use scenario-based analysis effectively, we validated an initial version of the FullStaQD Reference Architecture, developed as part of the QCNext Project[^qc-next], which was referred to as the “Proto-Stack”. The Proto-Stack is visualized below:
-
+  ![](./images/Protostack.png)
 
 
 Our set of scenarios was originally inspired by
