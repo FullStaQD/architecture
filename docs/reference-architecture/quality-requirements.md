@@ -207,8 +207,45 @@ The architecture should be interchangeable, which allows it to substitute one co
 
 ### Resource utilization 
 The quantum compiler should optimise quantum programs in order to minimise the number of required qubits and gates. An inefficient quantum program can lead to high costs for the user. ([SC1](#quality-scenarios))
-### Scalability 
-Because of the rapidly evolving field of quantum technology, the architecture should be scalable in terms of job size, kernel amount, ... ([SC2](#quality-scenarios))
+### Scalability
+*Relates to quality scenarios: [`SC2`](#sc2)*
+
+NISQ era quantum hardware only features up to a few hundred qubits and gates but
+major hardware providers claim in their roadmaps that these numbers will
+increase rapidly within the next decade.
+Scaling up to a large number of qubits and gates comes with new challenges:
+For example, decoding large quantum error correction codes can no longer be done
+using lookup tables, programs can no longer be stored as plain circuits and
+qubit routing in transpilation can become computationally expensive.
+We therefore state the following quality requirement:
+
+!!! abstract "Quantum software systems need to be scalable in terms of qubit count, gate count, and number of jobs."
+
+??? note "Realisation in the FullStaQD Reference Architecture"
+
+    The FullStaQD Reference Architecture addresses this requirement through the
+    following measures:
+
+    * We explore quantum program formats beyond OpenQASM circuits.
+      Since no standard has yet emerged for this purpose, the interfaces between
+      the three layers deliberately allow for different formats and components
+      are specified with dynamic circuits in mind.
+      See the [Building Block View](./building-block-view.md) section for
+      further details.
+    * The [Deployment View](./deployment-view.md) section also discusses the
+      integration of [QPUs](./glossary.md#quantum-processing-unit) into HPC
+      systems to meet computational needs.
+      For example, the architecture suggests to locate QEC decoders on powerful
+      machines close to the Quantum System Controller.
+    * The architecture addresses the potentially large number of quantum
+      computing jobs through an integration with HPC resource schedulers.
+      See the [Physical Layer](./building-block-view.md#physical-layer) for
+      details.
+
+    In the end, however, scalability is something that cannot be addressed in
+    the architecture alone and needs to be considered in the design of
+    individual components too. 
+
 ### Testability 
 The architecture needs to be capable to enable an objective and feasible test to be designed and performed to determine whether a requirement is met.
 
