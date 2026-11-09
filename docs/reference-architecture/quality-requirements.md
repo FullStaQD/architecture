@@ -167,12 +167,44 @@ This implies the following latency requirement:
     The Compiler and HPC Resource Scheduler are responsible for running
     latency-critical parts on suitable hardware.
 
-### Maintainability 
+### Maintainability
 The architecture needs must allow modifications with ease after the baseline is established. ([SC2,SC4](#quality-scenarios))
-### Modularity  
-The architecture needs to limit changes to one component from affecting other components, e.g. exchanging quantum hardware should not affect the application layer. ([SC4](#quality-scenarios))
+
+### Modularity
+*Related quality scenarios: [`SC4`](#sc4)*
+
+The key motivation behind the FullStaQD Reference Architecture is to promote
+interoperability in the quantum software ecosystem
+(see&nbsp;[Introduction](./index.md)).
+Software engineering design principles suggest modularity as a solution to
+keeping complex systems maintainable.
+We therefore make modularity an explicit quality requirement:
+
+!!! abstract "Quantum software systems must be modular, i.e. changes to one component should not affect other components."
+
+??? note "Realisation in the FullStaQD Reference Architecture"
+
+    Modularity was one of the guiding design principles in the design of the
+    FullStaQD Reference Architecture.
+    It is achieved through a clear separation of concerns and well-defined
+    interfaces.
+    For example, the following architectural decisions were taken for the sake
+    of modularity:
+    
+    * The Common Quantum Device Interface acts as a facade to the Physical
+      Layer.
+      Changes to the Quantum System Controller or Simulator can therefore be
+      contained within the Physical Layer.
+    * Quantum programming languages and other exchange formats act as an
+      interface between the Application and System Layer.
+      Changes within the Application and System Layers will not affect the
+      other.
+
+    See [Building Block View](./building-block-view.md) for details.
+
 ### Interchangeability 
 The architecture should be interchangeable, which allows it to substitute one component, part, or element with another of the same type without requiring modifications to the system or loss of functionality. This including different SDKs, compilers and hardware backends. ([SC2](#quality-scenarios))
+
 ### Resource utilization 
 The quantum compiler should optimise quantum programs in order to minimise the number of required qubits and gates. An inefficient quantum program can lead to high costs for the user. ([SC1](#quality-scenarios))
 ### Scalability 
