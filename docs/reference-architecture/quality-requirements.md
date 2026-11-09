@@ -40,10 +40,48 @@ We therefore specify the following quality requirement:
 
 [^fn-adaptation-in-single-place]: The compiler can contain most but not all required changes for adapting to different hardware. Exceptions include the Common Quantum Device Interface Adapter which needs to be implemented for each individual hardware type (but is reusable) and any hardware-specific features used in the application layer. 
 
-### Evolvability 
-Due to the fast evolving field of quantum computing, the architecture needs to adapt to changes in its environment, requirements, and implementation technologies in a cost-effective way. These changes could involve new software, algorithms, or hardware technology.  ([SC4](#quality-scenarios))
-### Extensibility 
-We want to be able to extend quantum software systems with new compilation passes, problem transformations and applications. ([SC2](#quality-scenarios))
+### Evolvability and Extensibility
+*Related quality scenarios: [`SC2`](#sc2)*
+
+The field of quantum computing is evolving rapidly with new hardware models,
+algorithms, quantum error correction codes and SDKs becoming available at an
+enormous pace.
+For many of these aspects, it is not yet clear which exact implementations will
+be chosen for the realisation of practical quantum computing.
+To keep up with the state of the art, quantum software systems must be able to
+adopt such new methods.
+We here phrase this evolvability requirement as a matter of extensibility:
+
+!!! abstract "Quantum software systems need to be extensible in the following dimensions:"
+
+    * They must be extensible to use new problem transformations.
+    * They must be extensible to employ new quantum algorithms.
+    * They must be extensible to support new quantum programming languages and quantum SDKs.
+    * They must be extensible to use new quantum error correction codes.
+    * They must be extensible to use new compilation passes.
+    * They must be extensible to execute quantum programs on new hardware models (see also: [Adaptability](#adaptability)).
+
+??? note "Realisation in the FullStaQD Reference Architecture"
+
+    The FullStaQD Reference Architecture realises the extensibility requirements
+    through modularity and a clear separation of concerns.
+    
+    * New problem transformations and algorithms can be implemented as part of
+      the [Application Layer](./building-block-view.md#application-layer) within
+      the respective components.
+    * New quantum programming languages and quantum SDKs can be supported by
+      implementing a corresponding language frontend within the
+      [System Layer](./building-block-view.md#system-layer)'s Compiler.
+    * New quantum error correction codes can be implemented as compilation
+      passes, as part of the Quantum System Controller, or as part of the
+      Use Case within the Application Layer, see
+      [Fault Tolerance](./cross-cutting-concepts.md#fault-tolerance) for
+      details.
+    * The compilation pass extensibility requirement is realised in the
+      Compiler.
+    * New types of quantum hardware can be supported by implementing a
+      corresponding Common Quantum Device Interface Adapter and a corresponding
+      Backend within the Compiler, see [Adaptability](#adaptability).
 
 ### Fault Tolerance
 *Related quality scenarios: [`SC3`](#sc3)*
