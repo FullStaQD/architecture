@@ -65,7 +65,7 @@ We here phrase this evolvability requirement as a matter of extensibility:
 
     The FullStaQD Reference Architecture realises the extensibility requirements
     through modularity and a clear separation of concerns.
-    
+
     * New problem transformations and algorithms can be implemented as part of
       the [Application Layer](./building-block-view.md#application-layer) within
       the respective components.
@@ -113,8 +113,35 @@ quantum software sytems:
 
 [^ref-preskill-nisq]: Preskill, J. [Quantum Computing in the NISQ era and beyond](https://quantum-journal.org/papers/q-2018-08-06-79/). Quantum 2, 79 (2018).
 
-### Integrability 
-The architecture allows software components or systems to be easily integrated into the existing IT infrastructure of stakeholders. It is important to ensure that stakeholders are motivated to use the architecture.  ([SC2](#quality-scenarios))
+### Integrability
+*Related quality scenarios: [`SC2`](#sc2)*
+
+Quantum computers are not expected to replace traditional computers as they
+excel only at problems that can be mapped well onto the quantum computation
+model.
+Therefore, quantum software systems will usually be used as part of a larger
+system where those specialised problems arise.
+For example, an optimisation problem from the scheduling systems of a logistics
+company might be submitted to a quantum software system, or a molecule
+specification from specialised pharmaceutical research software might be sent to
+a quantum software system for computing the ground state.
+Integrability is crucial for corporate users of quantum software systems, so we
+state the following quality requirement: 
+
+!!! abstract "Quantum software systems must be integrable into existing IT infrastracture."
+
+??? "Realisation in the FullStaQD Reference Architecture"
+
+    The boundaries of quantum software systems, and the integration into
+    external IT infrastructure is discussed in the
+    [Context and Scope](./context-and-scope.md) section.
+    The interface between external IT systems and quantum software systems is a
+    responsibility of the
+    [Application Layer](./building-block-view.md#application-layer).
+    More specfically, the interface to external IT systems can be realised
+    through the Use Case component, or it can be supported by specialised
+    Integration Tooling.
+
 ### Latency 
 The data transmission latency between components e.G. between quantum device and QEC decoder must be minimised. ([SC3](#quality-scenarios))
 ### Maintainability 
