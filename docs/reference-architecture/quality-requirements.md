@@ -142,8 +142,31 @@ state the following quality requirement:
     through the Use Case component, or it can be supported by specialised
     Integration Tooling.
 
-### Latency 
-The data transmission latency between components e.G. between quantum device and QEC decoder must be minimised. ([SC3](#quality-scenarios))
+### Latency
+*Related quality scenarios: [`SC3`](#sc3)*
+
+Noise is one of the most significant challenges in practical quantum computing,
+and quantum error correction is considered a key measure in order to achieve
+[Fault Tolerance](#fault-tolerance).
+But as noise accumulates quickly, quantum error correction rounds must be run at
+a high frequence to be effective.
+This implies the following latency requirement:
+
+!!! abstract "The data transmission latency between the Quantum System Controller and the Quantum Error Correction Decoder must be low."
+<!-- TODO: specify concrete value -->
+
+??? note "Realisation in the FullStaQD Reference Architecture"
+
+    Latency and bandwith between execution environments are discussed in the
+    [Deployment View](./deployment-view.md) section.
+    The FullStaQD Reference Architecture suggests to execute latency-critical
+    parts of the quantum software system in an execution environment close to
+    the [QPU](./glossary.md#quantum-processing-unit) whereas less
+    latency-critical parts of the system such as the compiler can be executed
+    elsewhere.
+    The Compiler and HPC Resource Scheduler are responsible for running
+    latency-critical parts on suitable hardware.
+
 ### Maintainability 
 The architecture needs must allow modifications with ease after the baseline is established. ([SC2,SC4](#quality-scenarios))
 ### Modularity  
