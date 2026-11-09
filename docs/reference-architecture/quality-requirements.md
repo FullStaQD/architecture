@@ -44,8 +44,37 @@ We therefore specify the following quality requirement:
 Due to the fast evolving field of quantum computing, the architecture needs to adapt to changes in its environment, requirements, and implementation technologies in a cost-effective way. These changes could involve new software, algorithms, or hardware technology.  ([SC4](#quality-scenarios))
 ### Extensibility 
 We want to be able to extend quantum software systems with new compilation passes, problem transformations and applications. ([SC2](#quality-scenarios))
-### Fault tolerance 
-Quantum software systems must be resilient to noise on hardware, i.e. quantum programs should produce their intended result even in the presence of noise. ([SC3](#quality-scenarios))
+
+### Fault Tolerance
+*Related quality scenarios: [`SC3`](#sc3)*
+
+Quantum computers are subject to noise, i.e. their states are disturbed randomly
+through imprecise operations or unwanted interactions with the environment (such
+as electromagnetic radiation).
+Noise is widely recognised one of the most significant challenges in quantum
+computing[^ref-preskill-nisq].
+When unhandled, these disturbances can accumulate such that the result of the
+(ideal) computation is lost.
+Fault tolerance is therefore one of the central quality requirements of a
+quantum software sytems:
+
+!!! abstract "Quantum software systems must be resilient to noise on hardware, i.e. quantum programs should produce their intended result even in the presence of limited amounts of noise."
+<!-- TODO: make it concrete, what noise levels are to be expected? -->
+
+??? note "Realisation in the FullStaQD Reference Architecture"
+
+    The FullStaQD Reference Architecture treats
+    [Fault Tolerance as a cross-cutting concept](./cross-cutting-concepts.md#fault-tolerance),
+    providing guidance on typical ways to implement fault tolerance measures
+    such as quantum error [correction](./glossary.md#quantum-error-correction),
+    [mitigation](./glossary.md#quantum-error-mitigation) and
+    [suppression](./glossary.md#quantum-error-suppression).
+    The narrow latency and bandwidth requirements of quantum error correction
+    are baked into the design of the architecture,
+    see&nbsp;[Deployment](./deployment-view.md) and [Latency](#latency).
+
+[^ref-preskill-nisq]: Preskill, J. [Quantum Computing in the NISQ era and beyond](https://quantum-journal.org/papers/q-2018-08-06-79/). Quantum 2, 79 (2018).
+
 ### Integrability 
 The architecture allows software components or systems to be easily integrated into the existing IT infrastructure of stakeholders. It is important to ensure that stakeholders are motivated to use the architecture.  ([SC2](#quality-scenarios))
 ### Latency 
