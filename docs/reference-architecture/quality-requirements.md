@@ -216,7 +216,7 @@ We state this as the following requirement:
 
 !!! abstract "All components should be interchangeable, i.e. it should be possible to substitute them with another implementation of the same type without requiring modifications to the quantum software system, or incurring loss of functionality."
 
-??? "Realisation in the FullStaQD Reference Architecture"
+??? note "Realisation in the FullStaQD Reference Architecture"
 
     The FullStaQD Reference Architecture doesn't specify concrete
     implementations; it merely describes the abstract components and
@@ -225,8 +225,40 @@ We state this as the following requirement:
     Components of the reference architecture are therefore interchangeable by
     design.
 
-### Resource utilization 
-The quantum compiler should optimise quantum programs in order to minimise the number of required qubits and gates. An inefficient quantum program can lead to high costs for the user. ([SC1](#quality-scenarios))
+### Resource utilisation 
+*Related quality scenarios: [`SC1`](#sc1)*
+
+In the NISQ era, quantum resources like qubits and gates will be
+scarce[^ref-preskill-nisq] and resource utilisation is often a deciding factor
+for whether a quantum program can run at all.
+The roadmaps of major quantum hardware providers suggest that devices with
+thousands to millions of physical qubits might become available in the next few
+decades but even then, practical applications might run into limits due to
+quantum error correction overheads or the sheer problem size.
+Furthermore, it is not yet clear how expensive quantum resource usage will be in
+the long term.
+Therefore, we formulate the following resource utilisation requirement:
+
+!!! abstract "Quantum software systems should minimise the number of used qubits and gates."
+
+??? note "Realisation in the FullStaQD Reference Architecture"
+
+    While minimising resource utilisation is a joint effort between all
+    components of the stack, the FullStaQD Reference Architecture identifies the
+    following key areas for achieving a low resource utilisation:
+    
+    * Application problems are first mapped to quantum programs in the Use Case
+      and Problem Transformations components within the
+      [Application Layer](./building-block-view.md#application-layer).
+      This mapping first determines the amount of required resources.
+    * The Compiler within the
+      [System Layer](./building-block-view.md#system-layer) is responsible for
+      minimising the resource usage of a given quantum program.
+    * Quantum Resource Estimation and Monitoring tools can further help analyse
+      and understand the quantum resource usage of a given application.
+      See the [Cross-Cutting Concepts](./cross-cutting-concepts.md) section for
+      further details.
+
 ### Scalability
 *Relates to quality scenarios: [`SC2`](#sc2)*
 
