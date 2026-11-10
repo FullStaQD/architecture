@@ -167,11 +167,8 @@ This implies the following latency requirement:
     The Compiler and HPC Resource Scheduler are responsible for running
     latency-critical parts on suitable hardware.
 
-### Maintainability
-The architecture needs must allow modifications with ease after the baseline is established. ([SC2,SC4](#quality-scenarios))
-
-### Modularity
-*Related quality scenarios: [`SC4`](#sc4)*
+### Maintainability and Modularity
+*Related quality scenarios: [`SC2`](#sc2), [`SC4`](#sc4)*
 
 The key motivation behind the FullStaQD Reference Architecture is to promote
 interoperability in the quantum software ecosystem
