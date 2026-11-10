@@ -202,8 +202,28 @@ We therefore make modularity an explicit quality requirement:
 
     See [Building Block View](./building-block-view.md) for details.
 
-### Interchangeability 
-The architecture should be interchangeable, which allows it to substitute one component, part, or element with another of the same type without requiring modifications to the system or loss of functionality. This including different SDKs, compilers and hardware backends. ([SC2](#quality-scenarios))
+### Interchangeability
+*Related quality scenarios: [`SC2`](#sc2)*
+
+One of the key goals of the FullStaQD Reference Architecture is to promote
+interoperability between various components in the quantum software ecosystem.
+Our reference architecture describes a common framework for quantum software
+systems with placeholder components representing the various different
+responsibilities.
+Therefore, any component realising the full specification of some placeholder
+component should be suitable for an implementation.
+We state this as the following requirement:
+
+!!! abstract "All components should be interchangeable, i.e. it should be possible to substitute them with another implementation of the same type without requiring modifications to the quantum software system, or incurring loss of functionality."
+
+??? "Realisation in the FullStaQD Reference Architecture"
+
+    The FullStaQD Reference Architecture doesn't specify concrete
+    implementations; it merely describes the abstract components and
+    responsibilities necessary for realising quantum software systems
+    (see&nbsp;[Building Block View](./building-block-view.md)).
+    Components of the reference architecture are therefore interchangeable by
+    design.
 
 ### Resource utilization 
 The quantum compiler should optimise quantum programs in order to minimise the number of required qubits and gates. An inefficient quantum program can lead to high costs for the user. ([SC1](#quality-scenarios))
