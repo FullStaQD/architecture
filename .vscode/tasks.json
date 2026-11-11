@@ -2,13 +2,19 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "uv sync",
+            "type": "shell",
+            "command": "uv sync --locked"
+        },
+        {
             "label": "Run dev server",
             "type": "shell",
-            "command": "zensical serve",
+            "command": "uv run zensical serve --open",
             "runOptions": {
                 "runOn": "folderOpen"
             },
-            "problemMatcher": []
+            "problemMatcher": [],
+            "dependsOn": "uv sync"
         }
     ]
 }
