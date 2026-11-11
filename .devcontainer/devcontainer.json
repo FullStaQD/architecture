@@ -1,0 +1,18 @@
+{
+	"name": "FullStaQD Architecture Docs",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"mounts": [
+		"source=uv-cache,target=/root/.cache/uv,type=volume"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": ["ms-python.python"],
+			"settings": {
+				"python.defaultInterpreterPath": "${containerWorkspaceFolder}/.venv/bin/python"
+			}
+		}
+	},
+	"forwardPorts": [8000]
+}
