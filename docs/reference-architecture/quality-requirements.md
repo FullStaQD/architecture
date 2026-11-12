@@ -295,9 +295,23 @@ We therefore state the following quality requirement:
     the architecture alone and needs to be considered in the design of
     individual components too. 
 
-### Testability 
-The architecture needs to be capable to enable an objective and feasible test to be designed and performed to determine whether a requirement is met.
+### Unit Testability
 
+The FullStaQD Reference Architecture aims to achieve a separation of concerns
+that allows vendors to implement quantum software components independently from
+each other.
+The [Modularity](#maintainability-and-modularity) requirement already states
+that changes to one component should not affect other components.
+For full independence of the development process, vendors also need to be able
+to test components independently from each other.
+We therefore state the following unit testability requirement:
+
+!!! abstract "Components of quantum software systems should be testable independently from each other."
+
+??? note "Realisation in the FullStaQD Reference Architecture"
+
+    The FullStaQD Reference Architecture discusses benchmarking and testing
+    tools as [Cross-Cutting Concepts](./cross-cutting-concepts.md).
 
 ## Quality Scenarios
 
