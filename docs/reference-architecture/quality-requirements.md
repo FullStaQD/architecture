@@ -1,13 +1,24 @@
-# Quality Requirements {#section-quality-scenarios}
-Quality Requirements are a key aspect in designing an architecture. They describe non-functional properties of a system and must be addressed at an architectural level, as changes for addressing quality requirements can become difficult or expensive afterwards.
+# Quality Requirements
+Quality Requirements are a key aspect in designing an architecture.
+They describe non-functional properties of a system and must be addressed on an architectural level, as changes for addressing quality requirements can become difficult or expensive afterwards.
 
-This section describes typical quality requirements that are relevant to quantum software systems in general. Although many of these quality requirements have been addressed in the design of the reference architecture, they still need to be taken into account during implementation. Specific implementations may have additional quality requirements, which are not covered. To validate the quality requirements, we also describe and assign example scenarios. Our quality terminology is in line with the [arc42 quality model](https://quality.arc42.org/qualities/) but tailored towards quantum software.
+This section describes typical quality requirements relevant to quantum software
+systems in general.
+Although many of these quality requirements have been addressed in the design of
+the reference architecture, they still need to be taken into account during
+the implementation.
+Concrete quantum software systems will usually have additional quality
+requirements which are not covered here.
 
+!!! info "Terminology"
 
-## Quality Requirements
+    Our quality requirements terminology is based on the *arc42 quality model*
+    but tailored towards quantum software.
+    Check out the [arc42 quality docs](https://quality.arc42.org/qualities/) for
+    explanations and examples of the quality terms in the context of classical
+    software engineering.
 
-### Adaptability
-*Related quality scenarios: [`SC2`](#sc2), [`SC4`](#sc4)*
+## Adaptability
 
 There are various different physical implementations for the mathematical model
 of a quantum computer.
@@ -40,8 +51,7 @@ We therefore specify the following quality requirement:
 
 [^fn-adaptation-in-single-place]: The compiler can contain most but not all required changes for adapting to different hardware. Exceptions include the Common Quantum Device Interface Adapter which needs to be implemented for each individual hardware type (but is reusable) and any hardware-specific features used in the application layer. 
 
-### Evolvability and Extensibility
-*Related quality scenarios: [`SC2`](#sc2)*
+## Evolvability and Extensibility
 
 The field of quantum computing is evolving rapidly with new hardware models,
 algorithms, quantum error correction codes and SDKs becoming available at an
@@ -83,8 +93,7 @@ We here phrase this evolvability requirement as a matter of extensibility:
       corresponding Common Quantum Device Interface Adapter and a corresponding
       Backend within the Compiler, see [Adaptability](#adaptability).
 
-### Fault Tolerance
-*Related quality scenarios: [`SC3`](#sc3)*
+## Fault Tolerance
 
 Quantum computers are subject to noise, i.e. their states are disturbed randomly
 through imprecise operations or unwanted interactions with the environment (such
@@ -113,8 +122,7 @@ quantum software sytems:
 
 [^ref-preskill-nisq]: Preskill, J. [Quantum Computing in the NISQ era and beyond](https://quantum-journal.org/papers/q-2018-08-06-79/). Quantum 2, 79 (2018).
 
-### Integrability
-*Related quality scenarios: [`SC2`](#sc2)*
+## Integrability
 
 Quantum computers are not expected to replace traditional computers as they
 excel only at problems that can be mapped well onto the quantum computation
@@ -142,8 +150,7 @@ state the following quality requirement:
     through the Use Case component, or it can be supported by specialised
     Integration Tooling.
 
-### Latency
-*Related quality scenarios: [`SC3`](#sc3)*
+## Latency
 
 Noise is one of the most significant challenges in practical quantum computing,
 and quantum error correction is considered a key measure in order to achieve
@@ -167,8 +174,7 @@ This implies the following latency requirement:
     The Compiler and HPC Resource Scheduler are responsible for running
     latency-critical parts on suitable hardware.
 
-### Maintainability and Modularity
-*Related quality scenarios: [`SC2`](#sc2), [`SC4`](#sc4)*
+## Maintainability and Modularity
 
 The key motivation behind the FullStaQD Reference Architecture is to promote
 interoperability in the quantum software ecosystem
@@ -199,8 +205,7 @@ We therefore make modularity an explicit quality requirement:
 
     See [Building Block View](./building-block-view.md) for details.
 
-### Interchangeability
-*Related quality scenarios: [`SC2`](#sc2)*
+## Interchangeability
 
 One of the key goals of the FullStaQD Reference Architecture is to promote
 interoperability between various components in the quantum software ecosystem.
@@ -222,8 +227,7 @@ We state this as the following requirement:
     Components of the reference architecture are therefore interchangeable by
     design.
 
-### Resource utilisation 
-*Related quality scenarios: [`SC1`](#sc1)*
+## Resource utilisation 
 
 In the NISQ era, quantum resources like qubits and gates will be
 scarce[^ref-preskill-nisq] and resource utilisation is often a deciding factor
@@ -256,8 +260,7 @@ Therefore, we formulate the following resource utilisation requirement:
       See the [Cross-Cutting Concepts](./cross-cutting-concepts.md) section for
       further details.
 
-### Scalability
-*Relates to quality scenarios: [`SC2`](#sc2)*
+## Scalability
 
 NISQ era quantum hardware only features up to a few hundred qubits and gates but
 major hardware providers claim in their roadmaps that these numbers will
@@ -295,7 +298,7 @@ We therefore state the following quality requirement:
     the architecture alone and needs to be considered in the design of
     individual components too. 
 
-### Unit Testability
+## Unit Testability
 
 The FullStaQD Reference Architecture aims to achieve a separation of concerns
 that allows vendors to implement quantum software components independently from
@@ -312,17 +315,3 @@ We therefore state the following unit testability requirement:
 
     The FullStaQD Reference Architecture discusses benchmarking and testing
     tools as [Cross-Cutting Concepts](./cross-cutting-concepts.md).
-
-## Quality Scenarios
-
-### `SC1`: Cost Estimation {#sc1}
-A stakeholder who received a cost estimate for the execution of their program only has to pay the estimated amount.
-
-### `SC2`: Switching Hardware Vendor {#sc2}
-A stakeholder should be able to change its hardware vendors without facing high costs.
-
-### `SC3`: Performance should be guaranteed {#sc3}
-The time and quality of performance when executing a program should be as expected.
-
-### `SC4`: Software Update {#sc4}
-The maintenance time must be low when the software used for the quantum programme is updated.
