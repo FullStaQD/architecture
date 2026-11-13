@@ -11,7 +11,7 @@ Additionally, we document the scenarios for other software architects to use the
 quantum software architecture instantiations, and for ourselves to evaluate
 architectural decisions in future versions of our reference architecture. 
 
-In order to use scenario-based analysis effectively, we validated an initial version of the FullStaQD Reference Architecture, developed as part of the QCNext Project[^qc-next], which was referred to as the “Proto-Stack”. The Proto-Stack is visualized below:
+In order to use scenario-based analysis we evaluate a prior work of the FullStaQD Reference Architecture, designed as part of the QCNext Project[^qc-next], which we refere to as the “Proto-Stack”. The Proto-Stack is visualized below:
   ![](./images/Protostack.png)
 
 
@@ -28,7 +28,7 @@ Our analysis currently covers the following scenarios:
 3. [Collision Detection using Quantum Machine Learning](./quantum-machine-learning.md)
 
 
-To provide better orientation and clarify the relationships between individual software components, each component in the scenarios was retrospectively assigned to its corresponding building block of the [building block view](../reference-architecture/building-block-view.md). The conclusions of the scenario-based analysis can be seen in the [runtime view](../reference-architecture/runtime-view.md). 
+To provide better orientation and clarify the relationships between individual software components, each component in the scenarios was retrospectively assigned to its corresponding building block of the [building block view](../reference-architecture/building-block-view.md). The conclusions of the scenario-based analysis can be found in the [runtime view](../reference-architecture/runtime-view.md). 
 
 
 
