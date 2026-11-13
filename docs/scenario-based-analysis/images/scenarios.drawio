@@ -1,6 +1,6 @@
 <mxfile host="Electron" pages="4">
   <diagram name="scenario1" id="Luvr6P1fOA9EW3_rRw2t">
-    <mxGraphModel dx="1664" dy="2158" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1683" dy="2170" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -485,7 +485,7 @@
           <mxGeometry height="50" width="200" x="560.6999999999999" y="758" as="geometry" />
         </mxCell>
         <mxCell id="Yzwy6oYiTrCI-XysjMCc-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 7px;&quot;&gt;&lt;i&gt;Common Quantum Device Interface Adapter&lt;/i&gt;&lt;/font&gt;" vertex="1">
-          <mxGeometry height="30" width="161" x="604.4999999999999" y="787" as="geometry" />
+          <mxGeometry height="30" width="161" x="607.4999999999999" y="787" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
