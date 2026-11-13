@@ -22,9 +22,8 @@ requirements which are not covered here.
 
 There are various different physical implementations for the mathematical model
 of a quantum computer.
-This includes Neutral Atom Qubits, Superconducting Qubits, Majorana Qubits and
-others.
-No clear winner has yet emerged from these hardware architectures and it is
+This includes neutral atom qubits, superconducting qubits and others.
+The field has not yet converged on a single hardware architecture and it is
 reasonable to assume that application developers might want to switch hardware,
 or be able to execute their application on multiple hardware types.
 We therefore specify the following quality requirement:
@@ -40,22 +39,22 @@ We therefore specify the following quality requirement:
       [Application Layer](./building-block-view.md#application-layer) to be
       device-independent.
       This separation limits the places that need to be changed in order to
-      adapt to a new type of hardware to the
+      adapt to a new type of quantum hardware to the
       [System](./building-block-view.md#system-layer) and
       [Physical Layer](./building-block-view.md#physical-layer). 
-    * Adaptation of a program to specific hardware types is an explicit
+    * Adaptation of a program to specific quantum hardware types is an explicit
       responsibility of the Compiler within the System Layer.
       Most adaptation logic can therefore be contained within a single
       place[^fn-adaptation-in-single-place], which also enables reuse of
       adaptation logic.
 
-[^fn-adaptation-in-single-place]: The compiler can contain most but not all required changes for adapting to different hardware. Exceptions include the Common Quantum Device Interface Adapter which needs to be implemented for each individual hardware type (but is reusable) and any hardware-specific features used in the application layer. 
+[^fn-adaptation-in-single-place]: The compiler can contain most but not all required changes for adapting to different hardware. Exceptions include the Common Quantum Device Interface Adapter which needs to be implemented for each individual quantum hardware type (but is reusable) and any hardware-specific features used in the application layer. 
 
 ## Evolvability and Extensibility
 
-The field of quantum computing is evolving rapidly with new hardware models,
-algorithms, quantum error correction codes and SDKs becoming available at an
-enormous pace.
+The field of quantum computing is evolving rapidly with new quantum hardware
+models, algorithms, error correction codes and SDKs becoming available
+at an enormous pace.
 For many of these aspects, it is not yet clear which exact implementations will
 be chosen for the realisation of practical quantum computing.
 To keep up with the state of the art, quantum software systems must be able to
@@ -124,9 +123,9 @@ quantum software sytems:
 
 ## Integrability
 
-Quantum computers are not expected to replace traditional computers as they
-excel only at problems that can be mapped well onto the quantum computation
-model.
+Quantum computers are not expected to replace classical computers as they
+outperform classical computers only for problems that can be mapped well onto
+the quantum computation model.
 Therefore, quantum software systems will usually be used as part of a larger
 system where those specialised problems arise.
 For example, an optimisation problem from the scheduling systems of a logistics
@@ -200,8 +199,7 @@ We therefore make modularity an explicit quality requirement:
       contained within the Physical Layer.
     * Quantum programming languages and other exchange formats act as an
       interface between the Application and System Layer.
-      Changes within the Application and System Layers will not affect the
-      other.
+      Changes within one of these layers will not affect the other.
 
     See [Building Block View](./building-block-view.md) for details.
 
@@ -222,7 +220,8 @@ We state this as the following requirement:
 
     The FullStaQD Reference Architecture doesn't specify concrete
     implementations; it merely describes the abstract components and
-    responsibilities necessary for realising quantum software systems
+    responsibilities necessary for realising quantum software systems, as well
+    as the interfaces between them
     (see&nbsp;[Building Block View](./building-block-view.md)).
     Components of the reference architecture are therefore interchangeable by
     design.
@@ -305,8 +304,8 @@ that allows vendors to implement quantum software components independently from
 each other.
 The [Modularity](#maintainability-and-modularity) requirement already states
 that changes to one component should not affect other components.
-For full independence of the development process, vendors also need to be able
-to test components independently from each other.
+For full independence of the development process, developers also need to be
+able to test components independently from each other.
 We therefore state the following unit testability requirement:
 
 !!! abstract "Components of quantum software systems should be testable independently from each other."
