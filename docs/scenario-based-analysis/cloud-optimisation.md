@@ -15,28 +15,29 @@ It has the following specification:
 
 
 
-## Application Layer - Downwards
-1. Cloud Optimisation Application:
-    - Processes the MaxCut problem instance and forwards the problem information to the QUBO Transformator
+## Application Layer - Downwards 
+1. Cloud Optimisation Application (*Use Case*)
+    - Allows acccess for the stakeholder to the architecture.
+    - Processes the MaxCut problem instance and forwards the problem information to the QUBO Transformator.
 
-2. QUBO Transformator
-    - Creates a QUBO, using the information of the Cloud Optimisation Application
+2. QUBO Transformator (*Problem Transformation*)
+    - Creates a QUBO, using the information of the Cloud Optimisation Application.
 
-3. Ising Transformator
-    - Transforms the QUBO into an Ising Hamiltonian
+3. Ising Transformator (*Problem Transformation*)
+    - Transforms the QUBO into an Ising Hamiltonian.
 
-4. Penalty Encoder
+4. Penalty Encoder (*Problem Transformation*)
     - Checks if the required optimization problem needs a penalty factor and adjusts it.
      
-5. QAOA
+5. QAOA (*Algorithm*)
     - QAOA is a hybrid algorithm which uses tunable parameters.
-    - It encodes the Ising Hamiltonian into a quantum circuit
+    - It encodes the Ising Hamiltonian into a quantum circuit.
    
-6. QAOA Program Generator
+6. QAOA Program Generator (*Quantum SDK*)
     - With the parametrised circuit the program generator creates a program for the transpilation pipeline in the system layer.
  
 ## System Layer - Downwards
-1. Noise Suppression
+1. Noise Suppression (*Fault Tolerance*)
     - Noise Supression reduces the error rate by actively canceling noise using adjusted pulse timing or add redundancy to detect and reduce errors.
     - It takes an optimized circuit and adds the above mentioned operations.
    
@@ -46,6 +47,6 @@ Refer to the [quantum simulation scenario](./quantum-simulation.md) for a full e
 
 
 ## Application Layer - Upwards
-7. SPSA
+7. SPSA (*Optimizers*)
     - SPSA is classical optimizer used for optimizing the parameters of the QAOA algorithm. 
     - It updates the parameters and sends them to the QAOA Program Generator, where the program is computed again until the optimizer terminates.
