@@ -26,6 +26,11 @@ This includes neutral atom qubits, superconducting qubits and others.
 The field has not yet converged on a single hardware architecture and it is
 reasonable to assume that application developers might want to switch hardware,
 or be able to execute their application on multiple hardware types.
+Even though the physical implementation of a quantum computing device is out of
+scope for quantum software systems (see
+[Context and Scope](./context-and-scope.md)), quantum software still needs to
+deal with the different modalities of physical quantum device implementations
+such as decoherence times or qubit connectivity.
 We therefore specify the following quality requirement:
 
 !!! abstract "Quantum software systems should be adaptable to different quantum computing hardware."
@@ -262,8 +267,8 @@ Therefore, we formulate the following resource utilisation requirement:
 ## Scalability
 
 NISQ era quantum hardware only features up to a few hundred qubits and gates but
-major hardware providers claim in their roadmaps that these numbers will
-increase rapidly within the next decade.
+major hardware providers claim that these numbers will increase rapidly within
+the next decade.
 Scaling up to a large number of qubits and gates comes with new challenges:
 For example, decoding large quantum error correction codes can no longer be done
 using lookup tables, programs can no longer be stored as plain circuits and
