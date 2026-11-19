@@ -97,7 +97,7 @@ The [Qiskit Transpilation Pipeline](https://quantum.cloud.ibm.com/docs/en/guides
     - The Program Generator updates the parameters of the COBYLA algorithm and starts the process again.
     - When the classical optimiser terminates, the VQE Program Generator gives the optimal result towards the Error Mitigation method.
       
-3. Zero Noise Extrapolation (*Fault Tolerance*)
+3. Zero Noise Extrapolation (*Fault Tolerance*)  ([Quantum SDK](../reference-architecture/cross-cutting-concepts.md#fault_tolerance))
     - Zero Noise Extrapolation (ZNE) is a error mitigation method, which can reduce the error rate by using an expectation value and a circuit has input.
     - It creates a program to measure a new expectation value with a circuit, which has still the same function but uses more gates. 
     - This process is repeated multiple times and lead towards a noise pattern, which allows to reduce the error rate by extrapolation.
