@@ -29,7 +29,7 @@ The figure below depicts the inference process with regular arrows and the train
       
 5. Angle Encoding (*Problem Transformations*)
     - Encodes each feature using rotational gates.
-    - Creates an encoded quantum state .
+    - Creates an encoded quantum state.
    
 6. Quantum Neural Network (*Algorithm*)
     - Appends a variational quantum circuit to the encoded quantum state.
@@ -47,7 +47,7 @@ Refer to [quantum simulation scenario](./quantum-simulation.md) for a full expla
     - Transforms expectation values of each feature into probabilities.
     - Gives the Collision Detection App a collision probability.
     
-9. Cross-Entropy Loss (training only)
+9. Cross-Entropy Loss (training only) (*Algorithm*)
     - Calculates the loss of the probabilities of the features.
        
 10. Backpropagation (training only) (*Algorithm*)
