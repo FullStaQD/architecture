@@ -73,11 +73,11 @@ The [Qiskit Transpilation Pipeline](https://quantum.cloud.ibm.com/docs/en/guides
     - Using digital hardware instructions and pulse definitions, this process converts these commands into physical signals to control operations on the quantum chip. 
     - It outputs a microwave signal list directly to the quantum hardware, translating digital instructions into executable physical actions.
     
-2. Molecule Laser ([Physical Quantum Device](../reference-architecture/context-and-scope.md##_business_context))
+2. Molecule Laser ([Physical Quantum Device](../reference-architecture/context-and-scope.md#_business_context))
     - The molecule laser uses the microwave signal list to execute the quantum operations on the physical hardware.
     - When all operations are done, the molecule Laser sends a status flag to the energy sensor.
 
-3. Energy Sensor ([Physical Quantum Device](../reference-architecture/context-and-scope.md##_business_context))
+3. Energy Sensor ([Physical Quantum Device](../reference-architecture/context-and-scope.md#_business_context))
     - When the molecule laser has completed its job and updated its status, this step measures the qubit energy levels.
 
 ## System Layer - Upwards 
@@ -97,8 +97,8 @@ The [Qiskit Transpilation Pipeline](https://quantum.cloud.ibm.com/docs/en/guides
     - The Program Generator updates the parameters of the COBYLA algorithm and starts the process again.
     - When the classical optimiser terminates, the VQE Program Generator gives the optimal result towards the Error Mitigation method.
       
-3. Zero Noise Extrapolation (*Fault Tolerance*)  ([Quantum SDK](../reference-architecture/cross-cutting-concepts.md#_fault_tolerance))
-    - Zero Noise Extrapolation (ZNE) is a error mitigation method, which can reduce the error rate by using an expectation value and a circuit has input.
+3. Zero Noise Extrapolation  ([Fault Tolerance](../reference-architecture/cross-cutting-concepts.md#fault-tolerance))
+    - Zero Noise Extrapolation (ZNE) is an error mitigation method, which can reduce the error rate by using an expectation value and a circuit has input.
     - It creates a program to measure a new expectation value with a circuit, which has still the same function but uses more gates. 
     - This process is repeated multiple times and lead towards a noise pattern, which allows to reduce the error rate by extrapolation.
     
