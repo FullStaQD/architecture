@@ -63,3 +63,20 @@ See also:
 
 * [Li and Benjamin](https://doi.org/10.1103/PhysRevX.7.021050) as well as [Temme et al.](https://doi.org/10.1103/PhysRevLett.119.180509) for more information about foundational approaches to QEM
 * [van den Berg et al.](https://doi.org/10.1038/s41567-023-02042-2) for a recent development of PEC towards larger quantum processors
+
+## Cross-Layer Concerns
+In the wider FullStaQD project, there is a *Cross-Layer Concerns* working
+package with various responsibilities that do not fit within a single layer.
+In the FullStaQD Reference Architecture, the cross-layer tools from this working
+package are discussed in the
+[Cross-Cutting Concepts](./cross-cutting-concepts.md) section.
+
+??? question "Why pick a different name?"
+
+    The term *Cross-Layer Concerns* of the FullStaQD project is more specific to
+    a layered architecture but it is also associated with a working package that
+    has some responsibilities that go beyond any architectural considerations.
+    For the FullStaQD Reference Architecture documentation, we chose to stick to
+    the term *Cross-Cutting Concepts* which is suggested by the
+    [arc42 architecture documentation template](https://docs.arc42.org/section-8/)
+    that we follow.
