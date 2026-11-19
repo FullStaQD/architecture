@@ -76,8 +76,8 @@ apply next.
 We also use the term QPL to emphasise that a program can be compiled and does
 not rely on the execution within a host language.
 
-In the [Building Block View](./building-block-view.md), QPLs are discussed as a
-possible interface between the System Layer and the Application Layer.
+In the [Building Block View](./building-block-view/index.md), QPLs are discussed
+as a possible interface between the System Layer and the Application Layer.
 
 
 ## Cross-Layer Concerns

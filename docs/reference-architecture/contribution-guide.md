@@ -9,7 +9,7 @@ the architecture are governed.
 Here’s what’s included:
 
 * [Code of Conduct](#code-of-conduct)
-* [Asking Questions / Getting Help](#asking-questions--getting-help)
+* [Asking Questions / Getting Help](#asking-questions-getting-help)
 * [Raising Issues](#raising-issues)
 * [Changing the Architecture](#changing-the-architecture)
 * [Maintainers](#maintainers)

@@ -40,13 +40,13 @@ We therefore specify the following quality requirement:
     In the FullStaQD Reference Architecture, adaptability is realised through the
     following measures:
 
-    * The [three-layered architecture](./building-block-view.md) specifies the
-      [Application Layer](./building-block-view.md#application-layer) to be
+    * The [three-layered architecture](./building-block-view/index.md) specifies the
+      [Application Layer](./building-block-view/application-layer.md) to be
       device-independent.
       This separation limits the places that need to be changed in order to
       adapt to a new type of quantum hardware to the
-      [System](./building-block-view.md#system-layer) and
-      [Physical Layer](./building-block-view.md#physical-layer). 
+      [System](./building-block-view/system-layer.md) and
+      [Physical Layer](./building-block-view/physical-layer.md). 
     * Adaptation of a program to specific quantum hardware types is an explicit
       responsibility of the Compiler within the System Layer.
       Most adaptation logic can therefore be contained within a single
@@ -82,11 +82,11 @@ We here phrase this evolvability requirement as a matter of extensibility:
     through modularity and a clear separation of concerns.
 
     * New problem transformations and algorithms can be implemented as part of
-      the [Application Layer](./building-block-view.md#application-layer) within
+      the [Application Layer](./building-block-view/application-layer.md) within
       the respective building blocks.
     * New quantum programming languages and quantum SDKs can be supported by
       implementing a corresponding language frontend within the
-      [System Layer](./building-block-view.md#system-layer)'s Compiler.
+      [System Layer](./building-block-view/system-layer.md)'s Compiler.
     * New quantum error correction codes can be implemented as compilation
       passes, as part of the Quantum System Controller, or as part of the
       Use Case within the Application Layer, see
@@ -150,7 +150,7 @@ state the following quality requirement:
     [Context and Scope](./context-and-scope.md) section.
     The interface between external IT systems and quantum software systems is a
     responsibility of the
-    [Application Layer](./building-block-view.md#application-layer).
+    [Application Layer](./building-block-view/application-layer.md).
     More specfically, the interface to external IT systems can be realised
     through the Use Case component, or it can be supported by specialised
     Integration Tooling.
@@ -199,7 +199,7 @@ We therefore make modularity an explicit quality requirement:
     For example, the following architectural decisions were taken for the sake
     of modularity:
     
-    * [Quantum programming languages](../glossary.md#quantum-programming-language)
+    * [Quantum programming languages](./glossary.md#quantum-programming-language)
       and other exchange formats act as an interface between the Application and
       System Layer.
       Changes within one of these layers will not affect the other.
@@ -208,7 +208,7 @@ We therefore make modularity an explicit quality requirement:
       Changes to the Quantum System Controller or Simulator can therefore be
       contained within the Physical Layer.
 
-    See [Building Block View](./building-block-view.md) for details.
+    See [Building Block View](./building-block-view/index.md) for details.
 
 ## Interchangeability
 
@@ -229,7 +229,7 @@ We state this as the following requirement:
     implementations; it merely describes the abstract components and
     responsibilities necessary for realising quantum software systems, as well
     as the interfaces between them
-    (see&nbsp;[Building Block View](./building-block-view.md)).
+    (see&nbsp;[Building Block View](./building-block-view/index.md)).
     Components of the reference architecture are therefore interchangeable by
     design.
 
@@ -256,10 +256,10 @@ Therefore, we formulate the following resource utilisation requirement:
     
     * Application problems are first mapped to quantum programs in the Use Case
       and Problem Transformations components within the
-      [Application Layer](./building-block-view.md#application-layer).
+      [Application Layer](./building-block-view/application-layer.md).
       This mapping first determines the amount of required resources.
     * The Compiler within the
-      [System Layer](./building-block-view.md#system-layer) is responsible for
+      [System Layer](./building-block-view/system-layer.md) is responsible for
       minimising the resource usage of a given quantum program.
     * Quantum Resource Estimation and Monitoring tools can further help analyse
       and understand the quantum resource usage of a given application.
@@ -288,7 +288,7 @@ We therefore state the following quality requirement:
       Since no standard has yet emerged for this purpose, the interfaces between
       the three layers deliberately allow for different formats and components
       are specified with dynamic circuits in mind.
-      See the [Building Block View](./building-block-view.md) section for
+      See the [Building Block View](./building-block-view/index.md) section for
       further details.
     * The [Deployment View](./deployment-view.md) section also discusses the
       integration of [QPUs](./glossary.md#quantum-processing-unit) into HPC
@@ -297,7 +297,7 @@ We therefore state the following quality requirement:
       machines close to the Quantum System Controller.
     * The architecture addresses the potentially large number of quantum
       computing jobs through an integration with HPC resource schedulers.
-      See the [Physical Layer](./building-block-view.md#physical-layer) for
+      See the [Physical Layer](./building-block-view/physical-layer.md) for
       details.
 
     In the end, however, scalability is something that cannot be addressed in
