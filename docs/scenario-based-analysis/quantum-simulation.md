@@ -16,25 +16,25 @@ It has the following specification:
 
 ## Application Layer - Downwards
 
-1. Simulation App (*Use Case*)
+1. Simulation App ([Use Case](../reference-architecture/building-block-view.md#_white_box_app_layer))
     - The Simulation App is the entry point for this scenario.
     - It takes the molecule specification and passes it down to the Hartree-Fock algorithm.
 
-2. Hartree-Fock (*Problem Transformation*)
+2. Hartree-Fock ([Problem Transformation](../reference-architecture/building-block-view.md#_white_box_app_layer))
     - The Hartree-Fock algorithm is the first transformation step to get from the molecule input to a quantum ready representation.
     - Its input is the molecular geometry in our scenario.
     - The output are the electron integrals.
 
-3. Hamiltonian Formulator (*Problem Transformation*)
+3. Hamiltonian Formulator ([Problem Transformation](../reference-architecture/building-block-view.md#_white_box_app_layer))
     - The Hamiltonian formulation maps the electron integrals into a fermonic Hamiltonian.
 
-4. Jordan-Wigner (*Problem Transformation*)
+4. Jordan-Wigner ([Problem Transformation](../reference-architecture/building-block-view.md#_white_box_app_layer))
     - The Jordan-Wigner Transformation allows a qubit representation using a fermonic Hamiltonian and turns it into a spin Hamiltonian, which is equivalent to a set of qubits.
      
-5. Variational Quantum Eigensolver (VQE) (*Algorithm*)
+5. Variational Quantum Eigensolver (VQE) ([Algorithm Template](../reference-architecture/building-block-view.md#_white_box_app_layer))
     - The VQE Algorithm is a hybrid algorithm, which uses the qubit Hamiltonian to create a parameterised quantum circuit.
 
-6. VQE Program Generator (*Quantum SDK*)
+6. VQE Program Generator ([Quantum SDK](../reference-architecture/building-block-view.md#_white_box_app_layer))
     - With the parametrised circuit the program generator creates a program for the transpilation pipeline in the system layer.
  
 ## System Layer - Downwards
@@ -88,12 +88,12 @@ The [Qiskit Transpilation Pipeline](https://quantum.cloud.ibm.com/docs/en/guides
 
 ## Application Layer - Upwards 
 
-1. COBYLA (*Optimisers*)
+1. COBYLA ([Optimisers](../reference-architecture/building-block-view.md#_white_box_app_layer))
     - COBYLA is a classical optimizer which needs an expectation value as input.
     - It compares the expectation value to the last one (if it exists) and tries to optimize the parameters of the VQE algorithm.
     - After an local optimal solution is found or the maximum of iterations is reached, the classical optimizer terminates.
       
-2. VQE Program Generator (*Quantum SDK*)
+2. VQE Program Generator ([Quantum SDK](../reference-architecture/building-block-view.md#_white_box_app_layer))
     - The Program Generator updates the parameters of the COBYLA algorithm and starts the process again.
     - When the classical optimiser terminates, the VQE Program Generator gives the optimal result towards the Error Mitigation method.
       
@@ -102,5 +102,5 @@ The [Qiskit Transpilation Pipeline](https://quantum.cloud.ibm.com/docs/en/guides
     - It creates a program to measure a new expectation value with a circuit, which has still the same function but uses more gates. 
     - This process is repeated multiple times and lead towards a noise pattern, which allows to reduce the error rate by extrapolation.
     
-4. Simulation App (*Use Case*)
+4. Simulation App ([Use Case](../reference-architecture/building-block-view.md#_white_box_app_layer))
     - The error-optimized expectation value is given towards the simulation app, which then visualize it as ground state energy for the user.
