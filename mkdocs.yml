@@ -39,7 +39,11 @@ nav:
       - reference-architecture/architecture-constraints.md
       - reference-architecture/context-and-scope.md
       - reference-architecture/solution-strategy.md
-      - reference-architecture/building-block-view.md
+      - Building Block View:
+        - Overall System: reference-architecture/building-block-view/index.md
+        - reference-architecture/building-block-view/application-layer.md
+        - reference-architecture/building-block-view/system-layer.md
+        - reference-architecture/building-block-view/physical-layer.md
       - reference-architecture/runtime-view.md
       - reference-architecture/deployment-view.md
       - reference-architecture/cross-cutting-concepts.md
@@ -48,7 +52,7 @@ nav:
       - reference-architecture/technical-risks.md
       - reference-architecture/glossary.md
     - Contributing:
-      - Contribution Guide: reference-architecture/change-process.md
+      - Contribution Guide: reference-architecture/contribution-guide.md
       - Code of Conduct: reference-architecture/code-of-conduct.md
 
   - Scenario-Based Analysis:
