@@ -6,7 +6,7 @@ More specifically, this includes concepts that can be implemented on either of
 the three layers (or on a combination of them), and tools that depend on all
 layers.
 
-## Fault Tolerance
+## Fault Tolerance {#fault-tolerance}
 Noise is deemed one of the most severe limitations of today's quantum computing
 devices[^preskill-nisq].
 Many methods in [Quantum Error Correction](./glossary.md#quantum-error-correction),
