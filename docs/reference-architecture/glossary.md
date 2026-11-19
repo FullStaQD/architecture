@@ -76,3 +76,21 @@ not rely on the execution within a host language.
 
 In the [building block view](./building-block-view.md), QPLs are discussed as a
 possible interface between the System Layer and the Application Layer.
+
+
+## Cross-Layer Concerns
+In the wider FullStaQD project, there is a *Cross-Layer Concerns* working
+package with various responsibilities that do not fit within a single layer.
+In the FullStaQD Reference Architecture, the cross-layer tools from this working
+package are discussed in the
+[Cross-Cutting Concepts](./cross-cutting-concepts.md) section.
+
+??? question "Why pick a different name?"
+
+    The term *Cross-Layer Concerns* of the FullStaQD project is more specific to
+    a layered architecture but it is also associated with a working package that
+    has some responsibilities that go beyond any architectural considerations.
+    For the FullStaQD Reference Architecture documentation, we chose to stick to
+    the term *Cross-Cutting Concepts* which is suggested by the
+    [arc42 architecture documentation template](https://docs.arc42.org/section-8/)
+    that we follow.
