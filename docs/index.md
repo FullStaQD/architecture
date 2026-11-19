@@ -7,23 +7,27 @@
 Welcome to the FullStaQD Architecture documentation!
 This site is divided into three sections:
 
-1. The [FullStaQD Reference Architecture](./reference-architecture/) documents a
-   generic quantum software architecture and how it arises from architecturally
-   significant requirements of quantum software systems.
+1. The [FullStaQD Reference Architecture](./reference-architecture/index.md)
+   documents a generic quantum software architecture and how it arises from
+   architecturally significant requirements of quantum software systems.
    The reference architecture is designed to capture generic properties of
    quantum software architecture rather than a concrete architecture.
    This allows the reference architecture to move along with the state of the art even as concrete interfaces change.
-2. Our [Scenario-Based Analysis](./scenario-based-analysis/) evaluates how our
-   reference architecture considerations hold up in concrete usage scenarios.
+2. Our [Scenario-Based Analysis](./scenario-based-analysis/index.md) evaluates
+   how our reference architecture considerations hold up in concrete usage
+   scenarios.
    These scenarios are our guardrails for making sure every evolution of the
    reference architecture can meet the needs of the various different
    applications.
 3. We also document the concrete architecture in the
-   [FullStaQD Reference Implementation](./reference-implementation) which shows
-   how concrete open-source components developed in the FullStaQD project make
-   up an instantiation of the reference architecture.
+   [FullStaQD Reference Implementation](./reference-implementation/index.md)
+   which shows how concrete open-source components developed in the FullStaQD
+   project make up an instantiation of the reference architecture.
 
-Our Reference Architecture is a living document, open to community input and continuously evolving alongside quantum computing research. We welcome feedback and suggestions, which can be submitted using our [change process](https://github.com/FullStaQD/architecture/blob/main/CONTRIBUTING.md#changing-the-architecture).
+Our Reference Architecture is a living document, open to community input and
+continuously evolving alongside quantum computing research.
+We welcome feedback and suggestions, which can be submitted using our
+[change process](https://github.com/FullStaQD/architecture/blob/main/CONTRIBUTING.md#changing-the-architecture).
 
 This project is part of [FullStaQD](https://fullstaqd.de), a German flagship
 project in quantum software research that aims to improve modularity and
@@ -40,4 +44,3 @@ Technology and Space (BMFTR) under Grant No. `01MQ25001F`.
 [bmftr-logo]: ./images/BMFTR_Logo.jpg
 [htad-link]: https://www.bmftr.bund.de/EN/Technology/HightechAgenda/HightechAgenda.html
 [htad-logo]: ./images/HightechAgendaLogo.jpg
-
