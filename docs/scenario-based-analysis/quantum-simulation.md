@@ -73,11 +73,11 @@ The [Qiskit Transpilation Pipeline](https://quantum.cloud.ibm.com/docs/en/guides
     - Using digital hardware instructions and pulse definitions, this process converts these commands into physical signals to control operations on the quantum chip. 
     - It outputs a microwave signal list directly to the quantum hardware, translating digital instructions into executable physical actions.
     
-2. Molecule Laser ([Physical Quantum Device](../reference-architecture/building-block-view.md#_white_box_phys_layer))
+2. Molecule Laser ([Physical Quantum Device](../reference-architecture/context-and-scope.md##_business_context))
     - The molecule laser uses the microwave signal list to execute the quantum operations on the physical hardware.
     - When all operations are done, the molecule Laser sends a status flag to the energy sensor.
 
-3. Energy Sensor ([Physical Quantum Device](../reference-architecture/building-block-view.md#_white_box_phys_layer))
+3. Energy Sensor ([Physical Quantum Device](../reference-architecture/context-and-scope.md##_business_context))
     - When the molecule laser has completed its job and updated its status, this step measures the qubit energy levels.
 
 ## System Layer - Upwards 
