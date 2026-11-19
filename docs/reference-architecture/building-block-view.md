@@ -125,7 +125,7 @@ satisfy these needs exactly.
 ??? info "Interaction patterns"
 
     We discuss typical interaction patterns between the System and Physical
-    Layers in a [separate runtime view section](./06_runtime_view.md#sys-phys-interaction).
+    Layers in a [separate runtime view section](./runtime-view.md#sys-phys-interaction).
 
 ## Level 2 {#_level_2}
 
@@ -219,7 +219,7 @@ a similar fashion:
 ### White Box System Layer {#_white_box_sys_layer}
 
 <figure markdown="span">
-  ![](./images/Building-Blocks-L2-System-Layer.excalidraw.png)
+  ![](./images/Building-Blocks-L2-System-Layer.excalidraw.svg)
 </figure>
 
 #### Motivation
@@ -236,36 +236,45 @@ the **HPC Runtime** component and the **Compiler** component.
 - **HPC Runtime:** This component covers the integration of quantum and hybrid
   programs into HPC systems.
   It includes the following components:
-    - The **Runtime Compiler** is based on the full Compiler component
+    - The **Runtime Compiler** is based on the full Hybrid Compiler component
       but focuses on compilation tasks which must be done during the runtime of a
       quantum HPC workload (e.g. re-optimising circuits instructions for changing
       properties of the hardware such as gate fidelities).
     - A specialised **Resource Scheduler** might be necessary to allow the HPC
       system to take into account [QPU](./glossary.md#quantum-processing-unit)
       resources.
-- **Compiler:** The purpose of a hybrid quantum compiler is to translate the
-  high-level program specification from the application to low-level
+- **Hybrid Compiler:** The purpose of a hybrid quantum compiler is to translate
+  the high-level program specification from the application to low-level
   instructions executable on the physical layer.
+  The term "hybrid" emphasises that such compilers will need to handle quantum
+  programs but also the classical programs that surround them.
   It includes the following sub-components:
-    - **Frontend:** Acts as a facade to the Compiler that parses some
-      program specification format (e.g. source code or an intermediate
-      representation), splits it into a classical and a
-      [quantum kernel](./glossary.md#quantum-kernel), and calls the Classical
-      and Quantum Compiler with these kernels, respectively.
+    - **Frontends:** Each frontend acts as a facade to the Hybrid Compiler that
+      parses some program specification format (e.g. source code or an intermediate
+      representation) into the internal program representation of the compiler.
       The term "frontend" is to be understood as a programming language frontend
       for the compiler (cf.
       [`gcc`'s page on frontends](https://gcc.gnu.org/frontends.html)), meaning
-      frontends for different languages or SDKs could be integrated in the future.
-    - **Classical Compiler:** Integrates established compiler infrastructure (e.g.
-      [`gcc`](https://gcc.gnu.org)) to compile classical parts of the program with
-      state-of-the-art optimisations.
-    - **Quantum Compiler:** Compiles high-level specifications of
-      [quantum-kernels](./glossary.md#quantum-kernel) to low-level,
-      device-specific instructions.
-      The compilation process involves passes and dialects and it is extensible
-      through a plugin system.
-    - **Backend:** The backend is a bridge between the Compiler and the Physical
-      Layer.
+      frontends for different languages or SDKs could be integrated in the
+      future.
+    - **Dialects:** Hybrid Compilers will typically use various dialects
+      (i.e. intermediate representation formats) to represent programs on
+      different levels of abstraction.
+    - **Compiler Passes:** Compiler Passes are at the heart of compilers.
+      Each compiler pass transforms the structure of the program but compiler
+      passes can serve different purposes.
+      For quantum compilation, typical purposes include logical optimisation
+      (e.g. reducing circuit size through gate cancellation), routing
+      (i.e.&nbsp;adapting quantum programs to fit the limited connectivity of
+      physical quantum devices) and quantum error correction (i.e., mapping a
+      logical circuit to a fault-tolerant one with QEC primitives).
+      Some compiler passes will use the Common Quantum Device Interface towards
+      the Physical Layer to access data about compilation target.
+    - **Backends:** Backends are responsible for lowering the intermediate
+      representation of the compiled program to a format that the target device
+      can understand.
+      Each backend is responsible for one such format, and Hybrid Compilers will
+      often have multiple backends to support multiple executable formats.
 
 #### Important Interfaces
 
