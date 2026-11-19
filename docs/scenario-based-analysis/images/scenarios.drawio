@@ -1,6 +1,6 @@
 <mxfile host="Electron" pages="4">
   <diagram name="scenario1" id="Luvr6P1fOA9EW3_rRw2t">
-    <mxGraphModel dx="1334" dy="2026" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1178" dy="1870" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -433,13 +433,13 @@
         <mxCell id="ZCrFBW-vqGUSXUJs4APg-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Quantum SDK&lt;/font&gt;&lt;/i&gt;" vertex="1">
           <mxGeometry height="16" width="114.7" x="398" y="286" as="geometry" />
         </mxCell>
-        <mxCell id="ZCrFBW-vqGUSXUJs4APg-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Algorithm&lt;/font&gt;&lt;/i&gt;" vertex="1">
-          <mxGeometry height="16" width="114.7" x="645" y="286" as="geometry" />
+        <mxCell id="ZCrFBW-vqGUSXUJs4APg-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Algorithm Templates&lt;/font&gt;&lt;/i&gt;" vertex="1">
+          <mxGeometry height="16" width="114.7" x="629" y="286" as="geometry" />
         </mxCell>
         <mxCell id="ZCrFBW-vqGUSXUJs4APg-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 7px;&quot;&gt;&lt;i&gt;Fault Tolerance&lt;/i&gt;&lt;/font&gt;" vertex="1">
           <mxGeometry height="30" width="60" x="425.35" y="380" as="geometry" />
         </mxCell>
-        <mxCell id="ZCrFBW-vqGUSXUJs4APg-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Optimizers&lt;/font&gt;&lt;/i&gt;" vertex="1">
+        <mxCell id="ZCrFBW-vqGUSXUJs4APg-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Optimisers&lt;/font&gt;&lt;/i&gt;" vertex="1">
           <mxGeometry height="16" width="114.7" x="883" y="386" as="geometry" />
         </mxCell>
         <mxCell id="ZCrFBW-vqGUSXUJs4APg-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 7px;&quot;&gt;&lt;i&gt;Compilation Passes&lt;/i&gt;&lt;/font&gt;" vertex="1">
@@ -491,7 +491,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="scenario2" id="2qdTRMjpyVd_vjPAP1hY">
-    <mxGraphModel dx="982" dy="1753" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1414" dy="2010" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="rAFRmXu0BtqNhfvsQcEC-0" />
         <mxCell id="rAFRmXu0BtqNhfvsQcEC-1" parent="rAFRmXu0BtqNhfvsQcEC-0" />
@@ -916,13 +916,13 @@
         <mxCell id="oWvL6jswUoWvo-zyM_nY-6" parent="rAFRmXu0BtqNhfvsQcEC-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Problem Transformations&lt;/font&gt;&lt;/i&gt;" vertex="1">
           <mxGeometry height="16" width="114.7" x="621" y="186" as="geometry" />
         </mxCell>
-        <mxCell id="oWvL6jswUoWvo-zyM_nY-7" parent="rAFRmXu0BtqNhfvsQcEC-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Algorithm&lt;/font&gt;&lt;/i&gt;" vertex="1">
-          <mxGeometry height="16" width="114.7" x="404" y="286" as="geometry" />
+        <mxCell id="oWvL6jswUoWvo-zyM_nY-7" parent="rAFRmXu0BtqNhfvsQcEC-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Algorithm Templates&lt;/font&gt;&lt;/i&gt;" vertex="1">
+          <mxGeometry height="16" width="114.7" x="389" y="286" as="geometry" />
         </mxCell>
         <mxCell id="oWvL6jswUoWvo-zyM_nY-8" parent="rAFRmXu0BtqNhfvsQcEC-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Quantum SDK&lt;/font&gt;&lt;/i&gt;" vertex="1">
           <mxGeometry height="16" width="114.7" x="398" y="386" as="geometry" />
         </mxCell>
-        <mxCell id="oWvL6jswUoWvo-zyM_nY-9" parent="rAFRmXu0BtqNhfvsQcEC-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Optimizers&lt;/font&gt;&lt;/i&gt;" vertex="1">
+        <mxCell id="oWvL6jswUoWvo-zyM_nY-9" parent="rAFRmXu0BtqNhfvsQcEC-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Optimisers&lt;/font&gt;&lt;/i&gt;" vertex="1">
           <mxGeometry height="16" width="114.7" x="884.15" y="386" as="geometry" />
         </mxCell>
         <mxCell id="oWvL6jswUoWvo-zyM_nY-10" parent="rAFRmXu0BtqNhfvsQcEC-1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 7px;&quot;&gt;&lt;i&gt;Compilation Passes&lt;/i&gt;&lt;/font&gt;" vertex="1">
@@ -1359,7 +1359,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="gRxLXf8EdxetjgPlxvwo" name="scenario4">
-    <mxGraphModel dx="911" dy="585" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1178" dy="701" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1476,7 +1476,7 @@
             <mxPoint y="-9" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="5ZdUSdfnYlOw7YFe5ygN-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Quantum Neural Network" vertex="1">
+        <mxCell id="5ZdUSdfnYlOw7YFe5ygN-21" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 11.5px;&quot;&gt;Quantum Neural Network&lt;/font&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="40" width="120" x="450" y="280" as="geometry" />
         </mxCell>
         <mxCell id="5ZdUSdfnYlOw7YFe5ygN-22" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="5ZdUSdfnYlOw7YFe5ygN-32">
@@ -1812,17 +1812,17 @@
         <mxCell id="ymIepmiZ-p89Miq_Wy2I-6" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Problem Transformations&lt;/font&gt;&lt;/i&gt;" vertex="1">
           <mxGeometry height="16" width="114.7" x="651" y="306" as="geometry" />
         </mxCell>
-        <mxCell id="ymIepmiZ-p89Miq_Wy2I-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Algorithm&lt;/font&gt;&lt;/i&gt;" vertex="1">
-          <mxGeometry height="16" width="114.7" x="496" y="305" as="geometry" />
+        <mxCell id="ymIepmiZ-p89Miq_Wy2I-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Algorithm Templates&lt;/font&gt;&lt;/i&gt;" vertex="1">
+          <mxGeometry height="16" width="114.7" x="479" y="305" as="geometry" />
         </mxCell>
-        <mxCell id="ymIepmiZ-p89Miq_Wy2I-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Optimizers&lt;/font&gt;&lt;/i&gt;" vertex="1">
+        <mxCell id="ymIepmiZ-p89Miq_Wy2I-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Optimisers&lt;/font&gt;&lt;/i&gt;" vertex="1">
           <mxGeometry height="16" width="114.7" x="304" y="406" as="geometry" />
         </mxCell>
-        <mxCell id="ymIepmiZ-p89Miq_Wy2I-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Algorithm&lt;/font&gt;&lt;/i&gt;" vertex="1">
-          <mxGeometry height="16" width="114.7" x="666" y="406" as="geometry" />
+        <mxCell id="ymIepmiZ-p89Miq_Wy2I-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Algorithm Templates&lt;/font&gt;&lt;/i&gt;" vertex="1">
+          <mxGeometry height="16" width="114.7" x="650" y="406" as="geometry" />
         </mxCell>
-        <mxCell id="ymIepmiZ-p89Miq_Wy2I-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Algorithm&lt;/font&gt;&lt;/i&gt;" vertex="1">
-          <mxGeometry height="16" width="114.7" x="494" y="406" as="geometry" />
+        <mxCell id="ymIepmiZ-p89Miq_Wy2I-10" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Algorithm Templates&lt;/font&gt;&lt;/i&gt;" vertex="1">
+          <mxGeometry height="16" width="114.7" x="479" y="406" as="geometry" />
         </mxCell>
         <mxCell id="ymIepmiZ-p89Miq_Wy2I-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Problem Transformations&lt;/font&gt;&lt;/i&gt;" vertex="1">
           <mxGeometry height="16" width="114.7" x="882" y="406" as="geometry" />
@@ -1869,7 +1869,7 @@
         <mxCell id="g2Yvs_SNe4fEtA9nvYsn-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font&gt;Circuit-Command&lt;/font&gt;&lt;div&gt;&lt;font&gt;mapping&lt;/font&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="30" width="112" x="144" y="700" as="geometry" />
         </mxCell>
-        <mxCell id="_A9kmpCiyQe_gsf7-c6E-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 9.5px;&quot;&gt;Quantum Neural Network Program Generator&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="_A9kmpCiyQe_gsf7-c6E-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Quantum Neural Network Program Generator&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="40" width="120" x="260" y="280" as="geometry" />
         </mxCell>
         <mxCell id="_A9kmpCiyQe_gsf7-c6E-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Quantum SDK&lt;/font&gt;&lt;/i&gt;" vertex="1">
