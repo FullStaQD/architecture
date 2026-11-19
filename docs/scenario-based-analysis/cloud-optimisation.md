@@ -15,18 +15,18 @@ It has the following specification:
 
 
 
-## Application Layer - Downwards 
-1. Cloud Optimisation Application (*Use Case*)
+## Application Layer - Downwards                                                                
+1. Cloud Optimisation Application ([Use Case](../reference-architecture/building-block-view.md#_white_box_app_layer))
     - Allows acccess for the stakeholder to the architecture.
     - Processes the MaxCut problem instance and forwards the problem information to the QUBO Transformator.
 
-2. QUBO Transformator (*Problem Transformation*)
+2. QUBO Transformator ([Problem Transformation](../reference-architecture/building-block-view.md#_white_box_app_layer))
     - Creates a QUBO, using the information of the Cloud Optimisation Application.
 
-3. Ising Transformator (*Problem Transformation*)
+3. Ising Transformator ([Problem Transformation](../reference-architecture/building-block-view.md#_white_box_app_layer))
     - Transforms the QUBO into an Ising Hamiltonian.
 
-4. Penalty Encoder (*Problem Transformation*)
+4. Penalty Encoder ([Problem Transformation](../reference-architecture/building-block-view.md#_white_box_app_layer))
     - Checks if the required optimization problem needs a penalty factor and adjusts it.
      
 5. QAOA (*Algorithm*)
