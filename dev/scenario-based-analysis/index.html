@@ -956,7 +956,9 @@ architecture can hold up to the requirements of its use cases.</p>
 <a href="../reference-architecture/">reference architecture</a>. At the current stage of the reference architecture, the scenario-based analysis focuses on the building block and runtime view. An extension to include the deployment view is planned for the future.
 Additionally, we document the scenarios for other software architects to use them in the evaluation of their own
 quantum software architecture instantiations, and for ourselves to evaluate
-architectural decisions in future versions of our reference architecture.</p>
+architectural decisions in future versions of our reference architecture. </p>
+<p>In order to use the scenario-based analysis, we evaluate the "Proto-Stack" which was designed in the QCNext project<sup id="fnref:qc-next"><a class="footnote-ref" href="#fn:qc-next">3</a></sup>, a predecessor of the FullStaQD project. The Proto-Stack is visualized below:
+  <img alt="" src="./images/Protostack.png" /></p>
 <p>Our set of scenarios was originally inspired by
 <a href="https://doi.org/10.1007/978-3-031-64136-7_12">Carbonelli et al.'s work</a> which
 presented three industrial usage scenarios for quantum computing.
@@ -968,6 +970,7 @@ Our analysis currently covers the following scenarios:</p>
 <li><a href="./cloud-optimisation/">Quantum Cloud Services for Optimisation Problems</a></li>
 <li><a href="./quantum-machine-learning/">Collision Detection using Quantum Machine Learning</a></li>
 </ol>
+<p>To provide better orientation and clarify the relationships between individual software components, each component in the scenarios was retrospectively assigned to its corresponding building block of the <a href="../reference-architecture/building-block-view/">building block view</a>. The conclusions of the scenario-based analysis can be found in the <a href="../reference-architecture/runtime-view/">runtime view</a>. </p>
 <div class="footnote">
 <hr />
 <ol>
@@ -976,6 +979,9 @@ Our analysis currently covers the following scenarios:</p>
 </li>
 <li id="fn:representative-study">
 <p>Quantum Technology and Application Consortium–QUTAC et al. <a href="https://link.springer.com/article/10.1140/epjqt/s40507-021-00114-x">Industry quantum computing applications</a> EPJ Quantum Technology 8.1 (2021)&#160;<a class="footnote-backref" href="#fnref:representative-study" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:qc-next">
+<p>QC Next – Development of a modular software stack for the commercial application of quantum computing:  <a href="https://www.digital.iao.fraunhofer.de/en/competences/quantum-computing/innovation-concept-quantum-computing-software-stack-staqc.html">innovation concept</a> (2025)&#160;<a class="footnote-backref" href="#fnref:qc-next" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

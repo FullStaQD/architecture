@@ -1124,40 +1124,40 @@
 <h2 id="application-layer-downwards">Application Layer - Downwards</h2>
 <ol>
 <li>
-<p>Simulation App:</p>
+<p>Simulation App (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Use Case</a>)</p>
 <ul>
 <li>The Simulation App is the entry point for this scenario.</li>
-<li>It takes the molecule specification and passes it down to the Hartree-Fock algorithm</li>
+<li>It takes the molecule specification and passes it down to the Hartree-Fock algorithm.</li>
 </ul>
 </li>
 <li>
-<p>Hartree-Fock:</p>
+<p>Hartree-Fock (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Problem Transformations</a>)</p>
 <ul>
-<li>The Hartree-Fock algorithm is the first transformation step to get from the molecule input to a quantum ready representation</li>
-<li>Its input is the molecular geometry in our scenario</li>
+<li>The Hartree-Fock algorithm is the first transformation step to get from the molecule input to a quantum ready representation.</li>
+<li>Its input is the molecular geometry in our scenario.</li>
 <li>The output are the electron integrals.</li>
 </ul>
 </li>
 <li>
-<p>Hamiltonian Formulator:</p>
+<p>Hamiltonian Formulator (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Problem Transformations</a>)</p>
 <ul>
 <li>The Hamiltonian formulation maps the electron integrals into a fermonic Hamiltonian.</li>
 </ul>
 </li>
 <li>
-<p>Jordan-Wigner:</p>
+<p>Jordan-Wigner (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Problem Transformations</a>)</p>
 <ul>
 <li>The Jordan-Wigner Transformation allows a qubit representation using a fermonic Hamiltonian and turns it into a spin Hamiltonian, which is equivalent to a set of qubits.</li>
 </ul>
 </li>
 <li>
-<p>VQE (Variational Quantum Eigensolver):</p>
+<p>Variational Quantum Eigensolver (VQE) (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Algorithm Templates</a>)</p>
 <ul>
 <li>The VQE Algorithm is a hybrid algorithm, which uses the qubit Hamiltonian to create a parameterised quantum circuit.</li>
 </ul>
 </li>
 <li>
-<p>VQE Program Generator</p>
+<p>VQE Program Generator (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Quantum SDK</a>)</p>
 <ul>
 <li>With the parametrised circuit the program generator creates a program for the transpilation pipeline in the system layer.</li>
 </ul>
@@ -1167,40 +1167,40 @@
 <p>The <a href="https://quantum.cloud.ibm.com/docs/en/guides/transpile">Qiskit Transpilation Pipeline</a> consists of 6 steps:</p>
 <ol>
 <li>
-<p>Initialization Stage</p>
+<p>Initialization Stage (<a href="../../reference-architecture/building-block-view/#_white_box_sys_layer">Compilation Passes</a>)</p>
 <ul>
 <li>Using the quantum program from the Application Layer, the transpilation pipeline can start.</li>
 <li>The first step of the transpilation pipeline is breaking down multi- and custom made qubit- gates into one- or two-qubit operations.</li>
 </ul>
 </li>
 <li>
-<p>Layout Stage</p>
+<p>Layout Stage (<a href="../../reference-architecture/building-block-view/#_white_box_sys_layer">Compilation Passes</a>)</p>
 <ul>
 <li>This stage maps the input circuit's virtual qubits to the target's physical hardware qubits.</li>
 <li>The algorithm's goal is to map the qubits in such a way that frequently-interacting virtual qubits end up next to each other in the physical hardware. </li>
 </ul>
 </li>
 <li>
-<p>Routing Stage</p>
+<p>Routing Stage (<a href="../../reference-architecture/building-block-view/#_white_box_sys_layer">Compilation Passes</a>)</p>
 <ul>
 <li>As described in the step before, a perfect connectivity between the qubits can not always be achieved. Therefore this stage adds additional operations to adapt to these constraints.</li>
 <li>Using the circuit and hardware topology as inputs, it can create a physically compatible circuit by inserting SWAP gates to move information between previously disconnected qubits.</li>
 </ul>
 </li>
 <li>
-<p>Translation Stage</p>
+<p>Translation Stage (<a href="../../reference-architecture/building-block-view/#_white_box_sys_layer">Compilation Passes</a>)</p>
 <ul>
 <li>This stage rewrites all previously chosen gates into the specific native gates supported by the target hardware's Instruction Set Architecture (ISA). </li>
 </ul>
 </li>
 <li>
-<p>Optimization Stage </p>
+<p>Optimization Stage (<a href="../../reference-architecture/building-block-view/#_white_box_sys_layer">Compilation Passes</a>)</p>
 <ul>
 <li>This stage executes low-level, hardware-aware refinements on circuits that are already compatible with the target's Instruction Set Architecture (ISA) to reduce redundancy.</li>
 </ul>
 </li>
 <li>
-<p>Scheduling Stage </p>
+<p>Scheduling Stage (<a href="../../reference-architecture/building-block-view/#_white_box_sys_layer">Compilation Passes</a>)</p>
 <ul>
 <li>The scheduling stage receives an ISA-compatible circuit and inserts explicit delay instructions to accurately reflect qubit idle periods, hardware timing constraints and to reduce error rate.</li>
 <li>It ensures the final output remains ISA-compatible while updating start-time metadata and optionally applying walltime-sensitive transformations.</li>
@@ -1208,7 +1208,7 @@
 </ul>
 </li>
 <li>
-<p>Circuit-Command Mapping</p>
+<p>Circuit-Command Mapping (<a href="../../reference-architecture/building-block-view/#_white_box_sys_layer">Compilation Backend</a>)</p>
 <ul>
 <li>Using the ISA-compatible circuit, additional information like number of measurements demanded and a translation table, which translated the commands into backend compatible commands, this steps gives a list of operations to the device and firmware of the hardware.</li>
 </ul>
@@ -1217,29 +1217,29 @@
 <h2 id="physical-layer">Physical Layer</h2>
 <ol>
 <li>
-<p>Superconducting Device and Firmware:</p>
+<p>Superconducting Device and Firmware (<a href="../../reference-architecture/building-block-view/#_white_box_phys_layer">Quantum System Controller</a>)</p>
 <ul>
 <li>Using digital hardware instructions and pulse definitions, this process converts these commands into physical signals to control operations on the quantum chip. </li>
 <li>It outputs a microwave signal list directly to the quantum hardware, translating digital instructions into executable physical actions.</li>
 </ul>
 </li>
 <li>
-<p>Molecule Laser:</p>
+<p>Molecule Laser (<a href="../../reference-architecture/context-and-scope/#_business_context">Physical Quantum Device</a>)</p>
 <ul>
 <li>The molecule laser uses the microwave signal list to execute the quantum operations on the physical hardware.</li>
-<li>When all operations are done, the molecule Laser sends a status flag to the energy sensor</li>
+<li>When all operations are done, the molecule Laser sends a status flag to the energy sensor.</li>
 </ul>
 </li>
 <li>
-<p>Energy Sensor:</p>
+<p>Energy Sensor (<a href="../../reference-architecture/context-and-scope/#_business_context">Physical Quantum Device</a>)</p>
 <ul>
-<li>When the molecule laser has completed its job and updated its status, this step measures the qubit energy levels </li>
+<li>When the molecule laser has completed its job and updated its status, this step measures the qubit energy levels.</li>
 </ul>
 </li>
 </ol>
 <h2 id="system-layer-upwards">System Layer - Upwards</h2>
 <ol>
-<li>Transpilation<ul>
+<li>Transpilation (<a href="../../reference-architecture/building-block-view/#_white_box_sys_layer">Compilation Passes</a>)<ul>
 <li>In this step, the qubit energy levels are transformed into an expectation value.</li>
 <li>To do this, additional backend data is needed to interpret the measured results.</li>
 </ul>
@@ -1248,30 +1248,30 @@
 <h2 id="application-layer-upwards">Application Layer - Upwards</h2>
 <ol>
 <li>
-<p>COBYLA</p>
+<p>COBYLA (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Optimisers</a>)</p>
 <ul>
 <li>COBYLA is a classical optimizer which needs an expectation value as input.</li>
 <li>It compares the expectation value to the last one (if it exists) and tries to optimize the parameters of the VQE algorithm.</li>
-<li>After an local optimal solution is found or the maximum of iterations is reached, the classical optimizer terminates</li>
+<li>After an local optimal solution is found or the maximum of iterations is reached, the classical optimizer terminates.</li>
 </ul>
 </li>
 <li>
-<p>VQE Program Generator</p>
+<p>VQE Program Generator (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Quantum SDK</a>)</p>
 <ul>
 <li>The Program Generator updates the parameters of the COBYLA algorithm and starts the process again.</li>
-<li>When the classical optimizer terminates, the Program Generator gives the optimal result towards the Error Mitigation Method.</li>
+<li>When the classical optimiser terminates, the VQE Program Generator gives the optimal result towards the Error Mitigation method.</li>
 </ul>
 </li>
 <li>
-<p>Zero Noise Extrapolation</p>
+<p>Zero Noise Extrapolation  (<a href="../../reference-architecture/cross-cutting-concepts/#fault-tolerance">Fault Tolerance</a>)</p>
 <ul>
-<li>Zero Noise Extrapolation (ZNE) is a error mitigation method, which can reduce the error rate by using an expectation value and a circuit has input</li>
+<li>Zero Noise Extrapolation (ZNE) is an error mitigation method, which can reduce the error rate by using an expectation value and a circuit has input.</li>
 <li>It creates a program to measure a new expectation value with a circuit, which has still the same function but uses more gates. </li>
 <li>This process is repeated multiple times and lead towards a noise pattern, which allows to reduce the error rate by extrapolation.</li>
 </ul>
 </li>
 <li>
-<p>Simulation App</p>
+<p>Simulation App (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Use Case</a>)</p>
 <ul>
 <li>The error-optimized expectation value is given towards the simulation app, which then visualize it as ground state energy for the user.</li>
 </ul>

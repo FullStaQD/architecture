@@ -1102,38 +1102,39 @@
 <h2 id="application-layer-downwards">Application Layer - Downwards</h2>
 <ol>
 <li>
-<p>Cloud Optimisation Application:</p>
+<p>Cloud Optimisation Application (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Use Case</a>)</p>
 <ul>
-<li>Processes the MaxCut problem instance and forwards the problem information to the QUBO Transformator</li>
+<li>Allows acccess for the stakeholder to the architecture.</li>
+<li>Processes the MaxCut problem instance and forwards the problem information to the QUBO Transformator.</li>
 </ul>
 </li>
 <li>
-<p>QUBO Transformator</p>
+<p>QUBO Transformator (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Problem Transformations</a>)</p>
 <ul>
-<li>Creates a QUBO, using the information of the Cloud Optimisation Application</li>
+<li>Creates a QUBO, using the information of the Cloud Optimisation Application.</li>
 </ul>
 </li>
 <li>
-<p>Ising Transformator</p>
+<p>Ising Transformator (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Problem Transformations</a>)</p>
 <ul>
-<li>Transforms the QUBO into an Ising Hamiltonian</li>
+<li>Transforms the QUBO into an Ising Hamiltonian.</li>
 </ul>
 </li>
 <li>
-<p>Penalty Encoder</p>
+<p>Penalty Encoder (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Problem Transformations</a>)</p>
 <ul>
 <li>Checks if the required optimization problem needs a penalty factor and adjusts it.</li>
 </ul>
 </li>
 <li>
-<p>QAOA</p>
+<p>QAOA (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Algorithm Templates</a>)</p>
 <ul>
 <li>QAOA is a hybrid algorithm which uses tunable parameters.</li>
-<li>It encodes the Ising Hamiltonian into a quantum circuit</li>
+<li>It encodes the Ising Hamiltonian into a quantum circuit.</li>
 </ul>
 </li>
 <li>
-<p>QAOA Program Generator</p>
+<p>QAOA Program Generator (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Quantum SDK</a>)</p>
 <ul>
 <li>With the parametrised circuit the program generator creates a program for the transpilation pipeline in the system layer.</li>
 </ul>
@@ -1141,7 +1142,7 @@
 </ol>
 <h2 id="system-layer-downwards">System Layer - Downwards</h2>
 <ol>
-<li>Noise Suppression<ul>
+<li>Noise Suppression (<a href="../../reference-architecture/cross-cutting-concepts/#fault-tolerance">Fault Tolerance</a>)<ul>
 <li>Noise Supression reduces the error rate by actively canceling noise using adjusted pulse timing or add redundancy to detect and reduce errors.</li>
 <li>It takes an optimized circuit and adds the above mentioned operations.</li>
 </ul>
@@ -1151,9 +1152,23 @@
 <p>Refer to the <a href=".././quantum-simulation/">quantum simulation scenario</a> for a full explanation.</p>
 <h2 id="application-layer-upwards">Application Layer - Upwards</h2>
 <ol>
-<li>SPSA<ul>
+<li>
+<p>SPSA (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Optimisers</a>)</p>
+<ul>
 <li>SPSA is classical optimizer used for optimizing the parameters of the QAOA algorithm. </li>
 <li>It updates the parameters and sends them to the QAOA Program Generator, where the program is computed again until the optimizer terminates.</li>
+</ul>
+</li>
+<li>
+<p>QAOA Program Generator (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Quantum SDK</a>)</p>
+<ul>
+<li>When the optimisers terminates, the final result is sent to the Cloud Optimisation Application</li>
+</ul>
+</li>
+<li>
+<p>Cloud Optimisation Application (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Use Case</a>)</p>
+<ul>
+<li>Takes the final result as input and displays the MaxCut value</li>
 </ul>
 </li>
 </ol>
