@@ -13,40 +13,48 @@ The figure below depicts the inference process with regular arrows and the train
 
 
 ## Application Layer - Downwards
-1. Collision Detection App
-    - Takes the real-time camera images and forwards the image data to the preprocessing
+1. Collision Detection App ([Use Case](../reference-architecture/building-block-view.md#_white_box_app_layer))
+    - Allows the access for the stakeholder.
+    - Takes the real-time camera images and forwards the image data to the preprocessing.
    
-2. Preprocessing
-    - Takes the image data as input and performs resizing, rescaling, color conversion, region-of-interest extraction and denoising
+2. Preprocessing ([Problem Transformations](../reference-architecture/building-block-view.md#_white_box_app_layer))
+    - Takes the image data as input and performs resizing, rescaling, color conversion, region-of-interest extraction and denoising.
 
-3. Residual Network (ResNet)
-    - Trained ResNet Backbone uses the image data to extract the features of an image
-    - Creates a feature vector and forwards the Principal Component Analysis (PCA)
+3. Residual Network (ResNet) ([Problem Transformations](../reference-architecture/building-block-view.md#_white_box_app_layer))
+    - Trained ResNet Backbone uses the image data to extract the features of an image.
+    - Creates a feature vector and forwards the Principal Component Analysis.
 
-4. Principal Component Analysis (PCA)
-    - Due to the limitation in the number of qubits, this step reduces the number of features in the feature vector
+4. Principal Component Analysis (PCA) ([Problem Transformations](../reference-architecture/building-block-view.md#_white_box_app_layer))
+    - Due to the limitation in the number of qubits, this step reduces the number of features in the feature vector.
       
-5. Angle Encoding
-    - Encodes each feature using rotational gates
-    - Creates an encoded quantum state 
+5. Angle Encoding ([Problem Transformations](../reference-architecture/building-block-view.md#_white_box_app_layer))
+    - Encodes each feature using rotational gates.
+    - Creates an encoded quantum state.
    
-6. Quantum Neural Network
-    - Appends a variational quantum circuit to the encoded quantum state
-    - Sends program to the System Layer
+6. Quantum Neural Network ([Algorithm Templates](../reference-architecture/building-block-view.md#_white_box_app_layer))
+    - Appends a variational quantum circuit to the encoded quantum state.
+      
+7. Quantum Neural Network Program Generator ([Quantum SDK](../reference-architecture/building-block-view.md#_white_box_app_layer))
+    - Creates a program of the quantum circuit.
+    - Sends program to the System Layer.
       
 ## System Layer & Physical Layer
 Refer to [quantum simulation scenario](./quantum-simulation.md) for a full explanation.
 
 ## Application Layer - Upwards
 
-7. Softmax Function 
-    - Transforms expectation values of each feature into probabilities
-    - Gives the Collision Detection App a collision probability
-8. Cross-Entropy Loss (training only)
-    - Calculates the loss of the probabilities of the features
+8. Softmax Function ([Problem Transformations](../reference-architecture/building-block-view.md#_white_box_app_layer))
+    - Transforms expectation values of each feature into probabilities.
+    - Gives the Collision Detection App a collision probability.
+    
+9. Collision Detection App ([Use Case](../reference-architecture/building-block-view.md#_white_box_app_layer))
+    - Gets the collision probability from the SoftMax Function and decides for an action. 
+    
+9. Cross-Entropy Loss (training only) ([Algorithm Templates](../reference-architecture/building-block-view.md#_white_box_app_layer))
+    - Calculates the loss of the probabilities of the features.
        
-10. Backpropagation (training only)
-    - Takes in the loss of the features and calculates the loss gradient
+10. Backpropagation (training only) ([Algorithm Templates](../reference-architecture/building-block-view.md#_white_box_app_layer))
+    - Takes in the loss of the features and calculates the loss gradient.
       
-12. Adaptive Moment Estimation (ADAM) (training only)
+11. Adaptive Moment Estimation (ADAM) (training only) ([Optimisers](../reference-architecture/building-block-view.md#_white_box_app_layer))
     - Uses the loss gradient to optimize the parameter of the quantum neural network.
