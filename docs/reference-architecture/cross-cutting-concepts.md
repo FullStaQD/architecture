@@ -122,6 +122,7 @@ Typical examples for Design and Development Support Tooling include:
 - Visualisation tools for inspecting the results of quantum computations,
   intermediary results or [monitoring data](#monitoring)
 - Testing, benchmarking and verification tools
+- Quantum resource estimation tools
 
 ??? question "Are compilers not development tools too?"
 
