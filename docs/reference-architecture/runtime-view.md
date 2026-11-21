@@ -10,9 +10,11 @@ This provides valuable insights into the requirements of the components and enab
 
 ## Quantum Software Application Execution
 Here we visualise a concrete example from our
-[scenario-based analysis](../scenario-based-analysis/) to illustrate a quantum software application is executed across different layers.
+[scenario-based analysis](../scenario-based-analysis/index.md) to illustrate a
+quantum software application is executed across different layers.
 This scenario covers an application in material simulation, check out the
-[scenario's documentation](../scenario-based-analysis/quantum-simulation.md) for the details.
+[scenario's documentation](../scenario-based-analysis/quantum-simulation.md) for
+the details.
 
 !!! warning "A common misconception"
 
@@ -29,10 +31,11 @@ This scenario covers an application in material simulation, check out the
 
 ## Interaction between the System and Physical Layers {#sys-phys-interaction}
 
-In the [building block view](./building-block-view.md), we argue for the need
-of a common interface between the [System Layer](./building-block-view.md#system-layer)
-and the [Physical Layer](./building-block-view.md#physical-layer), and we
-call this interface the *Common Quantum Device Interface*.
+In the [building block view](./building-block-view/index.md), we argue for the
+need of a common interface between the
+[System Layer](./building-block-view/system-layer.md) and the
+[Physical Layer](./building-block-view/physical-layer.md), and we call this
+interface the *Common Quantum Device Interface*.
 It serves two main tasks for the System Layer:
 
 1. **Querying device data:**

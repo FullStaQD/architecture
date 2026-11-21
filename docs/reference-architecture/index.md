@@ -5,9 +5,9 @@ Its key goal is to foster interoperability and modularity in quantum software.
 As a reference architecture, this project remains on a fairly high level,
 describing abstract responsibilities in typical components and interfaces rather
 than enforcing the use of specific packages or protocols.
-[Reference Implementations](../reference-implementation/) for these abstract
-parts are also developed within the FullStaQD project and will be made available
-at a later date.
+[Reference Implementations](../reference-implementation/index.md) for these
+abstract parts are also developed within the FullStaQD project and will be made
+available at a later date.
 
 This introductory page provides a brief overview of key elements in the
 reference architecture, as well as the methodology which was used to develop
@@ -98,7 +98,7 @@ structure quantum software systems into different levels of abstraction:
    those devices under a unified interface.
 
 A detailed breakdown of the components of the layers can be found in the
-[building block view](./building-block-view.md).
+[building block view](./building-block-view/index.md).
 
 Not all responsibilities in the quantum software stack can generally be
 associated with a single layer, some need to be implemented across layers, like
@@ -152,8 +152,8 @@ software:
 In the FullStaQD Reference Architecture, we keep stakeholders in mind throughout
 the architecture design.
 Most prominently, the reference architecture uses a
-[three-layered architecture](./building-block-view.md) to offer different levels
-of abstraction to different stakeholders. 
+[three-layered architecture](./building-block-view/index.md) to offer different
+levels of abstraction to different stakeholders. 
 
 ??? info "More about stakeholders"
 

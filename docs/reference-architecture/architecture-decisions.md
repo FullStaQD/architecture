@@ -10,7 +10,7 @@ which will allow re-evaluating them when circumstances change.
 We use a three-layered architecture for the top-level decomposition of quantum
 software systems.
 The rationale behind this decision is documented in
-[the building block view's motivation section](./building-block-view.md#motivation).
+[the building block view's motivation section](./building-block-view/index.md#motivation).
 
 ## 002: Separate Design and Development Support Tooling from the main stack {#2-separate-devtools}
 In the FullStaQD Reference Architecture, we have made
