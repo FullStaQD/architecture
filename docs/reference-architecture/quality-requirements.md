@@ -60,8 +60,9 @@ We therefore specify the following quality requirement:
 The field of quantum computing is evolving rapidly with new quantum hardware
 models, algorithms, error correction codes and SDKs becoming available
 at an enormous pace.
-For many of these aspects, it is not yet clear which exact implementations will
-be chosen for the realisation of practical quantum computing.
+For many of these components, it is not yet clear which exact implementations
+will prove to be the most useful in the realisation of practical quantum
+computing.
 To keep up with the state of the art, quantum software systems must be able to
 adopt such new methods.
 We here phrase this evolvability requirement as a matter of extensibility:
@@ -82,7 +83,7 @@ We here phrase this evolvability requirement as a matter of extensibility:
 
     * New problem transformations and algorithms can be implemented as part of
       the [Application Layer](./building-block-view.md#application-layer) within
-      the respective components.
+      the respective building blocks.
     * New quantum programming languages and quantum SDKs can be supported by
       implementing a corresponding language frontend within the
       [System Layer](./building-block-view.md#system-layer)'s Compiler.
@@ -198,13 +199,14 @@ We therefore make modularity an explicit quality requirement:
     For example, the following architectural decisions were taken for the sake
     of modularity:
     
+    * [Quantum programming languages](../glossary.md#quantum-programming-language)
+      and other exchange formats act as an interface between the Application and
+      System Layer.
+      Changes within one of these layers will not affect the other.
     * The Common Quantum Device Interface acts as a facade to the Physical
       Layer.
       Changes to the Quantum System Controller or Simulator can therefore be
       contained within the Physical Layer.
-    * Quantum programming languages and other exchange formats act as an
-      interface between the Application and System Layer.
-      Changes within one of these layers will not affect the other.
 
     See [Building Block View](./building-block-view.md) for details.
 
@@ -236,10 +238,10 @@ We state this as the following requirement:
 In the NISQ era, quantum resources like qubits and gates will be
 scarce[^ref-preskill-nisq] and resource utilisation is often a deciding factor
 for whether a quantum program can run at all.
-The roadmaps of major quantum hardware providers suggest that devices with
-thousands to millions of physical qubits might become available in the next few
-decades but even then, practical applications might run into limits due to
-quantum error correction overheads or the sheer problem size.
+Major quantum hardware providers claim that devices with thousands to millions
+of physical qubits might become available in the next few decades but even then,
+practical applications might run into limits due to quantum error correction
+overheads or the sheer problem size.
 Furthermore, it is not yet clear how expensive quantum resource usage will be in
 the long term.
 Therefore, we formulate the following resource utilisation requirement:
