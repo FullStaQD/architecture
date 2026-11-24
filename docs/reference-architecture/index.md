@@ -23,9 +23,7 @@ documentation template (v9.0) for section organisation.
     We warmly invite the community to give feedback, to discuss improvements,
     and to collaborate on making it useful for practical use.
 
-    Check out our
-    [contribution guide](https://github.com/FullStaQD/architecture/blob/main/CONTRIBUTING.md)
-    on GitHub!
+    Check out our [contribution guide](./contribution-guide.md)!
 
 !!! info "What is a reference architecture?"
 
