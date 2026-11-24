@@ -37,8 +37,8 @@ It has the following specification:
     - With the parametrised circuit the program generator creates a program for the transpilation pipeline in the system layer.
  
 ## System Layer - Downwards
-1. Noise Suppression ([Fault Tolerance](../reference-architecture/cross-cutting-concepts.md#fault-tolerance))
-    - Noise Supression reduces the error rate by actively canceling noise using adjusted pulse timing or add redundancy to detect and reduce errors.
+1. Dynamic Decoupling ([Fault Tolerance](../reference-architecture/cross-cutting-concepts.md#fault-tolerance))
+    - Dynamic Decoupling is a noise supression technique, which reduces the error rate by actively canceling noise using adjusted pulse timing or add redundancy to detect and reduce errors.
     - It takes an optimized circuit and adds the above mentioned operations.
    
    
