@@ -63,3 +63,16 @@ See also:
 
 * [Li and Benjamin](https://doi.org/10.1103/PhysRevX.7.021050) as well as [Temme et al.](https://doi.org/10.1103/PhysRevLett.119.180509) for more information about foundational approaches to QEM
 * [van den Berg et al.](https://doi.org/10.1038/s41567-023-02042-2) for a recent development of PEC towards larger quantum processors
+
+## Quantum Programming Language (QPL) {#quantum-programming-language}
+In the context of the FullStaQD Reference Architecture, we use the term
+*Quantum Programming Language* to describe quantum program specification formats
+with typical features of programming languages.
+Such features include for example control flow which could allow a quantum
+program to use the result of a mid-circuit measurement to decide which gate to
+apply next.
+We also use the term QPL to emphasise that a program can be compiled and does
+not rely on the execution within a host language.
+
+In the [building block view](./building-block-view.md), QPLs are discussed as a
+possible interface between the System Layer and the Application Layer.
