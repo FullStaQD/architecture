@@ -38,7 +38,7 @@ It has the following specification:
  
 ## System Layer - Downwards
 1. Dynamical Decoupling ([Fault Tolerance](../reference-architecture/cross-cutting-concepts.md#fault-tolerance))
-    - Dynamical Decoupling is a ([Quantum Error Supression](../reference-architecture/glossary.md#quantum-error-suppression) technique, which reduces the error rate by actively canceling noise using adjusted pulse timing or add redundancy to detect and reduce errors.
+    - Dynamical Decoupling is a [Quantum Error Supression](../reference-architecture/glossary.md#quantum-error-suppression) technique, which reduces the error rate by actively canceling noise using adjusted pulse timing or add redundancy to detect and reduce errors.
     - It takes an optimized circuit and adds the above mentioned operations.
    
    
