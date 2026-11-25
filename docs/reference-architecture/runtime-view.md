@@ -27,7 +27,23 @@ This scenario covers an application in material simulation, check out the
     ![activity diagram showing a material simulation scenario](../scenario-based-analysis/images/quantum-simulation.png){style="max-width: 95%"}
 </figure>
 
+## Separation of Concerns
+-> hardware agnostic -> application
+-> System layer transpilation alone is not enough
+-> Hardware dependen _> physical
+
+
+## Importance of the Cross-Cutting Concepts {#cross-cutting}
+When conducting the scenario-based analysis, we couldnt allocate fault tolerant methods at only one layer.
+.. -> Crosslayer must exist
+
+
+## Interface between the Application and System Layer {#app-sys-interface}
+Why Program? Circuit alone is not enough
+
 ## Interaction between the System and Physical Layers {#sys-phys-interaction}
+Hier vielleicht noch ein text zwischewn system und application, wie diese "low-level commands" und information provision von der device data dann über the common quantum device interface (qdmi/qrmi) laufen kann.
+
 
 In the [building block view](./building-block-view.md), we argue for the need
 of a common interface between the [System Layer](./building-block-view.md#system-layer)
@@ -51,6 +67,7 @@ typically interact using the Common Quantum Device Interface:
 <figure markdown="span">
     ![sequence diagram displaying a typical interaction between the system and physical layers](./images/sys-phys-interaction.svg){style="max-width: 95%"}
 </figure>
+
 
 
 ## QEC Decoding Loop {#qec-decoding-loop}
