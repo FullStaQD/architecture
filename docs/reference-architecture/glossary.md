@@ -87,10 +87,12 @@ package are discussed in the
 
 ??? question "Why pick a different name?"
 
-    The term *Cross-Layer Concerns* of the FullStaQD project is more specific to
-    a layered architecture but it is also associated with a working package that
-    has some responsibilities that go beyond any architectural considerations.
-    For the FullStaQD Reference Architecture documentation, we chose to stick to
-    the term *Cross-Cutting Concepts* which is suggested by the
+    The use of the term *Cross-Layer Concerns* in a FullStaQD working package
+    could have made it an obvious choice for the *Cross-Cutting Concepts*
+    section in this documentation.
+    However, the associated working package also carries responsibilities that
+    go beyond architectural considerations.
+    For the FullStaQD Reference Architecture documentation, we therefore chose
+    to stick to the term *Cross-Cutting Concepts* which is suggested by the
     [arc42 architecture documentation template](https://docs.arc42.org/section-8/)
     that we follow.
