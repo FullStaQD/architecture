@@ -18,10 +18,10 @@ It has the following specification:
 ## Application Layer - Downwards                                                                
 1. Cloud Optimisation Application ([Use Case](../reference-architecture/building-block-view.md#_white_box_app_layer))
     - Allows acccess for the stakeholder to the architecture.
-    - Processes the MaxCut problem instance and forwards the problem information to the QUBO Transformator.
+    - Processes the MaxCut problem and forwards the problem information to the QUBO Transformator.
 
 2. QUBO Transformator ([Problem Transformations](../reference-architecture/building-block-view.md#_white_box_app_layer))
-    - Creates a QUBO, using the information of the Cloud Optimisation Application.
+    - Creates a QUBO, using the information of the MaxCut instance of the Cloud Optimisation Application.
 
 3. Ising Transformator ([Problem Transformations](../reference-architecture/building-block-view.md#_white_box_app_layer))
     - Transforms the QUBO into an Ising Hamiltonian.
@@ -37,8 +37,8 @@ It has the following specification:
     - With the parametrised circuit the program generator creates a program for the transpilation pipeline in the system layer.
  
 ## System Layer - Downwards
-1. Noise Suppression ([Fault Tolerance](../reference-architecture/cross-cutting-concepts.md#fault-tolerance))
-    - Noise Supression reduces the error rate by actively canceling noise using adjusted pulse timing or add redundancy to detect and reduce errors.
+1. Dynamical Decoupling ([Fault Tolerance](../reference-architecture/cross-cutting-concepts.md#fault-tolerance))
+    - Dynamical Decoupling is a [Quantum Error Supression](../reference-architecture/glossary.md#quantum-error-suppression) technique, which reduces the error rate by actively canceling noise using adjusted pulse timing or add redundancy to detect and reduce errors.
     - It takes an optimized circuit and adds the above mentioned operations.
    
    
