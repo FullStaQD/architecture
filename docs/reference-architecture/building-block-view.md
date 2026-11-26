@@ -82,6 +82,8 @@ fidelities).
 * [Whitebox view of the Physical Layer](#_white_box_phys_layer)
 
 ### Important Interfaces
+In the reference architecture, interfaces between the layers play a crucial role in ensuring effective communication and interaction. Well-defined interfaces enable [modularity](./quality-requirements.md#maintainability-and-modularity), [maintainability](./quality-requirements.md#maintainability-and-modularity), and [extensibility](./quality-requirements.md#evolvability-and-extensibility) by establishing clear boundaries between the concerns of individual layers. Based on our [scenario-based analysis](../scenario-based-analysis/index.md), we derive a set of characteristics and identify key properties that the interfaces between the respective layers should fulfill.
+
 #### Between the Application and System Layers
 The interface between the Application and System Layers needs to serve the
 following needs:
