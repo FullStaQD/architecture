@@ -5,9 +5,9 @@ Its key goal is to foster interoperability and modularity in quantum software.
 As a reference architecture, this project remains on a fairly high level,
 describing abstract responsibilities in typical components and interfaces rather
 than enforcing the use of specific packages or protocols.
-[Reference Implementations](../reference-implementation/) for these abstract
-parts are also developed within the FullStaQD project and will be made available
-at a later date.
+[Reference Implementations](../reference-implementation/index.md) for these
+abstract parts are also developed within the FullStaQD project and will be made
+available at a later date.
 
 This introductory page provides a brief overview of key elements in the
 reference architecture, as well as the methodology which was used to develop
@@ -96,7 +96,7 @@ structure quantum software systems into different levels of abstraction:
    those devices under a unified interface.
 
 A detailed breakdown of the components of the layers can be found in the
-[building block view](./building-block-view.md).
+[building block view](./building-block-view/index.md).
 
 Not all responsibilities in the quantum software stack can generally be
 associated with a single layer, some need to be implemented across layers, like
@@ -121,11 +121,11 @@ the full list can be found in the
 
 | Quality Requirement { style="width: 1%; white-space: nowrap;" } | Description | 
 | ------------- | ------------- | 
-| [Extensibility](./quality-requirements.md#extensibility) | Quantum software systems can be extended with new use cases, SDKs, compiler passes, fault tolerance measures, and quantum devices. |
+| [Extensibility](./quality-requirements.md#evolvability-and-extensibility) | Quantum software systems can be extended with new use cases, SDKs, compiler passes, fault tolerance measures, and quantum devices. |
 | [Integrability](./quality-requirements.md#integrability) | Quantum software systems can be integrated into existing IT infrastructure, and High-Performance-Computing (HPC) systems in particular. |
-| [Modularity](./quality-requirements.md#modularity) | Changes to one component should not affect other components. |
+| [Modularity](./quality-requirements.md#maintainability-and-modularity) | Changes to one component should not affect other components. |
 | [Fault Tolerance](./quality-requirements.md#fault-tolerance) | The quantum software system can produce correct results in the presence of noise. |
-| [Maintainability](./quality-requirements.md#maintainability) | The reference architecture can be modified, corrected, adapted or improved due to changes in the environment or requirements with ease. |
+| [Maintainability](./quality-requirements.md#maintainability-and-modularity) | The reference architecture can be modified, corrected, adapted or improved due to changes in the environment or requirements with ease. |
 
 ## Stakeholders {#stakeholders}
 Quantum software systems are developed and used by stakeholders with different
@@ -150,8 +150,8 @@ software:
 In the FullStaQD Reference Architecture, we keep stakeholders in mind throughout
 the architecture design.
 Most prominently, the reference architecture uses a
-[three-layered architecture](./building-block-view.md) to offer different levels
-of abstraction to different stakeholders. 
+[three-layered architecture](./building-block-view/index.md) to offer different
+levels of abstraction to different stakeholders. 
 
 ??? info "More about stakeholders"
 
@@ -180,7 +180,7 @@ employed:
 
 | Method | Description | Reason | 
 | - | - | - | 
-| [Scenario-Based Analysis](../scenario-based-analysis) | Using predefined scenarios of use cases on the reference architecture  | To assess how well the reference architecture covers the predefined scenarios and to identify the common requirements shared by the components on which those scenarios depend |
+| [Scenario-Based Analysis](../scenario-based-analysis/index.md) | Using predefined scenarios of use cases on the reference architecture  | To assess how well the reference architecture covers the predefined scenarios and to identify the common requirements shared by the components on which those scenarios depend |
 | Requirement Survey | Sending surveys to stakeholders asking for requirements and needs for their components | Obtaining high-level input on the requirements that the reference architecture must fulfill  |
 | Interview Survey | In-depth interviews with experts of various architectural concerns (e.g. HPC, hardware, compilation) about the architecturally significant requirements in their area of expertise | Evaluating the reference architecture and gathering detailed input from various areas |
 | Workshops | On-site workshops with relevant partners from the FullStaQD consortium | Evaluating and improving the reference architecture |

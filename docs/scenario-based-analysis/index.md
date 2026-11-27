@@ -6,7 +6,7 @@ It uses concrete usage scenarios for the system under design to verify whether t
 architecture can hold up to the requirements of its use cases.
 
 In FullStaQD, we use this method to guide the design of our
-[reference architecture](../reference-architecture/). At the current stage of the reference architecture, the scenario-based analysis focuses on the building block and runtime view. An extension to include the deployment view is planned for the future.
+[reference architecture](../reference-architecture/index.md). At the current stage of the reference architecture, the scenario-based analysis focuses on the building block and runtime view. An extension to include the deployment view is planned for the future.
 Additionally, we document the scenarios for other software architects to use them in the evaluation of their own
 quantum software architecture instantiations, and for ourselves to evaluate
 architectural decisions in future versions of our reference architecture. 
@@ -29,7 +29,7 @@ Our analysis currently covers the following scenarios:
 3. [Collision Detection using Quantum Machine Learning](./quantum-machine-learning.md)
 
 
-To provide better orientation and clarify the relationships between individual software components, each component in the scenarios was retrospectively assigned to its corresponding building block of the [building block view](../reference-architecture/building-block-view.md). The conclusions of the scenario-based analysis can be found in the [runtime view](../reference-architecture/runtime-view.md). 
+To provide better orientation and clarify the relationships between individual software components, each component in the scenarios was retrospectively assigned to its corresponding building block of the [building block view](../reference-architecture/building-block-view/index.md). The conclusions of the scenario-based analysis can be found in the [runtime view](../reference-architecture/runtime-view.md). 
 
 
 

@@ -16,24 +16,24 @@ It has the following specification:
 
 
 ## Application Layer - Downwards                                                                
-1. Cloud Optimisation Application ([Use Case](../reference-architecture/building-block-view.md#_white_box_app_layer))
+1. Cloud Optimisation Application ([Use Case](../reference-architecture/building-block-view/application-layer.md))
     - Allows acccess for the stakeholder to the architecture.
     - Processes the MaxCut problem and forwards the problem information to the QUBO Transformator.
 
-2. QUBO Transformator ([Problem Transformations](../reference-architecture/building-block-view.md#_white_box_app_layer))
+2. QUBO Transformator ([Problem Transformations](../reference-architecture/building-block-view/application-layer.md))
     - Creates a QUBO, using the information of the MaxCut instance of the Cloud Optimisation Application.
 
-3. Ising Transformator ([Problem Transformations](../reference-architecture/building-block-view.md#_white_box_app_layer))
+3. Ising Transformator ([Problem Transformations](../reference-architecture/building-block-view/application-layer.md))
     - Transforms the QUBO into an Ising Hamiltonian.
 
-4. Penalty Encoder ([Problem Transformations](../reference-architecture/building-block-view.md#_white_box_app_layer))
+4. Penalty Encoder ([Problem Transformations](../reference-architecture/building-block-view/application-layer.md))
     - Checks if the required optimization problem needs a penalty factor and adjusts it.
      
-5. QAOA ([Algorithm Templates](../reference-architecture/building-block-view.md#_white_box_app_layer))
+5. QAOA ([Algorithm Templates](../reference-architecture/building-block-view/application-layer.md))
     - QAOA is a hybrid algorithm which uses tunable parameters.
     - It encodes the Ising Hamiltonian into a quantum circuit.
    
-6. QAOA Program Generator ([Quantum SDK](../reference-architecture/building-block-view.md#_white_box_app_layer))
+6. QAOA Program Generator ([Quantum SDK](../reference-architecture/building-block-view/application-layer.md))
     - With the parametrised circuit the program generator creates a program for the transpilation pipeline in the system layer.
  
 ## System Layer - Downwards
@@ -47,12 +47,12 @@ Refer to the [quantum simulation scenario](./quantum-simulation.md) for a full e
 
 
 ## Application Layer - Upwards
-1. SPSA ([Optimisers](../reference-architecture/building-block-view.md#_white_box_app_layer))
+1. SPSA ([Optimisers](../reference-architecture/building-block-view/application-layer.md))
     - SPSA is classical optimizer used for optimizing the parameters of the QAOA algorithm. 
     - It updates the parameters and sends them to the QAOA Program Generator, where the program is computed again until the optimizer terminates.
       
-2. QAOA Program Generator ([Quantum SDK](../reference-architecture/building-block-view.md#_white_box_app_layer))
+2. QAOA Program Generator ([Quantum SDK](../reference-architecture/building-block-view/application-layer.md))
     - When the optimisers terminates, the final result is sent to the Cloud Optimisation Application
       
-3. Cloud Optimisation Application ([Use Case](../reference-architecture/building-block-view.md#_white_box_app_layer))
+3. Cloud Optimisation Application ([Use Case](../reference-architecture/building-block-view/application-layer.md))
     - Takes the final result as input and displays the MaxCut value
