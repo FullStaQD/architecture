@@ -1,6 +1,6 @@
 <mxfile host="Electron" pages="4">
   <diagram name="scenario1" id="Luvr6P1fOA9EW3_rRw2t">
-    <mxGraphModel dx="1178" dy="1870" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1414" dy="2010" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -131,7 +131,7 @@
             <mxPoint x="180.0000000000001" y="400" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="uT3cTm07i6M5Yz-z-4mC-111" connectable="0" parent="uT3cTm07i6M5Yz-z-4mC-40" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Qiskit program" vertex="1">
+        <mxCell id="uT3cTm07i6M5Yz-z-4mC-111" connectable="0" parent="uT3cTm07i6M5Yz-z-4mC-40" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Quantum Circuit" vertex="1">
           <mxGeometry relative="1" x="0.1036" y="1" as="geometry">
             <mxPoint x="-1" y="-34" as="offset" />
           </mxGeometry>
@@ -597,7 +597,7 @@
             <mxPoint x="180" y="380" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="rAFRmXu0BtqNhfvsQcEC-27" connectable="0" parent="rAFRmXu0BtqNhfvsQcEC-26" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Qiskit program" vertex="1">
+        <mxCell id="rAFRmXu0BtqNhfvsQcEC-27" connectable="0" parent="rAFRmXu0BtqNhfvsQcEC-26" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Quantum Circuit" vertex="1">
           <mxGeometry relative="1" x="0.1036" y="1" as="geometry">
             <mxPoint x="-1" y="-28" as="offset" />
           </mxGeometry>
@@ -1367,7 +1367,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="gRxLXf8EdxetjgPlxvwo" name="scenario4">
-    <mxGraphModel dx="1178" dy="701" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1683" dy="1001" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1492,7 +1492,7 @@
             <mxPoint x="200.70000000000013" y="420" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="5ZdUSdfnYlOw7YFe5ygN-23" connectable="0" parent="5ZdUSdfnYlOw7YFe5ygN-22" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Qiskit program" vertex="1">
+        <mxCell id="5ZdUSdfnYlOw7YFe5ygN-23" connectable="0" parent="5ZdUSdfnYlOw7YFe5ygN-22" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Quantum Circuit" vertex="1">
           <mxGeometry relative="1" x="0.1036" y="1" as="geometry">
             <mxPoint x="-1" y="-54" as="offset" />
           </mxGeometry>
