@@ -34,8 +34,8 @@ It has the following specification:
 5. Variational Quantum Eigensolver (VQE) ([Algorithm Templates](../reference-architecture/building-block-view/application-layer.md))
     - The VQE Algorithm is a hybrid algorithm, which uses the qubit Hamiltonian to create a parameterised quantum circuit.
 
-6. VQE Program Generator ([Quantum SDK](../reference-architecture/building-block-view/application-layer.md))
-    - With the parametrised circuit the program generator creates a program for the transpilation pipeline in the system layer.
+6. VQE Circuit Generator ([Quantum SDK](../reference-architecture/building-block-view/application-layer.md))
+    - The circuit generator creates the final parametrised circuit for the transpilation pipeline in the system layer.
  
 ## System Layer - Downwards
 
