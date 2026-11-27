@@ -37,7 +37,7 @@ execution environments are particularly important:
   It allows developers to bring the *Use Case Source Code* to the datacentre,
   to compile the *[Quantum Kernel](./glossary.md#quantum-kernel)* and
   *Classical Kernels* using the *Hybrid Compiler*
-  (see&nbsp;[System Layer](./building-block-view.md#system-layer)), and to send
+  (see&nbsp;[System Layer](./building-block-view/system-layer.md)), and to send
   them to the *HPC Cluster* for execution.
 * The **HPC Cluster** is at the core of the datacentre.
   It is made up of many processing units, and storage facilities that allow
@@ -50,7 +50,7 @@ execution environments are particularly important:
       components such as *Runtime Compilers* and *Resource Scheduler* which
       are responsible for distributing the workload onto the available
       resources.
-      As discussed in the [System Layer](./building-block-view.md#system-layer),
+      As discussed in the [System Layer](./building-block-view/system-layer.md),
       resource schedulers need to be equipped to deal with both classical and
       quantum workloads.
     * In the context of quantum software, **QPU Nodes** are of particular

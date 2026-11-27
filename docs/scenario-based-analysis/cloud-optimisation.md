@@ -33,8 +33,8 @@ It has the following specification:
     - QAOA is a hybrid algorithm which uses tunable parameters.
     - It encodes the Ising Hamiltonian into a quantum circuit.
    
-6. QAOA Program Generator ([Quantum SDK](../reference-architecture/building-block-view/application-layer.md))
-    - With the parametrised circuit the program generator creates a program for the transpilation pipeline in the system layer.
+6. QAOA Circuit Generator ([Quantum SDK](../reference-architecture/building-block-view/application-layer.md))
+    - The circuit generator creates a parametrised circuit for the transpilation pipeline in the system layer.
  
 ## System Layer - Downwards
 1. Dynamical Decoupling ([Fault Tolerance](../reference-architecture/cross-cutting-concepts.md#fault-tolerance))

@@ -34,15 +34,15 @@ It has the following specification:
 5. Variational Quantum Eigensolver (VQE) ([Algorithm Templates](../reference-architecture/building-block-view/application-layer.md))
     - The VQE Algorithm is a hybrid algorithm, which uses the qubit Hamiltonian to create a parameterised quantum circuit.
 
-6. VQE Program Generator ([Quantum SDK](../reference-architecture/building-block-view/application-layer.md))
-    - With the parametrised circuit the program generator creates a program for the transpilation pipeline in the system layer.
+6. VQE Circuit Generator ([Quantum SDK](../reference-architecture/building-block-view/application-layer.md))
+    - The circuit generator creates the final parametrised circuit for the transpilation pipeline in the system layer.
  
 ## System Layer - Downwards
 
 The [Qiskit Transpilation Pipeline](https://quantum.cloud.ibm.com/docs/en/guides/transpile) consists of 6 steps:
 
 1. Initialization Stage ([Compilation Passes](../reference-architecture/building-block-view/system-layer.md))
-    - Using the quantum program from the Application Layer, the transpilation pipeline can start.
+    - Using the quantum circuit from the Application Layer, the transpilation pipeline can start.
     - The first step of the transpilation pipeline is breaking down multi- and custom made qubit- gates into one- or two-qubit operations.
       
 2. Layout Stage ([Compilation Passes](../reference-architecture/building-block-view/system-layer.md))
