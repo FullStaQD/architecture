@@ -1080,6 +1080,23 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Scenario-Based Analysis
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="././" class="md-nav__link md-nav__link--active">
         
   
@@ -1095,6 +1112,87 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Methodology
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusions-of-the-scenario-based-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Conclusions of the Scenario-based Analysis
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conclusions of the Scenario-based Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evaluation-of-the-layer-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Evaluation of the Layer Model
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-sys-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Evaluation of the Interface between the Application and System Layer
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sys-phys-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Evaluation of the Interface between the System and Physical Layer
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1232,6 +1330,11 @@
                       
                     
                     
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
                   
                   <div class="md-sidebar__inner">
                     
@@ -1243,6 +1346,75 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Methodology
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusions-of-the-scenario-based-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Conclusions of the Scenario-based Analysis
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conclusions of the Scenario-based Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evaluation-of-the-layer-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Evaluation of the Layer Model
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#app-sys-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Evaluation of the Interface between the Application and System Layer
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sys-phys-interaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Evaluation of the Interface between the System and Physical Layer
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1278,12 +1450,13 @@
 software engineering <sup id="fnref:state-of-the-art-analysis"><a class="footnote-ref" href="#fn:state-of-the-art-analysis">1</a></sup>.
 It uses concrete usage scenarios for the system under design to verify whether the
 architecture can hold up to the requirements of its use cases.</p>
+<h2 id="methodology">Methodology</h2>
 <p>In FullStaQD, we use this method to guide the design of our
 <a href="../reference-architecture/">reference architecture</a>. At the current stage of the reference architecture, the scenario-based analysis focuses on the building block and runtime view. An extension to include the deployment view is planned for the future.
 Additionally, we document the scenarios for other software architects to use them in the evaluation of their own
 quantum software architecture instantiations, and for ourselves to evaluate
 architectural decisions in future versions of our reference architecture. </p>
-<p>In order to use the scenario-based analysis, we evaluate the "Proto-Stack" which was designed in the QCNext project<sup id="fnref:qc-next"><a class="footnote-ref" href="#fn:qc-next">3</a></sup>, a predecessor of the FullStaQD project. The Proto-Stack is visualized below:
+<p>In order to use the scenario-based analysis, we evaluate the <em>Proto-Stack</em> which was designed in the QCNext project<sup id="fnref:qc-next"><a class="footnote-ref" href="#fn:qc-next">3</a></sup>, a predecessor of the FullStaQD project. The Proto-Stack is visualized below:
   <img alt="" src="./images/Protostack.png" /></p>
 <p>Our set of scenarios was originally inspired by
 <a href="https://doi.org/10.1007/978-3-031-64136-7_12">Carbonelli et al.'s work</a> which
@@ -1296,7 +1469,17 @@ Our analysis currently covers the following scenarios:</p>
 <li><a href="./cloud-optimisation/">Quantum Cloud Services for Optimisation Problems</a></li>
 <li><a href="./quantum-machine-learning/">Collision Detection using Quantum Machine Learning</a></li>
 </ol>
-<p>To provide better orientation and clarify the relationships between individual software components, each component in the scenarios was retrospectively assigned to its corresponding building block of the <a href="../reference-architecture/building-block-view/">building block view</a>. The conclusions of the scenario-based analysis can be found in the <a href="../reference-architecture/runtime-view/">runtime view</a>. </p>
+<p>To provide better orientation and clarify the relationships between individual software components, each component in the scenarios was retrospectively assigned to its corresponding building block of the <a href="../reference-architecture/building-block-view/">Building Block View</a>. </p>
+<h2 id="conclusions-of-the-scenario-based-analysis">Conclusions of the Scenario-based Analysis</h2>
+<p>Our reference architecture is significantly influenced by the findings of the scenario-based analysis, with its key implications referenced in several architectural views, including the  <a href="../reference-architecture/runtime-view/">Runtime View</a>, <a href="../reference-architecture/building-block-view/">Building Block View</a>, or in the <a href="../reference-architecture/cross-cutting-concepts/">Cross-Cutting Concepts</a>. The most important conclusions of the scenario-based analysis are outlined below.</p>
+<h3 id="evaluation-of-the-layer-model">Evaluation of the Layer Model</h3>
+<p>We use the scenario-based analysis on the <em>Proto-Stack</em> to analyse the three-layered architecture model. We find that a three-layered architecture allows a clear separation of concerns between software components. This separation enables key architectural <a href="../reference-architecture/quality-requirements/">quality requirements</a>, such as <a href="../reference-architecture/quality-requirements/#maintainability-and-modularity">modularity</a> and <a href="../reference-architecture/quality-requirements/#interchangeability">interchangeability</a> to be satisfied. It also shows that a three-layered structure consisting of an application, system and physical layer provides a sufficient basis for separating the responsibilities of software components, as well as their required associated knowledge, as discussed in more detail in the <a href="../reference-architecture/building-block-view/">Building Block View</a>. A more granular structure with sublayers, as the <em>Proto-Stack</em> has, restricts the development of a software system too much and does not facilitate the realisation of the quality requirements. </p>
+<p>Additionally, our scenario-based analysis shows that the <em>Cross-layer Extension and Concerns</em> of the <em>Proto-Stack</em> does not allow a clear separation of concerns for software components, which for example facilitate <a href="../reference-architecture/cross-cutting-concepts/#fault-tolerance">fault tolerance</a>. Depending on the functionality of the software components, they may extend across multiple layers or may not belong to any specific layer at all. We classify these software components as part of the <a href="../reference-architecture/cross-cutting-concepts/">Cross-Cutting Concepts</a>, which also includes software components which are used for monitoring, benchmarking and resource estimation. While the <em>Proto-Stack</em> addresses them through an additional component outside of the layer model, which may be suitable in some cases, our scenario-based analysis shows that they mostly need to be integrated into the relevant layers.</p>
+<h3 id="app-sys-interface">Evaluation of the Interface between the Application and System Layer</h3>
+<p>In our scenario-based analysis, we use <em>quantum circuit</em> as interface between the Application and System Layer. This means the Application Layer provides a quantum circuit, which is subsequently transpiled by the System Layer and executed on the quantum hardware through the Physical Layer. However, a quantum circuit alone may not provide all the information required by the different layers of the architecture. In this reference architecture, we define the <em>program</em> interface, which includes additional necessary information for the execution of the quantum system. This includes, for example, the configuration of <a href="../reference-architecture/cross-cutting-concepts/#fault-tolerance">fault tolerance</a> methods, specifying which fault tolerance methods should be applied to ensure reliable execution and how the system should handle potential failures during runtime. Furthermore, the interface can define compilation requirements and program optimization strategies, such as selecting specific compiler settings or optimization levels for the underlying hardware. In addition, it can contain deployment specifications that determine how the quantum system is distributed across the available computing infrastructure, such as HPC. Further details on the <em>program</em> interface are provided in the <a href="../reference-architecture/building-block-view/">Building Block View</a>.</p>
+<h3 id="sys-phys-interaction">Evaluation of the Interface between the System and Physical Layer</h3>
+<p>In the scenario-based analysis, we evaluate what kind of information should be exchanged between the System and Physical Layer. We find that the interface between the System Layer and the Physical Layer must exchange three types of information. First, the System Layer must be able to provide a set of commands supported by the firmware to execute the quantum circuit on the quantum hardware. Second, it needs to receive the results produced by the quantum hardware. Third, information about the hardware's properties and capabilities is required in advance to enable the System Layer to transpile the program for the target quantum hardware. </p>
+<p>Within the quantum computing ecosystem, several solutions already exist to facilitate this type of communication between the System Layer and the Physical Layer. We refer to these solutions as <em>Common Quantum Device Interfaces</em>, such as the <a href="https://munich-quantum-software-stack.github.io/QDMI/">Quantum Device Management Interface (QDMI)</a> and the <a href="https://quantum.cloud.ibm.com/docs/en/guides/qrmi">Quantum Resource Management Interface (QRMI)</a>. A more detailed description of the communication and interaction of the <a href="../reference-architecture/building-block-view/system-layer/">System</a> and <a href="../reference-architecture/building-block-view/physical-layer/">Physical Layer</a> is provided in the <a href="../reference-architecture/runtime-view/">Runtime View</a>.</p>
 <div class="footnote">
 <hr />
 <ol>

@@ -1483,9 +1483,9 @@
 </ul>
 </li>
 <li>
-<p>VQE Program Generator (<a href="../../reference-architecture/building-block-view/application-layer/">Quantum SDK</a>)</p>
+<p>VQE Circuit Generator (<a href="../../reference-architecture/building-block-view/application-layer/">Quantum SDK</a>)</p>
 <ul>
-<li>With the parametrised circuit the program generator creates a program for the transpilation pipeline in the system layer.</li>
+<li>The circuit generator creates the final parametrised circuit for the transpilation pipeline in the system layer.</li>
 </ul>
 </li>
 </ol>
@@ -1495,7 +1495,7 @@
 <li>
 <p>Initialization Stage (<a href="../../reference-architecture/building-block-view/system-layer/">Compilation Passes</a>)</p>
 <ul>
-<li>Using the quantum program from the Application Layer, the transpilation pipeline can start.</li>
+<li>Using the quantum circuit from the Application Layer, the transpilation pipeline can start.</li>
 <li>The first step of the transpilation pipeline is breaking down multi- and custom made qubit- gates into one- or two-qubit operations.</li>
 </ul>
 </li>
