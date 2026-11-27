@@ -1,7 +1,7 @@
 # Deployment View {#section-deployment-view}
-
-Quantum software stacks can be deployed in various environments.
-This section documents a few common deployment scenarios.
+The Deployment View provides an overview of the infrastructure requirements and the different ways in which a quantum software architecture can be realised in practice.
+It describes the allocation of software components to computing resources, their communication interfaces, and their dependencies on specific infrastructure elements.
+We visualise these aspects using the deployment on a single machine and on a HPC centre with integrated quantum hardware.
 
 ## Deployment on a Single Machine
 <figure markdown="span">
