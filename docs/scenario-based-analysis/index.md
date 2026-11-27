@@ -32,54 +32,29 @@ Our analysis currently covers the following scenarios:
 2. [Quantum Cloud Services for Optimisation Problems](./cloud-optimisation.md)
 3. [Collision Detection using Quantum Machine Learning](./quantum-machine-learning.md)
 
-To provide better orientation and clarify the relationships between individual software components, each component in the scenarios was retrospectively assigned to its corresponding building block of the [building block view](../reference-architecture/building-block-view/index.md). 
+To provide better orientation and clarify the relationships between individual software components, each component in the scenarios was retrospectively assigned to its corresponding building block of the [Building Block View](../reference-architecture/building-block-view/index.md). 
 
 The results of the scenario-based analysis are embedded in many parts of the reference architectur, such as in the [Runtime View](../reference-architecture/runtime-view.md), [Building Block View](../reference-architecture/building-block-view.md), or in the [Cross-Cutting Concepts](../reference-architecture/cross-cutting-concepts.md). 
 
-## Conclusion of the Scenario-based Analysis
+## Conclusions of the Scenario-based Analysis
 
 ### Separation of Concerns
--> hardware agnostic -> application
--> System layer transpilation alone is not enough
--> Hardware dependen _> physical
-We also found that some thing cant be allocated in only one layer, ... When conducting the scenario-based analysis, we couldnt allocate fault tolerant methods at only one layer.
-.. -> Crosslayer must exist
+A crucial aspect of the reference architecture is a clear separation of concerns between software components. This separation is essential for fulfilling key architectural [quality requirements](../reference-architecture/quality-requirements.md), such as [modularity](../reference-architecture/quality-requirements.md#maintainability-and-modularity) and [interchangeability](../reference-architecture/quality-requirements.md#interchangeability). Our scenario-based analysis of the Proto-Stack shows that a three-layered structure consisting of an application, system and physical layer provides a sufficient basis for separating the responsibilities of software components and aswell as their required associated knowledge, as discussed in more detail in the [Building Block View](../reference-architecture/building-block-view.md). A more granular structure with sublayers, as the Proto-Stack has, restricts the development of a software system too much and does not facilitate the realisation of the quality requirements. 
+
+Additionally, our scenario-based analysis shows that some software components, such as software components which facilitate [fault tolerance](../reference-architecture/cross-cutting-concepts.md#fault-tolerance), can not be assigned exclusively to one layer. Depending on their functionality, they may extend across multiple layers or may not belong to any specific layer at all. We classify these software components as part of the [Cross-Cutting Concepts](../reference-architecture/cross-cutting-concepts.md), which also includes software components which are used for monitoring, benchmarking and resource estimation. The Proto-Stack addresses these types of software components through an additional layer. While this approach may be suitable for some components, our scenario-based analysis shows that they mostly need to be integrated into the relevant layers rather than treated as a separate layer.
 
 
 ### Interface between the Application and System Layer {#app-sys-interface}
-Why Program? Circuit alone is not enough
-
-### Interaction between the System and Physical Layers {#sys-phys-interaction}
-Hier über die 3 informationen sprechen und dass es konzepte gibt, die das zusammenfassen wie qdmi
-
-
-Welche Konsequenzen können wir jetzt aus den gemeinsamkeiten/unterschieden ziehen?
-We were able to identify important properties of the interfaces between all layers ….
-
-Application to System: At least a circuit, ideally also zusätzliche befehle.
-System to Physical: List of Operations including … -> vielleicht hier schon auf QDMI anspielen. 
-Upwards:  easy…
-
-
-
-Aufteilung der Software Komponenten in die Schichten empfanden wir als sinnvoll und auch gut, abgesehen von der Fault Tolerance. Da kann, je nach implementierung die Error Mitigation zwischen Application/System, Error Correction Physical/System (Vor allem QEC kann je nach Hardware (NV Zentren) auch im physical layer oder anders stattfinden) und Error Suppression Physical/System stattfinden, was für cross-layer concerns spricht. Es wird vermutet, dass andere Stakeholder perspektiven noch mehr cross-layer concerns erzeugen könten.
-
-Eine reine Circuit übergabe von Application/System ist nicht genug. Da dort je nach implementierung ebenfalls andere fakten angegeben sein müssen, wie anzahl der shots, parameter von bspw hamiltonians, konfigurationen wie fault tolerance. oder auch das deployment. 
-
-
-
-Application/System Layer ist due Übersetzung zur Quantenhardware nicht ausreichend, es benötigt noch scheduler, ressource management zu hpc bspw....
+In our scenario-based analysis, we introduce the concept of a *program* to define the interface between the Application and System Layer. A naive approach would be to use only a quantum circuit as interface. In this case, the Application Layer would provide a quantum circuit, which is subsequently transpiled by the System Layer and executed on the quantum hardware through the Physical Layer. However, a quantum circuit alone may not provide all the information required by the different layers of the architecture. Additional informationen may therefore be necessary like fault tolerance configurations, compilation requirements, or deployment specifications. Fruther details on the *program* interface are provided in the [Building Block View](../reference-architecture/building-block-view.md).
 
 
 
 
--> Vielleicht hier auch ein Kapitel hinzufügen
-Results of other Stakeholder Views oder sowas...
-Gerade sowas wie HPC im System Layer 
--> Skills die benötigt werden in den Schichten
--> Operations auf den Layern
+### Interface between the System and Physical Layers {#sys-phys-interaction}
+The scenario-based analysis shows that the interface between the System Layer and the Physical Layer must exchange three types of information. First, the System Layer must be able to provide a set of commands supported by the firmware to execute the quantum circuit on the quantum hardware. Second, it needs to receive the results produced by the quantum hardware. Third, information about the hardware's properties and capabilities is required in advance to enable the System Layer to transpile the program for the target quantum hardware. 
 
-Die Sachen aus der Doku halt, um die Separation of Concerns zu stärken...
+Within the quantum computing ecosystem, several solutions already exist to facilitate this type of communication between the System Layer and the Physical Layer. These solutions are referred to as *Common Quantum Device Interfaces*, such as the [Quantum Device Management Interface (QDMI)](https://munich-quantum-software-stack.github.io/QDMI/) and the [Quantum Resource Management Interface (QRMI)](https://quantum.cloud.ibm.com/docs/en/guides/qrmi). A more detailed description of the communication and interaction of the System and Physical Layer is provided in the [Runtime View](../reference-architecture/runtime-view.md).
+
 
 
 
