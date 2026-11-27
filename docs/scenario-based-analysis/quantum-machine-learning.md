@@ -35,8 +35,8 @@ The figure below depicts the inference process with regular arrows and the train
     - Appends a variational quantum circuit to the encoded quantum state.
       
 7. Quantum Neural Network Program Generator ([Quantum SDK](../reference-architecture/building-block-view/application-layer.md))
-    - Creates a program of the quantum circuit.
-    - Sends program to the System Layer.
+    - Creates a circuit of the variational quantum circuit and the encoded state.
+    - Sends the circuit to the System Layer.
       
 ## System Layer & Physical Layer
 Refer to [quantum simulation scenario](./quantum-simulation.md) for a full explanation.
