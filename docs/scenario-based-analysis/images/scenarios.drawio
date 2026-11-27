@@ -1,6 +1,6 @@
 <mxfile host="Electron" pages="4">
   <diagram name="scenario1" id="Luvr6P1fOA9EW3_rRw2t">
-    <mxGraphModel dx="1414" dy="2010" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1683" dy="2170" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -123,7 +123,7 @@
             <mxPoint y="14" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="z4kWm_IhQDhwaIalFdym-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="VQE Program&amp;nbsp;&lt;div&gt;Generator&lt;/div&gt;" vertex="1">
+        <mxCell id="z4kWm_IhQDhwaIalFdym-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="VQE Circuit&amp;nbsp;&lt;div&gt;Generator&lt;/div&gt;" vertex="1">
           <mxGeometry height="40" width="120" x="360" y="260" as="geometry" />
         </mxCell>
         <mxCell id="uT3cTm07i6M5Yz-z-4mC-40" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="B8r5NXhHkaPwk3BPT0sh-6">
@@ -491,7 +491,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="scenario2" id="2qdTRMjpyVd_vjPAP1hY">
-    <mxGraphModel dx="1768" dy="2220" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1683" dy="2170" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="rAFRmXu0BtqNhfvsQcEC-0" />
         <mxCell id="rAFRmXu0BtqNhfvsQcEC-1" parent="rAFRmXu0BtqNhfvsQcEC-0" />
@@ -818,7 +818,7 @@
             <mxPoint x="180" y="380" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="rAFRmXu0BtqNhfvsQcEC-74" parent="rAFRmXu0BtqNhfvsQcEC-1" style="rounded=0;whiteSpace=wrap;html=1;" value="QAOA Program&lt;div&gt;Generator&lt;/div&gt;" vertex="1">
+        <mxCell id="rAFRmXu0BtqNhfvsQcEC-74" parent="rAFRmXu0BtqNhfvsQcEC-1" style="rounded=0;whiteSpace=wrap;html=1;" value="QAOA Circuit&lt;div&gt;Generator&lt;/div&gt;" vertex="1">
           <mxGeometry height="40" width="120" x="360" y="360" as="geometry" />
         </mxCell>
         <mxCell id="rAFRmXu0BtqNhfvsQcEC-75" edge="1" parent="rAFRmXu0BtqNhfvsQcEC-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.575;entryY=0.005;entryDx=0;entryDy=0;entryPerimeter=0;" target="rAFRmXu0BtqNhfvsQcEC-31">
@@ -1877,7 +1877,7 @@
         <mxCell id="g2Yvs_SNe4fEtA9nvYsn-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font&gt;Circuit-Command&lt;/font&gt;&lt;div&gt;&lt;font&gt;mapping&lt;/font&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="30" width="112" x="144" y="700" as="geometry" />
         </mxCell>
-        <mxCell id="_A9kmpCiyQe_gsf7-c6E-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Quantum Neural Network Program Generator&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="_A9kmpCiyQe_gsf7-c6E-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Quantum Neural Network Circuit Generator&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="40" width="120" x="260" y="280" as="geometry" />
         </mxCell>
         <mxCell id="_A9kmpCiyQe_gsf7-c6E-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;i&gt;&lt;font style=&quot;font-size: 7px;&quot;&gt;Quantum SDK&lt;/font&gt;&lt;/i&gt;" vertex="1">
