@@ -533,9 +533,25 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../reference-architecture/building-block-view/" class="md-nav__link">
+    
+    
+    
+    
+      
+      
         
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -548,7 +564,130 @@
   
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Building Block View
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/building-block-view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overall System
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/building-block-view/application-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Application Layer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/building-block-view/system-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  System Layer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/building-block-view/physical-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physical Layer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -808,7 +947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference-architecture/change-process.md" class="md-nav__link">
+      <a href="../../reference-architecture/contribution-guide/" class="md-nav__link">
         
   
   
@@ -1311,14 +1450,14 @@
 <h2 id="application-layer-downwards">Application Layer - Downwards</h2>
 <ol>
 <li>
-<p>Simulation App (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Use Case</a>)</p>
+<p>Simulation App (<a href="../../reference-architecture/building-block-view/application-layer/">Use Case</a>)</p>
 <ul>
 <li>The Simulation App is the entry point for this scenario.</li>
 <li>It takes the molecule specification and passes it down to the Hartree-Fock algorithm.</li>
 </ul>
 </li>
 <li>
-<p>Hartree-Fock (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Problem Transformations</a>)</p>
+<p>Hartree-Fock (<a href="../../reference-architecture/building-block-view/application-layer/">Problem Transformations</a>)</p>
 <ul>
 <li>The Hartree-Fock algorithm is the first transformation step to get from the molecule input to a quantum ready representation.</li>
 <li>Its input is the molecular geometry in our scenario.</li>
@@ -1326,25 +1465,25 @@
 </ul>
 </li>
 <li>
-<p>Hamiltonian Formulator (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Problem Transformations</a>)</p>
+<p>Hamiltonian Formulator (<a href="../../reference-architecture/building-block-view/application-layer/">Problem Transformations</a>)</p>
 <ul>
 <li>The Hamiltonian formulation maps the electron integrals into a fermonic Hamiltonian.</li>
 </ul>
 </li>
 <li>
-<p>Jordan-Wigner (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Problem Transformations</a>)</p>
+<p>Jordan-Wigner (<a href="../../reference-architecture/building-block-view/application-layer/">Problem Transformations</a>)</p>
 <ul>
 <li>The Jordan-Wigner Transformation allows a qubit representation using a fermonic Hamiltonian and turns it into a spin Hamiltonian, which is equivalent to a set of qubits.</li>
 </ul>
 </li>
 <li>
-<p>Variational Quantum Eigensolver (VQE) (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Algorithm Templates</a>)</p>
+<p>Variational Quantum Eigensolver (VQE) (<a href="../../reference-architecture/building-block-view/application-layer/">Algorithm Templates</a>)</p>
 <ul>
 <li>The VQE Algorithm is a hybrid algorithm, which uses the qubit Hamiltonian to create a parameterised quantum circuit.</li>
 </ul>
 </li>
 <li>
-<p>VQE Program Generator (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Quantum SDK</a>)</p>
+<p>VQE Program Generator (<a href="../../reference-architecture/building-block-view/application-layer/">Quantum SDK</a>)</p>
 <ul>
 <li>With the parametrised circuit the program generator creates a program for the transpilation pipeline in the system layer.</li>
 </ul>
@@ -1354,40 +1493,40 @@
 <p>The <a href="https://quantum.cloud.ibm.com/docs/en/guides/transpile">Qiskit Transpilation Pipeline</a> consists of 6 steps:</p>
 <ol>
 <li>
-<p>Initialization Stage (<a href="../../reference-architecture/building-block-view/#_white_box_sys_layer">Compilation Passes</a>)</p>
+<p>Initialization Stage (<a href="../../reference-architecture/building-block-view/system-layer/">Compilation Passes</a>)</p>
 <ul>
 <li>Using the quantum program from the Application Layer, the transpilation pipeline can start.</li>
 <li>The first step of the transpilation pipeline is breaking down multi- and custom made qubit- gates into one- or two-qubit operations.</li>
 </ul>
 </li>
 <li>
-<p>Layout Stage (<a href="../../reference-architecture/building-block-view/#_white_box_sys_layer">Compilation Passes</a>)</p>
+<p>Layout Stage (<a href="../../reference-architecture/building-block-view/system-layer/">Compilation Passes</a>)</p>
 <ul>
 <li>This stage maps the input circuit's virtual qubits to the target's physical hardware qubits.</li>
 <li>The algorithm's goal is to map the qubits in such a way that frequently-interacting virtual qubits end up next to each other in the physical hardware. </li>
 </ul>
 </li>
 <li>
-<p>Routing Stage (<a href="../../reference-architecture/building-block-view/#_white_box_sys_layer">Compilation Passes</a>)</p>
+<p>Routing Stage (<a href="../../reference-architecture/building-block-view/system-layer/">Compilation Passes</a>)</p>
 <ul>
 <li>As described in the step before, a perfect connectivity between the qubits can not always be achieved. Therefore this stage adds additional operations to adapt to these constraints.</li>
 <li>Using the circuit and hardware topology as inputs, it can create a physically compatible circuit by inserting SWAP gates to move information between previously disconnected qubits.</li>
 </ul>
 </li>
 <li>
-<p>Translation Stage (<a href="../../reference-architecture/building-block-view/#_white_box_sys_layer">Compilation Passes</a>)</p>
+<p>Translation Stage (<a href="../../reference-architecture/building-block-view/system-layer/">Compilation Passes</a>)</p>
 <ul>
 <li>This stage rewrites all previously chosen gates into the specific native gates supported by the target hardware's Instruction Set Architecture (ISA). </li>
 </ul>
 </li>
 <li>
-<p>Optimization Stage (<a href="../../reference-architecture/building-block-view/#_white_box_sys_layer">Compilation Passes</a>)</p>
+<p>Optimization Stage (<a href="../../reference-architecture/building-block-view/system-layer/">Compilation Passes</a>)</p>
 <ul>
 <li>This stage executes low-level, hardware-aware refinements on circuits that are already compatible with the target's Instruction Set Architecture (ISA) to reduce redundancy.</li>
 </ul>
 </li>
 <li>
-<p>Scheduling Stage (<a href="../../reference-architecture/building-block-view/#_white_box_sys_layer">Compilation Passes</a>)</p>
+<p>Scheduling Stage (<a href="../../reference-architecture/building-block-view/system-layer/">Compilation Passes</a>)</p>
 <ul>
 <li>The scheduling stage receives an ISA-compatible circuit and inserts explicit delay instructions to accurately reflect qubit idle periods, hardware timing constraints and to reduce error rate.</li>
 <li>It ensures the final output remains ISA-compatible while updating start-time metadata and optionally applying walltime-sensitive transformations.</li>
@@ -1395,7 +1534,7 @@
 </ul>
 </li>
 <li>
-<p>Circuit-Command Mapping (<a href="../../reference-architecture/building-block-view/#_white_box_sys_layer">Compilation Backend</a>)</p>
+<p>Circuit-Command Mapping (<a href="../../reference-architecture/building-block-view/system-layer/">Compilation Backend</a>)</p>
 <ul>
 <li>Using the ISA-compatible circuit, additional information like number of measurements demanded and a translation table, which translated the commands into backend compatible commands, this steps gives a list of operations to the device and firmware of the hardware.</li>
 </ul>
@@ -1404,7 +1543,7 @@
 <h2 id="physical-layer">Physical Layer</h2>
 <ol>
 <li>
-<p>Superconducting Device and Firmware (<a href="../../reference-architecture/building-block-view/#_white_box_phys_layer">Quantum System Controller</a>)</p>
+<p>Superconducting Device and Firmware (<a href="../../reference-architecture/building-block-view/physical-layer/">Quantum System Controller</a>)</p>
 <ul>
 <li>Using digital hardware instructions and pulse definitions, this process converts these commands into physical signals to control operations on the quantum chip. </li>
 <li>It outputs a microwave signal list directly to the quantum hardware, translating digital instructions into executable physical actions.</li>
@@ -1426,7 +1565,7 @@
 </ol>
 <h2 id="system-layer-upwards">System Layer - Upwards</h2>
 <ol>
-<li>Transpilation (<a href="../../reference-architecture/building-block-view/#_white_box_sys_layer">Compilation Passes</a>)<ul>
+<li>Transpilation (<a href="../../reference-architecture/building-block-view/system-layer/">Compilation Passes</a>)<ul>
 <li>In this step, the qubit energy levels are transformed into an expectation value.</li>
 <li>To do this, additional backend data is needed to interpret the measured results.</li>
 </ul>
@@ -1435,7 +1574,7 @@
 <h2 id="application-layer-upwards">Application Layer - Upwards</h2>
 <ol>
 <li>
-<p>COBYLA (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Optimisers</a>)</p>
+<p>COBYLA (<a href="../../reference-architecture/building-block-view/application-layer/">Optimisers</a>)</p>
 <ul>
 <li>COBYLA is a classical optimizer which needs an expectation value as input.</li>
 <li>It compares the expectation value to the last one (if it exists) and tries to optimize the parameters of the VQE algorithm.</li>
@@ -1443,7 +1582,7 @@
 </ul>
 </li>
 <li>
-<p>VQE Program Generator (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Quantum SDK</a>)</p>
+<p>VQE Program Generator (<a href="../../reference-architecture/building-block-view/application-layer/">Quantum SDK</a>)</p>
 <ul>
 <li>The Program Generator updates the parameters of the COBYLA algorithm and starts the process again.</li>
 <li>When the classical optimiser terminates, the VQE Program Generator gives the optimal result towards the Error Mitigation method.</li>
@@ -1458,7 +1597,7 @@
 </ul>
 </li>
 <li>
-<p>Simulation App (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Use Case</a>)</p>
+<p>Simulation App (<a href="../../reference-architecture/building-block-view/application-layer/">Use Case</a>)</p>
 <ul>
 <li>The error-optimized expectation value is given towards the simulation app, which then visualize it as ground state energy for the user.</li>
 </ul>

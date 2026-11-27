@@ -533,9 +533,25 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../reference-architecture/building-block-view/" class="md-nav__link">
+    
+    
+    
+    
+      
+      
         
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -548,7 +564,130 @@
   
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Building Block View
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/building-block-view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overall System
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/building-block-view/application-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Application Layer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/building-block-view/system-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  System Layer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/building-block-view/physical-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physical Layer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -808,7 +947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference-architecture/change-process.md" class="md-nav__link">
+      <a href="../../reference-architecture/contribution-guide/" class="md-nav__link">
         
   
   
@@ -1289,39 +1428,39 @@
 <h2 id="application-layer-downwards">Application Layer - Downwards</h2>
 <ol>
 <li>
-<p>Cloud Optimisation Application (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Use Case</a>)</p>
+<p>Cloud Optimisation Application (<a href="../../reference-architecture/building-block-view/application-layer/">Use Case</a>)</p>
 <ul>
 <li>Allows acccess for the stakeholder to the architecture.</li>
 <li>Processes the MaxCut problem and forwards the problem information to the QUBO Transformator.</li>
 </ul>
 </li>
 <li>
-<p>QUBO Transformator (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Problem Transformations</a>)</p>
+<p>QUBO Transformator (<a href="../../reference-architecture/building-block-view/application-layer/">Problem Transformations</a>)</p>
 <ul>
 <li>Creates a QUBO, using the information of the MaxCut instance of the Cloud Optimisation Application.</li>
 </ul>
 </li>
 <li>
-<p>Ising Transformator (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Problem Transformations</a>)</p>
+<p>Ising Transformator (<a href="../../reference-architecture/building-block-view/application-layer/">Problem Transformations</a>)</p>
 <ul>
 <li>Transforms the QUBO into an Ising Hamiltonian.</li>
 </ul>
 </li>
 <li>
-<p>Penalty Encoder (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Problem Transformations</a>)</p>
+<p>Penalty Encoder (<a href="../../reference-architecture/building-block-view/application-layer/">Problem Transformations</a>)</p>
 <ul>
 <li>Checks if the required optimization problem needs a penalty factor and adjusts it.</li>
 </ul>
 </li>
 <li>
-<p>QAOA (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Algorithm Templates</a>)</p>
+<p>QAOA (<a href="../../reference-architecture/building-block-view/application-layer/">Algorithm Templates</a>)</p>
 <ul>
 <li>QAOA is a hybrid algorithm which uses tunable parameters.</li>
 <li>It encodes the Ising Hamiltonian into a quantum circuit.</li>
 </ul>
 </li>
 <li>
-<p>QAOA Program Generator (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Quantum SDK</a>)</p>
+<p>QAOA Program Generator (<a href="../../reference-architecture/building-block-view/application-layer/">Quantum SDK</a>)</p>
 <ul>
 <li>With the parametrised circuit the program generator creates a program for the transpilation pipeline in the system layer.</li>
 </ul>
@@ -1340,20 +1479,20 @@
 <h2 id="application-layer-upwards">Application Layer - Upwards</h2>
 <ol>
 <li>
-<p>SPSA (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Optimisers</a>)</p>
+<p>SPSA (<a href="../../reference-architecture/building-block-view/application-layer/">Optimisers</a>)</p>
 <ul>
 <li>SPSA is classical optimizer used for optimizing the parameters of the QAOA algorithm. </li>
 <li>It updates the parameters and sends them to the QAOA Program Generator, where the program is computed again until the optimizer terminates.</li>
 </ul>
 </li>
 <li>
-<p>QAOA Program Generator (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Quantum SDK</a>)</p>
+<p>QAOA Program Generator (<a href="../../reference-architecture/building-block-view/application-layer/">Quantum SDK</a>)</p>
 <ul>
 <li>When the optimisers terminates, the final result is sent to the Cloud Optimisation Application</li>
 </ul>
 </li>
 <li>
-<p>Cloud Optimisation Application (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Use Case</a>)</p>
+<p>Cloud Optimisation Application (<a href="../../reference-architecture/building-block-view/application-layer/">Use Case</a>)</p>
 <ul>
 <li>Takes the final result as input and displays the MaxCut value</li>
 </ul>

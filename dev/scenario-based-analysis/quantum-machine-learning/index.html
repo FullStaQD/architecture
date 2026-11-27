@@ -533,9 +533,25 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../reference-architecture/building-block-view/" class="md-nav__link">
+    
+    
+    
+    
+      
+      
         
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -548,7 +564,130 @@
   
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Building Block View
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/building-block-view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overall System
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/building-block-view/application-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Application Layer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/building-block-view/system-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  System Layer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference-architecture/building-block-view/physical-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physical Layer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -808,7 +947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reference-architecture/change-process.md" class="md-nav__link">
+      <a href="../../reference-architecture/contribution-guide/" class="md-nav__link">
         
   
   
@@ -1266,46 +1405,46 @@ The figure below depicts the inference process with regular arrows and the train
 <h2 id="application-layer-downwards">Application Layer - Downwards</h2>
 <ol>
 <li>
-<p>Collision Detection App (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Use Case</a>)</p>
+<p>Collision Detection App (<a href="../../reference-architecture/building-block-view/application-layer/">Use Case</a>)</p>
 <ul>
 <li>Allows the access for the stakeholder.</li>
 <li>Takes the real-time camera images and forwards the image data to the preprocessing.</li>
 </ul>
 </li>
 <li>
-<p>Preprocessing (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Problem Transformations</a>)</p>
+<p>Preprocessing (<a href="../../reference-architecture/building-block-view/application-layer/">Problem Transformations</a>)</p>
 <ul>
 <li>Takes the image data as input and performs resizing, rescaling, color conversion, region-of-interest extraction and denoising.</li>
 </ul>
 </li>
 <li>
-<p>Residual Network (ResNet) (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Problem Transformations</a>)</p>
+<p>Residual Network (ResNet) (<a href="../../reference-architecture/building-block-view/application-layer/">Problem Transformations</a>)</p>
 <ul>
 <li>Trained ResNet Backbone uses the image data to extract the features of an image.</li>
 <li>Creates a feature vector and forwards the Principal Component Analysis.</li>
 </ul>
 </li>
 <li>
-<p>Principal Component Analysis (PCA) (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Problem Transformations</a>)</p>
+<p>Principal Component Analysis (PCA) (<a href="../../reference-architecture/building-block-view/application-layer/">Problem Transformations</a>)</p>
 <ul>
 <li>Due to the limitation in the number of qubits, this step reduces the number of features in the feature vector.</li>
 </ul>
 </li>
 <li>
-<p>Angle Encoding (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Problem Transformations</a>)</p>
+<p>Angle Encoding (<a href="../../reference-architecture/building-block-view/application-layer/">Problem Transformations</a>)</p>
 <ul>
 <li>Encodes each feature using rotational gates.</li>
 <li>Creates an encoded quantum state.</li>
 </ul>
 </li>
 <li>
-<p>Quantum Neural Network (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Algorithm Templates</a>)</p>
+<p>Quantum Neural Network (<a href="../../reference-architecture/building-block-view/application-layer/">Algorithm Templates</a>)</p>
 <ul>
 <li>Appends a variational quantum circuit to the encoded quantum state.</li>
 </ul>
 </li>
 <li>
-<p>Quantum Neural Network Program Generator (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Quantum SDK</a>)</p>
+<p>Quantum Neural Network Program Generator (<a href="../../reference-architecture/building-block-view/application-layer/">Quantum SDK</a>)</p>
 <ul>
 <li>Creates a program of the quantum circuit.</li>
 <li>Sends program to the System Layer.</li>
@@ -1317,32 +1456,32 @@ The figure below depicts the inference process with regular arrows and the train
 <h2 id="application-layer-upwards">Application Layer - Upwards</h2>
 <ol>
 <li>
-<p>Softmax Function (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Problem Transformations</a>)</p>
+<p>Softmax Function (<a href="../../reference-architecture/building-block-view/application-layer/">Problem Transformations</a>)</p>
 <ul>
 <li>Transforms expectation values of each feature into probabilities.</li>
 <li>Gives the Collision Detection App a collision probability.</li>
 </ul>
 </li>
 <li>
-<p>Collision Detection App (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Use Case</a>)</p>
+<p>Collision Detection App (<a href="../../reference-architecture/building-block-view/application-layer/">Use Case</a>)</p>
 <ul>
 <li>Gets the collision probability from the SoftMax Function and decides for an action. </li>
 </ul>
 </li>
 <li>
-<p>Cross-Entropy Loss (training only) (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Algorithm Templates</a>)</p>
+<p>Cross-Entropy Loss (training only) (<a href="../../reference-architecture/building-block-view/application-layer/">Algorithm Templates</a>)</p>
 <ul>
 <li>Calculates the loss of the probabilities of the features.</li>
 </ul>
 </li>
 <li>
-<p>Backpropagation (training only) (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Algorithm Templates</a>)</p>
+<p>Backpropagation (training only) (<a href="../../reference-architecture/building-block-view/application-layer/">Algorithm Templates</a>)</p>
 <ul>
 <li>Takes in the loss of the features and calculates the loss gradient.</li>
 </ul>
 </li>
 <li>
-<p>Adaptive Moment Estimation (ADAM) (training only) (<a href="../../reference-architecture/building-block-view/#_white_box_app_layer">Optimisers</a>)</p>
+<p>Adaptive Moment Estimation (ADAM) (training only) (<a href="../../reference-architecture/building-block-view/application-layer/">Optimisers</a>)</p>
 <ul>
 <li>Uses the loss gradient to optimize the parameter of the quantum neural network.</li>
 </ul>

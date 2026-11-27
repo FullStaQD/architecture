@@ -636,9 +636,25 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="./building-block-view/" class="md-nav__link">
+    
+    
+    
+    
+      
+      
         
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -651,7 +667,130 @@
   
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Building Block View
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./building-block-view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overall System
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./building-block-view/application-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Application Layer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./building-block-view/system-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  System Layer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./building-block-view/physical-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physical Layer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -914,7 +1053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="./change-process.md" class="md-nav__link">
+      <a href="./contribution-guide/" class="md-nav__link">
         
   
   
@@ -1289,9 +1428,9 @@ Its key goal is to foster interoperability and modularity in quantum software.
 As a reference architecture, this project remains on a fairly high level,
 describing abstract responsibilities in typical components and interfaces rather
 than enforcing the use of specific packages or protocols.
-<a href="../reference-implementation/">Reference Implementations</a> for these abstract
-parts are also developed within the FullStaQD project and will be made available
-at a later date.</p>
+<a href="../reference-implementation/">Reference Implementations</a> for these
+abstract parts are also developed within the FullStaQD project and will be made
+available at a later date.</p>
 <p>This introductory page provides a brief overview of key elements in the
 reference architecture, as well as the methodology which was used to develop
 the reference architecture.
@@ -1397,7 +1536,7 @@ the full list can be found in the
 </thead>
 <tbody>
 <tr>
-<td><a href="./quality-requirements/#extensibility">Extensibility</a></td>
+<td><a href="./quality-requirements/#evolvability-and-extensibility">Extensibility</a></td>
 <td>Quantum software systems can be extended with new use cases, SDKs, compiler passes, fault tolerance measures, and quantum devices.</td>
 </tr>
 <tr>
@@ -1405,7 +1544,7 @@ the full list can be found in the
 <td>Quantum software systems can be integrated into existing IT infrastructure, and High-Performance-Computing (HPC) systems in particular.</td>
 </tr>
 <tr>
-<td><a href="./quality-requirements/#modularity">Modularity</a></td>
+<td><a href="./quality-requirements/#maintainability-and-modularity">Modularity</a></td>
 <td>Changes to one component should not affect other components.</td>
 </tr>
 <tr>
@@ -1413,7 +1552,7 @@ the full list can be found in the
 <td>The quantum software system can produce correct results in the presence of noise.</td>
 </tr>
 <tr>
-<td><a href="./quality-requirements/#maintainability">Maintainability</a></td>
+<td><a href="./quality-requirements/#maintainability-and-modularity">Maintainability</a></td>
 <td>The reference architecture can be modified, corrected, adapted or improved due to changes in the environment or requirements with ease.</td>
 </tr>
 </tbody>
@@ -1455,8 +1594,8 @@ software:</p>
 <p>In the FullStaQD Reference Architecture, we keep stakeholders in mind throughout
 the architecture design.
 Most prominently, the reference architecture uses a
-<a href="./building-block-view/">three-layered architecture</a> to offer different levels
-of abstraction to different stakeholders. </p>
+<a href="./building-block-view/">three-layered architecture</a> to offer different
+levels of abstraction to different stakeholders. </p>
 <details class="info">
 <summary>More about stakeholders</summary>
 <p>More info on documenting stakeholders can be found in the
@@ -1486,7 +1625,7 @@ employed:</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../scenario-based-analysis">Scenario-Based Analysis</a></td>
+<td><a href="../scenario-based-analysis/">Scenario-Based Analysis</a></td>
 <td>Using predefined scenarios of use cases on the reference architecture</td>
 <td>To assess how well the reference architecture covers the predefined scenarios and to identify the common requirements shared by the components on which those scenarios depend</td>
 </tr>

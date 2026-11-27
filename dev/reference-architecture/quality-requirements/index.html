@@ -545,9 +545,25 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../building-block-view/" class="md-nav__link">
+    
+    
+    
+    
+      
+      
         
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -560,7 +576,130 @@
   
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Building Block View
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../building-block-view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overall System
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../building-block-view/application-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Application Layer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../building-block-view/system-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  System Layer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../building-block-view/physical-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physical Layer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -980,7 +1119,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../change-process.md" class="md-nav__link">
+      <a href="../contribution-guide/" class="md-nav__link">
         
   
   
@@ -1454,12 +1593,12 @@ We therefore specify the following quality requirement:</p>
 following measures:</p>
 <ul>
 <li>The <a href=".././building-block-view/">three-layered architecture</a> specifies the
-  <a href=".././building-block-view/#application-layer">Application Layer</a> to be
+  <a href=".././building-block-view/application-layer/">Application Layer</a> to be
   device-independent.
   This separation limits the places that need to be changed in order to
   adapt to a new type of quantum hardware to the
-  <a href=".././building-block-view/#system-layer">System</a> and
-  <a href=".././building-block-view/#physical-layer">Physical Layer</a>. </li>
+  <a href=".././building-block-view/system-layer/">System</a> and
+  <a href=".././building-block-view/physical-layer/">Physical Layer</a>. </li>
 <li>Adaptation of a program to specific quantum hardware types is an explicit
   responsibility of the Compiler within the System Layer.
   Most adaptation logic can therefore be contained within a single
@@ -1494,11 +1633,11 @@ We here phrase this evolvability requirement as a matter of extensibility:</p>
 through modularity and a clear separation of concerns.</p>
 <ul>
 <li>New problem transformations and algorithms can be implemented as part of
-  the <a href=".././building-block-view/#application-layer">Application Layer</a> within
+  the <a href=".././building-block-view/application-layer/">Application Layer</a> within
   the respective building blocks.</li>
 <li>New quantum programming languages and quantum SDKs can be supported by
   implementing a corresponding language frontend within the
-  <a href=".././building-block-view/#system-layer">System Layer</a>'s Compiler.</li>
+  <a href=".././building-block-view/system-layer/">System Layer</a>'s Compiler.</li>
 <li>New quantum error correction codes can be implemented as compilation
   passes, as part of the Quantum System Controller, or as part of the
   Use Case within the Application Layer, see
@@ -1560,7 +1699,7 @@ external IT infrastructure is discussed in the
 <a href=".././context-and-scope/">Context and Scope</a> section.
 The interface between external IT systems and quantum software systems is a
 responsibility of the
-<a href=".././building-block-view/#application-layer">Application Layer</a>.
+<a href=".././building-block-view/application-layer/">Application Layer</a>.
 More specfically, the interface to external IT systems can be realised
 through the Use Case component, or it can be supported by specialised
 Integration Tooling.</p>
@@ -1608,7 +1747,7 @@ interfaces.
 For example, the following architectural decisions were taken for the sake
 of modularity:</p>
 <ul>
-<li><a href="../../glossary/#quantum-programming-language">Quantum programming languages</a>
+<li><a href=".././glossary/#quantum-programming-language">Quantum programming languages</a>
   and other exchange formats act as an interface between the Application and
   System Layer.
   Changes within one of these layers will not affect the other.</li>
@@ -1663,10 +1802,10 @@ following key areas for achieving a low resource utilisation:</p>
 <ul>
 <li>Application problems are first mapped to quantum programs in the Use Case
   and Problem Transformations components within the
-  <a href=".././building-block-view/#application-layer">Application Layer</a>.
+  <a href=".././building-block-view/application-layer/">Application Layer</a>.
   This mapping first determines the amount of required resources.</li>
 <li>The Compiler within the
-  <a href=".././building-block-view/#system-layer">System Layer</a> is responsible for
+  <a href=".././building-block-view/system-layer/">System Layer</a> is responsible for
   minimising the resource usage of a given quantum program.</li>
 <li>Quantum Resource Estimation and Monitoring tools can further help analyse
   and understand the quantum resource usage of a given application.
@@ -1704,7 +1843,7 @@ following measures:</p>
   machines close to the Quantum System Controller.</li>
 <li>The architecture addresses the potentially large number of quantum
   computing jobs through an integration with HPC resource schedulers.
-  See the <a href=".././building-block-view/#physical-layer">Physical Layer</a> for
+  See the <a href=".././building-block-view/physical-layer/">Physical Layer</a> for
   details.</li>
 </ul>
 <p>In the end, however, scalability is something that cannot be addressed in

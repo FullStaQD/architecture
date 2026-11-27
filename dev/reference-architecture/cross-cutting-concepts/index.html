@@ -545,9 +545,25 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../building-block-view/" class="md-nav__link">
+    
+    
+    
+    
+      
+      
         
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -560,7 +576,130 @@
   
   
 
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Building Block View
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../building-block-view/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Overall System
+
+    
+  </span>
+  
+  
+
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../building-block-view/application-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Application Layer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../building-block-view/system-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  System Layer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../building-block-view/physical-layer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physical Layer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -914,7 +1053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../change-process.md" class="md-nav__link">
+      <a href="../contribution-guide/" class="md-nav__link">
         
   
   
@@ -1306,7 +1445,7 @@ for implementing fault tolerance measures:</p>
    Some hardware vendors suggest that they want to bundle highly optimised and
    highly device-specific error correction and supression techniques within
    their device firmware (see
-   <a href=".././building-block-view/#_white_box_phys_layer">Physical Layer</a>).
+   <a href=".././building-block-view/physical-layer/">Physical Layer</a>).
    Such measures would effectively be hidden in the device such that higher
    layers could treat the quantum device's logical qubits as physical qubits
    with an improved error rate.</li>
@@ -1315,7 +1454,7 @@ for implementing fault tolerance measures:</p>
    Researchers often frame Quantum Error Correction as a compilation step that
    maps logical operations to their physical, fault-tolerant implementations.
    Such an approach could be implemented as a compilation pass within the
-   <a href=".././building-block-view/#_white_box_sys_layer">System Layer</a>'s Compiler.
+   <a href=".././building-block-view/system-layer/">System Layer</a>'s Compiler.
    As the Compiler can access figures of merit from its compilation target,
    QEC compilation passes can implement their mapping while respecting the
    physical device's topology and fidelities.
@@ -1334,7 +1473,7 @@ for implementing fault tolerance measures:</p>
    implementation in the Application Layer.
    Common primitives and utilities for implementing these techniques can also be
    part of Quantum SDKs and related libaries
-   (see <a href=".././building-block-view/#_white_box_app_layer">Application Layer</a>).</p>
+   (see <a href=".././building-block-view/application-layer/">Application Layer</a>).</p>
 </li>
 </ol>
 <h2 id="monitoring">Monitoring</h2>
@@ -1364,7 +1503,7 @@ For the extraction of logs and metrics, two common patterns are to be expected:<
 operators to access monitoring data.
 Such a component could be a standalone tool, or it could be bundled with
 integration tooling in the
-<a href=".././building-block-view/#_white_box_app_layer">Application Layer</a> or the
+<a href=".././building-block-view/application-layer/">Application Layer</a> or the
 data collection component itself. </p>
 <h2 id="authentication-and-metering">Authentication and Metering</h2>
 <p>In cloud and HPC environments where multiple users can submit workloads, access

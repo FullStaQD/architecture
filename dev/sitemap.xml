@@ -19,6 +19,15 @@
         <loc>https://fullstaqd.github.io/architecture/dev/reference-architecture/building-block-view/</loc>
       </url>
       <url>
+        <loc>https://fullstaqd.github.io/architecture/dev/reference-architecture/building-block-view/application-layer/</loc>
+      </url>
+      <url>
+        <loc>https://fullstaqd.github.io/architecture/dev/reference-architecture/building-block-view/system-layer/</loc>
+      </url>
+      <url>
+        <loc>https://fullstaqd.github.io/architecture/dev/reference-architecture/building-block-view/physical-layer/</loc>
+      </url>
+      <url>
         <loc>https://fullstaqd.github.io/architecture/dev/reference-architecture/runtime-view/</loc>
       </url>
       <url>
@@ -38,6 +47,9 @@
       </url>
       <url>
         <loc>https://fullstaqd.github.io/architecture/dev/reference-architecture/glossary/</loc>
+      </url>
+      <url>
+        <loc>https://fullstaqd.github.io/architecture/dev/reference-architecture/contribution-guide/</loc>
       </url>
       <url>
         <loc>https://fullstaqd.github.io/architecture/dev/reference-architecture/code-of-conduct/</loc>
