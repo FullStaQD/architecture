@@ -1,4 +1,6 @@
 # Building Block View {#section-building-block-view}
+The Building Block View shows the decomposition of the reference architecture into types of software components and layers, as well as the dependencies between them. This allows stakeholders to gain an overview of how the system is organised, which responsibilities each layer and each type of software component takes on, and how they interact.
+
 
 ## Whitebox Overall System {#_whitebox_overall_system}
 
