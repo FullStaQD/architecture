@@ -1256,7 +1256,7 @@ contains a simulator rather than actual quantum device firmware to execute
 quantum kernels.</p>
 <h2 id="deployment-in-an-hpc-centre">Deployment in an HPC Centre</h2>
 <figure>
-  <img alt="" src=".././images/Deployment-HPC.excalidraw.png" />
+  <img alt="" src=".././images/Deployment-HPC.excalidraw.svg" />
 </figure>
 <p>It is a common belief in the quantum software community that quantum computers
 will be most useful as accelerators in High-Performance Computing (HPC)
@@ -1265,29 +1265,49 @@ A key feature of HPC clusters is that they integrate enormous amounts of
 computation resources (such as CPUs, GPUs, and potentially
 <a href=".././glossary/#quantum-processing-unit">QPUs</a>) to compute solutions to problems
 that are otherwise impossible to solve.</p>
-<p>For the execution of quantum software in an HPC environment, three execution
-environments are particularly important:</p>
+<p>For the execution of quantum software in an HPC environment, the following
+execution environments are particularly important:</p>
 <ul>
 <li>The <strong>Login Node</strong> is a machine that acts as an entry point to the datacentre.
-  It allows developers/operators/researchers to bring the <em>Use Case Source Code</em>
-  to the datacentre, and to generate executables for the <em>Quantum</em> and
-  <em>Classical Kernels</em> from it with the <em>Hybrid Compiler</em>.</li>
-<li>The <strong>HPC Cluster</strong> is at the core of the HPC datacentre.
-  It is made up of CPUs, accelerators (such as GPUs) and storage facilities that
-  allow running large classical workloads such as the <em>Classical Kernel</em> that
-  was compiled on the login node.
-  Beyond the actual workload, the HPC cluster also contains <em>HPC Runtime</em>
-  components such as the <em>Runtime Compiler</em> and the <em>Resource Scheduler</em> which
-  are responsible for distributing the workfload onto the available resources.</li>
-<li>In a quantum software context, a special device within the HPC Cluster is the
-  <strong>QPU Node</strong> which is made up of a physical <strong>Quantum Device</strong> (a.k.a.
+  It allows developers to bring the <em>Use Case Source Code</em> to the datacentre,
+  to compile the <em><a href=".././glossary/#quantum-kernel">Quantum Kernel</a></em> and
+  <em>Classical Kernels</em> using the <em>Hybrid Compiler</em>
+  (see&nbsp;<a href=".././building-block-view/#system-layer">System Layer</a>), and to send
+  them to the <em>HPC Cluster</em> for execution.</li>
+<li>The <strong>HPC Cluster</strong> is at the core of the datacentre.
+  It is made up of many processing units, and storage facilities that allow
+  running large workloads.
+  We here distinguish between the following types of nodes: <ul>
+<li><strong>Classical Nodes</strong> such as CPUs, GPUs and other accelerators carry out
+  classical workloads such as the <em>Classical Kernel</em> that was compiled on
+  the login node.
+  Beyond the actual workload, the Classical Nodes also host <em>HPC Runtime</em>
+  components such as <em>Runtime Compilers</em> and <em>Resource Scheduler</em> which
+  are responsible for distributing the workload onto the available
+  resources.
+  As discussed in the <a href=".././building-block-view/#system-layer">System Layer</a>,
+  resource schedulers need to be equipped to deal with both classical and
+  quantum workloads.</li>
+<li>In the context of quantum software, <strong>QPU Nodes</strong> are of particular
+  interest since they are responsible for executing quantum workloads such
+  as the <em><a href=".././glossary/#quantum-kernel">Quantum Kernel</a></em> that was compiled
+  on the <em>Login Node</em>.
+  <strong>QPU Nodes</strong> are made up of a physical <strong>Quantum Device</strong> (a.k.a.
   <a href=".././glossary/#quantum-processing-unit">QPU</a> or quantum computer) and a
-  <strong>Co-Processor</strong>.
-  The Co-Processor is a classical computer <!-- TODO: or FPGA? --> that runs the
-  <strong>firmware</strong> of the Quantum Device so that it can execute the compiled
-  <em>Quantum Kernel</em>.
-  Furthermore, the Co-Processor runs code that requires a low latency or high
-  bandwidth to the Quantum Device such as control flow or <em>QEC Decoder</em> tasks.</li>
+  <strong>Co-Processor</strong> that is located closely to the quantum device to enable
+  low-latency and high-bandwidth communication between them.
+  The Co-Processor is a classical computer <!-- TODO: or FPGA? --> that runs
+  the <strong>firmware</strong> of the <em>Quantum Device</em> so that it can execute the
+  compiled <em>Quantum Kernel</em>.
+  If the firmware does not support the <em>Common Quantum Device Interface</em> on
+  its own, an additional <em>Common Quantum Device Interface Adapter</em> component
+  can adapt the firmware's own interface to the common one.
+  The <em>Co-Processor</em> can also run other code that requires a
+  <a href=".././quality-requirements/#latency">low-latency</a> or high-bandwidth
+  connection to the <em>Quantum Device</em> such as control flow
+  or <em><a href=".././runtime-view/#qec-decoding-loop">QEC Decoder</a></em> tasks.</li>
+</ul>
+</li>
 </ul>
 
 
