@@ -39,27 +39,28 @@ execution environments are particularly important:
   *Classical Kernels* using the *Hybrid Compiler*
   (see&nbsp;[System Layer](./building-block-view.md#system-layer)), and to send
   them to the *HPC Cluster* for execution.
-* The **HPC Cluster** is at the core of the HPC datacentre.
+* The **HPC Cluster** is at the core of the datacentre.
   It is made up of many processing units, and storage facilities that allow
   running large workloads.
   We here distinguish between the following types of nodes: 
     * **Classical Nodes** such as CPUs, GPUs and other accelerators carry out
-      computation workloads such as the *Classical Kernel* that was compiled on
+      classical workloads such as the *Classical Kernel* that was compiled on
       the login node.
       Beyond the actual workload, the Classical Nodes also host *HPC Runtime*
       components such as *Runtime Compilers* and *Resource Scheduler* which
-      are responsible for distributing the workfload onto the available
+      are responsible for distributing the workload onto the available
       resources.
       As discussed in the [System Layer](./building-block-view.md#system-layer),
       resource schedulers need to be equipped to deal with both classical and
       quantum workloads.
     * In the context of quantum software, **QPU Nodes** are of particular
       interest since they are responsible for executing quantum workloads such
-      as the *Quantum Kernel* that was compiled on the *Login Node*.
+      as the *[Quantum Kernel](./glossary.md#quantum-kernel)* that was compiled
+      on the *Login Node*.
       **QPU Nodes** are made up of a physical **Quantum Device** (a.k.a.
       [QPU](./glossary.md#quantum-processing-unit) or quantum computer) and a
       **Co-Processor** that is located closely to the quantum device to enable
-      low-latency and high-bandwidth communication between the two.
+      low-latency and high-bandwidth communication between them.
       The Co-Processor is a classical computer <!-- TODO: or FPGA? --> that runs
       the **firmware** of the *Quantum Device* so that it can execute the
       compiled *Quantum Kernel*.
