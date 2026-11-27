@@ -1,4 +1,6 @@
 # Glossary {#section-glossary}
+The Glossary provides descriptions of the terminology used throughout this documentation. This is particularly important because some terms are ambiguous, with different meanings depending on the context or stakeholders involved. Given the diversity of stakeholders in the quantum computing domain, the Glossary aims to clarify these terms to establish a common understanding, and improve consistency throughout the documentation.
+
 
 ## Quantum Processing Unit (QPU) {#quantum-processing-unit}
 Quantum computers are sometimes referred to as quantum processing units (QPUs)
