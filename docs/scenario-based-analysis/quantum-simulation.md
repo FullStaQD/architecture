@@ -42,7 +42,7 @@ It has the following specification:
 The [Qiskit Transpilation Pipeline](https://quantum.cloud.ibm.com/docs/en/guides/transpile) consists of 6 steps:
 
 1. Initialization Stage ([Compilation Passes](../reference-architecture/building-block-view/system-layer.md))
-    - Using the quantum program from the Application Layer, the transpilation pipeline can start.
+    - Using the quantum circuit from the Application Layer, the transpilation pipeline can start.
     - The first step of the transpilation pipeline is breaking down multi- and custom made qubit- gates into one- or two-qubit operations.
       
 2. Layout Stage ([Compilation Passes](../reference-architecture/building-block-view/system-layer.md))
