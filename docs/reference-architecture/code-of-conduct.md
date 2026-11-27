@@ -1,4 +1,7 @@
 # Code of Conduct
+The Code of Conduct provides guidance based on our values, principles, and standards, outlining how we are expected to work and interact with one another. It also sets clear expectations for professional and respectful behaviour. By following this Code of Conduct, we each contribute to a positive working environment built on trust, transparency, and mutual responsibility. We encourage everyone to familiarise themselves with its principles.
+
+
 *Based on the [Contributor Covenant 3.0](https://www.contributor-covenant.org/version/3/0/).*
 
 ## Our Pledge
